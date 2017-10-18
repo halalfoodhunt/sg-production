@@ -1,0 +1,116 @@
+ <div class="pixfort_pix_slider pix_builder_bg" id="section_slider" data-selector=".pix_builder_bg" style="outline-offset: -3px;">
+ 	<div class="container">
+ 		<div class="sixteen columns">
+ 			<%= image_tag(@place.featured_image.url(:large), :class => "img-responsive") %>
+ 		</div>
+ 	</div><!-- /.container -->
+ </div>
+ <div class="pixfort_text_2_1 pix_builder_bg" id="section_text_2_1" data-selector=".pix_builder_bg" style="">
+ 	<div class="container ">
+ 		<div class="two-thirds column">
+ 			<div class="content_div">
+ 				<div class="event_box row pix_builder_bg">
+ 					<div class="event_box_1 ">
+ 						<div class="event_box_img ">
+ 							<%= image_tag(@place.logo.url(:large), :class => "img-responsive") %>
+ 						</div>
+ 					</div>
+ 					<div class="event_box_2">
+ 						<div class="padding_15 hor_padding">
+ 							<h4 data-selector="h4" style="">
+ 								<strong><%= @place.brand_name %></strong>
+ 							</h4>
+ 							<i class="fa fa-map-marker"></i> <%= @place.operating_address %><hr>
+ 							<img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> <%= @place.general_outlet_contact_number %><hr>
+ 							<% unless @place.website.blank? %>
+ 							<img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/house.png" title="Monitor" width="16">
+ 							<%= link_to @place.website, "#{@place.website}" %>
+ 							<% end %><hr>
+ 							Social sites: <% unless @place.facebook_page.blank? %><%= link_to @place.facebook_page do %><i class="fa fa-facebook-official"></i><% end %><% end %>
+ 							<% unless @place.instagram_handle.blank? %><%= link_to @place.instagram_handle do %><i class="fa fa-instagram"></i><% end %><% end %>
+ 						</div>
+ 					</div>
+ 				</div>
+ 				<% @place.rewards.each do |reward| %>
+ 				<% unless reward.discount.blank? %>
+ 				<div class="event_box row pix_builder_bg">
+ 					<div class="event_box_1 ">
+ 						<div class="event_box_img ">
+ 							<%= image_tag reward.discount.icon.url(:large), :class => "img-responsive" %>
+ 						</div>
+ 					</div>
+ 					<div class="event_box_2">
+ 						<div class="padding_15 hor_padding">
+ 							<h4 data-selector="h4" style="">
+ 								<strong>FRIENDS CARD HOLDERS ONLY</strong>
+ 							</h4>
+ 							<%= reward.terms %>
+ 							<p><br><%= link_to 'View More Rewards', rewards_path, class: "btn btn-default" %></p>
+ 						</div>
+ 					</div>
+ 					<% end %>
+ 					<% end %>
+ 				</div>
+ 				<div class="event_box row pix_builder_bg">
+ 					<% @place.menus.each do |menu| %>
+ 					<% unless menu.image.blank? %>
+ 					<div class="three columns alpha">
+ 						<div class="bg_Homes">
+ 							<div class="img_homes_st"><%= image_tag menu.image.url(:large), :class => "img-responsive" %></div>
+ 							<div class="text_homes_style">
+ 								<p class="calc_homes_st editContent"><%= menu.name %></p>
+ 								<p class="calc_homes_text editContent"><%= menu.description %></p>
+ 							</div>
+ 							<span class="perday_btn editContent">  <a class="pix_text" href="#">$ <%= menu.price %></a>  </span>
+ 						</div>
+ 						<% end %>
+ 						<% end %>
+ 					</div>
+ 				</div>
+ 			</div>
+ 		</div>
+ 		</div>
+ 		</div>
+ 		<div class="one-third column">
+ 			<div class="content_div">
+ 				<% unless @place.qualifying_type.blank? %>
+ 				<div class="container-fluid" style="border:1px solid #ccc;">
+ 					<div class="col-xs-12 col-sm-12 col-md-3">
+ 						<div class="avatar"><center>
+ 							<% if @place.verified == true %>
+ 							<%= image_tag @place.qualifying_type.icon.url(:medium), :class => "img-circle img_responsive", :style => "height:80px; width:80px;" %>
+ 							<% else %>
+ 							<img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/medium/Listing_Icons_Artboard_12.png?1487220138" alt="Chania">
+ 							<% end %>
+ 						</center></div>
+ 					</div>
+ 					<div class="col-xs-12 col-sm-12 col-md-9">
+ 						<h4 class="title">Halal Verification</h4>
+ 						<% if @place.verified == true %>
+ 						<%= @place.qualifying_type.halal_summary %>
+ 						<% else %>
+ 						This business has yet to submit documents for official verification.
+ 						<% end %>
+ 					</div>
+ 				</div>
+ 				<% end %>
+ 				<h4 class="editContent">Opening Hours</h4>
+ 				<p class="editContent"> <% @place.opening_hours.each do |time| %>
+ 					<div class="col-xs-4 col-sm-4 col-md-4" style="padding:0;">
+ 						<%= time.day.name %>
+ 					</div>
+ 					<div class="col-xs-3 col-sm-3 col-md-3">
+ 						<%= time.open.strftime("%I:%M %p") %>
+ 					</div>
+ 					<div class="col-xs-2 col-sm-2 col-md-2">
+ 						<p>-</p>
+ 					</div>
+ 					<div class="col-xs-3 col-sm-3 col-md-3">
+ 						<%= time.close.strftime("%I:%M %p") %>
+ 					</div>
+ 					<% end %></p>
+ 					<a class="text_3_button slow_fade editContent pix_text" href="#" data-selector=".pix_text, .pix_edit" style="">LEARN MORE</a>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>

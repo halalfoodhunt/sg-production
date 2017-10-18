@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Bakers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand name</th>
+      <th>General contact number</th>
+      <th>General email</th>
+      <th>Website online ordering page</th>
+      <th>Facebook page</th>
+      <th>Instagram handle</th>
+      <th>Self collection address</th>
+      <th>Question 1</th>
+      <th>Expiry date</th>
+      <th>Halal expiry</th>
+      <th>Verified</th>
+      <th>Draft</th>
+      <th>Merchant</th>
+      <th>Listing</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bakers.each do |baker| %>
+      <tr>
+        <td><%= baker.brand_name %></td>
+        <td><%= baker.general_contact_number %></td>
+        <td><%= baker.general_email %></td>
+        <td><%= baker.website_online_ordering_page %></td>
+        <td><%= baker.facebook_page %></td>
+        <td><%= baker.instagram_handle %></td>
+        <td><%= baker.self_collection_address %></td>
+        <td><%= baker.question_1 %></td>
+        <td><%= baker.expiry_date %></td>
+        <td><%= baker.halal_expiry %></td>
+        <td><%= baker.verified %></td>
+        <td><%= baker.draft %></td>
+        <td><%= baker.merchant %></td>
+        <td><%= baker.listing %></td>
+        <td><%= link_to 'Show', baker %></td>
+        <td><%= link_to 'Edit', edit_baker_path(baker) %></td>
+        <td><%= link_to 'Destroy', baker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Baker', new_baker_path %>

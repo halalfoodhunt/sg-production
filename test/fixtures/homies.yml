@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand_name: MyString
+  general_contact_number: MyString
+  general_email: MyString
+  website_online_ordering_page: MyString
+  facebook_page: MyString
+  instagram_handle: MyString
+  question_1: MyText
+  question_2: MyText
+  draft: false
+  verified: false
+  halal_expiry: 2017-10-10 08:52:06
+  expiry_date: 2017-10-10 08:52:06
+  merchant_id: 
+  listing_id: 
+
+two:
+  brand_name: MyString
+  general_contact_number: MyString
+  general_email: MyString
+  website_online_ordering_page: MyString
+  facebook_page: MyString
+  instagram_handle: MyString
+  question_1: MyText
+  question_2: MyText
+  draft: false
+  verified: false
+  halal_expiry: 2017-10-10 08:52:06
+  expiry_date: 2017-10-10 08:52:06
+  merchant_id: 
+  listing_id: 

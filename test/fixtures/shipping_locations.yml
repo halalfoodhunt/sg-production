@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  delivery_location_id: 1
+  homy_id: 1
+  online_retail_id: 1
+  food_delivery_id: 1
+  supplier_id: 1
+  raw_food_id: 1
+  baker_id: 1
+
+two:
+  delivery_location_id: 1
+  homy_id: 1
+  online_retail_id: 1
+  food_delivery_id: 1
+  supplier_id: 1
+  raw_food_id: 1
+  baker_id: 1

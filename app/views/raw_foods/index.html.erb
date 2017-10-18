@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Raw Foods</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand name</th>
+      <th>General contact number</th>
+      <th>General email</th>
+      <th>Website online ordering page</th>
+      <th>Facebook page</th>
+      <th>Instagram handle</th>
+      <th>Self collection address</th>
+      <th>Question 1</th>
+      <th>Expiry date</th>
+      <th>Halal expiry</th>
+      <th>Draft</th>
+      <th>Verified</th>
+      <th>Merchant</th>
+      <th>Listing</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @raw_foods.each do |raw_food| %>
+      <tr>
+        <td><%= raw_food.brand_name %></td>
+        <td><%= raw_food.general_contact_number %></td>
+        <td><%= raw_food.general_email %></td>
+        <td><%= raw_food.website_online_ordering_page %></td>
+        <td><%= raw_food.facebook_page %></td>
+        <td><%= raw_food.instagram_handle %></td>
+        <td><%= raw_food.self_collection_address %></td>
+        <td><%= raw_food.question_1 %></td>
+        <td><%= raw_food.expiry_date %></td>
+        <td><%= raw_food.halal_expiry %></td>
+        <td><%= raw_food.draft %></td>
+        <td><%= raw_food.verified %></td>
+        <td><%= raw_food.merchant %></td>
+        <td><%= raw_food.listing %></td>
+        <td><%= link_to 'Show', raw_food %></td>
+        <td><%= link_to 'Edit', edit_raw_food_path(raw_food) %></td>
+        <td><%= link_to 'Destroy', raw_food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Raw food', new_raw_food_path %>

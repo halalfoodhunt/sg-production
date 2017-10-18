@@ -1,0 +1,325 @@
+<div class="pixfort_university_6" id="section_university_5">
+	<div class="join_us_section pix_builder_bg" style="outline-offset: -3px;">
+		<div class="container">
+			
+			<div class="sixteen columns">
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent">Business Details</h3>
+						<h6 class="subject_st editContent" data-selector="h6">Provide a logo for your business so your customers can identify you.</h6>
+					</div>
+				</div>
+				
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg">
+						
+						<%= bootstrap_form_for(@place, :html => {:id => 'contact_form', :class => 'pix_form' }) do |f| %>
+						<% if @place.errors.any? %>
+						<div id="error_explanation">
+							<h2><%= pluralize(@place.errors.count, "error") %> prohibited this place from being saved:</h2>
+
+							<ul>
+								<% @place.errors.full_messages.each do |message| %>
+								<li><%= message %></li>
+								<% end %>
+							</ul>
+						</div>
+						<% end %>
+						
+						<%= f.text_field :brand_name, help: "For brands with multiple outlets, your listing will be displayed as 'Brand Name (Outlet)'", :class => 'pix_text' %><br>
+						<%= image_tag(@place.logo.url(:large), :class => "img_circle", :style => "width:200px; height:200px;") %>
+						<p>Dimension 250 by 250 pixels. JPEG or PNG files only.</p>
+						<p>Drag and drop or <%= f.file_field :logo, hide_label: true %> to upload logo</p>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="sixteen columns">
+				<br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent">Location</h3>
+						<h6 class="subject_st editContent">Where is your outlet?</h6>
+					</div>
+				</div>
+				
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg">
+						<div id="contact_form">
+							<%= f.collection_select :location_id, Location.all, :id, :name, autofocus: true, layout: :inline %><br>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="sixteen columns">
+				<br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent">Halal Status</h3>
+						<h6 class="subject_st editContent">Are you Halal-certified or Muslim-owned establishment?</h6>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg">
+						<div id="contact_form">
+							<%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inline %><br>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="sixteen columns">
+				<br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent">Verifying Documents</h3>
+						<h6 class="subject_st editContent">For <b>Halal-certified</b> businesses, please provide a copy or a photo of your MUIS Halal Certificate. <br><br> For <b>Muslim-owned</b> businesses, please upload your company's business registration(Bizfile)<br><br> For <b>Individuals</b> please submit photos of your NRIC (Front & Back) </h6>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg">
+						<div id="contact_form">
+							<% @place.verifying_documents.each do |verifying_document| %>
+							<%= image_tag(verifying_document.document.url(:thumb), :class => "img-responsive", :style => "width:50px; height:33.5px;") %>
+							<% if verifying_document.present? %>
+							<p>No file added</p>
+							<% else %>
+							<%= verifying_document.document_file_name %>
+							<% end %>
+							<%= verifying_document.document_file_size %>
+							<% end %>
+							<div id="verifying_documents">
+								<%= f.fields_for :verifying_documents do |verifying_document| %>
+								<%= render 'verifying_document_fields', f: verifying_document %>
+								<% end %>
+								<div class="links">
+									<%= link_to_add_association 'Add a Verifying Document', f, :verifying_documents %><br>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="sixteen columns">
+				<br>
+				<div class="four columns alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent">Listing Details</h3>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg">
+						<div id="contact_form">
+							<%= f.email_field :general_email, :class => 'pix_text' %><br>
+							<%= f.phone_field :general_outlet_contact_number, :class => 'pix_text' %><br>
+							<%= f.text_field :operating_address, :class => 'pix_text' %><br>
+							<%= f.url_field :website, placeholder: "http://www.yourwebsite.com", :class => 'pix_text' %><br>
+							<%= f.url_field :facebook_page, placeholder: "http://www.facebook.com/page", :class => 'pix_text' %><br>
+							<%= f.url_field :instagram_handle, placeholder: "http://www.instagram.com/page", :class => 'pix_text' %><br>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="sixteen columns">
+				<br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent">Opening Hours</h3>
+						<h6 class="subject_st editContent">Indicate your daily opening hours so customers can visit you at the right time.</h6>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg">
+						<div id="contact_form">
+							<div id="opening_hours">
+								<%= f.fields_for :opening_hours do |opening_hour| %>
+								<%= render 'opening_hour_fields', f: opening_hour %>
+								<% end %>
+								<div class="links">
+									<%= link_to_add_association 'Add Opening Hour', f, :opening_hours %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="sixteen columns">
+				<br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent">Select the options that best describe your business</h3>
+						<h6 class="subject_st editContent">You may select more than one option per category.</h6>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg">
+						<div id="contact_form">
+							<%= f.collection_select :place_type_id, PlaceType.all, :id, :name, autofocus: true, layout: :inline %>
+							<br>
+							<%= f.select :dining_type_ids, DiningType.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'dining-type' %><br>
+							<%= f.select :feature_ids, Feature.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'feature' %><br>
+							<%= f.select :menu_item_ids, MenuItem.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'menu-item' %><br>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="sixteen columns">
+				<br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent">Upload a store front image for your listing</h3>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg">
+						<div id="contact_form">
+							<%= image_tag(@place.featured_image.url(:large), :class => "img_responsive", :style => "width:300px; height:180px;") %>
+							<p>Dimension 800 by 600 pixels. JPEG files only.</p>
+							<p>Drag and drop or <%= f.file_field :featured_image, hide_label: true %> to upload image</p>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="sixteen columns">
+				<br>
+				<div class="four columns alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent">Menu</h3>
+						<h6 class="subject_st editContent">Upload images of your menu items, name, description and price.</h6>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg">
+						<div id="contact_form">
+							<div id="menus">
+								<%= f.fields_for :menus do |menu| %>
+								<%= render 'menu_fields', f: menu %>
+								<% end %>
+								<div class="links">
+									<%= link_to_add_association 'Add a menu item', f, :menus %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="sixteen columns">
+				<br>
+				<div class="four columns alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent">Provide additional links</h3>
+						<h6 class="subject_st editContent">These are third party links that collect delivery orders or reservations for you.</h6>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg">
+						<div id="contact_form">
+							<%= f.url_field :link_to_online_ordering_page, placeholder: "Online Ordering Page", :class => 'pix_text' %><br>
+							<%= f.url_field :link_to_online_reservation_page, placeholder: "Online Reservation Page", :class => 'pix_text' %><br>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="sixteen columns">
+				<br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent">Tell your customers all they need to know about you</h3>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg">
+						<div id="contact_form">
+							<%= f.text_area :question_1, label: "What do you recommend our users to try when they visit you?", placeholder: "Eg. We have pastas, pizzas and tomato soup", :class => 'pix_text' %><br>
+							<%= f.text_area :question_2, label: "What is the easiest way to get to your place by public transport?", placeholder: "Eg. Highlight parking options", :class => 'pix_text', :input_html => { 'rows' => 15 } %><br>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="sixteen columns">
+				<br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent">Offer our friends an attractive deal!</h3>
+						<h6 class="subject_st editContent">Tap on our loyal foodie community who hold the FRIENDS Card</h6>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg">
+						<div id="contact_form">
+							<%= f.fields_for :rewards do |ff| %>
+							<div>
+								<%= ff.collection_select :discount_id, Discount.all, :id, :name, autofocus: true, layout: :inline, :include_blank => 'No Rewards Offered' %><br>
+								<%= ff.text_area :terms, :input_html => { 'rows' => 15 }, placeholder:"Swissbake Bakery offers 10% off your bill. Valid with a minimum spending of $10. Not Valid with any other promotions and discounts.", label: "Terms & Conditions" %><br>
+							</div>
+							<% end %>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="sixteen columns">
+				<br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent">Are you ready to be published?</h3>
+						<h6 class="subject_st editContent">Not ready to publish yet? Tick this box if you'd like to save this listing as a draft. Make sure to untick this box onece you're ready to publish your listing.</h6>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg">
+						<%= f.hidden_field :listing_id %>
+						<%= f.check_box :draft %><br>
+						<div class="actions">
+							<%= f.submit 'Submit', :class => 'submit_btn orange_bg pix_text', :style => "background:#e73c25; color:#fff; border:0; padding:15px;" %>
+						</div>
+						<% end %>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div><!-- container -->
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('select#feature').select2({
+		placeholder: "Select Features",
+		allowClear: true
+	});
+});
+$(document).ready(function() {
+	$('select#dining-type').select2({
+		placeholder: "Select Dining Types",
+		allowClear: true
+	});
+});
+$(document).ready(function() {
+	$('select#menu-item').select2({
+		placeholder: "Select Menu Items",
+		allowClear: true
+	});
+});
+</script>
+

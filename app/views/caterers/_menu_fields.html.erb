@@ -1,0 +1,16 @@
+<div class="nested-fields">
+		<div class="four columns" style="margin-left:0;">
+			<%= f.file_field :image %>
+		</div>
+		<div class="five columns" style="margin-left:0;">
+			<%= f.text_field :name, label: "Package Name" %>
+		</div>
+		<div class="two columns" style="margin-left:0; margin-right:0;">
+			<%= f.number_field :price, label: "Price" %>
+		</div>
+		<div class="eleven columns" style="margin-left:0;">
+			<%= f.text_area :description, label: "Package Description", placeholder: "Include details for 5 of your available packages." %>
+		</div>
+	<%= link_to_remove_association "Remove Menu Item",  f %>
+	<hr>
+</div>

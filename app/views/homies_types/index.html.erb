@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Homies Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @homies_types.each do |homies_type| %>
+      <tr>
+        <td><%= homies_type.name %></td>
+        <td><%= link_to 'Show', homies_type %></td>
+        <td><%= link_to 'Edit', edit_homies_type_path(homies_type) %></td>
+        <td><%= link_to 'Destroy', homies_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Homies type', new_homies_type_path %>

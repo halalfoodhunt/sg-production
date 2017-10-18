@@ -1,0 +1,1 @@
+json.partial! "raw_food_product_categories/raw_food_product_category", raw_food_product_category: @raw_food_product_category

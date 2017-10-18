@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Main Ordering Methods</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @main_ordering_methods.each do |main_ordering_method| %>
+      <tr>
+        <td><%= main_ordering_method.name %></td>
+        <td><%= link_to 'Show', main_ordering_method %></td>
+        <td><%= link_to 'Edit', edit_main_ordering_method_path(main_ordering_method) %></td>
+        <td><%= link_to 'Destroy', main_ordering_method, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Main ordering method', new_main_ordering_method_path %>

@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Places</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand name</th>
+      <th>General email</th>
+      <th>General outlet contact number</th>
+      <th>Operating address</th>
+      <th>Website</th>
+      <th>Facebook page</th>
+      <th>Instagram handle</th>
+      <th>Link to online ordering page</th>
+      <th>Link to online reservation page</th>
+      <th>Question 1</th>
+      <th>Question 2</th>
+      <th>Merchant</th>
+      <th>Listing</th>
+      <th>Float</th>
+      <th>Float</th>
+      <th>Draft</th>
+      <th>Verified</th>
+      <th>Halal expiry</th>
+      <th>Expiry date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @places.each do |place| %>
+      <tr>
+        <td><%= place.brand_name %></td>
+        <td><%= place.general_email %></td>
+        <td><%= place.general_outlet_contact_number %></td>
+        <td><%= place.operating_address %></td>
+        <td><%= place.website %></td>
+        <td><%= place.facebook_page %></td>
+        <td><%= place.instagram_handle %></td>
+        <td><%= place.link_to_online_ordering_page %></td>
+        <td><%= place.link_to_online_reservation_page %></td>
+        <td><%= place.question_1 %></td>
+        <td><%= place.question_2 %></td>
+        <td><%= place.merchant %></td>
+        <td><%= place.listing %></td>
+        <td><%= place.draft %></td>
+        <td><%= place.verified %></td>
+        <td><%= place.halal_expiry %></td>
+        <td><%= place.expiry_date %></td>
+        <td><%= link_to 'Show', place %></td>
+        <td><%= link_to 'Edit', edit_place_path(place) %></td>
+        <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Place', new_place_path %>

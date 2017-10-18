@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Qualifying Types</h1>
+
+<table class="table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Halal summary</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @qualifying_types.each do |qualifying_type| %>
+      <tr>
+        <td><%= image_tag(qualifying_type.image.url(:square), :class => "img-circle") %></td>
+        <td><%= qualifying_type.name %></td>
+        <td><%= qualifying_type.halal_summary %></td>
+        <td><%= link_to 'Show', qualifying_type %></td>
+        <td><%= link_to 'Edit', edit_qualifying_type_path(qualifying_type) %></td>
+        <td><%= link_to 'Destroy', qualifying_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Qualifying type', new_qualifying_type_path %>

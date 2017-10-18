@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  open: 2017-10-11 08:01:44
+  close: 2017-10-11 08:01:44
+  place_id: 
+
+two:
+  open: 2017-10-11 08:01:44
+  close: 2017-10-11 08:01:44
+  place_id: 

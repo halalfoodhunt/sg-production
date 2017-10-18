@@ -1,0 +1,14 @@
+<div class="nested-fields">
+  <% @food_delivery.verifying_documents.each do |verifying_document| %>
+        <%= image_tag(verifying_document.document.url(:thumb), :class => "img-responsive", :style => "width:50px; height:33.5px;") %>
+      <% if verifying_document.present? %>
+      <p>No file added</p>
+      <% else %>
+        <%= verifying_document.document_file_name %>
+        <% end %>
+        <%= verifying_document.document_file_size %>
+    <% end %>
+        <%= f.file_field :document, hide_label: true %>
+      <%= link_to_remove_association "Remove Document",  f %>
+      <hr>
+ </div>

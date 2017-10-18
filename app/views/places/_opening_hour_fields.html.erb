@@ -1,0 +1,13 @@
+<div class="nested-fields">
+		<div class="three columns" style="margin-left:0;">
+			<%= f.collection_select :day_id, Day.all, :id, :name, autofocus: true, layout: :inline %>
+		</div>
+		<div class="four columns" style="margin-left:0;">
+			<%= f.time_field :open, label: "From" %>
+		</div>
+		<div class="four columns" style="margin-left:0;">
+			<%= f.time_field :close, label: "To" %>
+		</div>
+	<%= link_to_remove_association "Remove Opening Hour",  f %>
+	<hr>
+</div>

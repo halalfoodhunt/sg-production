@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Homies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand name</th>
+      <th>General contact number</th>
+      <th>General email</th>
+      <th>Website online ordering page</th>
+      <th>Facebook page</th>
+      <th>Instagram handle</th>
+      <th>Question 1</th>
+      <th>Question 2</th>
+      <th>Draft</th>
+      <th>Verified</th>
+      <th>Halal expiry</th>
+      <th>Expiry date</th>
+      <th>Merchant</th>
+      <th>Listing</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @homies.each do |homy| %>
+      <tr>
+        <td><%= homy.brand_name %></td>
+        <td><%= homy.general_contact_number %></td>
+        <td><%= homy.general_email %></td>
+        <td><%= homy.website_online_ordering_page %></td>
+        <td><%= homy.facebook_page %></td>
+        <td><%= homy.instagram_handle %></td>
+        <td><%= homy.question_1 %></td>
+        <td><%= homy.question_2 %></td>
+        <td><%= homy.draft %></td>
+        <td><%= homy.verified %></td>
+        <td><%= homy.halal_expiry %></td>
+        <td><%= homy.expiry_date %></td>
+        <td><%= homy.merchant %></td>
+        <td><%= homy.listing %></td>
+        <td><%= link_to 'Show', homy %></td>
+        <td><%= link_to 'Edit', edit_homy_path(homy) %></td>
+        <td><%= link_to 'Destroy', homy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Homy', new_homy_path %>

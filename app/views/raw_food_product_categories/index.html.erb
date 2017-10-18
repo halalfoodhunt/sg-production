@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Raw Food Product Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @raw_food_product_categories.each do |raw_food_product_category| %>
+      <tr>
+        <td><%= raw_food_product_category.name %></td>
+        <td><%= link_to 'Show', raw_food_product_category %></td>
+        <td><%= link_to 'Edit', edit_raw_food_product_category_path(raw_food_product_category) %></td>
+        <td><%= link_to 'Destroy', raw_food_product_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Raw food product category', new_raw_food_product_category_path %>

@@ -1,0 +1,2 @@
+module HomiesTypesHelper
+end

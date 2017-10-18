@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Online Retails</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand name</th>
+      <th>General contact number</th>
+      <th>General email</th>
+      <th>Website online ordering page</th>
+      <th>Facebook page</th>
+      <th>Instagram handle</th>
+      <th>Self collection address</th>
+      <th>Question 1</th>
+      <th>Halal expiry</th>
+      <th>Expiry date</th>
+      <th>Verified</th>
+      <th>Draft</th>
+      <th>Merchant</th>
+      <th>Listing</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @online_retails.each do |online_retail| %>
+      <tr>
+        <td><%= online_retail.brand_name %></td>
+        <td><%= online_retail.general_contact_number %></td>
+        <td><%= online_retail.general_email %></td>
+        <td><%= online_retail.website_online_ordering_page %></td>
+        <td><%= online_retail.facebook_page %></td>
+        <td><%= online_retail.instagram_handle %></td>
+        <td><%= online_retail.self_collection_address %></td>
+        <td><%= online_retail.question_1 %></td>
+        <td><%= online_retail.halal_expiry %></td>
+        <td><%= online_retail.expiry_date %></td>
+        <td><%= online_retail.verified %></td>
+        <td><%= online_retail.draft %></td>
+        <td><%= online_retail.merchant %></td>
+        <td><%= online_retail.listing %></td>
+        <td><%= link_to 'Show', online_retail %></td>
+        <td><%= link_to 'Edit', edit_online_retail_path(online_retail) %></td>
+        <td><%= link_to 'Destroy', online_retail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Online retail', new_online_retail_path %>

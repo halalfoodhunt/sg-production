@@ -1,0 +1,34 @@
+<div class="pixfort_party_15" id="section_party_3">
+        <div class="subscribe pix_builder_bg">
+            <div class="container">
+                <div class="sixteen columns">
+                    <div class="text_input pix_builder_bg">
+                        <div class="headtext_style">
+                            <span class="editContent">
+                                <span class="pix_text" style="color:#22211d;">
+                                    <strong>Login</strong>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="segment pix_builder_bg"></div>
+                        <span class="editContent">
+                            <p class="subtext_style">
+                                <strong>Log in here if you already have an account with us.</strong>
+                            </p>
+                        </span>
+                        <div class="contact_st">
+                            <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:id => 'contact_form', :class => 'pix_form' }) do |f| %>
+              <%= f.email_field :email, autofocus: true %><br>
+              <%= f.password_field :password, autocomplete: "off" %><br>
+              <% if devise_mapping.rememberable? -%>
+                <%= f.check_box :remember_me %>
+              <% end -%><br>
+              <%= f.submit "Log in", :class => 'submit_btn orange_bg pix_text', :style => "background:#e73c25; color:#fff; border:0; margin-bottom: 0;" %>
+              <% end %>
+              <%= render "merchants/shared/links" %><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 

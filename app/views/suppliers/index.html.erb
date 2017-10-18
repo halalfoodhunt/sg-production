@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Suppliers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand name</th>
+      <th>General contact number</th>
+      <th>General email</th>
+      <th>Website online ordering page</th>
+      <th>Facebook page</th>
+      <th>Instagram handle</th>
+      <th>Self collection address</th>
+      <th>Question 1</th>
+      <th>Expiry date</th>
+      <th>Halal expiry</th>
+      <th>Verified</th>
+      <th>Draft</th>
+      <th>Merchant</th>
+      <th>Listing</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @suppliers.each do |supplier| %>
+      <tr>
+        <td><%= supplier.brand_name %></td>
+        <td><%= supplier.general_contact_number %></td>
+        <td><%= supplier.general_email %></td>
+        <td><%= supplier.website_online_ordering_page %></td>
+        <td><%= supplier.facebook_page %></td>
+        <td><%= supplier.instagram_handle %></td>
+        <td><%= supplier.self_collection_address %></td>
+        <td><%= supplier.question_1 %></td>
+        <td><%= supplier.expiry_date %></td>
+        <td><%= supplier.halal_expiry %></td>
+        <td><%= supplier.verified %></td>
+        <td><%= supplier.draft %></td>
+        <td><%= supplier.merchant %></td>
+        <td><%= supplier.listing %></td>
+        <td><%= link_to 'Show', supplier %></td>
+        <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
+        <td><%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Supplier', new_supplier_path %>

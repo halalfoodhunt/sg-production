@@ -1,0 +1,285 @@
+<div class="pixfort_university_6" id="section_university_5">
+	<div class="join_us_section pix_builder_bg" data-selector=".pix_builder_bg" style="outline-offset: -3px;">
+		<div class="container">
+			
+			<div class="sixteen columns">
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent" data-selector="h3">Business Details</h3>
+						<h6 class="subject_st editContent" data-selector="h6">Provide a logo for your business so your customers can identify you.</h6>
+					</div>
+				</div>
+				
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg" data-selector=".pix_builder_bg">
+						
+						<%= bootstrap_form_for(@baker, :html => {:id => 'contact_form', :class => 'pix_form' }) do |f| %>
+						<% if @baker.errors.any? %>
+						<div id="error_explanation">
+							<h2><%= pluralize(@baker.errors.count, "error") %> prohibited this baker from being saved:</h2>
+
+							<ul>
+								<% @baker.errors.full_messages.each do |message| %>
+								<li><%= message %></li>
+								<% end %>
+							</ul>
+						</div>
+						<% end %>
+						
+						<%= f.text_field :brand_name, help: "For brands with multiple outlets, your listing will be displayed as 'Brand Name (Outlet)'", :class => 'pix_text' %><br>
+						<%= image_tag(@baker.logo.url(:large), :class => "img_circle", :style => "width:200px; height:200px;") %>
+						<p>Dimension 250 by 250 pixels. JPEG or PNG files only.</p>
+						<p>Drag and drop or <%= f.file_field :logo, hide_label: true %> to upload logo</p>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="sixteen columns">
+			  <br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent" data-selector="h3">Halal Status</h3>
+						<h6 class="subject_st editContent" data-selector="h6">Are you Halal-certified or Muslim-owned establishment?</h6>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg" data-selector=".pix_builder_bg">
+					  <div id="contact_form">
+						<%= f.collection_select :qualifying_type_id, QualifyingType.all, :id, :name, autofocus: true, layout: :inline %><br>
+					</div>
+				</div>
+			</div>
+			
+			</div>
+			
+			<div class="sixteen columns">
+			  <br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent" data-selector="h3">Verifying Documents</h3>
+						<h6 class="subject_st editContent" data-selector="h6">For <b>Halal-certified</b> businesses, please provide a copy or a photo of your MUIS Halal Certificate. <br><br> For <b>Muslim-owned</b> businesses, please upload your company's business registration(Bizfile)<br><br> For <b>Individuals</b> please submit photos of your NRIC (Front & Back) </h6>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg" data-selector=".pix_builder_bg">
+					  	<div id="contact_form">
+						    <div id="verifying_documents">
+							    <%= f.fields_for :verifying_documents do |verifying_document| %>
+							    <%= render 'verifying_document_fields', f: verifying_document %>
+							    <% end %>
+							    <div class="links">
+								  <%= link_to_add_association 'Add a Verifying Document', f, :verifying_documents %><br>
+							    </div>
+						    </div>
+					    </div>
+				  </div>
+			  </div>
+			  
+			  </div>
+			
+			<div class="sixteen columns">
+			  <br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent" data-selector="h3">Listing Details</h3>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					  <div class="substyle pix_builder_bg" data-selector=".pix_builder_bg">
+					    	<div id="contact_form">
+						<%= f.email_field :general_email, :class => 'pix_text' %><br>
+						<%= f.phone_field :general_contact_number, :class => 'pix_text' %><br>
+						<%= f.url_field :facebook_page, placeholder: "http://www.facebook.com/page", :class => 'pix_text' %><br>
+						<%= f.url_field :instagram_handle, placeholder: "http://www.instagram.com/page", :class => 'pix_text' %><br>
+						<%= f.text_area :self_collection_address, placeholder: "Indicate 'None' if self collection is not possible", label: "Self Collection Address", :class => 'pix_text' %><br>
+					  </div>
+				</div>
+			</div>
+			
+			</div>
+			
+			<div class="sixteen columns">
+			  <br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent" data-selector="h3">Select the options that best describe your business</h3>
+						<h6 class="subject_st editContent" data-selector="h6">You may select more than one option per category.</h6>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg" data-selector=".pix_builder_bg">
+					  <div id="contact_form">
+					  	<%= f.collection_select :baker_type_id, BakerType.all, :id, :name, autofocus: true, layout: :inline %>
+						<br>
+						<%= f.select :ordering_method_ids, OrderingMethod.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'ordering-method', :style => "width:100%;" %><br>
+						<%= f.select :baker_service_type_ids, BakerServiceType.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'online-retail-service-type' %><br>
+						<%= f.select :delivery_location_ids, DeliveryLocation.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'delivery-location' %><br>
+						<%= f.select :menu_item_ids, MenuItem.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'menu-item' %><br>
+						<%= f.select :baker_product_category_ids, BakerProductCategory.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'product-category' %><br>
+					</div>
+				</div>
+			</div>
+			
+			</div>
+			
+			<div class="sixteen columns">
+			  <br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent" data-selector="h3">Upload a store front image for your listing</h3>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg" data-selector=".pix_builder_bg">
+					  <div id="contact_form">
+								<%= image_tag(@baker.featured_image.url(:large), :class => "img_responsive", :style => "width:300px; height:180px;") %>
+								<p>Dimension 800 by 600 pixels. JPEG files only.</p>
+									<p>Drag and drop or <%= f.file_field :featured_image, hide_label: true %> to upload image</p>
+					</div>
+				</div>
+			</div>
+			
+			</div>
+			
+			<div class="sixteen columns">
+			  <br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent" data-selector="h3">Menu</h3>
+						<h6 class="subject_st editContent" data-selector="h6">Upload images of your menu items, name, description and price.</h6>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg" data-selector=".pix_builder_bg">
+					  	<div id="contact_form">
+						    <div id="menus">
+							    <%= f.fields_for :menus do |menu| %>
+							    <%= render 'menu_fields', f: menu %>
+							    <% end %>
+							    <div class="links">
+								  <%= link_to_add_association 'Add a menu item', f, :menus %>
+							    </div>
+						    </div>
+					    </div>
+				  </div>
+			  </div>
+			  
+			  </div>
+			
+			<div class="sixteen columns">
+			  <br>
+				<div class="four columns alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent" data-selector="h3">Provide additional links</h3>
+						<h6 class="subject_st editContent" data-selector="h6">These are third party links that collect delivery orders or reservations for you.</h6>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg" data-selector=".pix_builder_bg">
+					  <div id="contact_form">
+						<%= f.url_field :website_online_ordering_page, placeholder: "Eg. http://www.foodpanda.com/yourpage", :class => 'pix_text' %><br>
+					</div>
+				</div>
+			</div>
+			
+			</div>
+			
+			<div class="sixteen columns">
+			  <br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent" data-selector="h3">Tell your customers all they need to know about you</h3>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg" data-selector=".pix_builder_bg">
+					  <div id="contact_form">
+						<%= f.text_area :question_1, label: "What are your specialities?", placeholder: "Eg. We have pastas, pizzas and tomato soup", :class => 'pix_text' %><br>
+					</div>
+				</div>
+			</div>
+			
+			</div>
+			
+			<div class="sixteen columns">
+			  <br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent" data-selector="h3">Offer our friends an attractive deal!</h3>
+						<h6 class="subject_st editContent" data-selector="h6">Tap on our loyal foodie community who hold the FRIENDS Card</h6>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg" data-selector=".pix_builder_bg">
+					  <div id="contact_form">
+						<%= f.fields_for :reward do |ff| %>
+						<div>
+							<%= ff.collection_select :discount_id, Discount.all, :id, :name, autofocus: true, layout: :inline, :include_blank => 'No Rewards Offered' %><br>
+							<%= ff.text_area :terms, :input_html => { 'rows' => 15 }, placeholder:"Swissbake Bakery offers 10% off your bill. Valid with a minimum spending of $10. Not Valid with any other promotions and discounts.", label: "Terms & Conditions" %><br>
+						</div>
+						<% end %>
+					</div>
+				</div>
+			</div>
+			
+			</div>
+			
+			<div class="sixteen columns">
+			  <br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent" data-selector="h3">Are you ready to be published?</h3>
+						<h6 class="subject_st editContent" data-selector="h6">Not ready to publish yet? Tick this box if you'd like to save this listing as a draft. Make sure to untick this box onece you're ready to publish your listing.</h6>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg" data-selector=".pix_builder_bg">
+					  <div id="contact_form">
+					    <%= f.hidden_field :listing_id %>
+						  <%= f.check_box :draft %><br>
+		          <div class="actions">
+			          <%= f.submit 'Submit', :class => 'submit_btn orange_bg pix_text', :style => "background:#e73c25; color:#fff; border:0; padding:15px;" %>
+		          </div>
+		        <% end %>
+					</div>
+				</div>
+			</div>
+			
+			</div>
+			
+		</div>
+	</div><!-- container -->
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('select#ordering-method').select2({
+    placeholder: "Select Ordering Method",
+    allowClear: true
+  });
+});
+$(document).ready(function() {
+  $('select#delivery-location').select2({
+    placeholder: "Select Service Types",
+    allowClear: true
+  });
+});
+$(document).ready(function() {
+  $('select#menu-item').select2({
+    placeholder: "Select Menu Items",
+    allowClear: true
+  });
+});
+$(document).ready(function() {
+  $('select#online-retail-service-type').select2({
+    placeholder: "Select Service Types",
+    allowClear: true
+  });
+});
+$(document).ready(function() {
+  $('select#product-category').select2({
+    placeholder: "Select Product Category",
+    allowClear: true
+  });
+});
+</script>

@@ -1,0 +1,72 @@
+<% @listings[0..0].each do |listing| %>
+<div class="four columns alpha">
+	<div class="content_div center_text" style="border: 3px solid #ccc; border-radius:15px; margin: 25px 0;">
+		<h4><%= listing.name %></h4>
+		<p><%= image_tag listing.icon.url(:large), :class => "center_text", :style => "width:85px; height:85px" %></p>
+		<%= link_to 'Select', new_place_path(listing_id: listing.id), :class => "text_3_button slow_fade editContent pix_text" %>
+	</div>
+</div>
+<% end %>
+<% @listings[1..1].each do |listing| %>
+<div class="four columns alpha">
+	<div class="content_div center_text" style="border: 3px solid #ccc; border-radius:15px; margin: 25px 0;">
+		<h4><%= listing.name %></h4>
+		<p><%= image_tag listing.icon.url(:large), :class => "center_text", :style => "width:85px; height:85px" %></p>
+		<%= link_to 'Select', new_homy_path(listing_id: listing.id), :class => "text_3_button slow_fade editContent pix_text" %>
+	</div>
+</div>
+<% end %>
+<% @listings[2..2].each do |listing| %>
+<div class="four columns alpha">
+	<div class="content_div center_text" style="border: 3px solid #ccc; border-radius:15px; margin: 25px 0;">
+		<h4><%= listing.name %></h4>
+		<p><%= image_tag listing.icon.url(:large), :class => "center_text", :style => "width:85px; height:85px" %></p>
+		<%= link_to 'Select', new_food_delivery_path(listing_id: listing.id), :class => "text_3_button slow_fade editContent pix_text" %>
+	</div>
+</div>
+<% end %>
+<% @listings[3..3].each do |listing| %>
+<div class="four columns alpha">
+	<div class="content_div center_text" style="border: 3px solid #ccc; border-radius:15px; margin: 25px 0;">
+		<h4><%= listing.name %></h4>
+		<p><%= image_tag listing.icon.url(:large), :class => "center_text", :style => "width:85px; height:85px" %></p>
+		<%= link_to 'Select', new_caterer_path(listing_id: listing.id), :class => "text_3_button slow_fade editContent pix_text" %>
+	</div>
+</div>
+<% end %>
+<% @listings[4..4].each do |listing| %>
+<div class="four columns alpha">
+	<div class="content_div center_text" style="border: 3px solid #ccc; border-radius:15px; margin: 25px 0;">
+		<h4><%= listing.name %></h4>
+		<p><%= image_tag listing.icon.url(:large), :class => "center_text", :style => "width:85px; height:85px" %></p>
+		<%= link_to 'Select', new_online_retail_path(listing_id: listing.id), :class => "text_3_button slow_fade editContent pix_text" %>
+	</div>
+</div>
+<% end %>
+<% @listings[5..5].each do |listing| %>
+<div class="four columns alpha">
+	<div class="content_div center_text" style="border: 3px solid #ccc; border-radius:15px; margin: 25px 0;">
+		<h4><%= listing.name %></h4>
+		<p><%= image_tag listing.icon.url(:large), :class => "center_text", :style => "width:85px; height:85px" %></p>
+		<%= link_to 'Select', new_supplier_path(listing_id: listing.id), :class => "text_3_button slow_fade editContent pix_text" %>
+	</div>
+</div>
+<% end %>
+<% @listings[6..6].each do |listing| %>
+<div class="four columns alpha">
+	<div class="content_div center_text" style="border: 3px solid #ccc; border-radius:15px; margin: 25px 0;">
+		<h4><%= listing.name %></h4>
+		<p><%= image_tag listing.icon.url(:large), :class => "center_text", :style => "width:85px; height:85px" %></p>
+		<%= link_to 'Select', new_raw_food_path(listing_id: listing.id), :class => "text_3_button slow_fade editContent pix_text" %>
+	</div>
+</div>
+<% end %>
+<% @listings[7..7].each do |listing| %>
+<div class="four columns alpha">
+	<div class="content_div center_text" style="border: 3px solid #ccc; border-radius:15px; margin: 25px 0;">
+		<h4><%= listing.name %></h4>
+		<p><%= image_tag listing.icon.url(:large), :class => "center_text", :style => "width:85px; height:85px" %></p>
+		<%= link_to 'Select', new_baker_path(listing_id: listing.id), :class => "text_3_button slow_fade editContent pix_text" %>
+	</div>
+</div>
+<% end %>
