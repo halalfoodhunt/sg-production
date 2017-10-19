@@ -11,13 +11,13 @@ gem 'devise'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 
-gem 'active_skin'
+gem 'active_bootstrap_skin'
 
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
 gem 'aws-sdk', '~> 2.3'
 
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'bootstrap_form'
 
