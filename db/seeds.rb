@@ -5,6 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+AdminUser.delete_all
+AdminUser.create!(:email => 'info@halalfoodhunt.com', :password => 'Halal12345!', :password_confirmation => 'Halal12345!')
+
 BakerProductCategory.delete_all
 BakerProductCategory.create! id: 1, name: "Cakes"
 BakerProductCategory.create! id: 2, name: "Cookies"
