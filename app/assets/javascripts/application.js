@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require select2
 //= require turbolinks
 //= require bootstrap.min
 //= require bootstrap-switch
@@ -31,10 +32,11 @@
 //= require jquery.ui.touch-punch.min
 //= require jquery.vide
 //= require jquery.ui.effect-highlight
+//= require active_admin/base
+//= require active_admin_flat_skin
 //= require bootstrap-sprockets
 //= require cocoon
 //= require global
 //= require ticker
 //= require card
-//= require select2
 //= require_tree .
