@@ -34,7 +34,6 @@
 //= require jquery.ui.effect-highlight
 //= require active_admin/base
 //= require bootstrap-sprockets
-//= require active_bootstrap_skin
 //= require cocoon
 //= require global
 //= require ticker
