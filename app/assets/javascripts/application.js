@@ -32,6 +32,7 @@
 //= require jquery.ui.touch-punch.min
 //= require jquery.vide
 //= require jquery.ui.effect-highlight
+//= require active_admin/base
 //= require bootstrap-sprockets
 //= require cocoon
 //= require global
