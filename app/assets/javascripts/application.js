@@ -33,7 +33,6 @@
 //= require jquery.vide
 //= require jquery.ui.effect-highlight
 //= require active_admin/base
-//= require active_admin_flat_skin
 //= require bootstrap-sprockets
 //= require cocoon
 //= require global

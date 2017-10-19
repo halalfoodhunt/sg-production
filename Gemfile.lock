@@ -59,7 +59,7 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    active_admin_flat_skin (0.1.2)
+    active_skin (0.0.12)
     activejob (4.2.5)
       activesupport (= 4.2.5)
       globalid (>= 0.3.0)
@@ -272,7 +272,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_admin_flat_skin
+  active_skin
   activeadmin!
   aws-sdk (~> 2.3)
   bootstrap-sass (~> 3.2.0)
