@@ -6,12 +6,11 @@
 //
 // For example, to change the sidebar width:
 // $sidebar-width: 242px;
-$theme-primary: #e73c25;
 
 // Active Admin's got SASS!
 @import "active_admin/mixins";
-@import "active_material";
-//@import "active_admin/base";
+@import "active_admin/base";
+@import "active_skin";
 
 
 
