@@ -222,3 +222,4 @@ Listing.create! id: 5, name: "Online Product Retail", icon: File.new("public/ima
 Listing.create! id: 6, name: "Suppliers", icon: File.new("public/images/media/supplier.png")
 Listing.create! id: 7, name: "Raw Food", icon: File.new("public/images/media/raw-food.png")
 Listing.create! id: 8, name: "Bakers & Confectioners", icon: File.new("public/images/media/bakery.png")
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
