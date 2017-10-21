@@ -1,6 +1,6 @@
 class Place < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :brand_name, use: :slugged
+  friendly_id :brand_name, :use => [:slugged, :finders]
   
   before_create :set_expiration_date
   before_create :set_halal_expiry
