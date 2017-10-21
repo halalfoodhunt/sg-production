@@ -15,11 +15,11 @@ class PlacesController < ApplicationController
 
   # GET /places/new
   def new
+    @current_merchant = current_merchant
     @place.opening_hours.build
     @place.menus.build
     @place.verifying_documents.build
     @place.rewards.build
-    @current_merchant = current_merchant
     @place = Place.new(listing_id: params[:listing_id])
     @place.listing = Listing.find_by id: params["listing_id"]
   end
