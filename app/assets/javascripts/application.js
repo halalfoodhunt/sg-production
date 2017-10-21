@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require select2
 //= require turbolinks
 //= require cocoon
 //= require global
@@ -35,7 +36,6 @@
 //= require jquery.ui.effect-highlight
 //= require jquery.slick
 //= require bootstrap-sprockets
-//= require select2
 //= require initialize
 //= require ticker
 //= require card
