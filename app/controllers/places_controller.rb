@@ -18,6 +18,10 @@ class PlacesController < ApplicationController
     @current_merchant = current_merchant
     @place = Place.new(listing_id: params[:listing_id])
     @place.listing = Listing.find_by id: params["listing_id"]
+    @place.opening_hours.build
+    @place.menus.build
+    @place.verifying_documents.build
+    @place.rewards.build
   end
 
   # GET /places/1/edit
@@ -41,10 +45,6 @@ class PlacesController < ApplicationController
         format.json { render json: @place.errors, status: :unprocessable_entity }
       end
     end
-    @place.opening_hours.build
-    @place.menus.build
-    @place.verifying_documents.build
-    @place.rewards.build
     @place.feature_ids = params[:place][:feature_ids]
     @place.dining_type_ids = params[:place][:dining_type_ids]
     @place.menu_item_ids = params[:place][:menu_item_ids]
