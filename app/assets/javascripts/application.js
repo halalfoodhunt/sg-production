@@ -14,9 +14,9 @@
 //= require jquery_ujs
 //= require jquery.slick
 //= require initialize
-//= require turbolinks
 //= require cocoon
 //= require global
+//= require turbolinks
 //= require select2
 //= require bootstrap.min
 //= require bootstrap-switch
