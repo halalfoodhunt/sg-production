@@ -13,6 +13,14 @@ class Place < ActiveRecord::Base
     self.halal_expiry =  Date.today + 365.days
   end
   
+  def to_param
+    if caller.to_s.include?"active_admin"
+      id && id.to_s
+    else
+      slug
+    end
+  end
+  
   has_many :features, :through => :highlights, dependent: :destroy
   has_many :highlights, dependent: :destroy
   
