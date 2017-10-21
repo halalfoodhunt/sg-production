@@ -1,6 +1,6 @@
 <div class="nested-fields">
 		<div class="two columns" style="margin-left:0; margin-right:0;">
-		<%= image_tag(@places.verifying_document.document.url(:thumb), :class => "img-responsive", :style => "width:50px; height:33.5px;") %>
+		<%= image_tag(@place.verifying_documents.document.url(:thumb), :class => "img-responsive", :style => "width:50px; height:33.5px;") %>
 		</div>
 		<div class="four columns" style="margin-left:0;">
 			<%= f.file_field :image %>
