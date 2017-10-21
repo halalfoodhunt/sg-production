@@ -166,3 +166,15 @@ img.color_flip:hover {
     border: #e73c25 solid 1px;
     color: #e73c25;
 }
+
+.slick-prev::before, .slick-next::before {
+  color: #000;
+}
+
+.slick-next {
+  right: -5px;
+}
+
+.slick-prev {
+  left: -5px;
+}
