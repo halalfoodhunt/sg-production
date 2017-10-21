@@ -21,6 +21,8 @@ gem 'bootstrap_form'
 
 gem 'select2-rails'
 
+gem "jquery-slick-rails"
+
 gem "cocoon"
 
 gem 'ransack', github: 'activerecord-hackery/ransack'

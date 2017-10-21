@@ -26,7 +26,7 @@ class Place < ActiveRecord::Base
   accepts_nested_attributes_for :rewards
   
   has_many :opening_hours, dependent: :destroy, inverse_of: :place
-  accepts_nested_attributes_for :opening_hours, allow_destroy: true, reject_if: :all_blank
+  accepts_nested_attributes_for :opening_hours, reject_if: :all_blank, allow_destroy: true
   
   has_many :menus, dependent: :destroy, inverse_of: :place
   accepts_nested_attributes_for :menus, reject_if: :all_blank, allow_destroy: true

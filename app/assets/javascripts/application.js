@@ -32,6 +32,8 @@
 //= require jquery.ui.touch-punch.min
 //= require jquery.vide
 //= require jquery.ui.effect-highlight
+//= require jquery.slick
+//= require initialize
 //= require bootstrap-sprockets
 //= require cocoon
 //= require global
