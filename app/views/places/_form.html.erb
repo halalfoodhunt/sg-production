@@ -204,11 +204,11 @@
 				<div class="twelve columns omega">
 					<div class="substyle pix_builder_bg">
 						<div id="contact_form">
-							<div id="menus">
-								<div class="two columns" style="margin-left:0; margin-right:0;">
+							<div class="two columns" style="margin-left:0; margin-right:0;">
 									<% @place.menus.each do |menu| %>
 									<%= image_tag(menu.image.url(:thumb), :class => "img_responsive", :style => "width:80px; height:45px;") %>
 									<% end %></div>
+							<div id="menus">
 									<%= f.fields_for :menus do |menu| %>
 									<%= render 'menu_fields', f: menu %>
 									<% end %>
