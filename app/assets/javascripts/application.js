@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require cocoon
+//= require global
 //= require bootstrap.min
 //= require bootstrap-switch
 //= require animations
@@ -33,8 +35,6 @@
 //= require jquery.ui.effect-highlight
 //= require jquery.slick
 //= require bootstrap-sprockets
-//= require cocoon
-//= require global
 //= require select2
 //= require initialize
 //= require ticker
