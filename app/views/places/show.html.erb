@@ -42,9 +42,9 @@
             </div>
             <div class="event_box_2">
               <div class="padding_15 hor_padding">
-                <h4 data-selector="h4" style="">
+                <h3 data-selector="h3" style="">
                   <strong>Halal Verification</strong>
-                </h4>
+                </h3>
                 <% if @place.verified == true %>
                 <%= @place.qualifying_type.halal_summary %>
                 <% else %>
@@ -64,9 +64,9 @@
             </div>
             <div class="event_box_2">
               <div class="padding_15 hor_padding">
-                <h4 data-selector="h4" style="">
+                <h3 data-selector="h3" style="">
                   <strong>FRIENDS CARD HOLDERS ONLY</strong>
-                </h4>
+                </h3>
                 <%= reward.terms %>
                 <p><br><%= link_to 'View More Rewards', rewards_path, class: "btn btn-default" %></p>
               </div>
@@ -77,7 +77,7 @@
           <div class="event_box row pix_builder_bg">
            <h3>FAQ</h3>
            <h4 class="pix_text"><strong>What do you recommend our users to try when they visit you?</strong></h4>
-           <%= @place.question_1 %><br>
+           <%= @place.question_1 %><br><br>
            <h4 class="pix_text"><strong>What is the easiest way to get to your place by public transport?</strong></h4>
            <%= @place.question_2 %>
          </div>
@@ -86,7 +86,7 @@
      <div class="one-third column">
       <div class="content_div" style="padding:0;">
         <div class="event_box row pix_builder_bg">
-          <h4 class="editContent">Opening Hours</h4>
+          <h3 class="editContent">Opening Hours</h3>
           <p class="editContent"> <% @place.opening_hours.each do |time| %>
             <div class="col-xs-4 col-sm-4 col-md-4" style="padding:0;">
               <%= time.day.name %>
@@ -103,14 +103,14 @@
             <% end %></p>
           </div>
           <div class="event_box row pix_builder_bg">
-           <h4>Features</h4>
+           <h3>Features</h3>
            <% @place.features.each do |feature| %>
            <div class="col-xs-12 col-md-12" style="padding:0;"><p><%= image_tag feature.icon.url(:thumb) %> <%= link_to feature.name, places_path(feature: feature.name) %></p>
            </div>
            <% end %>
          </div>
          <div class="event_box row pix_builder_bg">
-           <h4>Dining Types</h4>
+           <h3>Dining Types</h3>
            <% @place.dining_types.each do |dining_type| %>
            <div class="col-xs-12 col-md-12" style="padding:0;"><p><%= image_tag dining_type.icon.url(:thumb) %> <%= link_to dining_type.name, places_path(dining_type: dining_type.name) %></p>
            </div>
@@ -122,7 +122,7 @@
  </div>
  <div class="pixfort_university_6" id="section_university_4">
   <div class="uni_life pix_builder_bg">
-    <div class="container"><h4>On the menu</h4></div>
+    <div class="container"><h3>On the menu</h3></div>
     <div class="container">
       <div class="scroller sixteen columns">
         <% @place.menus.each do |menu| %>
