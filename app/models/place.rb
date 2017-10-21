@@ -1,6 +1,6 @@
 class Place < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :brand_name, :use => [:slugged]
+  friendly_id :brand_name, use: :slugged
   
   before_create :set_expiration_date
   before_create :set_halal_expiry
@@ -11,14 +11,6 @@ class Place < ActiveRecord::Base
   
   def set_halal_expiry
     self.halal_expiry =  Date.today + 365.days
-  end
-  
-  def to_param
-    if caller.to_s.include?"active_admin"
-      id && id.to_s
-    else
-      slug
-    end
   end
   
   has_many :features, :through => :highlights, dependent: :destroy
