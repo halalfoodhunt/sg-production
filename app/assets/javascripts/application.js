@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.slick
 //= require initialize
 //= require turbolinks
 //= require cocoon
@@ -35,7 +36,6 @@
 //= require jquery.ui.touch-punch.min
 //= require jquery.vide
 //= require jquery.ui.effect-highlight
-//= require jquery.slick
 //= require bootstrap-sprockets
 //= require ticker
 //= require card
