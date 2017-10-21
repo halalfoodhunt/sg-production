@@ -1,12 +1,12 @@
 <div class="nested-fields">
+		<div class="two columns" style="margin-left:0; margin-right:0;">
+		<%= image_tag(@place.verifying_document.document.url(:thumb), :class => "img-responsive", :style => "width:50px; height:33.5px;") %>
+		</div>
 		<div class="four columns" style="margin-left:0;">
 			<%= f.file_field :image %>
 		</div>
 		<div class="five columns" style="margin-left:0;">
 			<%= f.text_field :name, label: "Dish Name" %>
-		</div>
-		<div class="two columns" style="margin-left:0; margin-right:0;">
-			<%= f.number_field :price, label: "Price" %>
 		</div>
 		<div class="eleven columns" style="margin-left:0;">
 			<%= f.text_area :description, label: "Description" %>
