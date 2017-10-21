@@ -204,18 +204,10 @@
 				<div class="twelve columns omega">
 					<div class="substyle pix_builder_bg">
 						<div id="contact_form">
-							<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2" style="margin-left:0; margin-right:0;">
-								<% @place.menus.each do |menu| %>
-								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-left:0; margin-right:0;">
-									<%= image_tag(menu.image.url(:thumb), :class => "img-responsive") %><br><hr>
-								</div>
-								<% end %>
-							</div>
-							<div id="menus" class="col-xs-12 col-sm-12 col-md-10 col-lg-10" style="margin-left:0; margin-right:0;">
+							<div id="menus">
 								<%= f.fields_for :menus do |menu| %>
 								<%= render 'menu_fields', f: menu %>
 								<% end %>
-								
 								<div class="links">
 									<%= link_to_add_association 'Add a menu item', f, :menus %>
 								</div>
