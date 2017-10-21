@@ -205,8 +205,8 @@
 					<div class="substyle pix_builder_bg">
 						<div id="contact_form">
 							<div id="menus">
+								<% @place.menus.each do |menu| %>
 									<%= f.fields_for :menus do |menu| %>
-									<% @place.menus.each do |menu| %>
 									<%= render 'menu_fields', f: menu %>
 									<% end %>
 									<% end %>
