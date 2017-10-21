@@ -212,13 +212,6 @@
 								<div class="links">
 									<%= link_to_add_association 'Add a menu item', f, :menus %>
 								</div>
-								<div class="col-sm-12 col-md-12" style="margin-left:0; margin-right:0;">
-								<% @place.menus.each do |menu| %>
-								<div class="col-sm-12 col-md-2">
-								<%= image_tag(menu.image.url(:thumb), :class => "img-responsive") %>
-								</div>
-								<% end %>
-								</div>
 							</div>
 						</div>
 					</div>
