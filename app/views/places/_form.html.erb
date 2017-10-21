@@ -204,124 +204,128 @@
 				<div class="twelve columns omega">
 					<div class="substyle pix_builder_bg">
 						<div id="contact_form">
-							<div id="menus">
+							<div class="two columns" style="margin-left:0; margin-right:0;">
 								<% @place.menus.each do |menu| %>
-									<%= f.fields_for :menus do |menu| %>
-									<%= render 'menu_fields', f: menu %>
-									<% end %>
-									<% end %>
-									<div class="links">
-										<%= link_to_add_association 'Add a menu item', f, :menus %>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-				</div>
-				
-				<div class="sixteen columns">
-					<br>
-					<div class="four columns alpha">
-						<div class="text_st">
-							<h3 class="title_st editContent">Provide additional links</h3>
-							<h6 class="subject_st editContent">These are third party links that collect delivery orders or reservations for you.</h6>
-						</div>
-					</div>
-					<div class="twelve columns omega">
-						<div class="substyle pix_builder_bg">
-							<div id="contact_form">
-								<%= f.url_field :link_to_online_ordering_page, placeholder: "Online Ordering Page", :class => 'pix_text' %><br>
-								<%= f.url_field :link_to_online_reservation_page, placeholder: "Online Reservation Page", :class => 'pix_text' %><br>
-							</div>
-						</div>
-					</div>
-					
-				</div>
-				
-				<div class="sixteen columns">
-					<br>
-					<div class="four columns  alpha">
-						<div class="text_st">
-							<h3 class="title_st editContent">Tell your customers all they need to know about you</h3>
-						</div>
-					</div>
-					<div class="twelve columns omega">
-						<div class="substyle pix_builder_bg">
-							<div id="contact_form">
-								<%= f.text_area :question_1, label: "What do you recommend our users to try when they visit you?", placeholder: "Eg. We have pastas, pizzas and tomato soup", :class => 'pix_text' %><br>
-								<%= f.text_area :question_2, label: "What is the easiest way to get to your place by public transport?", placeholder: "Eg. Highlight parking options", :class => 'pix_text', :input_html => { 'rows' => 15 } %><br>
-							</div>
-						</div>
-					</div>
-					
-				</div>
-				
-				<div class="sixteen columns">
-					<br>
-					<div class="four columns  alpha">
-						<div class="text_st">
-							<h3 class="title_st editContent">Offer our friends an attractive deal!</h3>
-							<h6 class="subject_st editContent">Tap on our loyal foodie community who hold the FRIENDS Card</h6>
-						</div>
-					</div>
-					<div class="twelve columns omega">
-						<div class="substyle pix_builder_bg">
-							<div id="contact_form">
-								<%= f.fields_for :rewards do |ff| %>
-								<div>
-									<%= ff.collection_select :discount_id, Discount.all, :id, :name, autofocus: true, layout: :inline, :include_blank => 'No Rewards Offered' %><br>
-									<%= ff.text_area :terms, :input_html => { 'rows' => 15 }, placeholder:"Swissbake Bakery offers 10% off your bill. Valid with a minimum spending of $10. Not Valid with any other promotions and discounts.", label: "Terms & Conditions" %><br>
-								</div>
+								<%= image_tag(menu.image.url(:thumb), :class => "img_responsive", :style => "width:80px; height:45px;") %>
 								<% end %>
 							</div>
+							<div id="menus">
+								<%= f.fields_for :menus do |menu| %>
+								<%= render 'menu_fields', f: menu %>
+								<% end %>
+								
+								<div class="links">
+									<%= link_to_add_association 'Add a menu item', f, :menus %>
+								</div>
+							</div>
 						</div>
 					</div>
-					
 				</div>
 				
-				<div class="sixteen columns">
-					<br>
-					<div class="four columns  alpha">
-						<div class="text_st">
-							<h3 class="title_st editContent">Are you ready to be published?</h3>
-							<h6 class="subject_st editContent">Not ready to publish yet? Tick this box if you'd like to save this listing as a draft. Make sure to untick this box onece you're ready to publish your listing.</h6>
+			</div>
+			
+			<div class="sixteen columns">
+				<br>
+				<div class="four columns alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent">Provide additional links</h3>
+						<h6 class="subject_st editContent">These are third party links that collect delivery orders or reservations for you.</h6>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg">
+						<div id="contact_form">
+							<%= f.url_field :link_to_online_ordering_page, placeholder: "Online Ordering Page", :class => 'pix_text' %><br>
+							<%= f.url_field :link_to_online_reservation_page, placeholder: "Online Reservation Page", :class => 'pix_text' %><br>
 						</div>
 					</div>
-					<div class="twelve columns omega">
-						<div class="substyle pix_builder_bg">
-							<%= f.hidden_field :listing_id %>
-							<%= f.check_box :draft %><br>
-							<div class="actions">
-								<%= f.submit 'Submit', :class => 'submit_btn orange_bg pix_text', :style => "background:#e73c25; color:#fff; border:0; padding:15px;" %>
+				</div>
+				
+			</div>
+			
+			<div class="sixteen columns">
+				<br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent">Tell your customers all they need to know about you</h3>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg">
+						<div id="contact_form">
+							<%= f.text_area :question_1, label: "What do you recommend our users to try when they visit you?", placeholder: "Eg. We have pastas, pizzas and tomato soup", :class => 'pix_text' %><br>
+							<%= f.text_area :question_2, label: "What is the easiest way to get to your place by public transport?", placeholder: "Eg. Highlight parking options", :class => 'pix_text', :input_html => { 'rows' => 15 } %><br>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="sixteen columns">
+				<br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent">Offer our friends an attractive deal!</h3>
+						<h6 class="subject_st editContent">Tap on our loyal foodie community who hold the FRIENDS Card</h6>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg">
+						<div id="contact_form">
+							<%= f.fields_for :rewards do |ff| %>
+							<div>
+								<%= ff.collection_select :discount_id, Discount.all, :id, :name, autofocus: true, layout: :inline, :include_blank => 'No Rewards Offered' %><br>
+								<%= ff.text_area :terms, :input_html => { 'rows' => 15 }, placeholder:"Swissbake Bakery offers 10% off your bill. Valid with a minimum spending of $10. Not Valid with any other promotions and discounts.", label: "Terms & Conditions" %><br>
 							</div>
 							<% end %>
 						</div>
 					</div>
-					
 				</div>
 				
 			</div>
-		</div><!-- container -->
-	</div>
-	<script type="text/javascript">
-	$(document).ready(function() {
-		$('select#feature').select2({
-			placeholder: "Select Features",
-			allowClear: true
-		});
+			
+			<div class="sixteen columns">
+				<br>
+				<div class="four columns  alpha">
+					<div class="text_st">
+						<h3 class="title_st editContent">Are you ready to be published?</h3>
+						<h6 class="subject_st editContent">Not ready to publish yet? Tick this box if you'd like to save this listing as a draft. Make sure to untick this box onece you're ready to publish your listing.</h6>
+					</div>
+				</div>
+				<div class="twelve columns omega">
+					<div class="substyle pix_builder_bg">
+						<%= f.hidden_field :listing_id %>
+						<%= f.check_box :draft %><br>
+						<div class="actions">
+							<%= f.submit 'Submit', :class => 'submit_btn orange_bg pix_text', :style => "background:#e73c25; color:#fff; border:0; padding:15px;" %>
+						</div>
+						<% end %>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div><!-- container -->
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('select#feature').select2({
+		placeholder: "Select Features",
+		allowClear: true
 	});
-	$(document).ready(function() {
-		$('select#dining-type').select2({
-			placeholder: "Select Dining Types",
-			allowClear: true
-		});
+});
+$(document).ready(function() {
+	$('select#dining-type').select2({
+		placeholder: "Select Dining Types",
+		allowClear: true
 	});
-	$(document).ready(function() {
-		$('select#menu-item').select2({
-			placeholder: "Select Menu Items",
-			allowClear: true
-		});
+});
+$(document).ready(function() {
+	$('select#menu-item').select2({
+		placeholder: "Select Menu Items",
+		allowClear: true
 	});
-	</script>
+});
+</script>
 
