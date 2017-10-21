@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require cocoon
 //= require global
-//= require turbolinks
 //= require select2
 //= require bootstrap.min
 //= require bootstrap-switch
