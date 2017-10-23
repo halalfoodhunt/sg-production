@@ -9,6 +9,7 @@ ActiveAdmin.register Place do
     
     form do |f|
       f.inputs "Place" do
+        f.input  "logo"
         f.input  "merchant"
         f.input  "listing"
         f.input  "brand_name"
