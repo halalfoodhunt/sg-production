@@ -60,7 +60,7 @@ ActiveAdmin.register Place do
         f.has_many :menus,
             allow_destroy: true,
             new_record: false do |a|
-              f.input :image, :as => :file, :hint => image_tag(f.object.image.url(:thumb)) 
+              a.input :image, :as => :file, :hint => image_tag(f.object.image.url(:thumb)) 
               a.input :name
             end
         end
