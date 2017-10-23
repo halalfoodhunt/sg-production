@@ -27,6 +27,15 @@ GIT
       sprockets-es6 (>= 0.9.2)
 
 GIT
+  remote: git://github.com/mfairburn/activeadmin-select2.git
+  revision: f35b0367cca61266737c94ca9a94cd142c95b763
+  specs:
+    activeadmin-select2 (0.1.8)
+      activeadmin
+      jquery-rails
+      select2-rails
+
+GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: 9b4805354864bc729e1a79a67a795e79dc7f42ae
   specs:
@@ -59,6 +68,7 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_admin_importable (1.1.2)
     activejob (4.2.5)
       activesupport (= 4.2.5)
       globalid (>= 0.3.0)
@@ -279,7 +289,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_admin_importable
   activeadmin!
+  activeadmin-select2!
   aws-sdk (~> 2.3)
   bootstrap-sass (~> 3.3.6)
   bootstrap_form

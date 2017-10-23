@@ -11,6 +11,10 @@ gem 'devise'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 
+gem 'activeadmin-select2', github: 'mfairburn/activeadmin-select2'
+
+gem 'active_admin_importable'
+
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
 gem 'aws-sdk', '~> 2.3'
