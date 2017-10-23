@@ -3,10 +3,9 @@ ActiveAdmin.register Merchant do
 
   form do |f|
       f.inputs "Merchant" do
+        f.input :name
         f.input :email
         f.input :password
-        f.input :password_confirmation
-        f.input :name
         f.input :position
         f.input :mobile_number
         f.input :registered_name_of_business
