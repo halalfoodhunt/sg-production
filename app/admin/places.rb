@@ -10,9 +10,7 @@ ActiveAdmin.register Place do
     form do |f|
       f.inputs "Place" do
         f.input :logo, :as => :file, :hint => image_tag(f.object.logo.url(:thumb)) 
-        f.input :logo_cache, :as => :hidden 
         f.input :featured_image, :as => :file, :hint => image_tag(f.object.featured_image.url(:thumb)) 
-        f.input :featured_image_cache, :as => :hidden 
         f.input  "merchant"
         f.input  "listing"
         f.input  "brand_name"
