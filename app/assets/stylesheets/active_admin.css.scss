@@ -8,13 +8,9 @@
 // $sidebar-width: 242px;
 
 // Active Admin's got SASS!
-@import "active_admin/mixins";
 @import "active_admin/select2/base";
-//$primary-color: #e73c25;
-$skinActiveColor: #001cee;
-$skinHeaderBck: #002744;
-$panelHeaderBck: #002744;
-@import "active_skin";
+$primary-color: #e73c25;
+@import 'formadmin/formadmin';
 
 //@import "arctic_admin/base";
 

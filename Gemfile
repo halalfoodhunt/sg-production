@@ -15,7 +15,7 @@ gem 'activeadmin-select2', github: 'mfairburn/activeadmin-select2'
 
 gem 'active_admin_importable'
 
-gem 'active_skin'
+gem 'formadmin'
 
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
