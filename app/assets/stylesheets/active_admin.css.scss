@@ -12,6 +12,10 @@
 @import "active_admin/base";
 @import "active_admin/select2/base";
 //$primary-color: #e73c25;
+$skinMainFirstColor: #A5A7AA!default;
+$skinMainSecondColor: #0066CC!default;
+$skinBorderWindowColor: #B8BABE!default;
+@import "wigu/active_admin_theme";
 
 //@import "arctic_admin/base";
 
