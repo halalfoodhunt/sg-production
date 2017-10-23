@@ -1,4 +1,13 @@
 ActiveAdmin.register QualifyingType do
+    permit_params [:name, :halal_summary]
+    
+    form do |f|
+      f.inputs "qualifying_types" do
+        f.input  "name"
+        f.input  "halal_summary"
+      end
+      f.actions
+  end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
