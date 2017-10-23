@@ -1,7 +1,7 @@
 ActiveAdmin.register Merchant do
   permit_params [:registered_name_of_business, :name, :position, :email, :password, :business_registration_number, :office_number, :mobile_number, :office_mailing_address]
   
-  before_filter :only => [:show] do
+  before_filter :only => [:show, :edit] do
     @merchant = Merchant.friendly.find(params[:id])
   end
 
