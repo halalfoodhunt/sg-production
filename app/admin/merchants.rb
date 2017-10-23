@@ -1,4 +1,22 @@
 ActiveAdmin.register Merchant do
+  permit_params [:registered_name_of_business, :name, :position, :email, :password, :password_confirmation, :business_registration_number, :office_number, :mobile_number, :office_mailing_address] 
+
+  form do |f|
+      f.inputs "Merchant" do
+        f.input :email
+        f.input :password
+        f.input :password_confirmation
+        f.input :name
+        f.input :position
+        f.input :mobile_number
+        f.input :registered_name_of_business
+        f.input :business_registration_number
+        f.input :office_number
+        f.input :office_mailing_address
+      end
+      f.actions
+  end
+    
   index do
     column :name
     column :position
