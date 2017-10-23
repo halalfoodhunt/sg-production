@@ -7,8 +7,6 @@ ActiveAdmin.register Place do
         defaults :finder => :find_by_slug
     end
     
-    filter :place, :as => :check_boxes
-    
     form do |f|
       f.inputs "Place" do
         f.input :logo, :as => :file, :hint => image_tag(f.object.logo.url(:medium)) 
@@ -71,6 +69,7 @@ ActiveAdmin.register Place do
   end
   
   index do
+    selectable_column
     column  "merchant"
     column  "listing"
     column  "brand_name"
