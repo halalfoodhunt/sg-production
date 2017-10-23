@@ -9,8 +9,10 @@
 
 // Active Admin's got SASS!
 @import "active_admin/select2/base";
+
+@import "active_admin/mixins";
 $primary-color: #e73c25;
-@import 'formadmin/formadmin';
+@import "arctic_admin/base";
 
 //@import "arctic_admin/base";
 
