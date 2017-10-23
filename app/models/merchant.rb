@@ -9,10 +9,6 @@ class Merchant < ActiveRecord::Base
          
   enum role: [:basic, :basic_plus, :pair, :bundle, :admin]
   after_initialize :set_default_role, :if => :new_record?
-
-  def set_default_role
-    self.role ||= :basic
-  end
   
   has_many :listings
   has_many :places
@@ -23,5 +19,14 @@ class Merchant < ActiveRecord::Base
   has_many :raw_foods
   has_many :online_retails
   has_many :suppliers
+
+  def set_default_role
+    self.role ||= :basic
+  end
   
+  private    
+    def password_required?
+      new_record? ? super : false
+    end
+
 end
