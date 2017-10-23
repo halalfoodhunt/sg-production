@@ -34,8 +34,8 @@ ActiveAdmin.register Place do
         f.input  "place_type"
         f.input  "rewards"
         f.input  "features"
-        f.input  "dining_type"
-        f.input  "menu_item"
+        f.input  "dining_types"
+        f.input  "menu_items"
         f.input  "slug"
       end
       f.actions
