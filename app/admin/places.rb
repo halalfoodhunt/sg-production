@@ -30,23 +30,30 @@ ActiveAdmin.register Place do
         f.input  "expiry_date"
         f.input  "created_at",                                      null: false
         f.input  "updated_at",                                      null: false
-        f.input  "opening_hour_id"
         f.input  "qualifying_type"
         f.input  "location"
         f.input  "place_type"
-        f.input  "rewards"
         f.input  "features"
         f.input  "dining_types"
         f.input  "menu_items"
         f.input  "slug"
         f.inputs do
+        f.has_many :opening_hours,
+            allow_destroy: true,
+            new_record: false do |a|
+              a.input :day
+              a.input :open
+              a.input :close
+            end
+        end
+        f.inputs do
         f.has_many :rewards,
             allow_destroy: true,
             new_record: false do |a|
-        a.input :discount
-        a.input :terms
-      end
-    end
+              a.input :discount
+              a.input :terms
+            end
+        end
       end
       f.actions
   end
