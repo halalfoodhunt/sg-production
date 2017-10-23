@@ -16,7 +16,7 @@ ActiveAdmin.register Merchant do
         f.input :business_registration_number
         f.input :office_number
         f.input :office_mailing_address
-        f.input :role_id, as: :select, collection: Role.all
+        f.input :role
       end
       f.actions
   end
