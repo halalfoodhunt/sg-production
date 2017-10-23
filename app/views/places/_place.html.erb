@@ -5,14 +5,14 @@
       <div class="front">
         <div class="cover">
           <% if place.verified == true %>
-          <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(place.qualifying_type.image.url(:square), :class => "img-responsive", :style => "width:40px; height:40px;") %></span>
+          <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(place.qualifying_type.image.url(:large), :class => "img-responsive", :style => "width:40px; height:40px;") %></span>
           <% else %>
           <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %>
           <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:16%;"><%= image_tag(place.place_type.image.url(:large), :class => "img-responsive", :style => "width:40px; height:40px;") %></span> 
           <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:28%;">
             <% place.rewards.each do |reward| %>
             <% unless reward.discount.blank? %>
-            <%= image_tag reward.discount.icon.url(:square), :class => "img-responsive", :style => "width:40px; height:40px;" %>
+            <%= image_tag reward.discount.icon.url(:large), :class => "img-responsive", :style => "width:40px; height:40px;" %>
             <% end %>
             <% end %>
           </span>
