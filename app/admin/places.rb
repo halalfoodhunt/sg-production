@@ -40,6 +40,18 @@ ActiveAdmin.register Place do
       end
       f.actions
   end
+  
+  index do
+    column  "merchant"
+    column  "listing"
+    column  "brand_name"
+    column  "general_email"
+    column  "draft",                           default: true
+    column  "verified",                        default: false
+    column  "halal_expiry"
+    column  "expiry_date"
+    actions
+  end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
