@@ -1,0 +1,1545 @@
+/* line 1, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  vertical-align: middle;
+}
+
+/* line 7, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container .select2-selection--single {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  height: 28px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* line 14, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container .select2-selection--single .select2-selection__rendered {
+  display: block;
+  padding-left: 8px;
+  padding-right: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* line 21, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container .select2-selection--single .select2-selection__clear {
+  position: relative;
+}
+
+/* line 23, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container[dir="rtl"] .select2-selection--single .select2-selection__rendered {
+  padding-right: 8px;
+  padding-left: 20px;
+}
+
+/* line 26, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container .select2-selection--multiple {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  min-height: 32px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* line 33, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container .select2-selection--multiple .select2-selection__rendered {
+  display: inline-block;
+  overflow: hidden;
+  padding-left: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* line 39, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container .select2-search--inline {
+  float: left;
+}
+
+/* line 41, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container .select2-search--inline .select2-search__field {
+  box-sizing: border-box;
+  border: none;
+  font-size: 100%;
+  margin-top: 5px;
+  padding: 0;
+}
+
+/* line 47, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container .select2-search--inline .select2-search__field::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* line 50, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-dropdown {
+  background-color: white;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  left: -100000px;
+  width: 100%;
+  z-index: 1051;
+}
+
+/* line 61, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-results {
+  display: block;
+}
+
+/* line 64, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-results__options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 69, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-results__option {
+  padding: 6px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* line 73, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-results__option[aria-selected] {
+  cursor: pointer;
+}
+
+/* line 76, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--open .select2-dropdown {
+  left: 0;
+}
+
+/* line 79, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--open .select2-dropdown--above {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* line 84, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--open .select2-dropdown--below {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* line 89, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-search--dropdown {
+  display: block;
+  padding: 4px;
+}
+
+/* line 92, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-search--dropdown .select2-search__field {
+  padding: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* line 96, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-search--dropdown .select2-search__field::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* line 98, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-search--dropdown.select2-search--hide {
+  display: none;
+}
+
+/* line 101, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-close-mask {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-height: 100%;
+  min-width: 100%;
+  height: auto;
+  width: auto;
+  opacity: 0;
+  z-index: 99;
+  background-color: #fff;
+  filter: alpha(opacity=0);
+}
+
+/* line 118, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-hidden-accessible {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+/* line 128, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-selection--single {
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+/* line 132, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #444;
+  line-height: 28px;
+}
+
+/* line 135, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-selection--single .select2-selection__clear {
+  cursor: pointer;
+  float: right;
+  font-weight: bold;
+}
+
+/* line 139, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+  color: #999;
+}
+
+/* line 141, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 26px;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 20px;
+}
+
+/* line 147, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border-color: #888 transparent transparent transparent;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  height: 0;
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -2px;
+  position: absolute;
+  top: 50%;
+  width: 0;
+}
+
+/* line 159, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__clear {
+  float: left;
+}
+
+/* line 162, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__arrow {
+  left: 1px;
+  right: auto;
+}
+
+/* line 166, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default.select2-container--disabled .select2-selection--single {
+  background-color: #eee;
+  cursor: default;
+}
+
+/* line 169, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default.select2-container--disabled .select2-selection--single .select2-selection__clear {
+  display: none;
+}
+
+/* line 172, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+  border-color: transparent transparent #888 transparent;
+  border-width: 0 4px 5px 4px;
+}
+
+/* line 176, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-selection--multiple {
+  background-color: white;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  cursor: text;
+}
+
+/* line 181, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0 5px;
+  width: 100%;
+}
+
+/* line 187, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+  list-style: none;
+}
+
+/* line 189, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-selection--multiple .select2-selection__placeholder {
+  color: #999;
+  margin-top: 5px;
+  float: left;
+}
+
+/* line 193, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-selection--multiple .select2-selection__clear {
+  cursor: pointer;
+  float: right;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+/* line 199, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background-color: #e4e4e4;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  cursor: default;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: 0 5px;
+}
+
+/* line 208, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  color: #999;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 2px;
+}
+
+/* line 214, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+  color: #333;
+}
+
+/* line 217, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice, .select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__placeholder, .select2-container--default[dir="rtl"] .select2-selection--multiple .select2-search--inline {
+  float: right;
+}
+
+/* line 220, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
+  margin-left: 5px;
+  margin-right: auto;
+}
+
+/* line 224, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice__remove {
+  margin-left: 2px;
+  margin-right: auto;
+}
+
+/* line 228, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+  border: solid black 1px;
+  outline: 0;
+}
+
+/* line 232, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default.select2-container--disabled .select2-selection--multiple {
+  background-color: #eee;
+  cursor: default;
+}
+
+/* line 236, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default.select2-container--disabled .select2-selection__choice__remove {
+  display: none;
+}
+
+/* line 239, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default.select2-container--open.select2-container--above .select2-selection--single, .select2-container--default.select2-container--open.select2-container--above .select2-selection--multiple {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* line 243, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* line 247, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  border: 1px solid #aaa;
+}
+
+/* line 250, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-search--inline .select2-search__field {
+  background: transparent;
+  border: none;
+  outline: 0;
+  box-shadow: none;
+  -webkit-appearance: textfield;
+}
+
+/* line 257, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-results > .select2-results__options {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* line 261, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-results__option[role=group] {
+  padding: 0;
+}
+
+/* line 264, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-results__option[aria-disabled=true] {
+  color: #999;
+}
+
+/* line 267, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-results__option[aria-selected=true] {
+  background-color: #ddd;
+}
+
+/* line 270, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-results__option .select2-results__option {
+  padding-left: 1em;
+}
+
+/* line 272, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-results__option .select2-results__option .select2-results__group {
+  padding-left: 0;
+}
+
+/* line 274, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -1em;
+  padding-left: 2em;
+}
+
+/* line 277, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -2em;
+  padding-left: 3em;
+}
+
+/* line 280, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -3em;
+  padding-left: 4em;
+}
+
+/* line 283, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -4em;
+  padding-left: 5em;
+}
+
+/* line 286, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -5em;
+  padding-left: 6em;
+}
+
+/* line 290, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: #5897fb;
+  color: white;
+}
+
+/* line 294, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--default .select2-results__group {
+  cursor: default;
+  display: block;
+  padding: 6px;
+}
+
+/* line 299, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-selection--single {
+  background-color: #f7f7f7;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  outline: 0;
+  background-image: -webkit-linear-gradient(top, white 50%, #eeeeee 100%);
+  background-image: -o-linear-gradient(top, white 50%, #eeeeee 100%);
+  background-image: linear-gradient(to bottom, white 50%, #eeeeee 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE', GradientType=0);
+}
+
+/* line 309, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-selection--single:focus {
+  border: 1px solid #5897fb;
+}
+
+/* line 311, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-selection--single .select2-selection__rendered {
+  color: #444;
+  line-height: 28px;
+}
+
+/* line 314, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-selection--single .select2-selection__clear {
+  cursor: pointer;
+  float: right;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* line 319, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-selection--single .select2-selection__placeholder {
+  color: #999;
+}
+
+/* line 321, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-selection--single .select2-selection__arrow {
+  background-color: #ddd;
+  border: none;
+  border-left: 1px solid #aaa;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  height: 26px;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 20px;
+  background-image: -webkit-linear-gradient(top, #eeeeee 50%, #cccccc 100%);
+  background-image: -o-linear-gradient(top, #eeeeee 50%, #cccccc 100%);
+  background-image: linear-gradient(to bottom, #eeeeee 50%, #cccccc 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFCCCCCC', GradientType=0);
+}
+
+/* line 337, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-selection--single .select2-selection__arrow b {
+  border-color: #888 transparent transparent transparent;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  height: 0;
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -2px;
+  position: absolute;
+  top: 50%;
+  width: 0;
+}
+
+/* line 349, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__clear {
+  float: left;
+}
+
+/* line 352, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__arrow {
+  border: none;
+  border-right: 1px solid #aaa;
+  border-radius: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  left: 1px;
+  right: auto;
+}
+
+/* line 361, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic.select2-container--open .select2-selection--single {
+  border: 1px solid #5897fb;
+}
+
+/* line 363, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow {
+  background: transparent;
+  border: none;
+}
+
+/* line 366, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow b {
+  border-color: transparent transparent #888 transparent;
+  border-width: 0 4px 5px 4px;
+}
+
+/* line 370, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic.select2-container--open.select2-container--above .select2-selection--single {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-image: -webkit-linear-gradient(top, white 0%, #eeeeee 50%);
+  background-image: -o-linear-gradient(top, white 0%, #eeeeee 50%);
+  background-image: linear-gradient(to bottom, white 0%, #eeeeee 50%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE', GradientType=0);
+}
+
+/* line 380, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic.select2-container--open.select2-container--below .select2-selection--single {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background-image: -webkit-linear-gradient(top, #eeeeee 50%, white 100%);
+  background-image: -o-linear-gradient(top, #eeeeee 50%, white 100%);
+  background-image: linear-gradient(to bottom, #eeeeee 50%, white 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFFFFFFF', GradientType=0);
+}
+
+/* line 390, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-selection--multiple {
+  background-color: white;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  cursor: text;
+  outline: 0;
+}
+
+/* line 396, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-selection--multiple:focus {
+  border: 1px solid #5897fb;
+}
+
+/* line 398, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-selection--multiple .select2-selection__rendered {
+  list-style: none;
+  margin: 0;
+  padding: 0 5px;
+}
+
+/* line 402, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-selection--multiple .select2-selection__clear {
+  display: none;
+}
+
+/* line 404, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-selection--multiple .select2-selection__choice {
+  background-color: #e4e4e4;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  cursor: default;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: 0 5px;
+}
+
+/* line 413, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-selection--multiple .select2-selection__choice__remove {
+  color: #888;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 2px;
+}
+
+/* line 419, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-selection--multiple .select2-selection__choice__remove:hover {
+  color: #555;
+}
+
+/* line 422, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
+  float: right;
+}
+
+/* line 425, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
+  margin-left: 5px;
+  margin-right: auto;
+}
+
+/* line 429, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice__remove {
+  margin-left: 2px;
+  margin-right: auto;
+}
+
+/* line 433, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic.select2-container--open .select2-selection--multiple {
+  border: 1px solid #5897fb;
+}
+
+/* line 436, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic.select2-container--open.select2-container--above .select2-selection--multiple {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* line 441, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic.select2-container--open.select2-container--below .select2-selection--multiple {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* line 446, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-search--dropdown .select2-search__field {
+  border: 1px solid #aaa;
+  outline: 0;
+}
+
+/* line 450, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-search--inline .select2-search__field {
+  outline: 0;
+  box-shadow: none;
+}
+
+/* line 454, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-dropdown {
+  background-color: white;
+  border: 1px solid transparent;
+}
+
+/* line 458, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-dropdown--above {
+  border-bottom: none;
+}
+
+/* line 461, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-dropdown--below {
+  border-top: none;
+}
+
+/* line 464, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-results > .select2-results__options {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* line 468, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-results__option[role=group] {
+  padding: 0;
+}
+
+/* line 471, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-results__option[aria-disabled=true] {
+  color: grey;
+}
+
+/* line 474, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-results__option--highlighted[aria-selected] {
+  background-color: #3875d7;
+  color: white;
+}
+
+/* line 478, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic .select2-results__group {
+  cursor: default;
+  display: block;
+  padding: 6px;
+}
+
+/* line 483, /usr/local/rvm/gems/ruby-2.3.4/gems/select2-rails-4.0.3/vendor/assets/stylesheets/select2.css */
+.select2-container--classic.select2-container--open .select2-dropdown {
+  border-color: #5897fb;
+}
+
+/* line 2, /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/activeadmin-select2-f35b0367cca6/app/assets/stylesheets/active_admin/select2/_filter.scss */
+.sidebar_section .select2-container {
+  width: 100%;
+}
+
+/* line 2, /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/activeadmin-select2-f35b0367cca6/app/assets/stylesheets/active_admin/select2/_form.scss */
+#main_content_wrapper .select2-container {
+  width: 50%;
+}
+
+/* line 10, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+html {
+  background: #f7f9fb;
+}
+
+/* line 13, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+body.active_admin {
+  background: #f7f9fb;
+}
+
+/* line 18, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper div.tabs > ul > li > a {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  box-shadow: none;
+  margin-bottom: 11px;
+  border: none;
+  background-color: #0066CC;
+  color: #ffffff;
+  margin-right: 5px;
+  padding: 10px 20px;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  border-bottom-left-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -moz-border-radius-bottomright: 0px;
+  border-bottom-right-radius: 0px;
+}
+/* line 45, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper div.tabs ul > li.ui-state-active > a {
+  background-color: #ffffff;
+  border: 1px solid #B8BABE;
+  border-bottom: 0px;
+  color: #0066CC;
+}
+/* line 51, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper div.tabs div.tab-content {
+  background-color: #ffffff;
+  border: 1px solid #B8BABE;
+  border-bottom: 2px solid #B8BABE;
+  border-radius: 4px;
+}
+/* line 58, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #header {
+  background-color: #A5A7AA;
+  border-bottom: 1px solid #cccdcf !important;
+  padding-bottom: 9px;
+  border: none;
+  text-shadow: none;
+  background-image: none;
+}
+/* line 65, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #header h1.site_title {
+  color: #0066CC;
+  font-size: 16px;
+}
+/* line 69, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #header a, #wrapper #header a:link {
+  color: #ffffff;
+}
+/* line 72, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #header ul.tabs > li > a {
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 6px 10px 6px 10px;
+}
+/* line 77, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #header ul.tabs > li.current > a, #wrapper #header ul.tabs > li:hover > a {
+  background-color: #0066CC;
+}
+/* line 82, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #header ul.tabs li.has_nested a {
+  padding-right: 20px;
+}
+/* line 85, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #header ul.tabs li.has_nested ul {
+  background-color: #0066CC;
+  border-radius: 4px;
+}
+/* line 88, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #header ul.tabs li.has_nested ul li > a {
+  padding-left: 15px;
+}
+/* line 91, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #header ul.tabs li.has_nested ul li.current > a::before, #wrapper #header ul.tabs li.has_nested ul li:hover > a::before {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 4px;
+  position: absolute;
+  top: 12px;
+  left: 4px;
+  background: transparent url(/assets/active_admin/nested_menu_arrow_dark-7c43b8e0a5f8823875f49a093c9d7a6b374f885b6f9cc248ae9cd7e6e9b29034.gif) no-repeat 0 0;
+  transform: rotate(-90deg);
+}
+/* line 105, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #header ul.tabs li.has_nested:hover a {
+  border-bottom: 7px solid #0066CC;
+}
+/* line 111, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #title_bar {
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  background-color: #babcbe;
+  border: none;
+  border-bottom: 3px solid #0066CC;
+}
+/* line 119, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #title_bar #titlebar_left span.breadcrumb {
+  font-size: 12px;
+  text-shadow: none;
+  margin-bottom: 8px;
+}
+/* line 123, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #title_bar #titlebar_left span.breadcrumb a, #wrapper #title_bar #titlebar_left span.breadcrumb span {
+  color: #f4f4f4 !important;
+}
+/* line 127, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #title_bar #titlebar_left h2 {
+  color: #ffffff;
+  text-shadow: none;
+}
+/* line 133, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #title_bar #titlebar_right .action_item a {
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  border-radius: 4px;
+  background-color: #0066CC;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+}
+/* line 143, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #title_bar #titlebar_right .action_item a:hover {
+  background-color: #0073e6 !important;
+}
+/* line 148, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #title_bar #titlebar_right div.dropdown_menu div.dropdown_menu_list_wrapper {
+  background-color: #A5A7AA;
+  border: none;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+/* line 154, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #title_bar #titlebar_right div.dropdown_menu div.dropdown_menu_list_wrapper div.dropdown_menu_nipple, #wrapper #title_bar #titlebar_right div.dropdown_menu div.dropdown_menu_list_wrapper div.dropdown_menu_nipple:after, #wrapper #title_bar #titlebar_right div.dropdown_menu div.dropdown_menu_list_wrapper div.dropdown_menu_nipple:before {
+  border-color: #A5A7AA transparent;
+}
+/* line 157, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #title_bar #titlebar_right div.dropdown_menu div.dropdown_menu_list_wrapper ul.dropdown_menu_list {
+  box-shadow: none;
+}
+/* line 160, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #title_bar #titlebar_right div.dropdown_menu div.dropdown_menu_list_wrapper ul.dropdown_menu_list li a {
+  background-color: #ffffff;
+  color: #A5A7AA;
+  border-radius: 0px;
+}
+/* line 164, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #title_bar #titlebar_right div.dropdown_menu div.dropdown_menu_list_wrapper ul.dropdown_menu_list li a:hover {
+  background-color: #0066CC;
+  color: #ffffff;
+}
+/* line 174, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #title_bar #titlebar_right div.batch_actions_selector a {
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  background-color: #0066CC;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 20px;
+  color: #ffffff;
+}
+/* line 183, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #title_bar #titlebar_right div.batch_actions_selector a:hover {
+  background-color: #0073e6;
+}
+/* line 191, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper .flashes .flash {
+  color: #ffffff;
+  background-image: none;
+  text-shadow: none;
+}
+/* line 197, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper .flashes .flash_notice {
+  background-color: #669148;
+  border-bottom: 2px solid #4C7331;
+}
+/* line 201, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper .flashes .flash_warning {
+  background-color: #BDBC45;
+  border-bottom: 2px solid #8B8A3D;
+}
+/* line 205, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper .flashes .flash_error {
+  background-color: #CD3333;
+  border-bottom: 2px solid #962F2F;
+}
+/* line 211, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content span.blank_slate {
+  border: 2px solid #66b3ff;
+  color: #8494a8;
+  border-radius: 4px;
+}
+/* line 216, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools {
+  margin-bottom: 35px;
+}
+/* line 219, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools div.dropdown_menu div.dropdown_menu_list_wrapper {
+  background-color: #A5A7AA;
+  border: none;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+/* line 225, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools div.dropdown_menu div.dropdown_menu_list_wrapper div.dropdown_menu_nipple, #wrapper #active_admin_content div.table_tools div.dropdown_menu div.dropdown_menu_list_wrapper div.dropdown_menu_nipple:after, #wrapper #active_admin_content div.table_tools div.dropdown_menu div.dropdown_menu_list_wrapper div.dropdown_menu_nipple:before {
+  border-color: #A5A7AA transparent;
+}
+/* line 228, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools div.dropdown_menu div.dropdown_menu_list_wrapper ul.dropdown_menu_list {
+  box-shadow: none;
+}
+/* line 231, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools div.dropdown_menu div.dropdown_menu_list_wrapper ul.dropdown_menu_list li a {
+  background-color: #ffffff;
+  color: #A5A7AA;
+  border-radius: 0px;
+}
+/* line 235, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools div.dropdown_menu div.dropdown_menu_list_wrapper ul.dropdown_menu_list li a:hover {
+  background-color: #0066CC;
+  color: #ffffff;
+}
+/* line 245, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools div.batch_actions_selector a {
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  background-color: #0066CC;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 20px;
+  color: #ffffff;
+}
+/* line 254, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools div.batch_actions_selector a:hover {
+  background-color: #0073e6;
+}
+/* line 260, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools div.dropdown_menu div.dropdown_menu_list_wrapper {
+  background-color: #A5A7AA;
+  border: none;
+  background-image: none;
+}
+/* line 264, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools div.dropdown_menu div.dropdown_menu_list_wrapper div.dropdown_menu_nipple, #wrapper #active_admin_content div.table_tools div.dropdown_menu div.dropdown_menu_list_wrapper div.dropdown_menu_nipple:after, #wrapper #active_admin_content div.table_tools div.dropdown_menu div.dropdown_menu_list_wrapper div.dropdown_menu_nipple:before {
+  border-color: #A5A7AA transparent;
+}
+/* line 267, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools div.dropdown_menu div.dropdown_menu_list_wrapper ul.dropdown_menu_list {
+  box-shadow: none;
+}
+/* line 270, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools div.dropdown_menu div.dropdown_menu_list_wrapper ul.dropdown_menu_list li a {
+  background-color: #ffffff;
+  box-shadow: none;
+  color: #A5A7AA;
+  border-radius: 0px;
+  text-shadow: none;
+}
+/* line 276, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools div.dropdown_menu div.dropdown_menu_list_wrapper ul.dropdown_menu_list li a:hover {
+  background-color: #0066CC;
+  color: #ffffff;
+}
+/* line 286, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools div.batch_actions_selector a {
+  background-image: none;
+  background-color: #0066CC;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 20px;
+  color: #ffffff;
+  text-shadow: none;
+  box-shadow: none;
+}
+/* line 295, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools div.batch_actions_selector a:hover {
+  background-color: #0073e6;
+  box-shadow: none;
+}
+/* line 303, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools ul.scopes li a {
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  background-color: #0066CC;
+  padding: 10px 20px;
+  color: #ffffff;
+  text-shadow: none;
+  border-right: 1px solid #ffffff;
+}
+/* line 312, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools ul.scopes li a span {
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+}
+/* line 320, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools ul.scopes li:first-child a {
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+/* line 330, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools ul.scopes li:last-child a {
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+/* line 340, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper #active_admin_content div.table_tools ul.scopes li.selected a {
+  background-color: #1a8cff;
+}
+/* line 347, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper table.index_table {
+  background-color: #ffffff;
+  border: 1px solid #B8BABE;
+  border-bottom: 2px solid #B8BABE;
+  border-radius: 4px;
+}
+/* line 352, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper table.index_table th {
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  font-size: 1.0em;
+  font-weight: bold;
+  background-color: #B8BABE;
+  padding: 10px 12px 10px 12px;
+  border-bottom: 3px solid #abadb2;
+  border-right: 1px solid #abadb2;
+}
+/* line 363, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper table.index_table th a {
+  font-size: 1.0em;
+  font-weight: bold !important;
+}
+/* line 368, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper table.index_table th.col-selectable {
+  width: 12px;
+}
+/* line 371, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper table.index_table th.sorted-desc {
+  background-color: #B8BABE;
+}
+/* line 374, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper table.index_table td {
+  padding: 10px 12px 10px 12px;
+}
+/* line 378, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper .sidebar_section.panel {
+  background-image: none;
+  box-shadow: none;
+  background-color: #ffffff;
+  border: 1px solid #B8BABE;
+  border-bottom: 2px solid #B8BABE;
+}
+/* line 384, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper .sidebar_section.panel > h3 {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  background-color: #0066CC;
+  color: #ffffff;
+  border: none;
+  padding: 8px 15px;
+  font-weight: 400;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+/* line 402, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper .sidebar_section.panel .filter_form_field label {
+  color: #8494a8;
+}
+/* line 405, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper .sidebar_section.panel .filter_form_field input {
+  border: 1px solid #e6e9ee;
+  background-color: #fdfefe;
+}
+/* line 409, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#wrapper .sidebar_section.panel .filter_form_field input:focus {
+  border-color: #3399ff;
+  box-shadow: none;
+}
+
+/* line 416, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+form fieldset > ol > li fieldset.fragments ol {
+  margin-left: 20%;
+}
+
+/* line 419, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+form fieldset ol > li.has_many_container h3 {
+  color: #8494a8;
+}
+
+/* line 422, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+form input[type=submit], a.button, a:link.button, a:visited.button, fieldset.actions > ol > li.button_action > button {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  background-color: #0066CC;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 20px;
+  color: #ffffff;
+}
+/* line 431, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+form input[type=submit]:hover, a.button:hover, a:link.button:hover, a:visited.button:hover, fieldset.actions > ol > li.button_action > button:hover {
+  background-image: none !important;
+  background-color: #0073e6 !important;
+}
+
+/* line 436, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+form fieldset.buttons li.cancel a, form fieldset.actions li.cancel a, form.filter_form a.clear_filters_btn {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 10px 20px;
+  border-color: #E4E4E4;
+}
+/* line 444, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+form fieldset.buttons li.cancel a:hover, form fieldset.actions li.cancel a:hover, form.filter_form a.clear_filters_btn:hover {
+  background-image: none !important;
+  background-color: #F4F4F4 !important;
+}
+
+/* line 449, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+form fieldset.inputs {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  box-shadow: none;
+  background-color: #ffffff;
+  border: 1px solid #e6e9ee;
+  border-bottom: 2px solid #e6e9ee;
+}
+/* line 458, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+form fieldset.inputs legend span {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  box-shadow: none;
+  background-color: #0066CC;
+  color: #ffffff;
+  border: none;
+  padding: 8px 15px;
+  font-weight: 400;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+/* line 478, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+form fieldset.inputs ol > li label {
+  color: #8494a8;
+}
+/* line 481, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+form fieldset.inputs ol > li input, form fieldset.inputs ol > li textarea {
+  border: 1px solid #e6e9ee;
+  background-color: #fdfefe;
+}
+/* line 485, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+form fieldset.inputs ol > li input:focus, form fieldset.inputs ol > li textarea:focus {
+  border-color: #3399ff;
+  box-shadow: none;
+}
+
+/* line 491, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#ui-datepicker-div {
+  background: none;
+  background-color: none;
+  box-shadow: none;
+  text-shadow: none;
+  box-shadow: none;
+}
+/* line 497, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#ui-datepicker-div div.ui-datepicker-header {
+  background-image: none;
+  background-color: #0066CC;
+  border-bottom: none;
+}
+/* line 502, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#ui-datepicker-div div.ui-datepicker-header div.ui-datepicker-title span {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  box-shadow: none;
+}
+/* line 510, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#ui-datepicker-div div.ui-datepicker-header:before {
+  border-bottom: 10px solid #0066CC;
+}
+/* line 513, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#ui-datepicker-div table.ui-datepicker-calendar {
+  background-color: #ffffff;
+  border-color: #0066CC;
+}
+/* line 518, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#ui-datepicker-div table.ui-datepicker-calendar thead tr th {
+  background-color: #3399ff;
+}
+/* line 526, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#ui-datepicker-div table.ui-datepicker-calendar tbody tr td a:hover {
+  background-color: #0066CC;
+  color: #ffffff;
+}
+/* line 531, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+#ui-datepicker-div table.ui-datepicker-calendar tbody tr td.ui-datepicker-today > a {
+  background-color: #0066CC;
+  color: #ffffff;
+}
+
+/* line 539, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.panel {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  box-shadow: none;
+  background-color: #ffffff;
+  border: 1px solid #B8BABE;
+  border-bottom: 2px solid #B8BABE;
+}
+/* line 547, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.panel > h3 {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  box-shadow: none;
+  background-color: #0066CC;
+  color: #ffffff;
+  border: none;
+  padding: 8px 15px;
+  font-weight: 400;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+/* line 565, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.panel .panel_contents {
+  font-weight: 400;
+}
+
+/* line 569, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.attributes_table table th, .attributes_table table td {
+  padding: 10px 0;
+}
+
+/* line 572, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.attributes_table table th {
+  color: #8494a8;
+}
+
+/* line 575, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.comments form.active_admin_comment fieldset.inputs {
+  border: none;
+}
+
+/* line 579, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.pagination span > a {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  box-shadow: none;
+  border: none;
+  background-color: #B8BABE;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+/* line 588, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.pagination span > a:hover {
+  background-image: none !important;
+  background-color: #0066CC !important;
+  color: #ffffff;
+}
+/* line 594, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.pagination span.page.current {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  box-shadow: none;
+  background-color: #0066CC;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* line 604, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.pagination span.page.current:hover {
+  background-image: none !important;
+  background-color: #0066CC !important;
+}
+
+/* line 610, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+body.logged_out #content_wrapper #active_admin_content {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  box-shadow: none;
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: 1px solid #B8BABE;
+  border-bottom: 2px solid #B8BABE;
+}
+/* line 621, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+body.logged_out #content_wrapper #active_admin_content #login h2 {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  box-shadow: none;
+  background-color: #0066CC;
+  color: #ffffff;
+  border: none;
+  padding: 8px 15px;
+  font-weight: 400;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+/* line 641, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+body.logged_out #content_wrapper #active_admin_content #login form fieldset {
+  border: none;
+}
+/* line 645, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+body.logged_out #content_wrapper #active_admin_content #login form fieldset ol li label {
+  color: #8494a8;
+}
+
+/* line 654, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+form input[type=text], form input[type=password], form input[type=email], form input[type=number], form input[type=url], form input[type=tel], form textarea {
+  border: 1px solid #e6e9ee;
+  background-color: #fdfefe;
+}
+
+/* line 658, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+form fieldset > ol > li fieldset ol li {
+  clear: both;
+}
+/* line 660, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+form fieldset > ol > li fieldset ol li select {
+  margin-top: 6px;
+}
+
+/* line 664, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.ui-dialog {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  box-shadow: none;
+  background-color: #ffffff;
+  border-bottom: 2px solid #B8BABE;
+}
+/* line 671, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.ui-dialog .ui-dialog-titlebar {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  box-shadow: none;
+  background-color: #0066CC;
+  color: #ffffff;
+  border: none;
+  padding: 8px 15px;
+  font-weight: 400;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+/* line 692, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.ui-dialog form ul li label {
+  display: block;
+  margin-bottom: 5px;
+}
+/* line 696, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.ui-dialog form ul li input[type="text"], .ui-dialog form ul li input[type="datepicker"], .ui-dialog form ul li textarea {
+  padding: 8px 10px 7px;
+  border: 1px solid #e6e9ee;
+  background-color: #fdfefe;
+  outline: none;
+  border-radius: 4px;
+  width: 247px;
+}
+/* line 703, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.ui-dialog form ul li input[type="text"]:focus, .ui-dialog form ul li input[type="datepicker"]:focus, .ui-dialog form ul li textarea:focus {
+  border-color: #3399ff;
+  box-shadow: none;
+}
+/* line 713, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-child {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  box-shadow: none;
+  border-radius: 4px;
+  background-color: #0066CC;
+  border: none;
+  color: #ffffff;
+  font-weight: 400;
+  padding: 10px 20px;
+}
+/* line 724, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-child:hover {
+  background-image: none !important;
+  background-color: #0073e6 !important;
+}
+/* line 729, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:last-child {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  box-shadow: none;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 10px 20px;
+  border-color: #E4E4E4;
+}
+/* line 738, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:last-child:hover {
+  background-image: none !important;
+  background-color: #F4F4F4 !important;
+}
+
+/* line 746, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.ui-widget-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* line 751, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+form.filter_form .filter_form_field.filter_date_range .seperator {
+  width: 10px;
+}
+
+/* line 756, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+.filter_form_field select {
+  border-radius: 3px;
+}
+
+/* line 762, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+input[type='radio']:before {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 50%;
+  margin: 20% auto;
+  border-radius: 50%;
+}
+/* line 770, /usr/local/rvm/gems/ruby-2.3.4/gems/active_admin_theme-1.0.3/app/assets/stylesheets/wigu/active_admin_theme.scss */
+input[type='radio']:checked:before {
+  background: #0066CC;
+}
