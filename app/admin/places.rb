@@ -32,7 +32,7 @@ ActiveAdmin.register Place do
         f.input  "qualifying_type"
         f.input  "location"
         f.input  "place_type"
-        f.input  "reward"
+        f.input  "rewards"
         f.input  "feature"
         f.input  "dining_type"
         f.input  "menu_item"
