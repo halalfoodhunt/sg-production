@@ -56,6 +56,14 @@ ActiveAdmin.register Place do
               a.input :terms
             end
         end
+        f.inputs do
+        f.has_many :menus,
+            allow_destroy: true,
+            new_record: false do |a|
+              a.input :image
+              a.input :name
+            end
+        end
       end
       f.actions
   end
