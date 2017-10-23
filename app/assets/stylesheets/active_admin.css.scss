@@ -11,10 +11,10 @@
 @import "active_admin/mixins";
 @import "active_admin/select2/base";
 //$primary-color: #e73c25;
-$skinMainFirstColor: #A5A7AA!default;
-$skinMainSecondColor: #0066CC!default;
-$skinBorderWindowColor: #B8BABE!default;
-@import "wigu/active_admin_theme";
+$skinActiveColor: #001cee;
+$skinHeaderBck: #002744;
+$panelHeaderBck: #002744;
+@import "active_skin";
 
 //@import "arctic_admin/base";
 

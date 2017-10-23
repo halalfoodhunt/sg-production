@@ -69,7 +69,7 @@ GEM
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
     active_admin_importable (1.1.2)
-    active_admin_theme (1.0.3)
+    active_skin (0.0.12)
     activejob (4.2.5)
       activesupport (= 4.2.5)
       globalid (>= 0.3.0)
@@ -291,7 +291,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_admin_importable
-  active_admin_theme
+  active_skin
   activeadmin!
   activeadmin-select2!
   aws-sdk (~> 2.3)
