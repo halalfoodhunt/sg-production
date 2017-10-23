@@ -9,7 +9,7 @@ ActiveAdmin.register Place do
     
     form do |f|
       f.inputs "Place" do
-        f.input :logo, :as => :file, :hint => image_tag(f.object.logo.url(:square)) 
+        f.input :logo, :as => :file, :hint => image_tag(f.object.logo.url(:medium)) 
         f.input :featured_image, :as => :file, :hint => image_tag(f.object.featured_image.url(:thumb)) 
         f.input  "merchant"
         f.input  "listing"
