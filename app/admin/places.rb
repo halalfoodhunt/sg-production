@@ -10,9 +10,7 @@ ActiveAdmin.register Place do
     form do |f|
       f.inputs "Place" do
         f.input  "logo"
-        column  "logo"
         f.input  "featured_image"
-        column  "featured_image"
         f.input  "merchant"
         f.input  "listing"
         f.input  "brand_name"
