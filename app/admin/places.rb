@@ -28,7 +28,7 @@ ActiveAdmin.register Place do
         f.input  "expiry_date"
         f.input  "created_at",                                      null: false
         f.input  "updated_at",                                      null: false
-        f.input  "opening_hour"
+        f.input  "opening_hour_id"
         f.input  "qualifying_type"
         f.input  "location"
         f.input  "place_type"
