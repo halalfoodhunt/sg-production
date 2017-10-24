@@ -1,7 +1,7 @@
 ActiveAdmin.register Reward do
     
       csv do
-        column :place_id
+        column("Place"){|reward| reward.place.brand_name }
         column("Discount"){|reward| reward.discount.name }
         column :terms
       end
