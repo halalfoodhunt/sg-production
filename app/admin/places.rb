@@ -81,6 +81,11 @@ ActiveAdmin.register Place do
     column  "expiry_date"
     actions
   end
+  
+  csv do
+    column(:place) { |reward| reward.discount.name }
+    column(:place) { |reward| reward.terms }
+  end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
