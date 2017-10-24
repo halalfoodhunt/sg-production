@@ -83,8 +83,8 @@ ActiveAdmin.register Place do
   end
   
   csv do
-    column("Discount"){|place| place.reward.discount.name }
-    column("Reward"){|place| place.reward.terms }
+    column("Merchant"){|place| place.merchant.name }
+    column("Feature"){|place| place.feature.name }
   end
   
 # See permitted parameters documentation:
