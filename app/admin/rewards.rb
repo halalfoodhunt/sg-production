@@ -2,7 +2,7 @@ ActiveAdmin.register Reward do
     
     csv do
         column :place_id
-        column :discount
+        column :discounts
         column :terms
     end
 # See permitted parameters documentation:
