@@ -1,7 +1,12 @@
 ActiveAdmin.register Reward do
     
 
-# See permitted parameters documentation:
+      csv do
+        column :homy_id
+        column :place_id
+        column("Discount"){|reward| reward.discount.name }
+        column :terms
+      end# See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
 # permit_params :list, :of, :attributes, :on, :model
