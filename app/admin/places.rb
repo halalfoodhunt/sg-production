@@ -70,6 +70,7 @@ ActiveAdmin.register Place do
   
   index do
     selectable_column
+    column  "id"
     column  "merchant"
     column  "listing"
     column  "brand_name"
