@@ -1,4 +1,11 @@
 ActiveAdmin.register Reward do
+    form do |f|
+      f.inputs "Reward" do
+        f.input  "place"
+        f.input  "discount"
+        f.input  "terms"
+            end
+        end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
