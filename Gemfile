@@ -9,13 +9,11 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'devise'
 
-gem 'activeadmin', github: 'gregbell/active_admin'
-
-gem 'activeadmin-select2', github: 'mfairburn/activeadmin-select2'
+gem 'activeadmin', '~> 1.0.0.pre'
 
 gem 'active_admin_importable'
 
-gem 'activeadmin-axlsx'
+gem 'activeadmin-axlsx', github: 'ybart/activeadmin-axlsx'
 
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
