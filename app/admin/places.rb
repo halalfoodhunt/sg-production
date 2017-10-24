@@ -8,6 +8,7 @@ ActiveAdmin.register Place do
           super do
             resource.opening_hours.build
             resource.rewards.build
+            resource.menus.build
           end
       end
         defaults :finder => :find_by_slug
