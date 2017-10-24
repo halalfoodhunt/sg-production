@@ -46,6 +46,7 @@ ActiveAdmin.register Place do
               a.input :day
               a.input :open
               a.input :close
+              a.actions
             end
         end
         f.inputs do
