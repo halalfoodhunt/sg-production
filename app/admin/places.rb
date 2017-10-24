@@ -107,6 +107,7 @@ ActiveAdmin.register Place do
     column("qualifying_type"){|place| place.qualifying_type.name }
     column("location"){|place| place.location.name }
     column("place_type"){|place| place.place_type.name }
+    column "slug"
   end
   
 # See permitted parameters documentation:
