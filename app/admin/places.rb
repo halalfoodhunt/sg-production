@@ -68,11 +68,6 @@ ActiveAdmin.register Place do
       f.actions
   end
   
-  csv do
-    column(:rewards) { |reward| reward.discount.name
-    reward.terms }
-  end
-  
   index do
     selectable_column
     column  "merchant"
