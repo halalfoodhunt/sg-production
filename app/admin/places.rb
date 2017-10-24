@@ -83,8 +83,8 @@ ActiveAdmin.register Place do
   end
   
   csv do
-    column(:places) { |reward| reward.discount.name }
-    column(:places) { |reward| reward.terms }
+    column(:reward) { |place| place.discount.name }
+    column(:reward) { |place| place.reward.terms }
   end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
