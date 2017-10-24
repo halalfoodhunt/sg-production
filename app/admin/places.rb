@@ -83,6 +83,7 @@ ActiveAdmin.register Place do
   end
   
   csv do
+    column  "id"
     column("Merchant"){|place| place.merchant.name }
     column("Listing"){|place| place.listing.name }
     column "brand_name"
