@@ -24,6 +24,8 @@ ActiveAdmin.register Merchant do
   end
     
   index do
+    selectable_column
+    column :id
     column :name
     column :position
     column :mobile_number
