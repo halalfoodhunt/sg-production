@@ -7,4 +7,5 @@ class DishItem < ActiveRecord::Base
 	belongs_to :baker
 	belongs_to :supplier
 	belongs_to :raw_food
+	belongs_to :caterer
 end
