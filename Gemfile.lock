@@ -69,6 +69,9 @@ GEM
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
     active_admin_importable (1.1.2)
+    activeadmin-axlsx (2.0.1)
+      activeadmin (>= 0.5.0)
+      axlsx
     activejob (4.2.5)
       activesupport (= 4.2.5)
       globalid (>= 0.3.0)
@@ -98,6 +101,10 @@ GEM
     aws-sdk-resources (2.10.70)
       aws-sdk-core (= 2.10.70)
     aws-sigv4 (1.0.2)
+    axlsx (2.0.1)
+      htmlentities (~> 4.3.1)
+      nokogiri (>= 1.4.1)
+      rubyzip (~> 1.0.0)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -147,6 +154,7 @@ GEM
     has_scope (0.7.1)
       actionpack (>= 4.1, < 5.2)
       activesupport (>= 4.1, < 5.2)
+    htmlentities (4.3.4)
     i18n (0.9.0)
       concurrent-ruby (~> 1.0)
     inherited_resources (1.7.2)
@@ -237,6 +245,7 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    rubyzip (1.0.0)
     sass (3.5.2)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -291,6 +300,7 @@ PLATFORMS
 DEPENDENCIES
   active_admin_importable
   activeadmin!
+  activeadmin-axlsx
   activeadmin-select2!
   aws-sdk (~> 2.3)
   bootstrap-sass (~> 3.3.6)
