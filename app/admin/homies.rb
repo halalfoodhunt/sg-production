@@ -41,14 +41,16 @@ ActiveAdmin.register Homy do
             new_record: false do |a|
               a.input :discount
               a.input :terms
+              a.actions
             end
         end
         f.inputs do
         f.has_many :menus,
             allow_destroy: true,
-            new_record: false do |a|
+            new_record: true do |a|
               a.input :image, :as => :file, :hint => image_tag(a.object.image.url(:thumb)) 
               a.input :name
+              a.actions
             end
         end
       end
