@@ -46,8 +46,8 @@ ActiveAdmin.register Place do
               a.input :day
               a.input :open
               a.input :close
-              a.actions
             end
+            f.buttons
         end
         f.inputs do
         f.has_many :rewards,
@@ -56,6 +56,7 @@ ActiveAdmin.register Place do
               a.input :discount
               a.input :terms
             end
+            f.buttons
         end
         f.inputs do
         f.has_many :menus,
@@ -63,8 +64,8 @@ ActiveAdmin.register Place do
             new_record: false do |a|
               a.input :image, :as => :file, :hint => image_tag(a.object.image.url(:thumb)) 
               a.input :name
-              a.actions
             end
+            f.buttons
         end
       end
       f.actions
