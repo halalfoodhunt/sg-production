@@ -50,7 +50,7 @@ ActiveAdmin.register Place do
         f.inputs do
         f.has_many :opening_hours,
             allow_destroy: true,
-            new_record: false do |a|
+            new_record: true do |a|
               a.input :day
               a.input :open
               a.input :close
@@ -69,7 +69,7 @@ ActiveAdmin.register Place do
         f.inputs do
         f.has_many :menus,
             allow_destroy: true,
-            new_record: false do |a|
+            new_record: true do |a|
               a.input :image, :as => :file, :hint => image_tag(a.object.image.url(:thumb)) 
               a.input :name
               a.actions
