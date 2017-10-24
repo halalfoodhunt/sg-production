@@ -63,6 +63,7 @@ ActiveAdmin.register Place do
             new_record: false do |a|
               a.input :image, :as => :file, :hint => image_tag(a.object.image.url(:thumb)) 
               a.input :name
+              a.actions
             end
         end
       end
