@@ -84,7 +84,27 @@ ActiveAdmin.register Place do
   
   csv do
     column("Merchant"){|place| place.merchant.name }
-    column("Features"){|place| place.feature.name }
+    column("Listing"){|place| place.listing.name }
+    column "brand_name"
+    column "general_email"
+    column "general_outlet_contact_number"
+    column "operating_address"
+    column "website"
+    column "facebook_page"
+    column "instagram_handle"
+    column "link_to_online_ordering_page"
+    column "link_to_online_reservation_page"
+    column "question_1"
+    column "question_2"
+    column "latitude"
+    column "longitude"
+    column "draft"
+    column "verified"
+    column "halal_expiry"
+    column "expiry_date"
+    column("qualifying_type"){|place| place.qualifying_type.name }
+    column("location"){|place| place.location.name }
+    column("place_type"){|place| place.place_type.name }
   end
   
 # See permitted parameters documentation:
