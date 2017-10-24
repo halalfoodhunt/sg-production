@@ -47,7 +47,7 @@ ActiveAdmin.register Place do
               a.input :open
               a.input :close
             end
-            f.buttons
+            f.actions
         end
         f.inputs do
         f.has_many :rewards,
@@ -56,7 +56,7 @@ ActiveAdmin.register Place do
               a.input :discount
               a.input :terms
             end
-            f.buttons
+            f.actions
         end
         f.inputs do
         f.has_many :menus,
@@ -65,7 +65,7 @@ ActiveAdmin.register Place do
               a.input :image, :as => :file, :hint => image_tag(a.object.image.url(:thumb)) 
               a.input :name
             end
-            f.buttons
+            f.actions
         end
       end
       f.actions
