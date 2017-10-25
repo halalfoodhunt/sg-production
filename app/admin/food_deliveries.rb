@@ -21,8 +21,8 @@ ActiveAdmin.register FoodDelivery do
         f.input  "listing"
         f.input  "brand_name"
         f.input  "general_email"
-        f.input  "general_contact_number"
-        f.input  "website_online_ordering_page"
+        f.input  "delivery_hotline"
+        f.input  "link_to_online_ordering_page"
         f.input  "facebook_page"
         f.input  "instagram_handle"
         f.input  "question_1"
@@ -33,10 +33,9 @@ ActiveAdmin.register FoodDelivery do
         f.input  "created_at",                                      null: false
         f.input  "updated_at",                                      null: false
         f.input  "qualifying_type"
-        f.input  "caterer_types"
-        f.input  "caterer_service_types"
-        f.input  "cuisine_types"
-        f.input  "event_types"
+        f.input  "delivery_service_types"
+        f.input  "delivery_locations"
+        f.input  "menu_items"
         f.input  "slug"
         f.inputs do
         f.has_many :rewards,
@@ -76,8 +75,8 @@ ActiveAdmin.register FoodDelivery do
   
   csv do
     column  "id"
-    column("Merchant"){|caterer| caterer.merchant.name }
-    column("Listing"){|caterer| caterer.listing.name }
+    column("Merchant"){|food_delivery| food_delivery.merchant.name }
+    column("Listing"){|food_delivery| food_delivery.listing.name }
     column "brand_name"
     column "general_email"
     column "general_contact_number"
@@ -87,8 +86,6 @@ ActiveAdmin.register FoodDelivery do
     column "question_1"
     column "draft"
     column "verified"
-    column "halal_expiry"
-    column "expiry_date"
     column "halal_expiry"
     column "expiry_date"
     column "slug"
