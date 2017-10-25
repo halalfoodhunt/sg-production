@@ -97,6 +97,7 @@ ActiveAdmin.register Homy do
     column "halal_expiry"
     column "expiry_date"
     column("homies_type"){|homy| homy.homies_type.name }
+    column("qualifying_type"){|homy| homy.qualifying_type.name }
     column "slug"
   end
 # See permitted parameters documentation:

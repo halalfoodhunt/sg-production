@@ -89,6 +89,7 @@ ActiveAdmin.register Caterer do
     column "verified"
     column "halal_expiry"
     column "expiry_date"
+    column("qualifying_type"){|caterer| caterer.qualifying_type.name }
     column "slug"
   end
 # See permitted parameters documentation:

@@ -6,6 +6,7 @@ ActiveAdmin.register Baker do
      controller do
       def new
           super do
+            resource.opening_hours.build
             resource.rewards.build
             resource.menus.build
           end
@@ -40,6 +41,16 @@ ActiveAdmin.register Baker do
         f.input  "baker_service_types"
         f.input  "baker_product_categories"
         f.input  "slug"
+        f.inputs do
+        f.has_many :opening_hours,
+            allow_destroy: true,
+            new_record: true do |a|
+              a.input :day
+              a.input :open
+              a.input :close
+              a.actions
+            end
+        end
         f.inputs do
         f.has_many :rewards,
             allow_destroy: true,
@@ -94,8 +105,7 @@ ActiveAdmin.register Baker do
     column "halal_expiry"
     column "expiry_date"
     column "halal_expiry"
-    column "expiry_date"
-    column("qualifying_type"){|baker| baker.homies_type.name }
+    column("qualifying_type"){|baker| baker.qualifying_type.name }
     column "slug"
   end
 # See permitted parameters documentation:
