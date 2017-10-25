@@ -11,6 +11,8 @@ gem 'devise'
 
 gem 'activeadmin', '~> 1.0.0.pre'
 
+gem 'arctic_admin'
+
 gem 'active_admin_importable'
 
 gem 'activeadmin-axlsx', github: 'ybart/activeadmin-axlsx'
