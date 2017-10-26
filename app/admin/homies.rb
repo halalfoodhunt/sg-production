@@ -97,7 +97,7 @@ ActiveAdmin.register Homy do
     column("homies_type"){|homy| homy.homies_type.name }
     column("qualifying_type"){|homy| homy.qualifying_type.name }
     column "slug"
-    column("Reward") { |homy| homy.reward.terms }
+    column("Rewards") { |homy| homy.reward.terms }
   end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

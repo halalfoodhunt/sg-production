@@ -98,7 +98,6 @@ ActiveAdmin.register Baker do
     column "facebook_page"
     column "instagram_handle"
     column "question_1"
-    column "question_2"
     column "self_collect_location"
     column "draft"
     column "verified"
