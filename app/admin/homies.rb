@@ -97,7 +97,7 @@ ActiveAdmin.register Homy do
     column("homies_type"){|homy| homy.homies_type.name }
     column("qualifying_type"){|homy| homy.qualifying_type.name }
     column "slug"
-    column("Reward") { |place| place.reward.terms }
+    column("Reward") { |homy| homy.reward.terms }
       column("Discount"){|reward| reward.discount.name }
       end
     end
