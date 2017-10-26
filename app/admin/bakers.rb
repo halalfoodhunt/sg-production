@@ -104,7 +104,6 @@ ActiveAdmin.register Baker do
     column "verified"
     column "halal_expiry"
     column "expiry_date"
-    column "halal_expiry"
     column("qualifying_type"){|baker| baker.qualifying_type.name }
     column "slug"
   end

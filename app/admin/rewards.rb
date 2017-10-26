@@ -2,8 +2,8 @@ ActiveAdmin.register Reward do
     
 
       csv do
-        column :homy_id
-        column :place_id
+        column("Caterer"){|reward| reward.caterer.brand_name }
+        column("Place"){|reward| reward.place.brand_name }
         column("Discount"){|reward| reward.discount.name }
         column :terms
       end# See permitted parameters documentation:

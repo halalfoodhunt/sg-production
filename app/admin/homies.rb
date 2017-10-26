@@ -94,8 +94,6 @@ ActiveAdmin.register Homy do
     column "verified"
     column "halal_expiry"
     column "expiry_date"
-    column "halal_expiry"
-    column "expiry_date"
     column("homies_type"){|homy| homy.homies_type.name }
     column("qualifying_type"){|homy| homy.qualifying_type.name }
     column "slug"
