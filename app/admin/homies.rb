@@ -99,7 +99,6 @@ ActiveAdmin.register Homy do
     column "slug"
     column("Reward") { |homy| homy.reward.terms }
       column("Discount"){|reward| reward.discount.name }
-      end
     end
   end
 # See permitted parameters documentation:
