@@ -118,7 +118,7 @@ ActiveAdmin.register Place do
     column("location"){|place| place.location.name }
     column("place_type"){|place| place.place_type.name }
     column "slug"
-    column(:reward) { |place| place.reward.terms }
+    column(:rewards) { |place| place.reward.terms }
   end
   
 # See permitted parameters documentation:
