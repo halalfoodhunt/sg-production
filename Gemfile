@@ -9,7 +9,7 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'devise'
 
-gem 'activeadmin', '~> 1.0.0.pre'
+gem 'activeadmin'
 
 gem 'arctic_admin'
 
