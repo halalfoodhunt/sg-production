@@ -45,8 +45,8 @@ ActiveAdmin.register Supplier do
             allow_destroy: true,
             new_record: true do |a|
               a.input :day
-              a.input :open
-              a.input :close
+              a.input :open, :as => :time_picker
+              a.input :close, :as => :time_picker
               a.actions
             end
         end
