@@ -37,7 +37,7 @@ class Place < ActiveRecord::Base
   belongs_to :place_type, class_name: 'Type of Place'
   belongs_to :location, class_name: 'Where'
   belongs_to :qualifying_type, class_name: 'Halal Type'
-  belongs_to :merchant, class_name: 'Merchant'
+  belongs_to :merchant, class_name: 'User'
   belongs_to :listing, class_name: 'List'
   
   has_attached_file :logo, styles: { large: "300x300>", medium: "120x120>", thumb: "30x30>" }, default_url: "/images/:style/placeholder.png"
