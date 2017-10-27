@@ -36,8 +36,8 @@ ActiveAdmin.register Place do
         f.input  "longitude"
         f.input  "draft",                           default: true
         f.input  "verified",                        default: false
-        f.input  "halal_expiry"
-        f.input  "expiry_date"
+        f.input  "halal_expiry", :as => :datepicker
+        f.input  "expiry_date", :as => :datepicker
         f.input  "created_at",                                      null: false
         f.input  "updated_at",                                      null: false
         f.input  "qualifying_type"
@@ -61,8 +61,8 @@ ActiveAdmin.register Place do
             allow_destroy: true,
             new_record: true do |a|
               a.input :day
-              a.input :open
-              a.input :close
+              a.input :open, :as => :time_picker
+              a.input :close, :as => :time_picker
               a.actions
             end
         end
