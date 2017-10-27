@@ -6,6 +6,7 @@ ActiveAdmin.register Supplier do
      controller do
       def new
           super do
+            resource.opening_hours.build
             resource.rewards.build
             resource.menus.build
           end
@@ -40,6 +41,16 @@ ActiveAdmin.register Supplier do
         f.input  "online_retail_service_types"
         f.input  "product_categories"
         f.input  "slug"
+        f.inputs do
+        f.has_many :opening_hours,
+            allow_destroy: true,
+            new_record: true do |a|
+              a.input :day
+              a.input :open
+              a.input :close
+              a.actions
+            end
+        end
         f.inputs do
         f.has_many :rewards,
             allow_destroy: true,
