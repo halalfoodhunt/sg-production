@@ -292,7 +292,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_admin_importable
-  activeadmin
+  activeadmin (~> 1.0.0.pre)
   activeadmin-axlsx!
   arctic_admin
   aws-sdk (~> 2.3)
