@@ -19,7 +19,7 @@ ActiveAdmin.register Place do
       f.inputs "Place" do
         f.input :logo, :as => :file, :hint => image_tag(f.object.logo.url(:medium)) 
         f.input :featured_image, :as => :file, :hint => image_tag(f.object.featured_image.url(:thumb)) 
-        f.input  "merchant"
+        f.collection_select :merchant_id, Merchant.all, :id, :brand_name
         f.input  "listing"
         f.input  "brand_name"
         f.input  "general_email"
