@@ -34,11 +34,11 @@ class Place < ActiveRecord::Base
   has_many :verifying_documents, dependent: :destroy, inverse_of: :place
   accepts_nested_attributes_for :verifying_documents, reject_if: :all_blank, allow_destroy: true
   
-  belongs_to :place_type, class_name: 'Type of Place'
-  belongs_to :location, class_name: 'Where'
-  belongs_to :qualifying_type, class_name: 'Halal Type'
-  belongs_to :merchant, class_name: 'Merchant'
-  belongs_to :listing, class_name: 'List'
+  belongs_to :place_type
+  belongs_to :location
+  belongs_to :qualifying_type
+  belongs_to :merchant
+  belongs_to :listing
   
   has_attached_file :logo, styles: { large: "300x300>", medium: "120x120>", thumb: "30x30>" }, default_url: "/images/:style/placeholder.png"
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/, :size => { :in => 0..2.megabytes }
