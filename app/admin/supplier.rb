@@ -37,7 +37,6 @@ ActiveAdmin.register Supplier do
         f.input  "product_qualifying_type"
         f.input  "ordering_methods"
         f.input  "delivery_locations"
-        f.input  "menu_items"
         f.input  "online_retail_service_types"
         f.input  "product_categories"
         f.input  "slug"
