@@ -1,4 +1,6 @@
 ActiveAdmin.register Feature do
+    active_admin_importable
+    
     permit_params [:name]
     
     form do |f|
