@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171019044146) do
+ActiveRecord::Schema.define(version: 20171027131838) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -203,6 +203,7 @@ ActiveRecord::Schema.define(version: 20171019044146) do
     t.integer  "baker_service_type_id"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.integer  "baker_id"
   end
 
   create_table "cooking_service_types", force: :cascade do |t|
@@ -270,6 +271,10 @@ ActiveRecord::Schema.define(version: 20171019044146) do
     t.datetime "updated_at",       null: false
     t.integer  "online_retail_id"
     t.integer  "baker_id"
+    t.integer  "homy_id"
+    t.integer  "supplier_id"
+    t.integer  "raw_food_id"
+    t.integer  "caterer_id"
   end
 
   create_table "eateries", force: :cascade do |t|
