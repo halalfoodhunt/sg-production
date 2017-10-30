@@ -1,4 +1,12 @@
 ActiveAdmin.register DiningType do
+    permit_params [:name]
+    
+    form do |f|
+      f.inputs "Dining Type" do
+        f.input  "name"
+         end
+      f.actions
+    end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

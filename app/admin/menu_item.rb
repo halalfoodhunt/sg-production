@@ -1,4 +1,12 @@
 ActiveAdmin.register MenuItem do
+    permit_params [:name]
+    
+    form do |f|
+      f.inputs "Menu Item" do
+        f.input  "name"
+         end
+      f.actions
+    end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
