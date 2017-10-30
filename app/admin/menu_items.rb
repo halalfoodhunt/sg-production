@@ -2,7 +2,7 @@ ActiveAdmin.register MenuItem do
     permit_params [:name]
     
     form do |f|
-      f.inputs :menu_item do
+      f.inputs :menu_items do
         f.input  "name"
          end
       f.actions
