@@ -59,6 +59,17 @@ ActiveAdmin.register FoodDelivery do
       f.actions
   end
   
+  scoped_collection_action :scoped_collection_update, form: -> do
+    { expiry_date: 'datepicker',
+      halal_expiry: 'datepicker',
+      merchant_id: Merchant.all.map { |merchant| [merchant.name, merchant.id] },
+      listing_id: Listing.all.map { |listing| [listing.name, listing.id] },
+      qualifying_type_id: QualifyingType.all.map { |qualifying_type| [qualifying_type.name, qualifying_type.id] },
+      draft: [['Yes', 't'], ['No', 'f']],
+      verified: [['Yes', 't'], ['No', 'f']]
+    }
+  end
+  
   index do
     selectable_column
     column  "id"
@@ -91,6 +102,9 @@ ActiveAdmin.register FoodDelivery do
     column("qualifying_type"){|food_delivery| food_delivery.qualifying_type.name }
     column "slug"
   end
+  
+  filter :brand_name
+  filter :id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
