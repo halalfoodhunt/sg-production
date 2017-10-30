@@ -3,6 +3,13 @@ ActiveAdmin.register Place do
   
     permit_params [:logo, :brand_name, :general_email, :general_outlet_contact_number, :operating_address, :website, :facebook_page, :instagram_handle, :link_to_online_ordering_page, :link_to_online_reservation_page, :question_1, :question_2, :featured_image, :merchant_id, :listing_id, :place_type_id, :location_id, :qualifying_type_id, :latitude, :longitude, :draft, :verified, :on_the_menu, :halal_expiry, :expiry_date, :opening_hours_attributes => [:id, :day_id, :open, :close, :_destroy], :rewards_attributes => [:id, :discount_id, :terms], :menus_attributes => [:id, :image, :name, :description, :price, :_destroy], :verifying_documents_attributes => [:id, :document, :_destroy], dining_type_ids: [], feature_ids: [], menu_item_ids: []]
     
+    batch_action :edit do |ids|
+      batch_action_collection.find(ids).each do |place|
+        place.edit! :qualifying_types
+    end
+      redirect_to collection_path, alert: "Edited places"
+    end
+    
     controller do
       def new
           super do
@@ -40,9 +47,9 @@ ActiveAdmin.register Place do
         f.input  "expiry_date", :as => :datepicker
         f.input  "created_at",                                      null: false
         f.input  "updated_at",                                      null: false
-        f.input  "qualifying_type"
-        f.input  "location"
-        f.input  "place_type"
+        f.input  "qualifying_types"
+        f.input  "locations"
+        f.input  "place_types"
         f.input  "features"
         f.input  "dining_types"
         f.input  "menu_items"
