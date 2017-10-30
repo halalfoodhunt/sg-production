@@ -11,8 +11,6 @@ gem 'devise'
 
 gem 'activeadmin'
 
-gem 'arctic_admin'
-
 gem 'active_admin_importable'
 
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
