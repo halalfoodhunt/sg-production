@@ -2,7 +2,7 @@ ActiveAdmin.register DiningType do
     permit_params [:name]
     
     form do |f|
-      f.inputs "Dining Type" do
+      f.inputs :dining_type do
         f.input  "name"
          end
       f.actions

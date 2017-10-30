@@ -1,5 +1,12 @@
 ActiveAdmin.register BakerProductCategory do
     permit_params [:name]
+    
+    form do |f|
+      f.inputs :baker_product_category do
+        f.input  "name"
+         end
+      f.actions
+    end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
