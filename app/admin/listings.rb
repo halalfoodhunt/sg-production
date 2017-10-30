@@ -2,7 +2,7 @@ ActiveAdmin.register Listing do
     permit_params [:name]
     
     form do |f|
-      f.inputs "Listing" do
+      f.inputs :listing do
         f.input  "name"
          end
       f.actions
