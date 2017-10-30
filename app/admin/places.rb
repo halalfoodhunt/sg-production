@@ -40,9 +40,9 @@ ActiveAdmin.register Place do
         f.input  "expiry_date", :as => :datepicker
         f.input  "created_at",                                      null: false
         f.input  "updated_at",                                      null: false
-        f.input  "qualifying_types"
-        f.input  "locations"
-        f.input  "place_types"
+        f.input  "qualifying_type"
+        f.input  "location"
+        f.input  "place_type"
         f.input  "features"
         f.input  "dining_types"
         f.input  "menu_items"
