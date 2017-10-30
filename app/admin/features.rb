@@ -2,7 +2,7 @@ ActiveAdmin.register Feature do
     permit_params [:name]
     
     form do |f|
-      f.inputs "Feature" do
+      f.inputs :feature do
         f.input  "name"
          end
       f.actions
