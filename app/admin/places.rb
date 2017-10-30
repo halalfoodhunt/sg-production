@@ -84,6 +84,7 @@ ActiveAdmin.register Place do
     { expiry_date: 'datepicker',
       halal_expiry: 'datepicker',
       merchant_id: Merchant.all.map { |merchant| [merchant.name, merchant.id] },
+      listing_id: Listing.all.map { |listing| [listing.name, listing.id] },
       qualifying_type_id: QualifyingType.all.map { |qualifying_type| [qualifying_type.name, qualifying_type.id] },
       place_type_id: PlaceType.all.map { |place_type| [place_type.name, place_type.id] },
       draft: [['Yes', 't'], ['No', 'f']],
