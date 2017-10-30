@@ -2,7 +2,7 @@ ActiveAdmin.register Day do
      permit_params [:name]
      
     form do |f|
-      f.inputs "Day" do
+      f.inputs :day do
         f.input  "name"
          end
       f.actions
