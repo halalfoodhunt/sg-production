@@ -5,7 +5,7 @@ ActiveAdmin.register Place do
     
     batch_action :edit do |ids|
       batch_action_collection.find(ids).each do |place|
-        place.edit! :qualifying_types
+        place.edit :qualifying_types
     end
       redirect_to collection_path, alert: "Edited places"
     end
