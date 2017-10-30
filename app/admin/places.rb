@@ -79,6 +79,16 @@ ActiveAdmin.register Place do
       f.actions
   end
   
+  scoped_collection_action :scoped_collection_update, form: -> do
+    { expiry_date: 'datepicker',
+      halal_expiry: 'datepicker',
+      qualifying_type_id: QualifyingType.all.map { |qualifying_type| [qualifying_type.name, qualifying_type.id] },
+      place_type_id: PlaceType.all.map { |place_type| [place_type.name, place_type.id] },
+      draft: [['Yes', 't'], ['No', 'f']],
+      verified: [['Yes', 't'], ['No', 'f']]
+    }
+  end
+  
   index do
     selectable_column
     column  "id"

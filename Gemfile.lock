@@ -43,6 +43,7 @@ GEM
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
     active_admin_importable (1.1.2)
+    active_admin_scoped_collection_actions (0.3.4)
     activeadmin (1.1.0)
       arbre (>= 1.1.1)
       coffee-rails
@@ -273,6 +274,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_admin_importable
+  active_admin_scoped_collection_actions
   activeadmin
   arctic_admin
   aws-sdk (~> 2.3)
