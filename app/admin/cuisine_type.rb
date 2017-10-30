@@ -1,4 +1,19 @@
 ActiveAdmin.register CuisineType do
+     permit_params [:name]
+    
+    form do |f|
+      f.inputs :cuisine_type do
+        f.input  "name"
+         end
+      f.actions
+    end
+    
+    index do
+    selectable_column
+    column  "id"
+    column  "name"
+    actions
+    end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
