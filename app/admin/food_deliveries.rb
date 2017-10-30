@@ -14,7 +14,7 @@ ActiveAdmin.register FoodDelivery do
     end
     
     form do |f|
-      f.inputs "Caterer" do
+      f.inputs "Food Delivery" do
         f.input :logo, :as => :file, :hint => image_tag(f.object.logo.url(:medium)) 
         f.input :featured_image, :as => :file, :hint => image_tag(f.object.featured_image.url(:thumb)) 
         f.input  "merchant"
