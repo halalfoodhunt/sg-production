@@ -3,11 +3,13 @@ ActiveAdmin.register Place do
   
     permit_params [:logo, :brand_name, :general_email, :general_outlet_contact_number, :operating_address, :website, :facebook_page, :instagram_handle, :link_to_online_ordering_page, :link_to_online_reservation_page, :question_1, :question_2, :featured_image, :merchant_id, :listing_id, :place_type_id, :location_id, :qualifying_type_id, :latitude, :longitude, :draft, :verified, :on_the_menu, :halal_expiry, :expiry_date, :opening_hours_attributes => [:id, :day_id, :open, :close, :_destroy], :rewards_attributes => [:id, :discount_id, :terms], :menus_attributes => [:id, :image, :name, :description, :price, :_destroy], :verifying_documents_attributes => [:id, :document, :_destroy], dining_type_ids: [], feature_ids: [], menu_item_ids: []]
     
-    batch_action :edit do |ids|
-      batch_action_collection.find(ids).each do |place|
-        place.edit :qualifying_types
-    end
-      redirect_to collection_path, alert: "Edited places"
+    batch_action :edit, form: {
+      listing_id: Listing.all.map { |listing| [listing.name, listing.id] },
+      qualifying_type_id: QualifyingType.all.map { |qualifying_type| [qualifying_type.name, qualifying_type.id] },
+      place_type_id: PlaceType.all.map { |place_type| [place_type.name, place_type.id] }
+    } do |ids, inputs|
+  # inputs is a hash of all the form fields you requested
+      redirect_to collection_path, notice: [ids, inputs].to_s
     end
     
     controller do
