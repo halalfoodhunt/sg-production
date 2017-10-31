@@ -84,10 +84,10 @@
        </div>
      </div>
      <div class="one-third column">
-       <% unless @place.opening_hours.blank? %>
       <div class="content_div" style="padding:0;">
+        <% unless @place.opening_hours.blank? %>
         <div class="event_box row pix_builder_bg">
-          <h3 class="editContent">Opening Hours</h3>
+          <h4>Opening Hours</h4>
           <p class="editContent"> <% @place.opening_hours.each do |time| %>
             <div class="col-xs-4 col-sm-4 col-md-4" style="padding:0;">
               <%= time.day.name %>
@@ -105,14 +105,14 @@
           </div>
           <% end %>
           <div class="event_box row pix_builder_bg">
-           <h3>Features</h3>
+           <h4>Features</h4>
            <% @place.features.each do |feature| %>
            <div class="col-xs-12 col-md-12" style="padding:0;"><p><%= image_tag feature.icon.url(:thumb) %> <%= link_to feature.name, places_path(feature: feature.name) %></p>
            </div>
            <% end %>
          </div>
          <div class="event_box row pix_builder_bg">
-           <h3>Dining Types</h3>
+           <h4>Dining Types</h4>
            <% @place.dining_types.each do |dining_type| %>
            <div class="col-xs-12 col-md-12" style="padding:0;"><p><%= image_tag dining_type.icon.url(:thumb) %> <%= link_to dining_type.name, places_path(dining_type: dining_type.name) %></p>
            </div>
@@ -124,7 +124,7 @@
  </div>
  <div class="pixfort_university_6" id="section_university_4">
   <div class="uni_life pix_builder_bg">
-    <div class="container"><h3>On the menu</h3></div>
+    <div class="container"><h4>On the menu</h4></div>
     <div class="container">
       <div class="scroller sixteen columns">
         <% @place.menus.each do |menu| %>
