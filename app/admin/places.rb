@@ -125,7 +125,7 @@ ActiveAdmin.register Place do
     column "verified"
     column "halal_expiry"
     column "expiry_date"
-    column "qualifying_type"
+    column "qualifying_type_id"
     column "slug"
   end
   
