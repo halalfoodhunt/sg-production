@@ -108,8 +108,8 @@ ActiveAdmin.register Place do
   
   csv force_quotes: true, col_sep: ';', column_names: false do
     column  "id"
-    column(:merchant){|place| place.merchant.name }
-    column(:listing){|place| place.listing.name }
+    column(:merchant)
+    column(:listing)
     column "brand_name"
     column "general_email"
     column "general_outlet_contact_number"
@@ -127,9 +127,9 @@ ActiveAdmin.register Place do
     column "verified"
     column "halal_expiry"
     column "expiry_date"
-    column(:qualifying_type){|place| place.qualifying_type.name }
-    column(:loctaion){|place| place.location.name }
-    column(:place_type){|place| place.place_type.name }
+    column(:qualifying_type_id)
+    column(:loctaion)
+    column(:place_type)
     column "slug"
   end
   
