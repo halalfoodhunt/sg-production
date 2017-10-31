@@ -125,7 +125,7 @@ ActiveAdmin.register Place do
     column "verified"
     column "halal_expiry"
     column "expiry_date"
-    column(:place_type_id){|place| place.place_type.name }
+    column :place_type_id 
     column "slug"
   end
   
