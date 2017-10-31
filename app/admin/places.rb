@@ -106,7 +106,7 @@ ActiveAdmin.register Place do
     actions
   end
   
-  csv do
+  csv force_quotes: true, col_sep: ';', column_names: false do
     column  "id"
     column(:merchant){|place| place.merchant.name }
     column(:listing){|place| place.listing.name }
