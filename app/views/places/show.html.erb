@@ -84,8 +84,8 @@
        </div>
      </div>
      <div class="one-third column">
+       <% unless @place.opening_hours.blank? %>
       <div class="content_div" style="padding:0;">
-        <% unless @place.opening_hours.blank? %>
         <div class="event_box row pix_builder_bg">
           <h3 class="editContent">Opening Hours</h3>
           <p class="editContent"> <% @place.opening_hours.each do |time| %>
