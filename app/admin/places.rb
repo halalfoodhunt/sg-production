@@ -108,8 +108,6 @@ ActiveAdmin.register Place do
   
   csv do
     column  "id"
-    column(:merchant){|place| place.merchant.name }
-    column(:listing){|place| place.listing.name }
     column "brand_name"
     column "general_email"
     column "general_outlet_contact_number"
@@ -127,9 +125,7 @@ ActiveAdmin.register Place do
     column "verified"
     column "halal_expiry"
     column "expiry_date"
-    column(:qualifying_type){|place| place.qualifying_type.name }
-    column(:loctaion){|place| place.location.name }
-    column(:place_type){|place| place.place_type.name }
+    column(:place_type_id){|place| place.place_type.name }
     column "slug"
   end
   
