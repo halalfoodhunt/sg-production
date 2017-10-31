@@ -4,14 +4,16 @@
     <div class="card">
       <div class="front">
         <div class="cover">
+          <% unless raw_food.product_qualifying_type.blank? %>
           <% if raw_food.verified == true %>
-          <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(raw_food.qualifying_type.image.url(:square), :class => "img-responsive") %></span>
+          <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(raw_food.product_qualifying_type.image.url(:square), :class => "img-responsive") %></span>
           <% else %>
-          <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %>
-          <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:16%;"><%= image_tag raw_food.raw_food_type.image.url(:square), :class => "img-responsive" %></span> 
+          <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %><% end %>
           <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:28%;">
-            <% unless raw_food.discount.name.blank? %>
-            <%= image_tag raw_food.discount.icon.url(:square), :class => "img-responsive" %>
+            <% raw_food.rewards.each do |reward| %>
+            <% unless reward.discount.name.blank? %>
+            <%= image_tag reward.discount.icon.url(:square), :class => "img-responsive" %>
+            <% end %>
             <% end %>
           </span>
           <%= image_tag raw_food.featured_image.url(:square) %>
@@ -21,7 +23,6 @@
         </div>
         <div class="content">
             <label><strong><%= link_to raw_food.brand_name, raw_food_path(raw_food) %></strong></label>
-            <p class="profession" style="text-transform: capitalize !important;"></p>
         </div>
       </div> <!-- end front panel -->
     </div>

@@ -4,14 +4,16 @@
     <div class="card">
       <div class="front">
         <div class="cover">
+          <% unless food_delivery.qualifying_type.blank? %>
           <% if food_delivery.verified == true %>
           <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(food_delivery.qualifying_type.image.url(:square), :class => "img-responsive") %></span>
           <% else %>
-          <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %>
-          <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:16%;"><%= image_tag food_delivery.food_delivery_type.image.url(:square), :class => "img-responsive" %></span> 
+          <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %><% end %>
           <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:28%;">
-            <% unless food_delivery.discount.name.blank? %>
-            <%= image_tag food_delivery.discount.icon.url(:square), :class => "img-responsive" %>
+            <% food_delivery.rewards.each do |reward| %>
+            <% unless reward.discount.name.blank? %>
+            <%= image_tag reward.discount.icon.url(:square), :class => "img-responsive" %>
+            <% end %>
             <% end %>
           </span>
           <%= image_tag food_delivery.featured_image.url(:square) %>
@@ -21,7 +23,6 @@
         </div>
         <div class="content">
             <label><strong><%= link_to food_delivery.brand_name, food_delivery_path(food_delivery) %></strong></label>
-            <p class="profession" style="text-transform: capitalize !important;"></p>
         </div>
       </div> <!-- end front panel -->
     </div>
