@@ -42,9 +42,9 @@
             </div>
             <div class="event_box_2">
               <div class="padding_15 hor_padding">
-                <h3 data-selector="h3" style="">
+                <h4 data-selector="h3" style="">
                   <strong>Halal Verification</strong>
-                </h3>
+                </h4>
                 <% if @place.verified == true %>
                 <%= @place.qualifying_type.halal_summary %>
                 <% else %>
@@ -75,10 +75,10 @@
             <% end %>
           </div>
           <div class="event_box row pix_builder_bg">
-           <h3>FAQ</h3>
-           <h4 class="pix_text"><strong>What do you recommend our users to try when they visit you?</strong></h4>
+           <h4>FAQ</h4>
+           <h4><strong>What do you recommend our users to try when they visit you?</strong></h4>
            <%= @place.question_1 %><br><br>
-           <h4 class="pix_text"><strong>What is the easiest way to get to your place by public transport?</strong></h4>
+           <h4><strong>What is the easiest way to get to your place by public transport?</strong></h4>
            <%= @place.question_2 %>
          </div>
        </div>
