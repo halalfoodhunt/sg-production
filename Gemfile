@@ -17,6 +17,8 @@ gem 'active_admin_importable'
 
 gem 'active_admin_scoped_collection_actions'
 
+gem 'select2-rails'
+
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
 gem 'aws-sdk', '~> 2.3'
