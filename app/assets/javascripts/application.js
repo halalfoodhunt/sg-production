@@ -15,6 +15,7 @@
 //= require jquery.slick
 //= require initialize
 //= require jquery.ui.effect-highlight
+//= require active_admin/select2
 //= require cocoon
 //= require global
 //= require turbolinks
