@@ -44,7 +44,7 @@ ActiveAdmin.register Place do
         f.input  "qualifying_type"
         f.input  "location"
         f.input  "place_type"
-        f.input  "features", as: :select2_multiple
+        f.input  "features", as: :select2
         f.input  "dining_types"
         f.input  "menu_items"
         f.input  "slug"
