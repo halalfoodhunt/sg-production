@@ -44,7 +44,7 @@ ActiveAdmin.register Place do
         f.input  "qualifying_type"
         f.input  "location"
         f.input  "place_type"
-        f.input :feature_ids, as: :tags, collection: Feature.all, display_name: :name
+        f.input :feature_ids, Feature.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'feature'
         f.input  "dining_types"
         f.input  "menu_items"
         f.input  "slug"
