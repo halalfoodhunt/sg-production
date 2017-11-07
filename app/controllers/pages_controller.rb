@@ -22,14 +22,6 @@ class PagesController < ApplicationController
     @bakers = @search_bakers.result.order("created_at DESC").where(draft: false)
     @place_types = PlaceType.all
     @discounts = Discount.all
-    @places = Place.all.order("created_at DESC").where(draft: false)
-    @homies = Homy.all.order("created_at DESC").where(draft: false)
-    @caterers = Caterer.all.order("created_at DESC").where(draft: false)
-    @food_deliveries = FoodDelivery.all.order("created_at DESC").where(draft: false)
-    @online_retails = OnlineRetail.all.order("created_at DESC").where(draft: false)
-    @suppliers = Supplier.all.order("created_at DESC").where(draft: false)
-    @raw_foods = RawFood.all.order("created_at DESC").where(draft: false)
-    @bakers = Baker.all.order("created_at DESC").where(draft: false)
   end
 
   def merchant_dashboard
