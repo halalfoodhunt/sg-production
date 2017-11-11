@@ -149,22 +149,21 @@
 		<div class="why_section pix_builder_bg">
 			<div class="container">
 				<div class="eight columns alpha">
-					<div id="map-canvas" style="width:100%; height:400px">
+					<div id="map" style="width:100%; height:400px">
               <script type="text/javascript">
-                  var mycenter = { lat: <%= @place.latitude %>, lng: <%= @place.longitude %>}
-                  var mapOptions = {
-                    center: mycenter,
-                    zoom: 15
-                  };
-                  function initMap() {
-                  var map = new google.maps.Map(document.getElementById('map-canvas'),
-                    mapOptions);
-                  var marker = new google.maps.Marker({
-                    position: mycenter,
-                    map: map
-                  });
-                }
-              </script>
+	var map;
+	var myCenter = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
+	function initMap() {
+		map = new google.maps.Map(document.getElementById('map'), {
+			center: myCenter,
+			zoom: 15
+		});
+		var marker = new google.maps.Marker({
+			position: myCenter,
+			map: map,
+		});
+	}
+	</script>
             </div>
 				</div>
 				<div class="eight columns omega">
