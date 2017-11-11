@@ -17,9 +17,9 @@
               <% end %><hr>
               Social sites: <% unless @place.facebook_page.blank? %><%= link_to @place.facebook_page do %><i class="fa fa-facebook-official"></i><% end %><% end %>
               <% unless @place.instagram_handle.blank? %><%= link_to @place.instagram_handle do %><i class="fa fa-instagram"></i><% end %><% end %></p><br>
-              <% unless @place.link_to_online_ordering_page.blank? %><%= link_to "Order NOW!", raw(@place.link_to_online_ordering_page), :class => "pix_button pix_button_line brown bold_text editContent" %>
+              <% unless @place.link_to_online_ordering_page.blank? %><%= link_to "Order NOW!", @place.link_to_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
               <% end %>
-              <% unless @place.link_to_online_reservation_page.blank? %><%= link_to "Reserve NOW!", raw(@place.link_to_online_reservation_page), :class => "pix_button pix_button_line brown bold_text editContent" %>
+              <% unless @place.link_to_online_reservation_page.blank? %><%= link_to "Reserve NOW!", @place.link_to_online_reservation_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
               <% end %>
             </div>
           </div>
