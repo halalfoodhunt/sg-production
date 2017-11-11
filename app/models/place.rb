@@ -13,6 +13,10 @@ class Place < ActiveRecord::Base
     self.halal_expiry =  Date.today + 365.days
   end
   
+  def should_generate_new_friendly_id?
+    name_changed?
+  end
+  
   has_many :features, :through => :highlights, dependent: :destroy
   has_many :highlights, dependent: :destroy
   
