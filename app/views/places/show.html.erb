@@ -89,16 +89,16 @@
         <div class="event_box row pix_builder_bg">
           <h4>Opening Hours</h4>
           <p class="editContent" style="font-size:8px;"> <% @place.opening_hours.each do |time| %>
-            <div class="col-xs-4 col-sm-4 col-md-4" style="padding:0; font-size:12px; line-height:14px;">
+            <div class="col-xs-4 col-sm-4 col-md-4" style="padding:0; font-size:12px; line-height:16px;">
               <%= time.day.name %>
             </div>
-            <div class="col-xs-3 col-sm-3 col-md-3" style="font-size:12px; line-height:14px;">
+            <div class="col-xs-3 col-sm-3 col-md-3" style="font-size:12px; line-height:16px;">
               <%= time.open.strftime("%I:%M %p") %>
             </div>
-            <div class="col-xs-2 col-sm-2 col-md-2" style="font-size:12px; line-height:14px;">
+            <div class="col-xs-2 col-sm-2 col-md-2" style="font-size:12px; line-height:16px;">
               <p>-</p>
             </div>
-            <div class="col-xs-3 col-sm-3 col-md-3" style="font-size:12px; line-height:14px;">
+            <div class="col-xs-3 col-sm-3 col-md-3" style="font-size:12px; line-height:16px;">
               <%= time.close.strftime("%I:%M %p") %>
             </div>
             <br><% end %></p>
