@@ -1,7 +1,7 @@
 ActiveAdmin.register Homy do
     active_admin_importable
   
-    permit_params [:logo, :brand_name, :general_contact_number, :general_email, :website_online_ordering_page, :facebook_page, :instagram_handle, :featured_image, :question_1, :question_2, :self_collect_location, :draft, :verified, :halal_expiry, :expiry_date, :merchant_id, :listing_id, :qualifying_type_id, :homies_type_id, :rewards_attributes => [:id, :discount_id, :terms], :menus_attributes => [:id, :image, :name, :description, :price], :verifying_documents_attributes => [:id, :document], ordering_method_ids: [], delivery_location_ids: [], menu_item_ids: [], homie_service_type_ids: []]
+    permit_params [:logo, :brand_name, :general_contact_number, :general_email, :website_online_ordering_page, :facebook_page, :instagram_handle, :featured_image, :question_1, :question_2, :self_collect_location, :draft, :verified, :halal_expiry, :expiry_date, :merchant_id, :listing_id, :qualifying_type_id, :homies_type_id, :rewards_attributes => [:id, :discount_id, :terms], :menus_attributes => [:id, :image, :name, :description, :price], :verifying_documents_attributes => [:id, :document], ordering_method_ids: [], delivery_location_ids: [], homies_menu_item_ids: [], homie_service_type_ids: []]
     
      controller do
       def new
@@ -38,7 +38,7 @@ ActiveAdmin.register Homy do
         f.input  "homies_type"
         f.input  "ordering_methods"
         f.input  "delivery_locations"
-        f.input  "menu_items"
+        f.input  "homies_menu_items"
         f.input  "homie_service_types"
         f.input  "slug"
         f.inputs do

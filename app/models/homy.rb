@@ -16,8 +16,8 @@ class Homy < ActiveRecord::Base
   has_many :homie_service_types, :through => :homie_work_types, dependent: :destroy
   has_many :homie_work_types, dependent: :destroy
   
-  has_many :menu_items, :through => :dish_items, dependent: :destroy
-  has_many :dish_items, dependent: :destroy
+  has_many :homies_menu_items, :through => :homies_dish_items, dependent: :destroy
+  has_many :homies_dish_items, dependent: :destroy
   
   has_many :delivery_locations, :through => :shipping_locations, dependent: :destroy
   has_many :shipping_locations, dependent: :destroy
