@@ -13,8 +13,8 @@ class FoodDelivery < ActiveRecord::Base
     self.halal_expiry =  Date.today + 365.days
   end
   
-  has_many :menu_items, :through => :dish_items, dependent: :destroy
-  has_many :dish_items, dependent: :destroy
+  has_many :food_deliveries_menu_items, :through => :food_deliveries_dish_items, dependent: :destroy
+  has_many :food_deliveries_dish_items, dependent: :destroy
   
   has_many :delivery_service_types, :through => :shipping_service_types, dependent: :destroy
   has_many :shipping_service_types, dependent: :destroy
