@@ -151,12 +151,12 @@
 				<div class="eight columns alpha">
 					<div id="map-canvas" style="width:100%; height:400px">
               <script type="text/javascript">
-                function initialize() {
                   var mycenter = { lat: <%= @place.latitude %>, lng: <%= @place.longitude %>}
                   var mapOptions = {
                     center: mycenter,
                     zoom: 15
                   };
+                  function initMap() {
                   var map = new google.maps.Map(document.getElementById('map-canvas'),
                     mapOptions);
                   var marker = new google.maps.Marker({
