@@ -88,7 +88,7 @@
         <% unless @place.opening_hours.blank? %>
         <div class="event_box row pix_builder_bg">
           <h4>Opening Hours</h4>
-          <p class="editContent"> <% @place.opening_hours.each do |time| %>
+          <p class="editContent" style="font-size:8px;"> <% @place.opening_hours.each do |time| %>
             <div class="col-xs-4 col-sm-4 col-md-4" style="padding:0;">
               <%= time.day.name %>
             </div>
