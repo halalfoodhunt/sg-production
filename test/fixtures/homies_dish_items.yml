@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  homy_id: 1
+  homies_menu_item_id: 1
+
+two:
+  homy_id: 1
+  homies_menu_item_id: 1
