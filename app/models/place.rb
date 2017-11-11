@@ -14,7 +14,7 @@ class Place < ActiveRecord::Base
   end
   
   def should_generate_new_friendly_id?
-    name_changed?
+    brand_name_changed?
   end
   
   has_many :features, :through => :highlights, dependent: :destroy
