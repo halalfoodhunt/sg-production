@@ -112,7 +112,7 @@
 						<%= f.collection_select :main_ordering_method_id, MainOrderingMethod.all, :id, :name, autofocus: true, layout: :inline %>
 						<br>
 						<%= f.select :delivery_location_ids, DeliveryLocation.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'delivery-location' %><br>
-						<%= f.select :menu_item_ids, MenuItem.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'menu-item' %><br>
+						<%= f.select :food_deliveries_menu_item_ids, FoodDeliveriesMenuItem.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'menu-item' %><br>
 						<%= f.select :delivery_service_type_ids, DeliveryServiceType.all.map{ |c| [c.name, c.id]}, {}, multiple: true, id: 'delivery-service-type' %><br>
 					</div>
 				</div>
