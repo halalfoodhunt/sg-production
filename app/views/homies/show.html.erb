@@ -8,7 +8,7 @@
 				</div>                 
 				<div class="eight columns omega ">
 					<div class="highlight_inner">
-						<p class="headtext_style editContent" style="font-size:18px;"><span class="pix-text"><%= image_tag @homy.logo.url(:medium), :class => "img-circle", :style => "height:80px; width:80px;" %> <%= @homy.brand_name %></span></p><br>
+						<p class="headtext_style editContent" style="font-size:18px;"><span class="pix-text"><%= image_tag @homy.logo.url(:large), :class => "img-circle", :style => "height:80px; width:80px;" %> <%= @homy.brand_name %></span></p><br>
 						<hr>
 							Social sites: <% unless @homy.facebook_page.blank? %><%= link_to @homy.facebook_page do %><i class="fa fa-facebook-official"></i><% end %><% end %>
 							<% unless @homy.instagram_handle.blank? %><%= link_to @homy.instagram_handle do %><i class="fa fa-instagram"></i><% end %><% end %></p><br>
