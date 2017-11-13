@@ -1,5 +1,6 @@
 class OpeningHour < ActiveRecord::Base
   belongs_to :place
+  belongs_to :homy
   belongs_to :food_delivery
   belongs_to :caterer
   belongs_to :supplier
