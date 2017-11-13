@@ -10,6 +10,7 @@
 					<div class="highlight_inner">
 						<p class="headtext_style editContent" style="font-size:18px;"><span class="pix-text"><%= image_tag @homy.logo.url(:medium), :class => "img-circle", :style => "height:80px; width:80px;" %> <%= @homy.brand_name %></span></p><br>
 						<hr>
+						<p class="editContent"><%= @homy.homies_type.name %></p>
 							Social sites: <% unless @homy.facebook_page.blank? %><%= link_to @homy.facebook_page do %><i class="fa fa-facebook-official"></i><% end %><% end %>
 							<% unless @homy.instagram_handle.blank? %><%= link_to @homy.instagram_handle do %><i class="fa fa-instagram"></i><% end %><% end %></p><br>
 							<% unless @homy.website_online_ordering_page.blank? %><%= link_to "Order NOW!", @homy.link_to_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
@@ -71,9 +72,9 @@
 					<% end %>
 					<div class="event_box row pix_builder_bg">
 						<h3>FAQ</h3>
-						<h4 class="editContent"><strong>What do you recommend our users to try when they visit you?</strong></h4>
+						<h4 class="editContent"><strong>What do you recommend our users to try when they buy from you?</strong></h4>
 						<%= @homy.question_1 %><br><br>
-						<h4 class="editContent"><strong>What is the easiest way to get to your place by public transport?</strong></h4>
+						<h4 class="editContent"><strong>Where and when is your next pop up location?</strong></h4>
 						<%= @homy.question_2 %>
 					</div>
 				</div>
@@ -81,16 +82,23 @@
 			<div class="one-third column">
 				<div class="content_div" style="padding:0;">
 						<div class="event_box row pix_builder_bg">
-							<h4>Features</h4>
-							<% @homy.features.each do |feature| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= image_tag feature.icon.url(:thumb) %> <%= link_to feature.name, places_path(feature: feature.name) %></p>
+							<h4>Ordering Methods</h4>
+							<% @homy.ordering_methods.each do |ordering_method| %>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p> <%= link_to ordering_method.name, homies_path(ordering_method: ordering_method.name) %></p>
 							</div>
 							<% end %>
 						</div>
 						<div class="event_box row pix_builder_bg">
-							<h4>Dining Types</h4>
-							<% @homy.dining_types.each do |dining_type| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= image_tag dining_type.icon.url(:thumb) %> <%= link_to dining_type.name, places_path(dining_type: dining_type.name) %></p>
+							<h4>Delivery Location</h4>
+							<% @homy.delivery_locations.each do |delivery_location| %>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to delivery_location.name, homies_path(delivery_location: delivery_location.name) %></p>
+							</div>
+							<% end %>
+						</div>
+						<div class="event_box row pix_builder_bg">
+							<h4>Homies Service Types</h4>
+							<% @homy.homie_service_types.each do |homie_service_type| %>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to homie_service_type.name, homies_path(homie_service_type: homie_service_type.name) %></p>
 							</div>
 							<% end %>
 						</div>
@@ -143,86 +151,3 @@
 				</div>
 			</div>
 		</div>
-
-
-
-
-
-
-
-
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Brand name:</strong>
-  <%= @homy.brand_name %>
-</p>
-
-<p>
-  <strong>General contact number:</strong>
-  <%= @homy.general_contact_number %>
-</p>
-
-<p>
-  <strong>General email:</strong>
-  <%= @homy.general_email %>
-</p>
-
-<p>
-  <strong>Website online ordering page:</strong>
-  <%= @homy.website_online_ordering_page %>
-</p>
-
-<p>
-  <strong>Facebook page:</strong>
-  <%= @homy.facebook_page %>
-</p>
-
-<p>
-  <strong>Instagram handle:</strong>
-  <%= @homy.instagram_handle %>
-</p>
-
-<p>
-  <strong>Question 1:</strong>
-  <%= @homy.question_1 %>
-</p>
-
-<p>
-  <strong>Question 2:</strong>
-  <%= @homy.question_2 %>
-</p>
-
-<p>
-  <strong>Draft:</strong>
-  <%= @homy.draft %>
-</p>
-
-<p>
-  <strong>Verified:</strong>
-  <%= @homy.verified %>
-</p>
-
-<p>
-  <strong>Halal expiry:</strong>
-  <%= @homy.halal_expiry %>
-</p>
-
-<p>
-  <strong>Expiry date:</strong>
-  <%= @homy.expiry_date %>
-</p>
-
-<p>
-  <strong>Merchant:</strong>
-  <%= @homy.merchant %>
-</p>
-
-<p>
-  <strong>Listing:</strong>
-  <%= @homy.listing %>
-</p>
-
-<%= link_to 'Edit', edit_homy_path(@homy) %> |
-<%= link_to 'Back', homies_path %>
