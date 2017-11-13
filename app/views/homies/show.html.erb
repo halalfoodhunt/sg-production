@@ -10,7 +10,7 @@
 					<div class="highlight_inner">
 						<p class="headtext_style editContent" style="font-size:18px;"><span class="pix-text"><%= image_tag @homy.logo.url(:medium), :class => "img-circle", :style => "height:80px; width:80px;" %> <%= @homy.brand_name %></span></p><br>
 						<hr>
-						<p class="editContent"><%= @homy.homies_type.name %></p>
+						<p class="editContent"></p>
 							Social sites: <% unless @homy.facebook_page.blank? %><%= link_to @homy.facebook_page do %><i class="fa fa-facebook-official"></i><% end %><% end %>
 							<% unless @homy.instagram_handle.blank? %><%= link_to @homy.instagram_handle do %><i class="fa fa-instagram"></i><% end %><% end %></p><br>
 							<% unless @homy.website_online_ordering_page.blank? %><%= link_to "Order NOW!", @homy.link_to_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
