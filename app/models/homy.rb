@@ -13,7 +13,7 @@ class Homy < ActiveRecord::Base
     self.halal_expiry =  Date.today + 365.days
   end
   
-  has_many :opening_hours, dependent: :destroy, inverse_of: :place
+  has_many :opening_hours, dependent: :destroy, inverse_of: :homy
   accepts_nested_attributes_for :opening_hours, reject_if: :all_blank, allow_destroy: true
   
   has_many :homie_service_types, :through => :homie_work_types, dependent: :destroy
