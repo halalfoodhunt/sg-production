@@ -51,7 +51,7 @@ ActiveAdmin.register Homy do
             end
         end
         f.inputs do
-        f.has_many :opening_hours,
+        f.has_many :opening_hours, :label => "Contactable Hours"
             allow_destroy: true,
             new_record: true do |a|
               a.input :day
