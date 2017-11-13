@@ -10,9 +10,9 @@
 					<div class="highlight_inner">
 						<p class="headtext_style editContent" style="font-size:18px;"><span class="pix-text"><%= image_tag @homy.logo.url(:medium), :class => "img-circle", :style => "height:80px; width:80px;" %> <%= @homy.brand_name %></span></p><br>
 						<hr>
-						<p class="editContent"><% unless @place.opening_hours.blank? %>
+						<p class="editContent"><% unless @homy.opening_hours.blank? %>
 						<h4>Contactable Hours</h4>
-						<p class="editContent" style="font-size:8px;"> <% @place.opening_hours.each do |time| %>
+						<p class="editContent" style="font-size:8px;"> <% @homy.opening_hours.each do |time| %>
 							<div class="col-xs-4 col-sm-4 col-md-4" style="padding:0; font-size:12px; line-height:16px;">
 								<%= time.day.name %>
 							</div>
