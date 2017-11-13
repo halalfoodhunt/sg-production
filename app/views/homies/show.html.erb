@@ -17,7 +17,7 @@
 							<hr>
 							<p class="editContent"><% unless @homy.opening_hours.blank? %>
 						<h4>Contactable Hours</h4>
-						<p class="editContent" style="font-size:8px;"> <% @homy.opening_hours.each do |time| %>
+						<p class="editContent"> <% @homy.opening_hours.each do |time| %>
 							<div class="col-xs-4 col-sm-4 col-md-4" style="padding:0; font-size:12px; line-height:16px;">
 								<%= time.day.name %>
 							</div>
