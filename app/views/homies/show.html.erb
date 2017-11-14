@@ -13,25 +13,7 @@
 							Social sites: <% unless @homy.facebook_page.blank? %><%= link_to @homy.facebook_page do %><i class="fa fa-facebook-official"></i><% end %><% end %>
 							<% unless @homy.instagram_handle.blank? %><%= link_to @homy.instagram_handle do %><i class="fa fa-instagram"></i><% end %><% end %></p><br>
 							<% unless @homy.website_online_ordering_page.blank? %><%= link_to "Order NOW!", @homy.website_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
-							<% end %>
-							<hr>
-							<p class="editContent"><% unless @homy.opening_hours.blank? %>
-						<h4>Contactable Hours</h4>
-						<p class="editContent"> <% @homy.opening_hours.each do |time| %>
-							<div class="col-xs-4 col-sm-4 col-md-4" style="padding:0;">
-								<%= time.day.name %>
-							</div>
-							<div class="col-xs-3 col-sm-3 col-md-3">
-								<%= time.open.strftime("%I:%M %p") %>
-							</div>
-							<div class="col-xs-2 col-sm-2 col-md-2">
-								<p>-</p>
-							</div>
-							<div class="col-xs-3 col-sm-3 col-md-3">
-								<%= time.close.strftime("%I:%M %p") %>
-							</div>
-							<br><% end %></p>
-						<% end %></p>
+							<hr><% end %>
 						</div>
 					</div>
 				</div>

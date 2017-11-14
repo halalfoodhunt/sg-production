@@ -90,6 +90,6 @@ class HomiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def homy_params
-      params.require(:homy).permit(:logo, :brand_name, :general_contact_number, :general_email, :website_online_ordering_page, :facebook_page, :instagram_handle, :featured_image, :question_1, :question_2, :self_collect_location, :draft, :verified, :halal_expiry, :expiry_date, :merchant_id, :listing_id, :qualifying_type_id, :homies_type_id, :rewards_attributes => [:id, :discount_id, :terms], :menus_attributes => [:id, :image, :name, :description, :price], :verifying_documents_attributes => [:id, :document], :opening_hours_attributes => [:id, :day_id, :open, :close, :_destroy], ordering_method_ids: [], delivery_location_ids: [], homies_menu_item_ids: [], homie_service_type_ids: [])
+      params.require(:homy).permit(:logo, :brand_name, :general_contact_number, :general_email, :website_online_ordering_page, :facebook_page, :instagram_handle, :featured_image, :question_1, :question_2, :self_collect_location, :draft, :verified, :halal_expiry, :expiry_date, :merchant_id, :listing_id, :qualifying_type_id, :homies_type_id, :rewards_attributes => [:id, :discount_id, :terms, :friends_code], :menus_attributes => [:id, :image, :name, :description, :price], :verifying_documents_attributes => [:id, :document], :opening_hours_attributes => [:id, :day_id, :open, :close, :_destroy], ordering_method_ids: [], delivery_location_ids: [], homies_menu_item_ids: [], homie_service_type_ids: [])
     end
 end
