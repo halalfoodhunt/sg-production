@@ -81,21 +81,28 @@
 						<div class="event_box row pix_builder_bg">
 							<h4>Ordering Methods</h4>
 							<% @online_retail.ordering_methods.each do |ordering_method| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p> <%= link_to ordering_method.name, homies_path(ordering_method: ordering_method.name) %></p>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p> <%= ordering_method.name %></p>
 							</div>
 							<% end %>
 						</div>
 						<div class="event_box row pix_builder_bg">
-							<h4>Delivery Location</h4>
+							<h4>Delivery Locations</h4>
 							<% @online_retail.delivery_locations.each do |delivery_location| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to delivery_location.name, homies_path(delivery_location: delivery_location.name) %></p>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= delivery_location.name %></p>
 							</div>
 							<% end %>
 						</div>
 						<div class="event_box row pix_builder_bg">
-							<h4>Homies Service Types</h4>
-							<% @online_retail.homie_service_types.each do |homie_service_type| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to homie_service_type.name, homies_path(homie_service_type: homie_service_type.name) %></p>
+							<h4>Online Retail Service Types</h4>
+							<% @online_retail.online_retail_service_types.each do |online_retail_service_type| %>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= online_retail_service_type.name %></p>
+							</div>
+							<% end %>
+						</div>
+						<div class="event_box row pix_builder_bg">
+							<h4>Product Categories</h4>
+							<% @online_retail.product_categories.each do |product_category| %>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= product_category.name %></p>
 							</div>
 							<% end %>
 						</div>
