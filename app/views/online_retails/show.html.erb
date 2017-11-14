@@ -24,12 +24,12 @@
 		<div class="container ">
 			<div class="two-thirds column">
 				<div class="content_div" style="padding:0;">
-					<% unless @online_retail.qualifying_type.blank? %>
+					<% unless @online_retail.product_qualifying_type.blank? %>
 					<div class="event_box row pix_builder_bg">
 						<div class="event_box_1 ">
 							<div class="event_box_img ">
 								<% if @online_retail.verified == true %>
-								<%= image_tag @online_retail.qualifying_type.image.url(:large), :class => "img-responsive" %>
+								<%= image_tag @online_retail.product_qualifying_type.image.url(:large), :class => "img-responsive" %>
 								<% else %>
 								<img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/large/Listing_Icons_Artboard_12.png?1487220138" alt="Chania" style="width:130px; height:130px;">
 								<% end %>
