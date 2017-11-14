@@ -81,23 +81,30 @@
 			<div class="one-third column">
 				<div class="content_div" style="padding:0;">
 						<div class="event_box row pix_builder_bg">
-							<h4>Ordering Methods</h4>
-							<% @caterer.ordering_methods.each do |ordering_method| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p> <%= link_to ordering_method.name, homies_path(ordering_method: ordering_method.name) %></p>
+							<h4>Caterer Type</h4>
+							<% @caterer.caterer_types.each do |caterer_type| %>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p> <%= caterer_type.name %></p>
 							</div>
 							<% end %>
 						</div>
 						<div class="event_box row pix_builder_bg">
-							<h4>Delivery Location</h4>
-							<% @caterer.delivery_locations.each do |delivery_location| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to delivery_location.name, homies_path(delivery_location: delivery_location.name) %></p>
+							<h4>Caterer Service Types</h4>
+							<% @caterer.caterer_service_types.each do |caterer_service_type| %>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= caterer_service_type.name %></p>
 							</div>
 							<% end %>
 						</div>
 						<div class="event_box row pix_builder_bg">
-							<h4>Homies Service Types</h4>
-							<% @caterer.homie_service_types.each do |homie_service_type| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to homie_service_type.name, homies_path(homie_service_type: homie_service_type.name) %></p>
+							<h4>Cuisine Types</h4>
+							<% @caterer.cuisine_types.each do |cuisine_type| %>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= cuisine_type.name %></p>
+							</div>
+							<% end %>
+						</div>
+						<div class="event_box row pix_builder_bg">
+							<h4>Event Types</h4>
+							<% @caterer.event_types.each do |event_type| %>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= event_type.name %></p>
 							</div>
 							<% end %>
 						</div>
