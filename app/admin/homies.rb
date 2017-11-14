@@ -46,6 +46,7 @@ ActiveAdmin.register Homy do
             allow_destroy: true,
             new_record: true do |a|
               a.input :discount
+              a.input :friends_code
               a.input :terms
               a.actions
             end
