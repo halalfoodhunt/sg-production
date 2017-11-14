@@ -10,9 +10,6 @@
           <% else %>
           <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/square/Listing_Icons_Artboard_12.png?1487060601" alt="Chania" style="width:40px; height:40px;"></span><% end %><% end %>
           <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:28%;">
-            <% supplier.rewards.each do |reward| %>
-            <%= image_tag reward.discount.icon.url(:square), :class => "img-responsive" %>
-            <% end %>
           </span>
           <%= image_tag supplier.featured_image.url(:square) %>
         </div>
