@@ -76,7 +76,7 @@
             </span>
             <% end %>
             <div class="thumbnail" style="padding:0px; height:320px;">
-              <%= image_tag place.featured_image.url(:large), :class => "img_responsive" %>
+              <%= image_tag place.featured_image.url(:square), :class => "img_responsive" %>
               <div class="caption">
                 <center><p style="margin:0;"><i class="fa fa-map-marker"></i> <%= place.brand_name %><br><p>(<%= place.merchant.id %>/<%= place.listing.id %>/<%= place.id %>)</p></p></center>
               </div>
