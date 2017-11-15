@@ -102,31 +102,6 @@
 			  <br>
 				<div class="four columns  alpha">
 					<div class="text_st">
-						<h3 class="title_st editContent" data-selector="h3">Opening Hours</h3>
-						<h6 class="subject_st editContent" data-selector="h6">Indicate your daily opening hours so customers can visit you at the right time.</h6>
-					</div>
-				</div>
-				<div class="twelve columns omega">
-					<div class="substyle pix_builder_bg" data-selector=".pix_builder_bg">
-					  	<div id="contact_form">
-						    <div id="opening_hours">
-							    <%= f.fields_for :opening_hours do |opening_hour| %>
-							    <%= render 'opening_hour_fields', f: opening_hour %>
-							    <% end %>
-							    <div class="links">
-								  <%= link_to_add_association 'Add Opening Hour', f, :opening_hours %>
-							    </div>
-						    </div>
-					    </div>
-				  </div>
-			  </div>
-			  
-			  </div>
-			
-			<div class="sixteen columns">
-			  <br>
-				<div class="four columns  alpha">
-					<div class="text_st">
 						<h3 class="title_st editContent" data-selector="h3">Select the options that best describe your business</h3>
 						<h6 class="subject_st editContent" data-selector="h6">You may select more than one option per category.</h6>
 					</div>
