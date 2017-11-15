@@ -27,7 +27,7 @@ class Place < ActiveRecord::Base
   has_many :dish_items, dependent: :destroy
   
   has_many :rewards, dependent: :destroy
-  accepts_nested_attributes_for :rewards, allow_destroy: true
+  accepts_nested_attributes_for :rewards, reject_if: :all_blank, allow_destroy: true
   
   has_many :opening_hours, dependent: :destroy, inverse_of: :place
   accepts_nested_attributes_for :opening_hours, reject_if: :all_blank, allow_destroy: true
