@@ -25,6 +25,27 @@
 			</div>
 		</div>
 	</div>
+			<div class="pixfort_university_6" id="section_university_4">
+			<div class="uni_life pix_builder_bg">
+				<div class="container"><h4>On the menu</h4></div>
+				<div class="container">
+					<div class="scroller sixteen columns">
+						<% @food_delivery.menus.each do |menu| %>
+						<% unless menu.image.blank? %>
+						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+							<div class="part_st">
+								<%= image_tag menu.image.url(:square), :class => "img-responsive" %>
+								<div class="text_uni_style">
+									<p class="uni_st editContent"><%= menu.name %></p>
+								</div>
+							</div>
+						</div>
+						<% end %>
+						<% end %>
+					</div>
+				</div><!-- container -->
+			</div>
+		</div>
 	<div class="pixfort_content_1 pix_contents pix_builder_bg" id="section_text_2_1" data-selector=".pix_builder_bg" style="">
 		<div class="container ">
 			<div class="two-thirds column">
@@ -99,27 +120,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="pixfort_university_6" id="section_university_4">
-			<div class="uni_life pix_builder_bg">
-				<div class="container"><h4>On the menu</h4></div>
-				<div class="container">
-					<div class="scroller sixteen columns">
-						<% @food_delivery.menus.each do |menu| %>
-						<% unless menu.image.blank? %>
-						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-							<div class="part_st">
-								<%= image_tag menu.image.url(:square), :class => "img-responsive" %>
-								<div class="text_uni_style">
-									<p class="uni_st editContent"><%= menu.name %></p>
-								</div>
-							</div>
-						</div>
-						<% end %>
-						<% end %>
-					</div>
-				</div><!-- container -->
 			</div>
 		</div>
 		<div class="pixfort_business_10" id="section_business_5">
