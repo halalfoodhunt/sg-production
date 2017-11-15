@@ -78,7 +78,7 @@
             <div class="thumbnail" style="padding:0px; height:340px;">
               <%= image_tag place.featured_image.url(:square), :class => "img_responsive" %>
               <div class="caption">
-                <center><p style="margin:0;"><i class="fa fa-map-marker"></i> <%= place.brand_name %><br><p>(<%= place.merchant.id %>/<%= place.listing.id %>/<%= place.id %>)</p></p></center>
+                <center><p style="margin:0; font-size:12px;"><i class="fa fa-map-marker"></i> <%= place.brand_name %><br><p>(<%= place.merchant.id %>/<%= place.listing.id %>/<%= place.id %>)</p></p></center>
               </div>
               <div class="col-xs-12 col-sm-12 col-md-12 btn-places" style="background:orange;"><center><h5><strong>Place</strong><br> (EXPIRY: <%= place.expiry_date.strftime('%m/%d/%Y') %>) </h5></center></div>
               <div class="col-xs-12 col-sm-12 col-md-6" style="background:#333; color:white; padding:10px; border-right:solid 1px #ccc;">
