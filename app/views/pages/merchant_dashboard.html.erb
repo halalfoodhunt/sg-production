@@ -67,7 +67,7 @@
         <div class="container ">
           <% unless @current_merchant.places.empty? %>
           <% @current_merchant.places.each do |place| %>
-          <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
             <% if place.verified == true %>
             <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
             <% else %>
