@@ -46,6 +46,7 @@ ActiveAdmin.register OnlineRetail do
             new_record: false do |a|
               a.input :discount
               a.input :terms
+              a.input :friends_code
               a.actions
             end
         end

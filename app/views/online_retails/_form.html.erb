@@ -215,6 +215,7 @@
 						<div>
 							<%= ff.collection_select :discount_id, Discount.all, :id, :name, autofocus: true, layout: :inline, :include_blank => 'No Rewards Offered' %><br>
 							<%= ff.text_area :terms, :input_html => { 'rows' => 15 }, placeholder:"Swissbake Bakery offers 10% off your bill. Valid with a minimum spending of $10. Not Valid with any other promotions and discounts.", label: "Terms & Conditions" %><br>
+							<%= ff.text_field :friends_code, label: "Friends Code" %><br>
 						</div>
 						<% end %>
 					</div>
