@@ -10,6 +10,15 @@
 					<div class="highlight_inner">
 						<p class="headtext_style editContent" style="font-size:18px;"><span class="pix-text"><%= image_tag @online_retail.logo.url(:large), :class => "img-circle", :style => "height:80px; width:80px;" %> <%= @online_retail.brand_name %></span></p><br>
 						<hr>
+						<p><% unless @online_retail.general_email.blank? %>
+						<img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> <%= @online_retail.general_email %><hr>
+						<% end %></p>
+						<p><% unless @online_retail.general_contact_number.blank? %>
+						<img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> <%= @online_retail.general_contact_number %><hr>
+						<% end %></p>
+						<p><% unless @online_retail.self_collect_location.blank? %>
+						<img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> <%= @online_retail.self_collect_location %><hr>
+						<% end %></p>
 							Social sites: <% unless @online_retail.facebook_page.blank? %><%= link_to @online_retail.facebook_page do %><i class="fa fa-facebook-official"></i><% end %><% end %>
 							<% unless @online_retail.instagram_handle.blank? %><%= link_to @online_retail.instagram_handle do %><i class="fa fa-instagram"></i><% end %><% end %></p><br>
 							<% unless @online_retail.website_online_ordering_page.blank? %><%= link_to "Order NOW!", @online_retail.website_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
