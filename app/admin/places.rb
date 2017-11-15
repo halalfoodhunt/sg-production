@@ -33,6 +33,7 @@ ActiveAdmin.register Place do
         f.input  "link_to_online_reservation_page"
         f.input  "question_1"
         f.input  "question_2"
+        f.input  "musollah_nearby"
         f.input  "latitude"
         f.input  "longitude"
         f.input  "draft",                           default: true
