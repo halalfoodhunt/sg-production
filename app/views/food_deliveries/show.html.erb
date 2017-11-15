@@ -10,10 +10,14 @@
 					<div class="highlight_inner">
 						<p class="headtext_style editContent" style="font-size:18px;"><span class="pix-text"><%= image_tag @food_delivery.logo.url(:large), :class => "img-circle", :style => "height:80px; width:80px;" %> <%= @food_delivery.brand_name %></span></p><br>
 						<hr>
+						<% unless @food_delivery.general_email.blank? %>
 						<p><%= @food_delivery.general_email %></p>
 						<hr>
+						<% end %>
+						<% unless @food_delivery.delivery_hotline.blank? %>
 						<p><%= @food_delivery.delivery_hotline %></p>
 						<hr>
+						<% end %>
 							Social sites: <% unless @food_delivery.facebook_page.blank? %><%= link_to @food_delivery.facebook_page do %><i class="fa fa-facebook-official"></i><% end %><% end %>
 							<% unless @food_delivery.instagram_handle.blank? %><%= link_to @food_delivery.instagram_handle do %><i class="fa fa-instagram"></i><% end %><% end %></p><br>
 							<% unless @food_delivery.link_to_online_ordering_page.blank? %><%= link_to "Order NOW!", @food_delivery.link_to_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
