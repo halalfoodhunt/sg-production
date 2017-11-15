@@ -33,6 +33,7 @@ ActiveAdmin.register FoodDelivery do
         f.input  "created_at",                                      null: false
         f.input  "updated_at",                                      null: false
         f.input  "qualifying_type"
+        f.input  "main_ordering_method"
         f.input  "delivery_service_types"
         f.input  "delivery_locations"
         f.input  "food_deliveries_menu_items"
