@@ -29,6 +29,7 @@ class PlacesController < ApplicationController
     @place.opening_hours.build
     @place.menus.build
     @place.verifying_documents.build
+    @place.rewards.build
   end
 
   # POST /places
@@ -65,7 +66,6 @@ class PlacesController < ApplicationController
       @place.feature_ids = params[:place][:feature_ids]
       @place.dining_type_ids = params[:place][:dining_type_ids]
       @place.menu_item_ids = params[:place][:menu_item_ids]
-      @place.rewards.build
   end
 
   # DELETE /places/1
