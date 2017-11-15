@@ -3,7 +3,7 @@
    <div class="card-container manual-flip">
     <div class="card">
       <div class="front">
-        <div class="cover">
+        <div class="cover center">
           <% if homy.verified == true %>
           <span class="top-label" style="position:absolute; z-index:100; padding:5px; left:5%;"><%= image_tag(homy.qualifying_type.image.url(:large), :class => "img-responsive", :style => "width:40px; height:40px;") %></span>
           <% else %>
