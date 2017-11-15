@@ -23,7 +23,7 @@
         </div>
         <div class="content">
             <label><strong><%= link_to online_retail.brand_name, online_retail_path(online_retail) %></strong></label><br>
-            <% unless online_retail.link_to_online_ordering_page.blank? %><%= link_to "Order NOW!", online_retail.link_to_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
+            <% unless online_retail.website_online_ordering_page.blank? %><%= link_to "Order NOW!", online_retail.website_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
 							<% end %>
         </div>
       </div> <!-- end front panel -->
