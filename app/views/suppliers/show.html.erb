@@ -1,3 +1,175 @@
+<div class="pix_builder_bg" id="section_highlight_2" style="outline-offset: -3px; background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('<%= @supplier.featured_image.url(:large) %>'); background-size: contain;">
+	<div class="big_padding highlight-section">
+		<div class="highlight-right pix_builder_bg"></div>
+		<div class="container">
+			<div class="sixteen columns">
+				<div class="eight columns alpha">
+					<br>
+				</div>                 
+				<div class="eight columns omega ">
+					<div class="highlight_inner">
+						<p class="headtext_style editContent" style="font-size:18px;"><span class="pix-text"><%= image_tag @supplier.logo.url(:large), :class => "img-circle", :style => "height:80px; width:80px;" %> <%= @supplier.brand_name %></span></p><br>
+						<hr>
+						<p><% unless @supplier.general_contact_number.blank? %>
+						<%= @supplier.general_contact_number %>
+						<hr><% end %></p>
+						<p><% unless @supplier.general_email.blank? %>
+						<%= @supplier.general_email %>
+						<hr><% end %></p>
+							Social sites: <% unless @supplier.facebook_page.blank? %><%= link_to @supplier.facebook_page do %><i class="fa fa-facebook-official"></i><% end %><% end %>
+							<% unless @supplier.instagram_handle.blank? %><%= link_to @supplier.instagram_handle do %><i class="fa fa-instagram"></i><% end %><% end %></p><br>
+							<% unless @supplier.website_online_ordering_page.blank? %><%= link_to "Order NOW!", @supplier.website_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
+							<hr><% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="pixfort_content_1 pix_contents pix_builder_bg" id="section_text_2_1" data-selector=".pix_builder_bg" style="">
+		<div class="container ">
+			<div class="two-thirds column">
+				<div class="content_div" style="padding:0;">
+					<% unless @supplier.product_qualifying_type.blank? %>
+					<div class="event_box row pix_builder_bg">
+						<div class="event_box_1 ">
+							<div class="event_box_img ">
+								<% if @supplier.verified == true %>
+								<%= image_tag @supplier.product_qualifying_type.image.url(:large), :class => "img-responsive" %>
+								<% else %>
+								<img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/large/Listing_Icons_Artboard_12.png?1487220138" alt="Chania" style="width:130px; height:130px;">
+								<% end %>
+							</div>
+						</div>
+						<div class="event_box_2">
+							<div class="padding_15 hor_padding">
+								<h4 data-selector="h3" style="">
+									<strong>Halal Verification</strong>
+								</h4>
+								<% if @supplier.verified == true %>
+								<%= @supplier.product_qualifying_type.halal_summary %>
+								<% else %>
+								This business has yet to submit documents for official verification.
+								<% end %>
+							</div>
+						</div>
+						<% end %>
+					</div>
+					<% @supplier.rewards.each do |reward| %>
+					<% unless reward.discount.blank? %>
+					<div class="event_box row pix_builder_bg">
+						<div class="event_box_1 ">
+							<div class="event_box_img ">
+								<%= image_tag reward.discount.icon.url(:large), :class => "img-responsive" %>
+							</div>
+						</div>
+						<div class="event_box_2">
+							<div class="padding_15 hor_padding">
+								<h4 data-selector="h3" style="">
+									<strong>FRIENDS CARD HOLDERS ONLY</strong>
+								</h4>
+								<%= reward.terms %>
+								<p><br><%= link_to 'View More Rewards', rewards_path, class: "btn btn-default" %></p>
+							</div>
+						</div>
+					</div>
+					<% end %>
+					<% end %>
+					<div class="event_box row pix_builder_bg">
+						<h3>FAQ</h3>
+						<h4 class="editContent"><strong>What do you recommend our users to try when they buy from you?</strong></h4>
+						<%= @supplier.question_1 %><br><br>
+					</div>
+				</div>
+			</div>
+			<div class="one-third column">
+				<div class="content_div" style="padding:0;">
+						<div class="event_box row pix_builder_bg">
+							<h4>Ordering Methods</h4>
+							<% @supplier.ordering_methods.each do |ordering_method| %>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p> <%= ordering_method.name %></p>
+							</div>
+							<% end %>
+						</div>
+						<div class="event_box row pix_builder_bg">
+							<h4>Delivery Locations</h4>
+							<% @supplier.delivery_locations.each do |delivery_location| %>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= delivery_location.name %></p>
+							</div>
+							<% end %>
+						</div>
+						<div class="event_box row pix_builder_bg">
+							<h4>Online Retail Service Types</h4>
+							<% @supplier.online_retail_service_types.each do |online_retail_service_type| %>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= online_retail_service_type.name %></p>
+							</div>
+							<% end %>
+						</div>
+						<div class="event_box row pix_builder_bg">
+							<h4>Product Categories</h4>
+							<% @supplier.product_categories.each do |product_category| %>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= product_category.name %></p>
+							</div>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pixfort_university_6" id="section_university_4">
+			<div class="uni_life pix_builder_bg">
+				<div class="container"><h4>On the menu</h4></div>
+				<div class="container">
+					<div class="scroller sixteen columns">
+						<% @supplier.menus.each do |menu| %>
+						<% unless menu.image.blank? %>
+						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+							<div class="part_st">
+								<%= image_tag menu.image.url(:square), :class => "img-responsive" %>
+								<div class="text_uni_style">
+									<p class="uni_st editContent"><%= menu.name %></p>
+								</div>
+							</div>
+						</div>
+						<% end %>
+						<% end %>
+					</div>
+				</div><!-- container -->
+			</div>
+		</div>
+		<div class="pixfort_business_10" id="section_business_5">
+			<div class="why_section pix_builder_bg">
+				<div class="container">
+					<div class="eight columns alpha">
+					</div>
+					<div class="eight columns omega">
+						<div class="text_input">
+							<div class="headtext_style"><span class="editContent"><span class="pix_text">Message Box</span></span></div>
+							<div class="contact_st">
+								<form id="contact_form" pix-confirm="hidden_pix_10">
+									<div id="result"></div>
+									<input type="text" name="name" id="name" placeholder="Enter Your Full Name" class="pix_text"><br>
+									<input type="text" name="number" id="number" placeholder="Enter Your Phone Number" class="pix_text"><br>
+									<input type="email" name="email" id="email" placeholder="Enter Your Email" class="pix_text"><br>
+									<button class="subscribe_btn pix_text" id="subscribe_btn_10"><br>
+										<span class="editContent">SEND MESSAGE</span>
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
