@@ -118,7 +118,7 @@
           <% end %>
           <% end %>
           <% unless @current_merchant.caterers.empty? %>
-          <% caterers.each do |caterer| %>
+          <% @current_merchant.caterers.each do |caterer| %>
           <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom:20px;">
             <% if caterer.verified == true %>
             <span class="label label-success" style="position:absolute; z-index:100; padding:5px; margin:5px 0 0 5px;">VERIFIED</span>
