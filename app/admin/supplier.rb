@@ -53,9 +53,10 @@ ActiveAdmin.register Supplier do
         f.inputs do
         f.has_many :rewards,
             allow_destroy: true,
-            new_record: false do |a|
+            new_record: true do |a|
               a.input :discount
               a.input :terms
+              a.input :friends_code
               a.actions
             end
         end
