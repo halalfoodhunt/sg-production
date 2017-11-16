@@ -35,7 +35,7 @@ class RewardsController < ApplicationController
     @search_bakers = Baker.ransack(params[:q])
     @bakers = @search_bakers.result.where(reward_id: @reward_id).order("created_at DESC").where(draft: false).where.not(reward_id: nil)
   else
-    @discount_id = Discount.find_by(name: params[:discount]).id
+    @reward_id = Reward.find_by(name: params[:reward]).id
     @places = Place.where(reward_id: @reward_id).order("created_at DESC").where(draft: false)
     @homies = Homy.where(reward_id: @reward_id).order("created_at DESC").where(draft: false)
     @caterers = Caterer.where(reward_id: @reward_id).order("created_at DESC").where(draft: false)
