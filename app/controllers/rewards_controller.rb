@@ -17,6 +17,5 @@ class RewardsController < ApplicationController
     @search_bakers = Baker.ransack(params[:q])
     @bakers = @search_bakers.result.order("created_at DESC").where(draft: false)
     @discounts = Discount.all
-    @place.reward = Reward.find_by id: params["reward_id"]
   end
 end
