@@ -17,7 +17,7 @@ class RewardsController < ApplicationController
     @search_bakers = Baker.ransack(params[:q])
     @bakers = @search_bakers.result.where(reward_id: @reward_id).order("created_at DESC").where(draft: false).where.not(reward_id: nil)
     
-  if params[:friends_reward].blank?
+  if params[:reward].blank?
     @search_place = Place.ransack(params[:q])
     @places = @search_place.result.where(draft: false).where.not(reward_id: nil).order("created_at DESC")
     @search_homies = Homy.ransack(params[:q])
@@ -35,7 +35,7 @@ class RewardsController < ApplicationController
     @search_bakers = Baker.ransack(params[:q])
     @bakers = @search_bakers.result.where(reward_id: @reward_id).order("created_at DESC").where(draft: false).where.not(reward_id: nil)
   else
-    @reward_id = Reward.find_by(name: params[:friends_reward]).id
+    @discount_id = Discount.find_by(name: params[:discount]).id
     @places = Place.where(reward_id: @reward_id).order("created_at DESC").where(draft: false)
     @homies = Homy.where(reward_id: @reward_id).order("created_at DESC").where(draft: false)
     @caterers = Caterer.where(reward_id: @reward_id).order("created_at DESC").where(draft: false)
