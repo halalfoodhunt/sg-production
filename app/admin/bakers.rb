@@ -38,6 +38,7 @@ ActiveAdmin.register Baker do
         f.input  "ordering_methods"
         f.input  "delivery_locations"
         f.input  "menu_items"
+        f.input  "baker_types"
         f.input  "baker_service_types"
         f.input  "baker_product_categories"
         f.input  "slug"
