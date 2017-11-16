@@ -1,0 +1,35 @@
+<% @online_retails.each do |online_retail| %>
+<% online_retail.rewards.each do |reward| %>
+<% unless reward.discount.blank? %>
+<div class="four columns alpha">
+ <div class="card-container">
+  <div class="card">
+    <div class="front">
+      <div class="cover">
+        <%= image_tag online_retail.featured_image.url(:square) %>
+      </div>
+      <div class="user">
+        <%= image_tag reward.discount.icon.url(:large) %>
+      </div>
+      <div class="content">
+        <label><strong><%= online_retail.brand_name %></strong></label>
+        <p class="profession"></p>
+      </div>
+    </div> <!-- end front panel -->
+    <div class="back">
+      <div class="header">
+        <h5 class="motto"></h5>
+      </div>
+      <div class="content">
+        <h4 class="text-center"><%= reward.discount.name %></h4>
+        <hr>
+        <small class="text-center"><%= reward.terms %></small><br><br>
+        <label><%= link_to online_retail_path(online_retail), class:"btn_normal padding_5" do %><strong>View Merchant Details</strong><% end %></label>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<% end %>
+<% end %>
+<% end %>
