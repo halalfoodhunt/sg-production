@@ -22,7 +22,7 @@
             <div class="tab-content">
               <div id="place" class="tab-pane fade in active">
                <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
-                <%= search_form_for @search_place, :html => {:id => 'contact_form', :class => 'pix_form' }, url: root_path do |f| %>
+                <%= search_form_for @search_places, :html => {:id => 'contact_form', :class => 'pix_form' }, url: root_path do |f| %>
                 <div class="col-sm-12 col-md-12" style="padding:20px">
                   <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
                    <label for="Search" class="label-front">What kind of food are you looking for?</label>
@@ -197,10 +197,10 @@
               <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Filter by
                 <span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                  <li><center><h5><%= sort_link(@search_place, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_place, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_place, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-                  <li><center><h5><%= sort_link(@search_place, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                  <li><center><h5><%= sort_link(@search_places, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                  <li><center><h5><%= sort_link(@search_places, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                  <li><center><h5><%= sort_link(@search_places, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                  <li><center><h5><%= sort_link(@search_places, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
                 </ul>
               </div>
             </div>
