@@ -17,7 +17,7 @@
 //= require jquery.ui.effect-highlight
 //= require cocoon
 //= require global
-
+//= require turbolinks
 //= require select2
 //= require bootstrap.min
 //= require bootstrap-switch
