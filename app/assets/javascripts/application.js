@@ -17,13 +17,13 @@
 //= require jquery.ui.effect-highlight
 //= require cocoon
 //= require global
+//= require turbolinks
 //= require bootstrap.min
 //= require bootstrap-switch
 //= require animations
 //= require appear.min
 //= require backbone
 //= require smoothscroll.min
-//= require turbolinks
 //= require select2
 //= require custom
 //= require custom1
