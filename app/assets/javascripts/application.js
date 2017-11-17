@@ -15,6 +15,10 @@
 //= require jquery.slick
 //= require initialize
 //= require jquery.ui.effect-highlight
+//= require jquery.easing.1.3
+//= require jquery.popupoverlay
+//= require jquery.ui.touch-punch.min
+//= require jquery.vide
 //= require cocoon
 //= require global
 //= require turbolinks
@@ -29,10 +33,6 @@
 //= require custom1
 //= require custom2
 //= require custom3
-//= require jquery.easing.1.3
-//= require jquery.popupoverlay
-//= require jquery.ui.touch-punch.min
-//= require jquery.vide
 //= require bootstrap-sprockets
 //= require ticker
 //= require card
