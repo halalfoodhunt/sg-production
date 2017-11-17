@@ -92,7 +92,7 @@
 		.has-video { position:relative; overflow:hidden; }
 		.pix_full_screen {min-height: 100% !important;}
 		.has-video .section_video { position: absolute; top: 0; left: 0; min-height: 100%; min-width: 100%; overflow: hidden;  z-index: 10; background: #eee;  }
-		//.has-video .section_video .mask { position: absolute; top: 0; left: 0;  height: 100%; width: 100%; z-index: 3; background:url(../images/videomask.png) repeat center;}
+		.has-video .section_video .mask { position: absolute; top: 0; left: 0;  height: 100%; width: 100%; z-index: 3; background:url(../images/videomask.png) repeat center;}
 		.has-video .section_wrapper { position:relative; z-index:10; }
 		.has-video .section_video video { position: absolute; top: 0; left: 0; min-height: 100%; min-width: 100%; z-index: 2;-webkit-background-size:cover; 
    -moz-background-size:cover; 
@@ -101,7 +101,7 @@
    background-position: scroll;
 }
 		@media only screen and (min-device-width:481px) and (max-device-width:1024px){ 
-//			.has-video .section_video { display: none !important; }
+			.has-video .section_video { display: none !important; }
 		}
 		.video_warper { background:#000;}
 		.pix_video_bg_1 {
@@ -120,27 +120,12 @@
 			z-index: 1000;
 		}
 
-
-
-		
-
-
-		/*Slider*/
+/*Slider*/
 		.pixfort_pix_slider {
 			padding: 20px 0;
 			background: #eee;
 		}
-
-
-
-
-
-
-
-
-
-
-
+		
 /*Icons*/
 		a.pi { text-decoration: none; }
 		/*footer*/
@@ -219,13 +204,6 @@
 		.pixfort_content_3 { padding: 30px 0;}
 		.pixfort_content_3 .img_div { text-align: center;position: relative;padding: 10px 0;}
 		.pixfort_content_3 .img_div img { max-width: 100%;height: auto;}
-
-
-
-
-
-
-
 
 
 
@@ -656,8 +634,7 @@ color: rgb(255, 255, 255); font-size: 18px;  background-color: rgb(247, 148, 29)
 		-o-background-size:cover;
 		background-size:cover; }
 
-	.event_div {  }
-	.event_box { background: #fff;border: 2px solid #ddd;border-radius: 4px;padding: 30px;margin: 30px 0; }
+	.event_box { background: #fff;border: 2px solid #ddd;border-radius: 4px;padding: 15px;margin: 30px 0; }
 	.padding_15 { padding: 0 20px }
 	.padding_5 { padding: 5px }
 	.hor_padding { padding-top: 10px;padding-bottom: 10px; }
