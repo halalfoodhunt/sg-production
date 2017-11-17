@@ -48,7 +48,7 @@ class PagesController < ApplicationController
   
   def friends
     @search_places = Place.ransack(params[:q])
-    @places = @search_places.result.order("created_at DESC").where(draft: false)
+    @places = @search_places.result.order("created_at DESC").where(draft: false).limit(20)
     @search_homies = Homy.ransack(params[:q])
     @homies = @search_homies.result.order("created_at DESC").where(draft: false)
     @search_caterers = Caterer.ransack(params[:q])
