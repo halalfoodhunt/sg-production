@@ -23,7 +23,7 @@
 //= require appear.min
 //= require backbone
 //= require smoothscroll.min
-//= require turbolinks
+
 //= require select2
 //= require custom
 //= require custom1
