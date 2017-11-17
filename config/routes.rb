@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'pages/privacy_policy'
   
-  get 'pages#friends', to: 'friends'
+  get 'pages/friends'
   
   get 'listings/index'
   
