@@ -23,15 +23,12 @@
 //= require appear.min
 //= require backbone
 //= require smoothscroll.min
-
+//= require turbolinks
 //= require select2
 //= require custom
 //= require custom1
 //= require custom2
 //= require custom3
-//= require jquery-1.7.2.min
-//= require jquery-1.8.3.min
-//= require jquery.common.min
 //= require jquery.easing.1.3
 //= require jquery.popupoverlay
 //= require jquery.ui.touch-punch.min
