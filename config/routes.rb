@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get 'pages/privacy_policy'
   
+  get 'pages/friends', to: 'friends'
+  
   get 'listings/index'
   
   resources :baker_product_categories
