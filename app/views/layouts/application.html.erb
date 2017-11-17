@@ -12,9 +12,6 @@
   <meta http-equiv="x-ua-compatible" content="IE=9">
   <%= render 'application/favicon' %>
   <%= csrf_meta_tags %>
-  <% if @og_properties.present? %>
-  <%= meta_og_tags @og_properties %>
-  <% end %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script>
