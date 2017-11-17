@@ -364,21 +364,21 @@
 		.creative_circle {
 			padding-top: 20px; padding-bottom: 20px; box-shadow: none; border-color: rgb(241, 194, 50); border-width: 2px; background-image: none; background-color: rgba(0, 0, 0, 0);
 			padding:20px;
-		border:2px solid rgb(241, 194, 50);
-		border-radius:100%;
-		line-height: 0px;
-		display:inline-block;
-		position:relative
+			border:2px solid rgb(241, 194, 50);
+			border-radius:100%;
+			line-height: 0px;
+			display:inline-block;
+			position:relative
 		}
 		.creative_features .c1_style2 {
-				font-weight:700;
-				color:#222
+			font-weight:700;
+			color:#222
 		}
 
 		.creative_features .c2_style2 {
-				font-weight:400;
-				color:#696969;
-				line-height:30px
+			font-weight:400;
+			color:#696969;
+			line-height:30px
 		}
 		.creative_c_icon{
 			color: rgb(241, 194, 50); font-size: 42px;
