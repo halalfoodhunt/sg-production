@@ -150,21 +150,9 @@
 			<div class="why_section pix_builder_bg" style="background: white !important;">
 				<div class="container">
 					<div class="eight columns alpha">
-						<div id="map" style="width:100%; height:400px">
-							<script type="text/javascript">
-							var map;
-							var myCenter = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
-							function initMap() {
-								map = new google.maps.Map(document.getElementById('map'), {
-									center: myCenter,
-									zoom: 15
-								});
-								var marker = new google.maps.Marker({
-									position: myCenter,
-									map: map,
-								});
-							}
-							</script>
+						<div style="width:100%; height:400px">
+							<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@place.latitude},#{@place.longitude}&markers=#{@place.latitude},#{@place.longitude}&zoom=7&size=640x400&key=AIzaSyCe8iw731yHmc9zsoySpYflFaYecOJLyHY",
+              class: 'img-fluid img-rounded', alt: "#{@place.brand_name} on the map"%>
 						</div>
 					</div>
 					<div class="eight columns omega">
