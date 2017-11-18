@@ -34,7 +34,7 @@
 //= require card
 //= require turbolinks
 //= require select2
-//= require bootstrap-sprockets
+
 //= require bootstrap.min
 //= require bootstrap-switch
 //= require ticker
