@@ -32,10 +32,10 @@
 //= require custom2
 //= require custom3
 //= require card
-//= require turbolinks
+//= require select2
 //= require bootstrap-sprockets
 //= require bootstrap.min
 //= require bootstrap-switch
+//= require turbolinks
 //= require ticker
-//= require select2
 //= require_tree .
