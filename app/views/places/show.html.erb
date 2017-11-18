@@ -150,7 +150,6 @@
 			<div class="why_section pix_builder_bg" style="background: white !important;">
 				<div class="container">
 					<div class="eight columns alpha">
-						<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
   var lat = <%= @place.latitude %>, 
       lon = <%= @place.longitude %>,
@@ -165,7 +164,7 @@
 
   google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-<div id="map_canvas" style="width:400px; height 400px;"></div>
+<div id="map_canvas" style="width:400px; height: 400px;"></div>
 					</div>
 					<div class="eight columns omega">
 						<div class="text_input">
