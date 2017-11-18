@@ -36,5 +36,6 @@
 //= require custom3
 //= require ticker
 //= require card
+//= require bootstrap-sprockets
 //= require select2
 //= require_tree .
