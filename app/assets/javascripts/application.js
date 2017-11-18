@@ -22,6 +22,9 @@
 //= require cocoon
 //= require global
 //= require turbolinks
+//= require bootstrap-sprockets
+//= require bootstrap.min
+//= require bootstrap-switch
 //= require underscore-min
 //= require gmaps/google
 //= require animations
@@ -33,8 +36,5 @@
 //= require custom2
 //= require custom3
 //= require card
-//= require bootstrap-sprockets
-//= require bootstrap.min
-//= require bootstrap-switch
 //= require ticker
 //= require_tree .
