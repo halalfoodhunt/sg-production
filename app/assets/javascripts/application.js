@@ -21,12 +21,11 @@
 //= require jquery.vide
 //= require cocoon
 //= require global
-//= require turbolinks
-//= require bootstrap-sprockets
-//= require bootstrap.min
-//= require bootstrap-switch
 //= require underscore-min
 //= require gmaps/google
+//= require turbolinks
+//= require bootstrap.min
+//= require bootstrap-switch
 //= require animations
 //= require appear.min
 //= require backbone
@@ -35,6 +34,8 @@
 //= require custom1
 //= require custom2
 //= require custom3
-//= require card
 //= require ticker
+//= require card
+//= require bootstrap-sprockets
+//= require select2
 //= require_tree .
