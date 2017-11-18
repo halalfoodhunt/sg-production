@@ -21,6 +21,8 @@
 //= require jquery.vide
 //= require cocoon
 //= require global
+//= require underscore
+//= require gmaps/google
 //= require turbolinks
 //= require bootstrap.min
 //= require bootstrap-switch

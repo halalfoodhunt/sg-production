@@ -41,6 +41,8 @@ gem 'friendly_id', '~> 5.1.0'
 
 gem 'geocoder'
 
+gem 'gmaps4rails'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
