@@ -35,7 +35,7 @@
 //= require custom3
 //= require ticker
 //= require card
-//= require bootstrap-sprocket
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require select2
 //= require_tree .
