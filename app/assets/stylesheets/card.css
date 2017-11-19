@@ -106,7 +106,7 @@
 .card .content{
     background-color: rgba(0, 0, 0, 0);
     box-shadow: none;
-    padding: 10px 20px 20px;
+    padding: 10px;
 }
 .card .content .main {
     min-height: 160px;
