@@ -22,8 +22,8 @@
           <%= image_tag online_retail.logo.url(:medium), :class => "img-circle" %>
         </div>
         <div class="content">
-            <center><label><strong><%= link_to online_retail.brand_name, online_retail_path(online_retail) %></strong></label>
-            <labe><strong><%= link_to "Merchant Details", online_retail_path(online_retail), :style => "color:#ececec;" %></strong></label>
+            <center><label><strong><%= link_to online_retail.brand_name, online_retail_path(online_retail) %></strong></label><br>
+            <label><strong><%= link_to "View Merchant Details", online_retail_path(online_retail), :style => "color:#ccc;" %></strong></label>
             <% unless online_retail.website_online_ordering_page.blank? %><%= link_to "Order NOW!", online_retail.website_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
 							<% end %>
 							</center>
