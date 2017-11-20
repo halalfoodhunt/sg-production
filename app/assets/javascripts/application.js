@@ -18,6 +18,7 @@
 //= require cocoon
 //= require ticker
 //= require select2
+//= require bootstrap-sprockets
 //= require animations
 //= require appear.min
 //= require backbone
