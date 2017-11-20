@@ -24,8 +24,6 @@
 //= require underscore-min
 //= require gmaps/google
 //= require turbolinks
-//= require bootstrap.min
-//= require bootstrap-switch
 //= require animations
 //= require appear.min
 //= require backbone
