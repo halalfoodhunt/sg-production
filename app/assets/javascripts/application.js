@@ -18,6 +18,8 @@
 //= require cocoon
 //= require ticker
 //= require select2
+//= require jquery.slick
+//= require initialize
 //= require bootstrap-sprockets
 //= require animations
 //= require appear.min
@@ -35,8 +37,6 @@
 //= require jquery.ui.touch-punch.min
 //= require jquery.vide
 //= require jquery.ui.effect-highlight
-//= require jquery.slick
-//= require initialize
 //= require card
 //= require turbolinks
 //= require_tree .
