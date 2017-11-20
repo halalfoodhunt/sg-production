@@ -21,10 +21,10 @@
 //= require jquery.vide
 //= require cocoon
 //= require global
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require underscore-min
 //= require gmaps/google
-//= require bootstrap-sprockets
 //= require animations
 //= require appear.min
 //= require backbone
