@@ -23,7 +23,6 @@
 //= require global
 //= require underscore-min
 //= require gmaps/google
-//= require bootstrap-sprockets
 //= require animations
 //= require appear.min
 //= require backbone
@@ -32,8 +31,9 @@
 //= require custom1
 //= require custom2
 //= require custom3
-//= require turbolinks
 //= require ticker
+//= require turbolinks
+//= require bootstrap-sprockets
 //= require card
 //= require select2
 //= require_tree .
