@@ -13,6 +13,9 @@ class Caterer < ActiveRecord::Base
     self.halal_expiry =  Date.today + 365.days
   end
   
+  has_many :caterer_menu_items, :through => :caterer_dish_items, dependent: :destroy
+  has_many :caterer_dish_items, dependent: :destroy
+  
   has_many :cuisine_types, :through => :cooking_types, dependent: :destroy
   has_many :cooking_types, dependent: :destroy
   
