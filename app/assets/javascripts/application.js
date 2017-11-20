@@ -15,6 +15,8 @@
 //= require underscore-min
 //= require gmaps/google
 //= require bootstrap-switch
+//= require cocoon
+//= require ticker
 //= require select2
 //= require animations
 //= require appear.min
@@ -36,6 +38,4 @@
 //= require initialize
 //= require card
 //= require turbolinks
-//= require cocoon
-//= require ticker
 //= require_tree .
