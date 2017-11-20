@@ -32,8 +32,8 @@
 //= require custom1
 //= require custom2
 //= require custom3
+//= require turbolinks
 //= require ticker
 //= require card
-//= require turbolinks
 //= require select2
 //= require_tree .
