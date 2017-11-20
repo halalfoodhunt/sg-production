@@ -12,6 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-1.7.2.min
+//= require jquery-1.8.3.min
+//= require jquery.common.min
+//= require jquery.easing.1.3
+//= require jquery.popupoverlay
+//= require jquery.ui.touch-punch.min
+//= require jquery.vide
+//= require jquery.ui.effect-highlight
 //= require underscore-min
 //= require gmaps/google
 //= require bootstrap-switch
@@ -29,14 +37,6 @@
 //= require custom1
 //= require custom2
 //= require custom3
-//= require jquery-1.7.2.min
-//= require jquery-1.8.3.min
-//= require jquery.common.min
-//= require jquery.easing.1.3
-//= require jquery.popupoverlay
-//= require jquery.ui.touch-punch.min
-//= require jquery.vide
-//= require jquery.ui.effect-highlight
 //= require card
 //= require turbolinks
 //= require_tree .
