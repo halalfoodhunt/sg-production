@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require jquery.slick
 //= require initialize
 //= require jquery.ui.effect-highlight
@@ -21,7 +22,6 @@
 //= require jquery.vide
 //= require cocoon
 //= require global
-//= require bootstrap-sprockets
 //= require turbolinks
 //= require underscore-min
 //= require gmaps/google
