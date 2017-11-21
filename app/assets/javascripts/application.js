@@ -26,6 +26,10 @@
 //= require cocoon
 //= require ticker
 //= require select2
+//= require custom
+//= require custom1
+//= require custom2
+//= require custom3
 //= require jquery.slick
 //= require initialize
 //= require bootstrap-sprockets
@@ -33,10 +37,6 @@
 //= require appear.min
 //= require backbone
 //= require smoothscroll.min
-//= require custom
-//= require custom1
-//= require custom2
-//= require custom3
 //= require card
 //= require turbolinks
 //= require_tree .
