@@ -17,6 +17,7 @@
 //= require jquery.popupoverlay
 //= require jquery.ui.touch-punch.min
 //= require jquery.vide
+//= require animations
 //= require jquery.slick
 //= require initialize
 //= require ticker
@@ -25,7 +26,6 @@
 //= require twitter/bootstrap
 //= require cocoon
 //= require global
-//= require animations
 //= require appear.min
 //= require backbone
 //= require smoothscroll.min
