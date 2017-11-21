@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.slick
+//= require initialize
 //= require twitter/bootstrap
+//= require turbolinks
 //= require jquery.ui.effect-highlight
 //= require jquery.easing.1.3
 //= require jquery.popupoverlay
@@ -26,7 +29,6 @@
 //= require ticker
 //= require underscore-min
 //= require gmaps/google
-//= require turbolinks
 //= require cocoon
 //= require global
 //= require appear.min
@@ -34,6 +36,4 @@
 //= require smoothscroll.min
 //= require card
 //= require select2
-//= require jquery.slick
-//= require initialize
 //= require_tree .
