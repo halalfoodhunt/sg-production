@@ -22,7 +22,6 @@
 //= require custom1
 //= require custom2
 //= require custom3
-//= require turbolinks
 //= require animations
 //= require jquery.slick
 //= require initialize
@@ -36,4 +35,5 @@
 //= require smoothscroll.min
 //= require card
 //= require select2
+//= require turbolinks
 //= require_tree .
