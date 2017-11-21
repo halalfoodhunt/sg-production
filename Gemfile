@@ -7,6 +7,10 @@ gem 'rails', '4.2.5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
+gem 'twitter-bootstrap-rails'
+
+gem "font-awesome-rails"
+
 gem 'devise'
 
 gem 'activeadmin'
@@ -22,8 +26,6 @@ gem 'activeadmin_addons'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
 gem 'aws-sdk', '~> 2.3'
-
-gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'bootstrap_form'
 

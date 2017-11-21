@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
+//= require twitter/bootstrap
 //= require jquery.slick
 //= require initialize
 //= require jquery.ui.effect-highlight
@@ -25,8 +25,6 @@
 //= require underscore-min
 //= require gmaps/google
 //= require animations
-//= require turbolinks
-//= require bootstrap-switch
 //= require appear.min
 //= require backbone
 //= require smoothscroll.min
