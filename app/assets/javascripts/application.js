@@ -19,11 +19,11 @@
 //= require jquery.popupoverlay
 //= require jquery.ui.touch-punch.min
 //= require jquery.vide
+//= require underscore-min
+//= require gmaps/google
 //= require twitter/bootstrap
 //= require cocoon
 //= require global
-//= require underscore-min
-//= require gmaps/google
 //= require animations
 //= require appear.min
 //= require backbone
