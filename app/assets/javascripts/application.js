@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require jquery.slick
 //= require initialize
 //= require jquery.ui.effect-highlight
@@ -35,6 +36,5 @@
 //= require custom3
 //= require ticker
 //= require card
-//= require bootstrap-sprockets
 //= require select2
 //= require_tree .
