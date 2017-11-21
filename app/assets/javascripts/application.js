@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require jquery.slick
 //= require initialize
 //= require jquery.ui.effect-highlight
@@ -20,6 +19,7 @@
 //= require jquery.popupoverlay
 //= require jquery.ui.touch-punch.min
 //= require jquery.vide
+//= require twitter/bootstrap
 //= require cocoon
 //= require global
 //= require underscore-min
