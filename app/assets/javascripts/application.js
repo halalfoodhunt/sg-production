@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require jquery-1.7.2.min
 //= require jquery-1.8.3.min
+//= require jquery.slick
+//= require initialize
 //= require jquery.common.min
 //= require jquery.easing.1.3
 //= require jquery.popupoverlay
@@ -26,15 +28,13 @@
 //= require cocoon
 //= require ticker
 //= require select2
+//= require bootstrap-sprockets
 //= require custom
 //= require custom1
 //= require custom2
 //= require custom3
-//= require jquery.slick
-//= require initialize
 //= require appear.min
 //= require animations
-//= require bootstrap-sprockets
 //= require backbone
 //= require smoothscroll.min
 //= require card
