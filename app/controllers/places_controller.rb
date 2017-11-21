@@ -43,6 +43,7 @@ class PlacesController < ApplicationController
 
   # GET /places/1/edit
   def edit
+    @current_merchant = current_merchant
     @place.opening_hours.build
     @place.menus.build
     @place.verifying_documents.build

@@ -16,6 +16,6 @@ class RewardsController < ApplicationController
     @raw_foods = @search_raw_foods.result.order("created_at DESC").where(draft: false)
     @search_bakers = Baker.ransack(params[:q])
     @bakers = @search_bakers.result.order("created_at DESC").where(draft: false)
-    @rewards = Reward.all
+    @rewards.place = Place.where.not(place_id: nil)
   end
 end
