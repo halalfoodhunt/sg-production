@@ -32,9 +32,9 @@
 //= require custom3
 //= require jquery.slick
 //= require initialize
-//= require bootstrap-sprockets
-//= require animations
 //= require appear.min
+//= require animations
+//= require bootstrap-sprockets
 //= require backbone
 //= require smoothscroll.min
 //= require card
