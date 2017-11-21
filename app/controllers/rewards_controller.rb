@@ -1,7 +1,7 @@
 class RewardsController < ApplicationController
   def index
     @search_places = Place.ransack(params[:q])
-    @places = @search_places.result.order("created_at DESC").where(draft: false).where.not(reward_id: nil)
+    @places = @search_places.result.order("created_at DESC").where(draft: false).where(reward_id: nil)
     @search_homies = Homy.ransack(params[:q])
     @homies = @search_homies.result.order("created_at DESC").where(draft: false)
     @search_caterers = Caterer.ransack(params[:q])
