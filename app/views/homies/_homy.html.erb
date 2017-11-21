@@ -22,7 +22,7 @@
         </div>
         <div class="content">
             <label><strong><%= link_to homy.brand_name, homy_path(homy) %></strong></label>
-            <p class="profession" style="text-transform: capitalize !important;"><%= homy.homies_type.name %> <br> <i class="fa fa-map-marker"></i> <%= homy.self_collect_location %></p>
+            <label><strong><%= link_to "View Merchant Details", homy_path(homy), :style => "color:#ccc;" %></strong></label>
         </div>
       </div> <!-- end front panel -->
     </div>
