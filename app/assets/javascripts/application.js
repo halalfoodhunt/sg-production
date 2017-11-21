@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require jquery.ui.effect-highlight
 //= require jquery.easing.1.3
 //= require jquery.popupoverlay
@@ -23,7 +24,6 @@
 //= require ticker
 //= require underscore-min
 //= require gmaps/google
-//= require twitter/bootstrap
 //= require cocoon
 //= require global
 //= require appear.min
