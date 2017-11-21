@@ -18,6 +18,10 @@
 //= require jquery.popupoverlay
 //= require jquery.ui.touch-punch.min
 //= require jquery.vide
+//= require custom
+//= require custom1
+//= require custom2
+//= require custom3
 //= require animations
 //= require jquery.slick
 //= require initialize
@@ -29,10 +33,6 @@
 //= require appear.min
 //= require backbone
 //= require smoothscroll.min
-//= require custom
-//= require custom1
-//= require custom2
-//= require custom3
 //= require card
 //= require select2
 //= require_tree .
