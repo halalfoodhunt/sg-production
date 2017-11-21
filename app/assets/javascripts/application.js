@@ -23,8 +23,6 @@
 //= require custom2
 //= require custom3
 //= require animations
-//= require jquery.slick
-//= require initialize
 //= require ticker
 //= require underscore-min
 //= require gmaps/google
@@ -36,4 +34,6 @@
 //= require card
 //= require select2
 //= require turbolinks
+//= require jquery.slick
+//= require initialize
 //= require_tree .
