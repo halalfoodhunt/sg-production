@@ -29,8 +29,8 @@ ActiveAdmin.register OnlineRetail do
         f.input  "self_collection_address"
         f.input  "draft",                           default: true
         f.input  "verified",                        default: false
-        f.input  "halal_expiry"
-        f.input  "expiry_date"
+        f.input  "halal_expiry", :as => :datepicker
+        f.input  "expiry_date", :as => :datepicker
         f.input  "created_at",                                      null: false
         f.input  "updated_at",                                      null: false
         f.input  "product_qualifying_type"
