@@ -26,6 +26,7 @@
 //= require ticker
 //= require underscore-min
 //= require gmaps/google
+//= require turbolinks
 //= require cocoon
 //= require global
 //= require appear.min
@@ -33,7 +34,6 @@
 //= require smoothscroll.min
 //= require card
 //= require select2
-//= require turbolinks
 //= require jquery.slick
 //= require initialize
 //= require_tree .
