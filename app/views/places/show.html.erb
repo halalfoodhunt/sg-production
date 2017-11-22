@@ -156,23 +156,8 @@
 			<div class="why_section pix_builder_bg" style="background: white !important;">
 				<div class="container">
 					<div class="eight columns alpha">
-<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCe8iw731yHmc9zsoySpYflFaYecOJLyHY&sensor=false" %>
-   <script type="text/javascript">
-      function initialize() {
-        var mycenter = { lat: <%= @place.latitude %>, lng: <%= @place.longitude %>}
-        var mapOptions = {
-          center: mycenter,
-          zoom: 8
-        };
-        var map = new google.maps.Map(document.getElementById('map-canvas'),
-            mapOptions);
-        var marker = new google.maps.Marker({
-          position: mycenter,
-          map: map
-        });
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@place.latitude},#{@place.longitude}&markers=#{@place.latitude},#{@place.longitude}&zoom=7&size=640x400&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
+              class: 'img-fluid img-rounded', alt: "#{@place.brand_name} on the map"%>
 <div id="map" style="width: 400px; height: 400px"></div>
 					</div>
 					<div class="eight columns omega">
