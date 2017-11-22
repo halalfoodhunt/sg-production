@@ -23,7 +23,7 @@
         </div>
         <div class="content">
             <center><label><strong><%= link_to online_retail.brand_name, online_retail_path(online_retail) %></strong></label><br>
-            <label><strong><%= link_to "View Merchant Details", online_retail_path(online_retail), :style => "color:#333; border:2px solid #333; padding:5px;" %></strong></label>
+            <label><strong><%= link_to "View Merchant Details", online_retail_path(online_retail), :style => "color:#666; border:2px solid #666; padding:5px;" %></strong></label>
             <% unless online_retail.website_online_ordering_page.blank? %><%= link_to "Order NOW!", online_retail.website_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
 							<% end %>
 							</center>
