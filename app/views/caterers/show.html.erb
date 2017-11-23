@@ -10,8 +10,8 @@
 					<div class="highlight_inner">
 						<p class="headtext_style editContent" style="font-size:18px;"><span class="pix-text"><%= image_tag @caterer.logo.url(:large), :class => "img-circle", :style => "height:80px; width:80px;" %> <%= @caterer.brand_name %></span></p><br>
 						<hr><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> <% unless @caterer.general_contact_number.blank? %><%= @caterer.general_contact_number %><% end %></p>
-							Social sites: <% unless @caterer.facebook_page.blank? %><%= link_to @caterer.facebook_page do %><i class="fa fa-facebook-official"></i><% end %><% end %>
-							<% unless @caterer.instagram_handle.blank? %><%= link_to @caterer.instagram_handle do %><i class="fa fa-instagram"></i><% end %><% end %></p><br>
+							Social sites: <% unless @caterer.facebook_page.blank? %><%= link_to @caterer.facebook_page do %><i class="fa fa-facebook-official fa-2x"></i><% end %><% end %>
+							<% unless @caterer.instagram_handle.blank? %><%= link_to @caterer.instagram_handle do %><i class="fa fa-instagram fa-2x"></i><% end %><% end %></p><br>
 							<% unless @caterer.website_online_ordering_page.blank? %><%= link_to "Order NOW!", @caterer.website_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
 							<% end %>
 							<hr>

@@ -16,8 +16,8 @@
 							<img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/house.png" title="Monitor" width="16">
 							<%= link_to @place.website, "#{@place.website}" %>
 							<hr><% end %>
-							Social sites: <% unless @place.facebook_page.blank? %><%= link_to @place.facebook_page do %><i class="fa fa-facebook-official"></i><% end %><% end %>
-							<% unless @place.instagram_handle.blank? %><%= link_to @place.instagram_handle do %><i class="fa fa-instagram"></i><% end %><% end %></p><br>
+							Social sites: <% unless @place.facebook_page.blank? %><%= link_to @place.facebook_page do %><i class="fa fa-facebook-official fa-2x"></i><% end %><% end %>
+							<% unless @place.instagram_handle.blank? %><%= link_to @place.instagram_handle do %><i class="fa fa-instagram fa-2x"></i><% end %><% end %></p><br>
 							<% unless @place.link_to_online_ordering_page.blank? %><%= link_to "Order NOW!", @place.link_to_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
 							<% end %>
 							<% unless @place.link_to_online_reservation_page.blank? %><%= link_to "Reserve NOW!", @place.link_to_online_reservation_page, :class => "pix_button pix_button_line orange bold_text editContent" %>

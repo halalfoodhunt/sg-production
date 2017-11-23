@@ -19,8 +19,8 @@
 						<p><% unless @raw_food.self_collection_address.blank? %>
 						<%= @raw_food.self_collection_address %>
 						<hr><% end %></p>
-							Social sites: <% unless @raw_food.facebook_page.blank? %><%= link_to @raw_food.facebook_page do %><i class="fa fa-facebook-official"></i><% end %><% end %>
-							<% unless @raw_food.instagram_handle.blank? %><%= link_to @raw_food.instagram_handle do %><i class="fa fa-instagram"></i><% end %><% end %></p><br>
+							Social sites: <% unless @raw_food.facebook_page.blank? %><%= link_to @raw_food.facebook_page do %><i class="fa fa-facebook-official fa-2x"></i><% end %><% end %>
+							<% unless @raw_food.instagram_handle.blank? %><%= link_to @raw_food.instagram_handle do %><i class="fa fa-instagram fa-2x"></i><% end %><% end %></p><br>
 							<% unless @raw_food.website_online_ordering_page.blank? %><%= link_to "Order NOW!", @raw_food.website_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
 							<hr><% end %>
 						</div>

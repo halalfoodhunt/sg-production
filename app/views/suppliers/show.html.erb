@@ -19,8 +19,8 @@
 						<p><% unless @supplier.self_collection_address.blank? %>
 						<%= @supplier.self_collection_address %>
 						<hr><% end %></p>
-							Social sites: <% unless @supplier.facebook_page.blank? %><%= link_to @supplier.facebook_page do %><i class="fa fa-facebook-official"></i><% end %><% end %>
-							<% unless @supplier.instagram_handle.blank? %><%= link_to @supplier.instagram_handle do %><i class="fa fa-instagram"></i><% end %><% end %></p><br>
+							Social sites: <% unless @supplier.facebook_page.blank? %><%= link_to @supplier.facebook_page do %><i class="fa fa-facebook-official fa-2x"></i><% end %><% end %>
+							<% unless @supplier.instagram_handle.blank? %><%= link_to @supplier.instagram_handle do %><i class="fa fa-instagram fa-2x"></i><% end %><% end %></p><br>
 							<% unless @supplier.website_online_ordering_page.blank? %><%= link_to "Order NOW!", @supplier.website_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
 							<hr><% end %>
 						</div>

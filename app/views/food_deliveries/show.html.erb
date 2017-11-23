@@ -18,8 +18,8 @@
 						<p><%= @food_delivery.delivery_hotline %></p>
 						<hr>
 						<% end %>
-							Social sites: <% unless @food_delivery.facebook_page.blank? %><%= link_to @food_delivery.facebook_page do %><i class="fa fa-facebook-official"></i><% end %><% end %>
-							<% unless @food_delivery.instagram_handle.blank? %><%= link_to @food_delivery.instagram_handle do %><i class="fa fa-instagram"></i><% end %><% end %></p><br>
+							Social sites: <% unless @food_delivery.facebook_page.blank? %><%= link_to @food_delivery.facebook_page do %><i class="fa fa-facebook-official fa-2x"></i><% end %><% end %>
+							<% unless @food_delivery.instagram_handle.blank? %><%= link_to @food_delivery.instagram_handle do %><i class="fa fa-instagram fa-2x"></i><% end %><% end %></p><br>
 							<% unless @food_delivery.link_to_online_ordering_page.blank? %><%= link_to "Order NOW!", @food_delivery.link_to_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
 							<% end %>
 							<hr>
