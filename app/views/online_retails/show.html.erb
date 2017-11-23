@@ -19,8 +19,8 @@
 						<p><% unless @online_retail.self_collect_location.blank? %>
 						<img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> <%= @online_retail.self_collect_location %><hr>
 						<% end %></p>
-							Social sites: <% unless @online_retail.facebook_page.blank? %><%= link_to @online_retail.facebook_page do %><i class="fa fa-facebook-official"></i><% end %><% end %>
-							<% unless @online_retail.instagram_handle.blank? %><%= link_to @online_retail.instagram_handle do %><i class="fa fa-instagram"></i><% end %><% end %></p><br>
+							Social sites: <% unless @online_retail.facebook_page.blank? %><%= link_to @online_retail.facebook_page do %><i class="fa fa-facebook-official fa-2x"></i><% end %><% end %>
+							<% unless @online_retail.instagram_handle.blank? %><%= link_to @online_retail.instagram_handle do %><i class="fa fa-instagram fa-2x"></i><% end %><% end %></p><br>
 							<% unless @online_retail.website_online_ordering_page.blank? %><%= link_to "Order NOW!", @online_retail.website_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
 							<hr><% end %>
 						</div>
