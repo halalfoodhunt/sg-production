@@ -13,9 +13,9 @@ Rails.application.routes.draw do
 
   get 'pages/privacy_policy'
   
-  get 'friends', to: 'pages#friends'
-  
   get 'listings/index'
+  
+  get '*path' => redirect('/')
   
   resources :baker_product_categories
   resources :baker_service_types
