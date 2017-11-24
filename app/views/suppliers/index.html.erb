@@ -10,8 +10,8 @@
             <div class ="col-xs-12 col-sm-12 col-md-4"></div>
             <div class ="col-xs-12 col-sm-12 col-md-12">
               <ul class="nav nav-tabs">
-                <li><a data-toggle="tab" href="#place" data-target="#place, #place1">Places</a></li>
-                <li class="active"><a data-toggle="tab" href="#homies" data-target="#homies, #homies1">Homies & Pop-Ups</a></li>
+                <li class="active"><a data-toggle="tab" href="#place" data-target="#place, #place1">Places</a></li>
+                <li><a data-toggle="tab" href="#homies" data-target="#homies, #homies1">Homies & Pop-Ups</a></li>
                 <li><a data-toggle="tab" href="#caterers" data-target="#caterers, #caterers1">Caterers</a></li>
                 <li><a data-toggle="tab" href="#deliveries" data-target="#deliveries, #deliveries1">Food Deliveries</a></li>
                 <li><a data-toggle="tab" href="#retails" data-target="#retails, #retails1">Online Retail</a></li>
@@ -20,9 +20,9 @@
                 <li><a data-toggle="tab" href="raw" data-target="#raw, #raw1"> Raw Foods</a></li>
               </ul>
               <div class="tab-content">
-                <div id="place" class="tab-pane fade">
+                <div id="place" class="tab-pane fade in active">
                  <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4);">
-                  <%= search_form_for(@search_places, :html => {:id => 'contact_form', :class => 'pix_form' }, url: places_path) do |f| %>
+                  <%= search_form_for(@search_places, :html => {:id => 'contact_form', :class => 'pix_form' }, url: root_path) do |f| %>
                   <div class="col-sm-12 col-md-12" style="padding:20px">
                     <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
                      <label for="Search" class="label-front">What kind of food are you looking for?</label>
@@ -37,10 +37,10 @@
               </div>
             </div>
             
-            <div id="homies" class="tab-pane fade in active">
+            <div id="homies" class="tab-pane fade">
              <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
               
-              <%= search_form_for(@search_homies, :html => {:id => 'contact_form', :class => 'pix_form' }, url: homies_path) do |f| %>
+              <%= search_form_for(@search_homies, :html => {:id => 'contact_form', :class => 'pix_form' }) do |f| %>
               <div class="col-sm-12 col-md-12" style="padding:20px">
                 <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
                  <label for="Search" class="label-front">What kind of food are you looking for?</label>
@@ -58,7 +58,7 @@
          <div id="caterers" class="tab-pane fade">
           <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
             
-            <%= search_form_for(@search_caterers, :html => {:id => 'contact_form', :class => 'pix_form' }, url: caterers_path) do |f| %>
+            <%= search_form_for(@search_caterers, :html => {:id => 'contact_form', :class => 'pix_form' }) do |f| %>
             <div class="col-sm-12 col-md-12" style="padding:20px">
               <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
                <label for="Search" class="label-front">What kind of catering are you looking for?</label>
@@ -76,7 +76,7 @@
        <div id="deliveries" class="tab-pane fade">
         <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
           
-          <%= search_form_for(@search_food_deliveries, :html => {:id => 'contact_form', :class => 'pix_form' }, url: food_deliveries_path) do |f| %>
+          <%= search_form_for(@search_food_deliveries, :html => {:id => 'contact_form', :class => 'pix_form' }) do |f| %>
           <div class="col-sm-12 col-md-12" style="padding:20px">
             <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
              <label for="Search" class="label-front">What kind of food are you looking for?</label>
@@ -95,7 +95,7 @@
      <div id="retails" class="tab-pane fade">
       <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
         
-        <%= search_form_for(@search_online_retails, :html => {:id => 'contact_form', :class => 'pix_form' }, url: online_retails_path) do |f| %>
+        <%= search_form_for(@search_online_retails, :html => {:id => 'contact_form', :class => 'pix_form' }) do |f| %>
         <div class="col-sm-12 col-md-12" style="padding:20px">
           <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
            <label for="Search" class="label-front">What kind of food are you looking for?</label>
@@ -114,7 +114,7 @@
    <div id="suppliers" class="tab-pane fade">
     <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
       
-      <%= search_form_for(@search_suppliers, :html => {:id => 'contact_form', :class => 'pix_form' }, url: suppliers_path) do |f| %>
+      <%= search_form_for(@search_suppliers, :html => {:id => 'contact_form', :class => 'pix_form' }) do |f| %>
       <div class="col-sm-12 col-md-12" style="padding:20px">
         <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
          <label for="Search" class="label-front">What kind of supplier are you looking for?</label>
@@ -133,7 +133,7 @@
  <div id="bakes" class="tab-pane fade">
    <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
     
-    <%= search_form_for(@search_bakers, :html => {:id => 'contact_form', :class => 'pix_form' }, url: bakers_path) do |f| %>
+    <%= search_form_for(@search_bakers, :html => {:id => 'contact_form', :class => 'pix_form' }) do |f| %>
     <div class="col-sm-12 col-md-12" style="padding:20px">
       <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
        <label for="Search" class="label-front">What kind of bakes & confectioners are you looking for?</label>
@@ -151,7 +151,7 @@
 <div id="raw" class="tab-pane fade">
   <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
     
-    <%= search_form_for(@search_raw_foods, :html => {:id => 'contact_form', :class => 'pix_form' }, url: raw_foods_path) do |f| %>
+    <%= search_form_for(@search_raw_foods, :html => {:id => 'contact_form', :class => 'pix_form' }) do |f| %>
     <div class="col-sm-12 col-md-12" style="padding:20px">
       <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
        <label for="Search" class="label-front">What kind of raw ingredients are you looking for?</label>
@@ -184,7 +184,7 @@
     <div class="container">
      <br>
      <div class="tab-content">
-       <div id="place1" class="tab-pane fade">
+       <div id="place1" class="tab-pane fade in active">
          
         <div class="container">
           
@@ -212,7 +212,7 @@
       
     </div>
     
-    <div id="homies1" class="tab-pane fade in active">
+    <div id="homies1" class="tab-pane fade">
       <div class="container">
         
         <div class="two-thirds column" style="padding:15px;"><h5>SHOWING <strong><u><%= @homies.count %></u></strong> HOMIES & POP-UPS IN SINGAPORE</h5></div>
