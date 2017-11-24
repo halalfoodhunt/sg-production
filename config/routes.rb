@@ -15,8 +15,6 @@ Rails.application.routes.draw do
   
   get 'listings/index'
   
-  get '*path' => redirect('/')
-  
   resources :baker_product_categories
   resources :baker_service_types
   resources :event_types
@@ -48,6 +46,8 @@ Rails.application.routes.draw do
   resources :places
   resources :listings
   devise_for :merchants, controllers: { registrations: "merchants/registrations", sessions: 'merchants/sessions' }
+  
+  get '*path' => redirect('/')
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
