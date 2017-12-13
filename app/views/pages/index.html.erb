@@ -249,13 +249,16 @@
 							<div class="two-thirds column" style="padding:15px;"><h5>SHOWING <strong><u><%= @caterers.count %></u></strong> CATERERS IN SINGAPORE</h5></div>
 							
 							<div class="one-third column">
-								<div class="dropdown" style="float:right;">
-									<button class="dropbtn">Sort by</button>
-									<div class="dropdown-content">
-										<%= sort_link(@search_caterers, :brand_name, 'A-Z', default_order: :asc) %>
-										<%= sort_link(@search_caterers, :brand_name, 'Z-A', default_order: :desc) %>
-										<%= sort_link(@search_caterers, :created_at, 'Recent', default_order: :desc) %>
-										<%= sort_link(@search_caterers, :created_at, 'Oldest', default_order: :asc) %>
+								<div class="col-xs-12 col-sm-12 col-md-12 text-right">
+								<div class="dropdown">
+									<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
+										<span class="caret"></span></button>
+										<ul class="dropdown-menu">
+											<li><center><h5><%= sort_link(@search_caterers, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
+											<li><center><h5><%= sort_link(@search_caterers, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
+											<li><center><h5><%= sort_link(@search_caterers, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+											<li><center><h5><%= sort_link(@search_caterers, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+										</ul>
 									</div>
 								</div>
 							</div>
