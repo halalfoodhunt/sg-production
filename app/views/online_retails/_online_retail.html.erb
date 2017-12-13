@@ -24,8 +24,8 @@
 				<div class="content">
 					<center><label><strong><%= link_to online_retail.brand_name, online_retail_path(online_retail) %></strong></label><br>
 						<div class="btn-group">
-							<%= link_to "View Merchant Details", online_retail_path(online_retail), :class => "btn btn-primary" %>
-							<% unless online_retail.website_online_ordering_page.blank? %><%= link_to "Order NOW!", online_retail.website_online_ordering_page, :class => "btn btn-primary" %>
+							<%= link_to "View Details", online_retail_path(online_retail), :class => "btn btn-primary" %>
+							<% unless online_retail.website_online_ordering_page.blank? %><%= link_to "Order", online_retail.website_online_ordering_page, :class => "btn btn-primary" %>
 							<% end %>
 						</div>
 					</center>
