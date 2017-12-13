@@ -20,7 +20,7 @@
                 <li><a data-toggle="tab" href="raw" data-target="#raw, #raw1"> Raw Foods</a></li>
               </ul>
               <div class="tab-content">
-                <div id="place" class="tab-pane fade in active">
+                <div id="place" class="tab-pane fade">
                  <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4);">
                   <%= search_form_for(@search_places, :html => {:id => 'contact_form', :class => 'pix_form' }, url: root_path) do |f| %>
                   <div class="col-sm-12 col-md-12" style="padding:20px">
@@ -37,7 +37,7 @@
               </div>
             </div>
             
-            <div id="homies" class="tab-pane fade">
+            <div id="homies" class="tab-pane fade in active">
              <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
               
               <%= search_form_for(@search_homies, :html => {:id => 'contact_form', :class => 'pix_form' }) do |f| %>
@@ -184,7 +184,7 @@
     <div class="container">
      <br>
      <div class="tab-content">
-       <div id="place1" class="tab-pane fade in active">
+       <div id="place1" class="tab-pane fade">
          
         <div class="container">
           
@@ -212,7 +212,7 @@
       
     </div>
     
-    <div id="homies1" class="tab-pane fade">
+    <div id="homies1" class="tab-pane fade in active">
       <div class="container">
         
         <div class="two-thirds column" style="padding:15px;"><h5>SHOWING <strong><u><%= @homies.count %></u></strong> HOMIES & POP-UPS IN SINGAPORE</h5></div>
