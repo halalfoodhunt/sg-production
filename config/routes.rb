@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   resources :online_retails
   resources :caterers
   resources :food_deliveries
-  resources :homies, as: 'pop-ups'
+  resources :homies
   resources :places
   resources :listings
   devise_for :merchants, controllers: { registrations: "merchants/registrations", sessions: 'merchants/sessions' }
