@@ -193,18 +193,14 @@
          </div>
          
          <div class="one-third column">
-           <div style="float:right;">
-            <div class="btn-group">
-										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-											SORT BY <span class="caret"></span></button>
-											<ul class="dropdown-menu" role="menu">
-												<li><center><h5><%= sort_link(@search_places, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
-												<li><center><h5><%= sort_link(@search_places, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
-												<li><center><h5><%= sort_link(@search_places, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-												<li><center><h5><%= sort_link(@search_places, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
-											</ul>
-										</div>
-									</div>
+           <div class="dropdown" style="float:right;">
+            <button class="dropbtn">Sort by</button>
+            <div class="dropdown-content">
+              <%= sort_link(@search_places, :brand_name, 'A-Z', default_order: :asc) %>
+              <%= sort_link(@search_places, :brand_name, 'Z-A', default_order: :desc) %>
+              <%= sort_link(@search_places, :created_at, 'Recent', default_order: :desc) %>
+              <%= sort_link(@search_places, :created_at, 'Oldest', default_order: :asc) %>
+            </div>
           </div>
         </div>
         
