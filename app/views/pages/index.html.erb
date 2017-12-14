@@ -285,7 +285,7 @@
                             <li><center><h5><%= sort_link(@search_food_deliveries, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
                             <li><center><h5><%= sort_link(@search_food_deliveries, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
                             <li><center><h5><%= sort_link(@search_food_deliveries, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-                            <li><center><h5><%= sort_link(@@search_food_deliveries, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                            <li><center><h5><%= sort_link(@search_food_deliveries, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
                           </ul>
                         </div>
                       </div>
