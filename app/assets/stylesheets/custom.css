@@ -169,6 +169,7 @@ img.color_flip:hover {
 
 .slick-prev::before, .slick-next::before {
   background: #000;
+  border-radius: 10px;
 }
 
 .slick-next {
