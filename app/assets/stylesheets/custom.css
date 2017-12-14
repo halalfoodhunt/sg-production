@@ -168,7 +168,7 @@ img.color_flip:hover {
 }
 
 .slick-prev::before, .slick-next::before {
-  color: #000;
+  background: #000;
 }
 
 .slick-next {
