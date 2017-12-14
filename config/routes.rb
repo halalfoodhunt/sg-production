@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   resources :place_types
   resources :qualifying_types
 
-  resources :bakers
+  resources :bakers, path: :bakers_and_confectioners
   resources :raw_foods
   resources :suppliers
   resources :online_retails
