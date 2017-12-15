@@ -102,7 +102,7 @@
 					<div class="event_box row pix_builder_bg">
 						<h3>FAQ</h3>
 						<h4 class="editContent"><strong>What do you recommend our users to try when they buy from you?</strong></h4>
-						<%= @supplier.question_1 %><br><br>
+						<%= @supplier.question_1.gsub(/\n/, '<br/>') %><br><br>
 					</div>
 				</div>
 			</div>
