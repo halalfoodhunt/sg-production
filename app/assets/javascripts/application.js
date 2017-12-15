@@ -14,10 +14,10 @@
 //= require jquery_ujs
 //= require jquery.slick
 //= require initialize
-//= require card
-//= require select2
 //= require twitter/bootstrap
 //= require turbolinks
+//= require card
+//= require select2
 //= require jquery.ui.effect-highlight
 //= require jquery.easing.1.3
 //= require jquery.popupoverlay
