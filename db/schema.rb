@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171030192818) do
+ActiveRecord::Schema.define(version: 20171120061825) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -140,6 +140,19 @@ ActiveRecord::Schema.define(version: 20171030192818) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "caterer_dish_items", force: :cascade do |t|
+    t.integer  "caterer_id"
+    t.integer  "caterer_menu_item_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "caterer_menu_items", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "caterer_service_types", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -186,8 +199,10 @@ ActiveRecord::Schema.define(version: 20171030192818) do
     t.integer  "caterer_service_type_id"
     t.integer  "event_type_id"
     t.string   "slug"
+    t.integer  "caterer_menu_item_id"
   end
 
+  add_index "caterers", ["caterer_menu_item_id"], name: "index_caterers_on_caterer_menu_item_id"
   add_index "caterers", ["caterer_service_type_id"], name: "index_caterers_on_caterer_service_type_id"
   add_index "caterers", ["caterer_type_id"], name: "index_caterers_on_caterer_type_id"
   add_index "caterers", ["cuisine_type_id"], name: "index_caterers_on_cuisine_type_id"
@@ -335,16 +350,31 @@ ActiveRecord::Schema.define(version: 20171030192818) do
     t.integer  "delivery_service_type_id"
     t.string   "slug"
     t.integer  "menu_item_id"
+    t.integer  "food_deliveries_menu_item_id"
   end
 
   add_index "food_deliveries", ["delivery_location_id"], name: "index_food_deliveries_on_delivery_location_id"
   add_index "food_deliveries", ["delivery_service_type_id"], name: "index_food_deliveries_on_delivery_service_type_id"
+  add_index "food_deliveries", ["food_deliveries_menu_item_id"], name: "index_food_deliveries_on_food_deliveries_menu_item_id"
   add_index "food_deliveries", ["listing_id"], name: "index_food_deliveries_on_listing_id"
   add_index "food_deliveries", ["main_ordering_method_id"], name: "index_food_deliveries_on_main_ordering_method_id"
   add_index "food_deliveries", ["merchant_id"], name: "index_food_deliveries_on_merchant_id"
   add_index "food_deliveries", ["qualifying_type_id"], name: "index_food_deliveries_on_qualifying_type_id"
   add_index "food_deliveries", ["reward_id"], name: "index_food_deliveries_on_reward_id"
   add_index "food_deliveries", ["slug"], name: "index_food_deliveries_on_slug", unique: true
+
+  create_table "food_deliveries_dish_items", force: :cascade do |t|
+    t.integer  "food_delivery_id"
+    t.integer  "food_deliveries_menu_item_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  create_table "food_deliveries_menu_items", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -421,10 +451,13 @@ ActiveRecord::Schema.define(version: 20171030192818) do
     t.text     "self_collect_location"
     t.integer  "homie_service_type_id"
     t.string   "slug"
+    t.integer  "homies_menu_item_id"
+    t.integer  "opening_hour_id"
   end
 
   add_index "homies", ["delivery_location_id"], name: "index_homies_on_delivery_location_id"
   add_index "homies", ["homie_service_type_id"], name: "index_homies_on_homie_service_type_id"
+  add_index "homies", ["homies_menu_item_id"], name: "index_homies_on_homies_menu_item_id"
   add_index "homies", ["homies_type_id"], name: "index_homies_on_homies_type_id"
   add_index "homies", ["listing_id"], name: "index_homies_on_listing_id"
   add_index "homies", ["merchant_id"], name: "index_homies_on_merchant_id"
@@ -432,6 +465,19 @@ ActiveRecord::Schema.define(version: 20171030192818) do
   add_index "homies", ["qualifying_type_id"], name: "index_homies_on_qualifying_type_id"
   add_index "homies", ["reward_id"], name: "index_homies_on_reward_id"
   add_index "homies", ["slug"], name: "index_homies_on_slug", unique: true
+
+  create_table "homies_dish_items", force: :cascade do |t|
+    t.integer  "homy_id"
+    t.integer  "homies_menu_item_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "homies_menu_items", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "homies_types", force: :cascade do |t|
     t.string   "name"
@@ -539,6 +585,7 @@ ActiveRecord::Schema.define(version: 20171030192818) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.integer  "supplier_id"
+    t.integer  "raw_food_id"
   end
 
   create_table "online_retails", force: :cascade do |t|
@@ -604,12 +651,14 @@ ActiveRecord::Schema.define(version: 20171030192818) do
     t.integer  "caterer_id"
     t.integer  "food_delivery_id"
     t.integer  "raw_food_id"
+    t.integer  "homy_id"
   end
 
   add_index "opening_hours", ["baker_id"], name: "index_opening_hours_on_baker_id"
   add_index "opening_hours", ["caterer_id"], name: "index_opening_hours_on_caterer_id"
   add_index "opening_hours", ["day_id"], name: "index_opening_hours_on_day_id"
   add_index "opening_hours", ["food_delivery_id"], name: "index_opening_hours_on_food_delivery_id"
+  add_index "opening_hours", ["homy_id"], name: "index_opening_hours_on_homy_id"
   add_index "opening_hours", ["place_id"], name: "index_opening_hours_on_place_id"
   add_index "opening_hours", ["raw_food_id"], name: "index_opening_hours_on_raw_food_id"
   add_index "opening_hours", ["supplier_id"], name: "index_opening_hours_on_supplier_id"
@@ -676,6 +725,7 @@ ActiveRecord::Schema.define(version: 20171030192818) do
     t.text     "on_the_menu"
     t.integer  "verifying_document_id"
     t.string   "slug"
+    t.text     "musollah_nearby"
   end
 
   add_index "places", ["dining_type_id"], name: "index_places_on_dining_type_id"
@@ -697,8 +747,13 @@ ActiveRecord::Schema.define(version: 20171030192818) do
 
   create_table "product_qualifying_types", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.text     "halal_summary"
   end
 
   create_table "product_types", force: :cascade do |t|
@@ -795,6 +850,7 @@ ActiveRecord::Schema.define(version: 20171030192818) do
     t.integer  "raw_food_id"
     t.integer  "supplier_id"
     t.integer  "baker_id"
+    t.string   "friends_code"
   end
 
   add_index "rewards", ["discount_id"], name: "index_rewards_on_discount_id"
