@@ -9,6 +9,18 @@ class HomiesController < ApplicationController
     @ordering_method_id = OrderingMethod.find_by(name: params[:ordering_method]).id
     @homies = Homy.joins(:booking_methods).where(booking_methods: {ordering_method_id: @ordering_method_id})
     @search_homies = Homy.ransack(params[:q])
+    elsif params[:delivery_location].present? 
+    @delivery_location_id = DeliveryLocation.find_by(name: params[:delivery_location]).id
+    @homies = Homy.joins(:shipping_locations).where(shipping_locations: {delivery_location_id: @delivery_location_id})
+    @search_homies = Homy.ransack(params[:q])
+    elsif params[:homie_service_type].present? 
+    @homie_service_type_id = HomieServiceType.find_by(name: params[:homie_service_type]).id
+    @homies = Homy.joins(:homie_work_types).where(homie_work_types: {homie_service_type_id: @homie_service_type_id})
+    @search_homies = Homy.ransack(params[:q])
+    elsif params[:homie_service_type].present? 
+    @homies_menu_item_id = HomiesMenuItem.find_by(name: params[:homies_menu_item]).id
+    @homies = Homy.joins(:homies_dish_items).where(homies_dish_items: {homies_menu_item_id: @homies_menu_item_id})
+    @search_homies = Homy.ransack(params[:q])
     else
     @search_homies = Homy.ransack(params[:q])
     @homies = @search_homies.result.order("created_at DESC").where(draft: false)
