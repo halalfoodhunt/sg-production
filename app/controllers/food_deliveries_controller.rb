@@ -11,7 +11,7 @@ class FoodDeliveriesController < ApplicationController
     @search_food_deliveries = FoodDelivery.ransack(params[:q])
     elsif params[:delivery_location].present? 
     @delivery_location_id = DeliveryLocation.find_by(name: params[:delivery_location]).id
-    @food_deliveries = FoodDelivery.joins(:cooking_service_types).where(cooking_service_types: {delivery_location_id: @delivery_location_id})
+    @food_deliveries = FoodDelivery.joins(:shipping_locations).where(shipping_locations: {delivery_location_id: @delivery_location_id})
     @search_food_deliveries = FoodDelivery.ransack(params[:q])
     elsif params[:delivery_service_type].present? 
     @delivery_service_type_id = DeliveryServiceType.find_by(name: params[:delivery_service_type]).id
