@@ -9,6 +9,10 @@ class PlacesController < ApplicationController
     @feature_id = Feature.find_by(name: params[:feature]).id
     @places = Place.joins(:highlights).where(highlights: {feature_id: @feature_id})
     @search_places = Place.ransack(params[:q])
+    elsif params[:menu_item].present? 
+    @menu_item_id = MenuItem.find_by(name: params[:menu_item]).id
+    @places = Place.joins(:dish_items).where(dish_items: {menu_item_id: @menu_item_id})
+    @search_places = Place.ransack(params[:q])
     else
     @search_places = Place.ransack(params[:q])
     @places = @search_places.result.order("created_at DESC").where(draft: false)
