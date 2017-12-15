@@ -9,16 +9,10 @@ class PlacesController < ApplicationController
     @feature_id = Feature.find_by(name: params[:feature]).id
     @places = Place.joins(:highlights).where(highlights: {feature_id: @feature_id})
     @search_places = Place.ransack(params[:q])
-    @search_homies = Homy.ransack(params[:q])
-    @search_caterers = Caterer.ransack(params[:q])
-    @search_food_deliveries = FoodDelivery.ransack(params[:q])
-    @search_online_retails = OnlineRetail.ransack(params[:q])
-    @search_suppliers = Supplier.ransack(params[:q])
-    @search_raw_foods = RawFood.ransack(params[:q])
-    @search_bakers = Baker.ransack(params[:q])
-    end
+    else
     @search_places = Place.ransack(params[:q])
     @places = @search_places.result.order("created_at DESC").where(draft: false)
+    end
     @search_homies = Homy.ransack(params[:q])
     @homies = @search_homies.result.order("created_at DESC").where(draft: false)
     @search_caterers = Caterer.ransack(params[:q])
