@@ -7,7 +7,7 @@ class PlacesController < ApplicationController
   def index
     if params[:feature].present? 
     @feature_id = Feature.find_by(name: params[:feature]).id
-    @places = Place.joins(:features).where(features: {feature_id: @feature_id}).where(draft: false)
+    @places = Place.joins(:features).where(features: {feature_id: @feature_id})
     @search_places = Place.ransack(params[:q])
     else
     @search_places = Place.ransack(params[:q])
