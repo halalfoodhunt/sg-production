@@ -1,4 +1,5 @@
 ActiveAdmin.register OnlineRetail do
+    config.batch_actions = true
     active_admin_importable
   
     permit_params [:logo, :brand_name, :general_contact_number, :general_email, :website_online_ordering_page, :facebook_page, :instagram_handle, :featured_image, :self_collection_address, :question_1, :halal_expiry, :expiry_date, :verified, :draft, :merchant_id, :listing_id, :product_qualifying_type_id, :rewards_attributes => [:id, :discount_id, :terms], :menus_attributes => [:id, :image, :name, :description, :price], :verifying_documents_attributes => [:id, :document],  ordering_method_ids: [], delivery_location_ids: [], menu_item_ids: [], online_retail_service_type_ids: [], product_category_ids: []]
@@ -61,6 +62,17 @@ ActiveAdmin.register OnlineRetail do
         end
       end
       f.actions
+  end
+  
+  scoped_collection_action :scoped_collection_update, form: -> do
+    { expiry_date: 'datepicker',
+      halal_expiry: 'datepicker',
+      merchant_id: Merchant.all.map { |merchant| [merchant.name, merchant.id] },
+      listing_id: Listing.all.map { |listing| [listing.name, listing.id] },
+      product_qualifying_type_id: ProductQualifyingType.all.map { |qualifying_type| [product_qualifying_type.name, product_qualifying_type.id] },
+      draft: [['Yes', 't'], ['No', 'f']],
+      verified: [['Yes', 't'], ['No', 'f']]
+    }
   end
   
   index do
