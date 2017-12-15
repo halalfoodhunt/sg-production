@@ -14,11 +14,11 @@ class CaterersController < ApplicationController
     @caterers = Caterer.joins(:cooking_service_types).where(cooking_service_types: {caterer_service_type_id: @caterer_service_type_id})
     @search_caterers = Caterer.ransack(params[:q])
     elsif params[:cuisine_type].present? 
-    @cuisine_type_id = CookingType.find_by(name: params[:cuisine_type]).id
+    @cuisine_type_id = CuisineType.find_by(name: params[:cuisine_type]).id
     @caterers = Caterer.joins(:cooking_types).where(cooking_types: {cuisine_type_id: @cuisine_type_id})
     @search_caterers = Caterer.ransack(params[:q])
     elsif params[:event_type].present? 
-    @event_type_id = DiningType.find_by(name: params[:event_type]).id
+    @event_type_id = EventType.find_by(name: params[:event_type]).id
     @caterers = Caterer.joins(:function_types).where(function_types: {event_type_id: @event_type_id})
     @search_caterers = Caterer.ransack(params[:q])
     else
