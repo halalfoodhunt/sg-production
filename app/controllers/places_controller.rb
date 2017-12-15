@@ -5,6 +5,11 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
+    if params[:feature].present? 
+    @feature_id = Feature.find_by(name: params[:feature]).id
+    @places = Place.joins(:features).where(features: {feature_id: @feature_id}).where(draft: false)
+    @search_places = Place.ransack(params[:q])
+    else
     @search_places = Place.ransack(params[:q])
     @places = @search_places.result.order("created_at DESC").where(draft: false)
     @search_homies = Homy.ransack(params[:q])
@@ -23,6 +28,7 @@ class PlacesController < ApplicationController
     @bakers = @search_bakers.result.order("created_at DESC").where(draft: false)
     @place_types = PlaceType.all
     @discounts = Discount.all
+    end
   end
 
   # GET /places/1
