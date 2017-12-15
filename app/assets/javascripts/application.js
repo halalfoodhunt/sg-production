@@ -16,7 +16,6 @@
 //= require initialize
 //= require twitter/bootstrap
 //= require turbolinks
-//= require select2
 //= require jquery.ui.effect-highlight
 //= require jquery.easing.1.3
 //= require jquery.popupoverlay
@@ -36,4 +35,5 @@
 //= require backbone
 //= require smoothscroll.min
 //= require card
+//= require select2
 //= require_tree .
