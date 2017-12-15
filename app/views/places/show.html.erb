@@ -11,10 +11,10 @@
 						<p class="headtext_style editContent" style="font-size:18px;"><span class="pix-text"><%= image_tag @place.logo.url(:medium), :class => "img-circle", :style => "height:80px; width:80px;" %> <%= @place.brand_name %></span></p><br>
 						<p class="normal_text margin_bottom normal_text red editContent"><i class="fa fa-map-marker"></i> <%= @place.operating_address %></p><hr>
 						<p class="normal_text margin_bottom normal_text red editContent"><i class="fa fa-map-marker"></i> <%= @place.location.name %></p><hr>
-						<p class="normal_text light_gray editContent"><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> <%= @place.general_outlet_contact_number %><hr>
+						<p class="normal_text margin_bottom normal_text red editContent"><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> <%= @place.general_outlet_contact_number %><hr>
 							<% unless @place.website.blank? %>
 							<img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/house.png" title="Monitor" width="16">
-							<%= link_to @place.website, "#{@place.website}" %>
+						<p class="normal_text margin_bottom normal_text red editContent"><%= link_to @place.website, "#{@place.website}" %></p>
 							<hr><% end %>
 							Social sites: <% unless @place.facebook_page.blank? %><%= link_to @place.facebook_page do %><i class="fa fa-facebook-official fa-2x"></i><% end %><% end %>
 							<% unless @place.instagram_handle.blank? %><%= link_to @place.instagram_handle do %><i class="fa fa-instagram fa-2x"></i><% end %><% end %></p><br>
