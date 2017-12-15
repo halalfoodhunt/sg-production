@@ -16,7 +16,7 @@ class PlacesController < ApplicationController
     @search_suppliers = Supplier.ransack(params[:q])
     @search_raw_foods = RawFood.ransack(params[:q])
     @search_bakers = Baker.ransack(params[:q])
-    else
+    end
     @search_places = Place.ransack(params[:q])
     @places = @search_places.result.order("created_at DESC").where(draft: false)
     @search_homies = Homy.ransack(params[:q])
@@ -35,7 +35,6 @@ class PlacesController < ApplicationController
     @bakers = @search_bakers.result.order("created_at DESC").where(draft: false)
     @place_types = PlaceType.all
     @discounts = Discount.all
-    end
   end
 
   # GET /places/1
