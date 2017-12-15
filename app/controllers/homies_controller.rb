@@ -5,10 +5,16 @@ class HomiesController < ApplicationController
   # GET /homies
   # GET /homies.json
   def index
-    @search_places = Place.ransack(params[:q])
-    @places = @search_places.result.order("created_at DESC").where(draft: false)
+    if params[:ordering_method].present? 
+    @ordering_method_id = OrderingMethod.find_by(name: params[:ordering_method]).id
+    @homies = Homy.joins(:booking_methods).where(booking_methods: {ordering_method_id: @ordering_method_id})
+    @search_homies = Homy.ransack(params[:q])
+    else
     @search_homies = Homy.ransack(params[:q])
     @homies = @search_homies.result.order("created_at DESC").where(draft: false)
+    end
+    @search_places = Place.ransack(params[:q])
+    @places = @search_places.result.order("created_at DESC").where(draft: false)
     @search_caterers = Caterer.ransack(params[:q])
     @caterers = @search_caterers.result.order("created_at DESC").where(draft: false)
     @search_food_deliveries = FoodDelivery.ransack(params[:q])

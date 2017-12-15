@@ -108,7 +108,7 @@
 						<div class="event_box row pix_builder_bg">
 							<h4>Ordering Methods</h4>
 							<% @homy.ordering_methods.each do |ordering_method| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p> <%= ordering_method.name %></p>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to ordering_method.name, homies_path(ordering_method: ordering_method.name) %></p>
 							</div>
 							<% end %>
 						</div>
