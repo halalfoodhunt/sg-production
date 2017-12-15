@@ -5,14 +5,28 @@ class FoodDeliveriesController < ApplicationController
   # GET /food_deliveries
   # GET /food_deliveries.json
   def index
+    if params[:food_delivery_menu_item].present? 
+    @food_delivery_menu_item_id = FoodDeliveryMenuItem.find_by(name: params[:food_delivery_menu_item]).id
+    @food_deliveries = FoodDelivery.joins(:food_delivery_dish_items).where(food_delivery_dish_items: {food_delivery_menu_item_id: @food_delivery_menu_item_id})
+    @search_food_deliveries = FoodDelivery.ransack(params[:q])
+    elsif params[:delivery_location].present? 
+    @delivery_location_id = DeliveryLocation.find_by(name: params[:delivery_location]).id
+    @food_deliveries = FoodDelivery.joins(:cooking_service_types).where(cooking_service_types: {delivery_location_id: @delivery_location_id})
+    @search_food_deliveries = FoodDelivery.ransack(params[:q])
+    elsif params[:delivery_service_type].present? 
+    @delivery_service_type_id = DeliveryServiceType.find_by(name: params[:delivery_service_type]).id
+    @food_deliveries = FoodDelivery.joins(:shipping_service_types).where(shipping_service_types: {delivery_service_type_id: @delivery_service_type_id})
+    @search_food_deliveries = FoodDelivery.ransack(params[:q])
+    else
+    @search_food_deliveries = FoodDelivery.ransack(params[:q])
+    @food_deliveries = @search_food_deliveries.result.order("created_at DESC").where(draft: false)
+    end
     @search_places = Place.ransack(params[:q])
     @places = @search_places.result.order("created_at DESC").where(draft: false)
     @search_homies = Homy.ransack(params[:q])
     @homies = @search_homies.result.order("created_at DESC").where(draft: false)
     @search_caterers = Caterer.ransack(params[:q])
     @caterers = @search_caterers.result.order("created_at DESC").where(draft: false)
-    @search_food_deliveries = FoodDelivery.ransack(params[:q])
-    @food_deliveries = @search_food_deliveries.result.order("created_at DESC").where(draft: false)
     @search_online_retails = OnlineRetail.ransack(params[:q])
     @online_retails = @search_online_retails.result.order("created_at DESC").where(draft: false)
     @search_suppliers = Supplier.ransack(params[:q])
