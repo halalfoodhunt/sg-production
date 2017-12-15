@@ -9,7 +9,7 @@
 				<div class="eight columns omega ">
 					<div class="highlight_inner">
 						<p class="headtext_style editContent" style="font-size:18px;"><span class="pix-text"><%= image_tag @caterer.logo.url(:large), :class => "img-circle", :style => "height:80px; width:80px;" %> <%= @caterer.brand_name %></span></p><br>
-						<hr><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> <% unless @caterer.general_contact_number.blank? %><%= @caterer.general_contact_number %><% end %></p>
+						<hr><p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> <% unless @caterer.general_contact_number.blank? %><%= @caterer.general_contact_number %><% end %></p><hr>
 							Social sites: <% unless @caterer.facebook_page.blank? %><%= link_to @caterer.facebook_page do %><i class="fa fa-facebook-official fa-2x"></i><% end %><% end %>
 							<% unless @caterer.instagram_handle.blank? %><%= link_to @caterer.instagram_handle do %><i class="fa fa-instagram fa-2x"></i><% end %><% end %></p><br>
 							<% unless @caterer.website_online_ordering_page.blank? %><%= link_to "Order NOW!", @caterer.website_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
@@ -103,28 +103,28 @@
 						<div class="event_box row pix_builder_bg">
 							<h4>Caterer Type</h4>
 							<% @caterer.caterer_types.each do |caterer_type| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p> <%= caterer_type.name %></p>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to caterer_type.name, caterers_path(caterer_type: caterer_type.name) %></p>
 							</div>
 							<% end %>
 						</div>
 						<div class="event_box row pix_builder_bg">
 							<h4>Caterer Service Types</h4>
 							<% @caterer.caterer_service_types.each do |caterer_service_type| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= caterer_service_type.name %></p>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to caterer_service_type.name, caterers_path(caterer_service_type: caterer_service_type.name) %></p>
 							</div>
 							<% end %>
 						</div>
 						<div class="event_box row pix_builder_bg">
 							<h4>Cuisine Types</h4>
 							<% @caterer.cuisine_types.each do |cuisine_type| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= cuisine_type.name %></p>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to cuisine_type.name, caterers_path(cuisine_type: cuisine_type.name) %></p>
 							</div>
 							<% end %>
 						</div>
 						<div class="event_box row pix_builder_bg">
 							<h4>Event Types</h4>
 							<% @caterer.event_types.each do |event_type| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= event_type.name %></p>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to event_type.name, caterers_path(event_type: event_type.name) %></p>
 							</div>
 							<% end %>
 						</div>
