@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require jquery.slick
 //= require initialize
+//= require card
+//= require select2
 //= require twitter/bootstrap
 //= require turbolinks
 //= require jquery.ui.effect-highlight
@@ -34,6 +36,4 @@
 //= require appear.min
 //= require backbone
 //= require smoothscroll.min
-//= require card
-//= require select2
 //= require_tree .
