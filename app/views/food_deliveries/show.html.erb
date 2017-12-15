@@ -11,11 +11,11 @@
 						<p class="headtext_style editContent" style="font-size:18px;"><span class="pix-text"><%= image_tag @food_delivery.logo.url(:large), :class => "img-circle", :style => "height:80px; width:80px;" %> <%= @food_delivery.brand_name %></span></p><br>
 						<hr>
 						<% unless @food_delivery.general_email.blank? %>
-						<p><%= @food_delivery.general_email %></p>
+						<p><i class="fa fa-envelope"></i> <%= @food_delivery.general_email %></p>
 						<hr>
 						<% end %>
 						<% unless @food_delivery.delivery_hotline.blank? %>
-						<p><%= @food_delivery.delivery_hotline %></p>
+						<p><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> <%= @food_delivery.delivery_hotline %></p>
 						<hr>
 						<% end %>
 							Social sites: <% unless @food_delivery.facebook_page.blank? %><%= link_to @food_delivery.facebook_page do %><i class="fa fa-facebook-official fa-2x"></i><% end %><% end %>
