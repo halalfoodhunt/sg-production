@@ -69,7 +69,7 @@ ActiveAdmin.register OnlineRetail do
       halal_expiry: 'datepicker',
       merchant_id: Merchant.all.map { |merchant| [merchant.name, merchant.id] },
       listing_id: Listing.all.map { |listing| [listing.name, listing.id] },
-      product_qualifying_type_id: ProductQualifyingType.all.map { |product_qualifying_type| [product_qualifying_type.name, product_qualifying_type.id] },
+      product_qualifying_type_id: [ProductQualifyingType.all.map { |product_qualifying_type| [product_qualifying_type.name, product_qualifying_type.id] }, {include_blank: 'Unverified'}],
       draft: [['Yes', 't'], ['No', 'f']],
       verified: [['Yes', 't'], ['No', 'f']]
     }
