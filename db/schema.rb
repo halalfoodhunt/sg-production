@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171120061825) do
+ActiveRecord::Schema.define(version: 20171216102819) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -45,6 +45,19 @@ ActiveRecord::Schema.define(version: 20171120061825) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+
+  create_table "baker_dish_items", force: :cascade do |t|
+    t.integer  "baker_id"
+    t.integer  "baker_menu_item_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "baker_menu_items", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "baker_product_categories", force: :cascade do |t|
     t.string   "name"
@@ -108,8 +121,10 @@ ActiveRecord::Schema.define(version: 20171120061825) do
     t.integer  "baker_product_category_id"
     t.integer  "menu_item_id"
     t.string   "slug"
+    t.integer  "baker_menu_item_id"
   end
 
+  add_index "bakers", ["baker_menu_item_id"], name: "index_bakers_on_baker_menu_item_id"
   add_index "bakers", ["baker_product_category_id"], name: "index_bakers_on_baker_product_category_id"
   add_index "bakers", ["baker_service_type_id"], name: "index_bakers_on_baker_service_type_id"
   add_index "bakers", ["baker_type_id"], name: "index_bakers_on_baker_type_id"
@@ -573,6 +588,19 @@ ActiveRecord::Schema.define(version: 20171120061825) do
   add_index "merchants", ["reset_password_token"], name: "index_merchants_on_reset_password_token", unique: true
   add_index "merchants", ["slug"], name: "index_merchants_on_slug", unique: true
 
+  create_table "online_retail_dish_items", force: :cascade do |t|
+    t.integer  "online_retail_id"
+    t.integer  "online_retail_menu_item_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "online_retail_menu_items", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "online_retail_service_types", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -625,12 +653,14 @@ ActiveRecord::Schema.define(version: 20171120061825) do
     t.integer  "product_category_id"
     t.integer  "product_qualifying_type_id"
     t.string   "slug"
+    t.integer  "online_retail_menu_item_id"
   end
 
   add_index "online_retails", ["delivery_location_id"], name: "index_online_retails_on_delivery_location_id"
   add_index "online_retails", ["listing_id"], name: "index_online_retails_on_listing_id"
   add_index "online_retails", ["menu_item_id"], name: "index_online_retails_on_menu_item_id"
   add_index "online_retails", ["merchant_id"], name: "index_online_retails_on_merchant_id"
+  add_index "online_retails", ["online_retail_menu_item_id"], name: "index_online_retails_on_online_retail_menu_item_id"
   add_index "online_retails", ["online_retail_service_type_id"], name: "index_online_retails_on_online_retail_service_type_id"
   add_index "online_retails", ["ordering_method_id"], name: "index_online_retails_on_ordering_method_id"
   add_index "online_retails", ["product_category_id"], name: "index_online_retails_on_product_category_id"
@@ -775,6 +805,19 @@ ActiveRecord::Schema.define(version: 20171120061825) do
     t.datetime "image_updated_at"
   end
 
+  create_table "raw_food_dish_items", force: :cascade do |t|
+    t.integer  "raw_food_id"
+    t.integer  "raw_food_menu_item_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  create_table "raw_food_menu_items", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "raw_food_product_categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -824,6 +867,7 @@ ActiveRecord::Schema.define(version: 20171120061825) do
     t.integer  "raw_food_product_category_id"
     t.integer  "product_qualifying_type_id"
     t.string   "slug"
+    t.integer  "raw_food_menu_item_id"
   end
 
   add_index "raw_foods", ["delivery_location_id"], name: "index_raw_foods_on_delivery_location_id"
@@ -833,6 +877,7 @@ ActiveRecord::Schema.define(version: 20171120061825) do
   add_index "raw_foods", ["ordering_method_id"], name: "index_raw_foods_on_ordering_method_id"
   add_index "raw_foods", ["product_qualifying_type_id"], name: "index_raw_foods_on_product_qualifying_type_id"
   add_index "raw_foods", ["qualifying_type_id"], name: "index_raw_foods_on_qualifying_type_id"
+  add_index "raw_foods", ["raw_food_menu_item_id"], name: "index_raw_foods_on_raw_food_menu_item_id"
   add_index "raw_foods", ["raw_food_product_category_id"], name: "index_raw_foods_on_raw_food_product_category_id"
   add_index "raw_foods", ["reward_id"], name: "index_raw_foods_on_reward_id"
   add_index "raw_foods", ["slug"], name: "index_raw_foods_on_slug", unique: true
@@ -874,6 +919,19 @@ ActiveRecord::Schema.define(version: 20171120061825) do
     t.datetime "updated_at",               null: false
   end
 
+  create_table "supplier_dish_items", force: :cascade do |t|
+    t.integer  "supplier_id"
+    t.integer  "supplier_menu_item_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  create_table "supplier_menu_items", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "suppliers", force: :cascade do |t|
     t.string   "brand_name"
     t.string   "general_contact_number"
@@ -910,6 +968,7 @@ ActiveRecord::Schema.define(version: 20171120061825) do
     t.integer  "online_retail_service_type_id"
     t.integer  "product_qualifying_type_id"
     t.string   "slug"
+    t.integer  "supplier_menu_item_id"
   end
 
   add_index "suppliers", ["delivery_location_id"], name: "index_suppliers_on_delivery_location_id"
@@ -922,6 +981,7 @@ ActiveRecord::Schema.define(version: 20171120061825) do
   add_index "suppliers", ["qualifying_type_id"], name: "index_suppliers_on_qualifying_type_id"
   add_index "suppliers", ["reward_id"], name: "index_suppliers_on_reward_id"
   add_index "suppliers", ["slug"], name: "index_suppliers_on_slug", unique: true
+  add_index "suppliers", ["supplier_menu_item_id"], name: "index_suppliers_on_supplier_menu_item_id"
 
   create_table "verifying_documents", force: :cascade do |t|
     t.string   "document_file_name"
