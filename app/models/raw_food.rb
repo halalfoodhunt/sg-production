@@ -13,6 +13,9 @@ class RawFood < ActiveRecord::Base
     self.halal_expiry =  Date.today + 365.days
   end
   
+  has_many :raw_food_menu_items, :through => :raw_food_dish_items, dependent: :destroy
+  has_many :raw_food_dish_items, dependent: :destroy
+  
   has_many :raw_food_product_categories, :through => :raw_food_product_types, dependent: :destroy
   has_many :raw_food_product_types, dependent: :destroy
   

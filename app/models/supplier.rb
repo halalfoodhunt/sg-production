@@ -13,6 +13,9 @@ class Supplier < ActiveRecord::Base
     self.halal_expiry =  Date.today + 365.days
   end
   
+  has_many :supplier_menu_items, :through => :supplier_dish_items, dependent: :destroy
+  has_many :supplier_dish_items, dependent: :destroy
+  
   has_many :product_categories, :through => :product_types, dependent: :destroy
   has_many :product_types, dependent: :destroy
   

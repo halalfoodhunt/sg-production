@@ -122,6 +122,6 @@ class CaterersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def caterer_params
-      params.require(:caterer).permit(:logo, :brand_name, :general_contact_number, :general_email, :website_online_ordering_page, :facebook_page, :instagram_handle, :featured_image, :question_1, :expiry_date, :halal_expiry, :verified, :draft, :merchant_id, :listing_id, :qualifying_type_id, :opening_hours_attributes => [:id, :day_id, :open, :close, :_destroy], :rewards_attributes => [:id, :discount_id, :terms], :menus_attributes => [:id, :image, :name, :description, :price], :verifying_documents_attributes => [:id, :document], caterer_type_ids: [], caterer_service_type_ids: [], cuisine_type_ids: [], event_type_ids: [])
+      params.require(:caterer).permit(:logo, :brand_name, :general_contact_number, :general_email, :website_online_ordering_page, :facebook_page, :instagram_handle, :featured_image, :question_1, :expiry_date, :halal_expiry, :verified, :draft, :merchant_id, :listing_id, :qualifying_type_id, :opening_hours_attributes => [:id, :day_id, :open, :close, :_destroy], :rewards_attributes => [:id, :discount_id, :terms], :menus_attributes => [:id, :image, :name, :description, :price], :verifying_documents_attributes => [:id, :document], caterer_type_ids: [], caterer_service_type_ids: [], cuisine_type_ids: [], event_type_ids: [], caterer_menu_item_ids: [])
     end
 end

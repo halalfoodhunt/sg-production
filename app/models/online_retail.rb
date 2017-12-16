@@ -16,8 +16,8 @@ class OnlineRetail < ActiveRecord::Base
   has_many :product_categories, :through => :product_types, dependent: :destroy
   has_many :product_types, dependent: :destroy
   
-  has_many :menu_items, :through => :dish_items, dependent: :destroy
-  has_many :dish_items, dependent: :destroy
+  has_many :online_retail_menu_items, :through => :online_retail_dish_items, dependent: :destroy
+  has_many :online_retail_dish_items, dependent: :destroy
   
   has_many :online_retail_service_types, :through => :online_retail_work_types, dependent: :destroy
   has_many :online_retail_work_types, dependent: :destroy

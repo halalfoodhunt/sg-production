@@ -1,9 +1,34 @@
 class OnlineRetailsController < ApplicationController
+  before_action :authenticate_merchant!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_online_retail, only: [:show, :edit, :update, :destroy]
 
   # GET /online_retails
   # GET /online_retails.json
   def index
+    if params[:ordering_method].present? 
+    @ordering_method_id = OrderingMethod.find_by(name: params[:ordering_method]).id
+    @online_retails = OnlineRetail.joins(:booking_methods).where(booking_methods: {ordering_method_id: @ordering_method_id})
+    @search_online_retails = OnlineRetail.ransack(params[:q])
+    elsif params[:delivery_location].present? 
+    @delivery_location_id = DeliveryLocation.find_by(name: params[:delivery_location]).id
+    @online_retails = OnlineRetail.joins(:shipping_locations).where(shipping_locations: {delivery_location_id: @delivery_location_id})
+    @search_online_retails = OnlineRetail.ransack(params[:q])
+    elsif params[:online_retail_service_type].present? 
+    @online_retail_service_type_id = OnlineRetailServiceType.find_by(name: params[:online_retail_service_type]).id
+    @online_retails = OnlineRetail.joins(:online_retail_work_types).where(online_retail_work_types: {online_retail_service_type_id: @online_retail_service_type_id})
+    @search_online_retails = OnlineRetail.ransack(params[:q])
+    elsif params[:product_category].present? 
+    @product_category_id = ProductCategory.find_by(name: params[:product_category]).id
+    @online_retails = OnlineRetail.joins(:product_types).where(product_types: {product_category_id: @product_category_id})
+    @search_online_retails = OnlineRetail.ransack(params[:q])
+    elsif params[:online_retail_menu_item].present? 
+    @online_retail_menu_item_id = OnlineRetailMenuItem.find_by(name: params[:online_retail_menu_item]).id
+    @online_retails = OnlineRetail.joins(:online_retail_dish_items).where(online_retail_dish_items: {online_retail_menu_item_id: @online_retail_menu_item_id})
+    @search_online_retails = OnlineRetail.ransack(params[:q])
+    else
+    @search_online_retails = OnlineRetail.ransack(params[:q])
+    @online_retails = @search_online_retails.result.order("created_at DESC").where(draft: false)
+    end
     @search_places = Place.ransack(params[:q])
     @places = @search_places.result.order("created_at DESC").where(draft: false)
     @search_homies = Homy.ransack(params[:q])
@@ -12,8 +37,6 @@ class OnlineRetailsController < ApplicationController
     @caterers = @search_caterers.result.order("created_at DESC").where(draft: false)
     @search_food_deliveries = FoodDelivery.ransack(params[:q])
     @food_deliveries = @search_food_deliveries.result.order("created_at DESC").where(draft: false)
-    @search_online_retails = OnlineRetail.ransack(params[:q])
-    @online_retails = @search_online_retails.result.order("created_at DESC").where(draft: false)
     @search_suppliers = Supplier.ransack(params[:q])
     @suppliers = @search_suppliers.result.order("created_at DESC").where(draft: false)
     @search_raw_foods = RawFood.ransack(params[:q])
@@ -103,6 +126,6 @@ class OnlineRetailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def online_retail_params
-      params.require(:online_retail).permit(:logo, :brand_name, :general_contact_number, :general_email, :website_online_ordering_page, :facebook_page, :instagram_handle, :featured_image, :self_collection_address, :question_1, :halal_expiry, :expiry_date, :verified, :draft, :merchant_id, :listing_id, :product_qualifying_type_id, :rewards_attributes => [:id, :discount_id, :terms], :menus_attributes => [:id, :image, :name, :description, :price], :verifying_documents_attributes => [:id, :document],  ordering_method_ids: [], delivery_location_ids: [], menu_item_ids: [], online_retail_service_type_ids: [], product_category_ids: [])
+      params.require(:online_retail).permit(:logo, :brand_name, :general_contact_number, :general_email, :website_online_ordering_page, :facebook_page, :instagram_handle, :featured_image, :self_collection_address, :question_1, :halal_expiry, :expiry_date, :verified, :draft, :merchant_id, :listing_id, :product_qualifying_type_id, :rewards_attributes => [:id, :discount_id, :terms], :menus_attributes => [:id, :image, :name, :description, :price], :verifying_documents_attributes => [:id, :document],  ordering_method_ids: [], delivery_location_ids: [], online_retail_menu_item_ids: [], online_retail_service_type_ids: [], product_category_ids: [])
     end
 end

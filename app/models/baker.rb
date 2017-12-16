@@ -13,8 +13,8 @@ class Baker < ActiveRecord::Base
     self.halal_expiry =  Date.today + 365.days
   end
   
-  has_many :menu_items, :through => :dish_items, dependent: :destroy
-  has_many :dish_items, dependent: :destroy
+  has_many :baker_menu_items, :through => :baker_dish_items, dependent: :destroy
+  has_many :baker_dish_items, dependent: :destroy
   
   has_many :baker_product_categories, :through => :baker_product_types, dependent: :destroy
   has_many :baker_product_types, dependent: :destroy
