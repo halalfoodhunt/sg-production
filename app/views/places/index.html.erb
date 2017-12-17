@@ -1,8 +1,10 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <%= search_form_for @search_places, url: places_path do |f| %>
-  <% MenuItem.all.uniq.each do |menu_item| %>
-  <div class ="col-xs-12 col-sm-12 col-md-4"><%= check_box_tag('search_places[menu_item_name_cont_any][]', menu_item.name) %> <%= menu_item.name %></div><br>
+  <%= f.label :menu_item, "Menu Item" %>
+  <% MenuItem.all.each do |menu_item| %>
+  <div class ="col-xs-12 col-sm-12 col-md-4">
+    <%= f.check_box :menu_item_id_in, {multiple: true}, menu_item.id, nil %> <%= menu_item.name %></div><br>
   <% end %>
   <%= f.submit "Search" %>
   <% end %>
