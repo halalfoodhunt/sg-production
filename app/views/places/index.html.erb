@@ -1,194 +1,182 @@
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <%= search_form_for @search_places, url: places_url do |f| %>
-  <div class ="col-xs-12 col-sm-12 col-md-2">
-    <% MenuItem.all.uniq.each do |menu_item| %>
-    <%= check_box_tag('q[menu_item_name_cont_any][]', menu_item.name) %>
-    <%= menu_item.name %><br>
-    <% end %>
-    <div>
-      <%= f.submit "Search" %>
-      <% end %>
-    </div>
-    <div class="extra_padding pix_builder_bg dark form_2_bg" id="section_normal_4_1" style="background: url(http://www.halalfoodhunt.com/images/media/WEBSITE-3.jpg) top; padding-top: 0px; padding-bottom: 40px; box-shadow: none; border-color: rgb(255, 255, 255); background-size: cover; background-attachment: scroll; background-repeat: no-repeat; outline-offset: -3px;" src="http://www.halalfoodhunt.com/images/media/WEBSITE-3.jpg">
-      <div class="container">
-        <div class="sixteen columns">
-          <div class="sixteen columns alpha">
-            <div class="">
-              <div class="substyle pix_builder_bg">
-                <div class ="col-xs-12 col-sm-12 col-md-8">
-                  <h1 style="font-family: 'Muli', sans-serif; font-weight:700; color:#444;">Discover and verify<br></h1><h3 style="margin-top: 0; color:#333;">your halal food choices here!</h3>
-                </div>
-                <div class ="col-xs-12 col-sm-12 col-md-4"></div>
-                <div class ="col-xs-12 col-sm-12 col-md-12">
-                  <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#place" data-target="#place, #place1">Places</a></li>
-                    <li><a data-toggle="tab" href="#homies" data-target="#homies, #homies1">Homies & Pop-Ups</a></li>
-                    <li><a data-toggle="tab" href="#caterers" data-target="#caterers, #caterers1">Caterers</a></li>
-                    <li><a data-toggle="tab" href="#deliveries" data-target="#deliveries, #deliveries1">Food Deliveries</a></li>
-                    <li><a data-toggle="tab" href="#retails" data-target="#retails, #retails1">Online Retail</a></li>
-                    <li><a data-toggle="tab" href="#suppliers" data-target="#suppliers, #suppliers1">Suppliers</a></li>
-                    <li><a data-toggle="tab" href="#bakes" data-target="#bakes, #bakes1">Bakers & Confectioners</a></li>
-                    <li><a data-toggle="tab" href="raw" data-target="#raw, #raw1"> Raw Foods</a></li>
-                  </ul>
-                  <div class="tab-content">
-                    <div id="place" class="tab-pane fade in active">
-                      <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4);">
-                        <%= search_form_for(@search_places, :html => {:id => 'contact_form', :class => 'pix_form' }, url: places_path) do |f| %>
-                        <div class="col-sm-12 col-md-12" style="padding:20px">
-                          <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-                            <label for="Search" class="label-front">What kind of food are you looking for?</label>
-                            <%= f.text_field :brand_name_or_question_1_or_operating_address_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Nasi, Rojak, etc." %>
-                          </div>
-                          <br>
-                          <div>
-                            <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %><center><span onclick="openNav()" style="color:#333;">Advanced Search</span></center>
-                          </div>
-                          <% end %>
-                        </div>
+<div class="extra_padding pix_builder_bg dark form_2_bg" id="section_normal_4_1" style="background: url(http://www.halalfoodhunt.com/images/media/WEBSITE-3.jpg) top; padding-top: 0px; padding-bottom: 40px; box-shadow: none; border-color: rgb(255, 255, 255); background-size: cover; background-attachment: scroll; background-repeat: no-repeat; outline-offset: -3px;" src="http://www.halalfoodhunt.com/images/media/WEBSITE-3.jpg">
+  <div class="container">
+    <div class="sixteen columns">
+      <div class="sixteen columns alpha">
+        <div class="">
+          <div class="substyle pix_builder_bg">
+            <div class ="col-xs-12 col-sm-12 col-md-8">
+              <h1 style="font-family: 'Muli', sans-serif; font-weight:700; color:#444;">Discover and verify<br></h1><h3 style="margin-top: 0; color:#333;">your halal food choices here!</h3>
+            </div>
+            <div class ="col-xs-12 col-sm-12 col-md-4"></div>
+            <div class ="col-xs-12 col-sm-12 col-md-12">
+              <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#place" data-target="#place, #place1">Places</a></li>
+                <li><a data-toggle="tab" href="#homies" data-target="#homies, #homies1">Homies & Pop-Ups</a></li>
+                <li><a data-toggle="tab" href="#caterers" data-target="#caterers, #caterers1">Caterers</a></li>
+                <li><a data-toggle="tab" href="#deliveries" data-target="#deliveries, #deliveries1">Food Deliveries</a></li>
+                <li><a data-toggle="tab" href="#retails" data-target="#retails, #retails1">Online Retail</a></li>
+                <li><a data-toggle="tab" href="#suppliers" data-target="#suppliers, #suppliers1">Suppliers</a></li>
+                <li><a data-toggle="tab" href="#bakes" data-target="#bakes, #bakes1">Bakers & Confectioners</a></li>
+                <li><a data-toggle="tab" href="raw" data-target="#raw, #raw1"> Raw Foods</a></li>
+              </ul>
+              <div class="tab-content">
+                <div id="place" class="tab-pane fade in active">
+                  <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4);">
+                    <%= search_form_for(@search_places, :html => {:id => 'contact_form', :class => 'pix_form' }, url: places_path) do |f| %>
+                    <div class="col-sm-12 col-md-12" style="padding:20px">
+                      <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+                        <label for="Search" class="label-front">What kind of food are you looking for?</label>
+                        <%= f.text_field :brand_name_or_question_1_or_operating_address_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Nasi, Rojak, etc." %>
                       </div>
-                    </div>
-                    
-                    <div id="homies" class="tab-pane fade">
-                      <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
-                        
-                        <%= search_form_for(@search_homies, :html => {:id => 'contact_form', :class => 'pix_form' }, url: homies_path) do |f| %>
-                        <div class="col-sm-12 col-md-12" style="padding:20px">
-                          <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-                            <label for="Search" class="label-front">What kind of food are you looking for?</label>
-                            <%= f.text_field :brand_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Nasi, Rojak, etc." %>
-                          </div>
-                          <br>
-                          <div>
-                            <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
-                          </div>
-                          <% end %>
-                        </div>
+                      <br>
+                      <div>
+                        <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %><center><span onclick="openNav()" style="color:#333;">Advanced Search</span></center>
                       </div>
-                    </div>
-                    
-                    <div id="caterers" class="tab-pane fade">
-                      <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
-                        
-                        <%= search_form_for(@search_caterers, :html => {:id => 'contact_form', :class => 'pix_form' }, url: caterers_path) do |f| %>
-                        <div class="col-sm-12 col-md-12" style="padding:20px">
-                          <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-                            <label for="Search" class="label-front">What kind of catering are you looking for?</label>
-                            <%= f.text_field :brand_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Wedding, Seminar etc." %>
-                          </div>
-                          <br>
-                          <div>
-                            <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
-                          </div>
-                          <% end %>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div id="deliveries" class="tab-pane fade">
-                      <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
-                        
-                        <%= search_form_for(@search_food_deliveries, :html => {:id => 'contact_form', :class => 'pix_form' }, url: food_deliveries_path) do |f| %>
-                        <div class="col-sm-12 col-md-12" style="padding:20px">
-                          <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-                            <label for="Search" class="label-front">What kind of food are you looking for?</label>
-                            <%= f.text_field :brand_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Sushi, Healthy etc." %>
-                          </div>
-                          <br>
-                          <div>
-                            <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
-                          </div>
-                          <% end %>
-                        </div>
-                        
-                      </div>
-                    </div>
-
-                    <div id="retails" class="tab-pane fade">
-                      <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
-                        
-                        <%= search_form_for(@search_online_retails, :html => {:id => 'contact_form', :class => 'pix_form' }, url: online_retails_path) do |f| %>
-                        <div class="col-sm-12 col-md-12" style="padding:20px">
-                          <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-                            <label for="Search" class="label-front">What kind of food are you looking for?</label>
-                            <%= f.text_field :brand_name_cont_any, class: "form-control", :style => "height:42px;", placeholder: "Type: Home-made Milk, Frozen Satay" %>
-                          </div>
-                          <br>
-                          <div>
-                            <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
-                          </div>
-                          <% end %>
-                        </div>
-                        
-                      </div>
-                    </div>
-
-                    <div id="suppliers" class="tab-pane fade">
-                      <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
-                        
-                        <%= search_form_for(@search_suppliers, :html => {:id => 'contact_form', :class => 'pix_form' }, url: suppliers_path) do |f| %>
-                        <div class="col-sm-12 col-md-12" style="padding:20px">
-                          <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-                            <label for="Search" class="label-front">What kind of supplier are you looking for?</label>
-                            <%= f.text_field :brand_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Berkat, Frozen Satay" %>
-                          </div>
-                          <br>
-                          <div>
-                            <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
-                          </div>
-                          <% end %>
-                        </div>
-                        
-                      </div>
-                    </div>
-
-                    <div id="bakes" class="tab-pane fade">
-                      <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
-                        
-                        <%= search_form_for(@search_bakers, :html => {:id => 'contact_form', :class => 'pix_form' }, url: bakers_path) do |f| %>
-                        <div class="col-sm-12 col-md-12" style="padding:20px">
-                          <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-                            <label for="Search" class="label-front">What kind of bakes & confectioners are you looking for?</label>
-                            <%= f.text_field :brand_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Birthday Cakes, Raya Cookies etc." %><br>
-                          </div>
-                          <div>
-                            <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
-                          </div>
-                          <% end %>
-                        </div>
-
-                      </div>
-                    </div>
-
-                    <div id="raw" class="tab-pane fade">
-                      <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
-                        
-                        <%= search_form_for(@search_raw_foods, :html => {:id => 'contact_form', :class => 'pix_form' }, url: raw_foods_path) do |f| %>
-                        <div class="col-sm-12 col-md-12" style="padding:20px">
-                          <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
-                            <label for="Search" class="label-front">What kind of raw ingredients are you looking for?</label>
-                            <%= f.text_field :brand_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Berkat, Frozen Satay" %>
-                          </div>
-                          <br>
-                          <div>
-                            <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
-                          </div>
-                          <% end %>
-                        </div>
-                        
-                      </div>
-                      
+                      <% end %>
                     </div>
                   </div>
+                </div>
+                
+                <div id="homies" class="tab-pane fade">
+                  <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
+                    
+                    <%= search_form_for(@search_homies, :html => {:id => 'contact_form', :class => 'pix_form' }, url: homies_path) do |f| %>
+                    <div class="col-sm-12 col-md-12" style="padding:20px">
+                      <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+                        <label for="Search" class="label-front">What kind of food are you looking for?</label>
+                        <%= f.text_field :brand_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Nasi, Rojak, etc." %>
+                      </div>
+                      <br>
+                      <div>
+                        <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+                      </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="caterers" class="tab-pane fade">
+                  <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
+                    
+                    <%= search_form_for(@search_caterers, :html => {:id => 'contact_form', :class => 'pix_form' }, url: caterers_path) do |f| %>
+                    <div class="col-sm-12 col-md-12" style="padding:20px">
+                      <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+                        <label for="Search" class="label-front">What kind of catering are you looking for?</label>
+                        <%= f.text_field :brand_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Wedding, Seminar etc." %>
+                      </div>
+                      <br>
+                      <div>
+                        <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+                      </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="deliveries" class="tab-pane fade">
+                  <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
+                    
+                    <%= search_form_for(@search_food_deliveries, :html => {:id => 'contact_form', :class => 'pix_form' }, url: food_deliveries_path) do |f| %>
+                    <div class="col-sm-12 col-md-12" style="padding:20px">
+                      <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+                        <label for="Search" class="label-front">What kind of food are you looking for?</label>
+                        <%= f.text_field :brand_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Sushi, Healthy etc." %>
+                      </div>
+                      <br>
+                      <div>
+                        <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+                      </div>
+                      <% end %>
+                    </div>
+                    
+                  </div>
+                </div>
 
+                <div id="retails" class="tab-pane fade">
+                  <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
+                    
+                    <%= search_form_for(@search_online_retails, :html => {:id => 'contact_form', :class => 'pix_form' }, url: online_retails_path) do |f| %>
+                    <div class="col-sm-12 col-md-12" style="padding:20px">
+                      <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+                        <label for="Search" class="label-front">What kind of food are you looking for?</label>
+                        <%= f.text_field :brand_name_cont_any, class: "form-control", :style => "height:42px;", placeholder: "Type: Home-made Milk, Frozen Satay" %>
+                      </div>
+                      <br>
+                      <div>
+                        <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+                      </div>
+                      <% end %>
+                    </div>
+                    
+                  </div>
+                </div>
+
+                <div id="suppliers" class="tab-pane fade">
+                  <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
+                    
+                    <%= search_form_for(@search_suppliers, :html => {:id => 'contact_form', :class => 'pix_form' }, url: suppliers_path) do |f| %>
+                    <div class="col-sm-12 col-md-12" style="padding:20px">
+                      <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+                        <label for="Search" class="label-front">What kind of supplier are you looking for?</label>
+                        <%= f.text_field :brand_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Berkat, Frozen Satay" %>
+                      </div>
+                      <br>
+                      <div>
+                        <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+                      </div>
+                      <% end %>
+                    </div>
+                    
+                  </div>
+                </div>
+
+                <div id="bakes" class="tab-pane fade">
+                  <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
+                    
+                    <%= search_form_for(@search_bakers, :html => {:id => 'contact_form', :class => 'pix_form' }, url: bakers_path) do |f| %>
+                    <div class="col-sm-12 col-md-12" style="padding:20px">
+                      <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+                        <label for="Search" class="label-front">What kind of bakes & confectioners are you looking for?</label>
+                        <%= f.text_field :brand_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Birthday Cakes, Raya Cookies etc." %><br>
+                      </div>
+                      <div>
+                        <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+                      </div>
+                      <% end %>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div id="raw" class="tab-pane fade">
+                  <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4)">
+                    
+                    <%= search_form_for(@search_raw_foods, :html => {:id => 'contact_form', :class => 'pix_form' }, url: raw_foods_path) do |f| %>
+                    <div class="col-sm-12 col-md-12" style="padding:20px">
+                      <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
+                        <label for="Search" class="label-front">What kind of raw ingredients are you looking for?</label>
+                        <%= f.text_field :brand_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Berkat, Frozen Satay" %>
+                      </div>
+                      <br>
+                      <div>
+                        <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+                      </div>
+                      <% end %>
+                    </div>
+                    
+                  </div>
+                  
                 </div>
               </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>
 </div>
 <div id="section_hotel_4_1">
@@ -497,3 +485,15 @@
                 </div>
               </div>
             </div>
+            <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <%= search_form_for @search_places, url: places_url do |f| %>
+              <div class ="col-xs-12 col-sm-12 col-md-2">
+                <% MenuItem.all.uniq.each do |menu_item| %>
+                <%= check_box_tag('q[menu_item_name_cont_any][]', menu_item.name) %>
+                <%= menu_item.name %><br>
+                <% end %>
+                <div>
+                  <%= f.submit "Search" %>
+                  <% end %>
+                </div>
