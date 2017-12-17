@@ -5,12 +5,6 @@
   <a href="#">Clients</a>
   <a href="#">Contact</a>
 </div>
-
-<!-- Use any element to open the sidenav -->
-<span onclick="openNav()">open</span>
-
-<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-<div id="main">
 <div class="extra_padding pix_builder_bg dark form_2_bg" id="section_normal_4_1" style="background: url(http://www.halalfoodhunt.com/images/media/WEBSITE-3.jpg) top; padding-top: 0px; padding-bottom: 40px; box-shadow: none; border-color: rgb(255, 255, 255); background-size: cover; background-attachment: scroll; background-repeat: no-repeat; outline-offset: -3px;" src="http://www.halalfoodhunt.com/images/media/WEBSITE-3.jpg">
   <div class="container">
     <div class="sixteen columns">
@@ -43,7 +37,7 @@
                       </div>
                       <br>
                       <div>
-                        <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+                        <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %><br><center><span onclick="openNav()">Advanced Search</span></center>
                       </div>
                       <% end %>
                     </div>
@@ -498,4 +492,3 @@
                     </div>
                   </div>
                 </div>
-</div>
