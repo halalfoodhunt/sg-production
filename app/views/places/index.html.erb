@@ -1,3 +1,20 @@
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <%= search_form_for @search_places do |f| %>
+  <div class="col-sm-12 col-md-12">
+    <%= f.collection_check_boxes(:menu_items_id_eq_any, MenuItem.all, :id, :name, {:class=>'form-control'}) %><br>
+    <%= f.collection_check_boxes(:dining_types_id_eq_any, DiningType.all, :id, :name, {:class=>'form-control'}) %>
+  </div>
+  <div class="col-sm-12 col-md-12">
+    <%= f.collection_check_boxes(:features_id_eq_any, Feature.all, :id, :name, {:class=>'form-control'}) %><br>
+    <%= f.collection_check_boxes(:location_id_eq, Location.order(:name), :id, :name, {:class=>'form-control'}) %><br>
+  </div>
+  <br>
+  <div>
+    <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+  </div>
+  <% end %>
+</div>
 <div class="extra_padding pix_builder_bg dark form_2_bg" id="section_normal_4_1" style="background: url(http://www.halalfoodhunt.com/images/media/WEBSITE-3.jpg) top; padding-top: 0px; padding-bottom: 40px; box-shadow: none; border-color: rgb(255, 255, 255); background-size: cover; background-attachment: scroll; background-repeat: no-repeat; outline-offset: -3px;" src="http://www.halalfoodhunt.com/images/media/WEBSITE-3.jpg">
   <div class="container">
     <div class="sixteen columns">
@@ -30,7 +47,7 @@
                       </div>
                       <br>
                       <div>
-                        <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
+                        <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %><center><span onclick="openNav()" style="color:#333;">Advanced Search</span></center>
                       </div>
                       <% end %>
                     </div>
