@@ -1,7 +1,7 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="col-xs-12 col-sm-12 col-md-12">
-    <button class="btn btn-block btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
       Filter Menu Items
     </button>
     <%= search_form_for @search_places, url: places_path do |f| %>
@@ -15,7 +15,7 @@
         <% end %>
       </div>
     </div>
-    <button class="btn btn-block btn-success" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+    <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
       Filter Features
     </button>
     <div class="collapse" id="collapseExample2">
