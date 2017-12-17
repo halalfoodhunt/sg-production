@@ -2,7 +2,7 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <%= search_form_for @search_places, url: places_path do |f| %>
   <% MenuItem.all.uniq.each do |menu_item| %>
-  <%= check_box_tag('search_places[menu_item_name_cont_any][]', menu_item.name) %> <%= menu_item.name %><br>
+  <div class ="col-xs-12 col-sm-12 col-md-4"><%= check_box_tag('search_places[menu_item_name_cont_any][]', menu_item.name) %> <%= menu_item.name %></div><br>
   <% end %>
   <%= f.submit "Search" %>
   <% end %>
