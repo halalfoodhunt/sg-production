@@ -41,6 +41,19 @@
         <% end %>
       </div>
     </div>
+    <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4" style="margin-bottom:10px;">
+      Filter by Location
+    </button>
+    <div class="collapse" id="collapseExample4">
+      <div class="card card-body">
+        <%= f.label "Dining Type" %><br>
+        <%= f.collection_check_boxes :location_id_in_any, Location.all, :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-6">
+          <%= b.check_box %> <%= b.label %>
+        </div>
+        <% end %>
+      </div>
+    </div>
     <%= f.submit "Search", :class => "btn btn-block btn-default", :style => "padding:10px;" %>
     <% end %>
   </div>
