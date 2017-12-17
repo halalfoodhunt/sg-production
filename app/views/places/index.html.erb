@@ -16,12 +16,25 @@
       </div>
     </div>
     <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
-      Filter Features
+      Filter by Features
     </button>
     <div class="collapse" id="collapseExample2">
       <div class="card card-body">
         <%= f.label "Feature" %><br />
         <%= f.collection_check_boxes :features_id_in_any, Feature.all, :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <%= b.check_box %> <%= b.label %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
+      Filter by Dining Types
+    </button>
+    <div class="collapse" id="collapseExample3">
+      <div class="card card-body">
+        <%= f.label "Dining Type" %><br />
+        <%= f.collection_check_boxes :dining_types_id_in_any, DiningType.all, :id, :name do |b| %>
         <div class="col-xs-12 col-sm-12 col-md-12">
           <%= b.check_box %> <%= b.label %>
         </div>
