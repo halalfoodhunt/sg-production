@@ -7,7 +7,7 @@
     <%= search_form_for @search_places, url: places_path do |f| %>
     <div class="collapse" id="collapseExample">
       <div class="card card-body">
-        <%= f.label "Menu Items" %>
+        <%= f.label "Menu Items" %><br>
         <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.all, :id, :name do |b| %>
         <div class="col-xs-12 col-sm-12 col-md-6">
           <%= b.check_box %> <%= b.label %>
@@ -20,7 +20,7 @@
     </button>
     <div class="collapse" id="collapseExample2">
       <div class="card card-body">
-        <%= f.label "Feature" %>
+        <%= f.label "Feature" %><br>
         <%= f.collection_check_boxes :features_id_in_any, Feature.all, :id, :name do |b| %>
         <div class="col-xs-12 col-sm-12 col-md-12">
           <%= b.check_box %> <%= b.label %>
@@ -33,7 +33,7 @@
     </button>
     <div class="collapse" id="collapseExample3">
       <div class="card card-body">
-        <%= f.label "Dining Type" %>
+        <%= f.label "Dining Type" %><br>
         <%= f.collection_check_boxes :dining_types_id_in_any, DiningType.all, :id, :name do |b| %>
         <div class="col-xs-12 col-sm-12 col-md-6">
           <%= b.check_box %> <%= b.label %>
