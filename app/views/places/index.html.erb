@@ -1,15 +1,65 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <%= search_form_for @search_places, url: places_path do |f| %>
-  <%= f.label "Mebu Items" %><br />
-  <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.all, :id, :name do |b| %>
-  <div class="col-xs-12 col-sm-12 col-md-6">
-    <%= b.check_box %>
-    <%= b.label %>
+  <div id="accordion" role="tablist">
+    <div class="card">
+      <div class="card-header" role="tab" id="headingOne">
+        <h5 class="mb-0">
+          <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Filter by Menu Items
+          </a>
+        </h5>
+      </div>
+
+      <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+         <%= search_form_for @search_places, url: places_path do |f| %>
+         <%= f.label "Menu Items" %><br />
+         <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.all, :id, :name do |b| %>
+         <div class="col-xs-12 col-sm-12 col-md-6">
+          <%= b.check_box %>
+          <%= b.label %>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <% end %>
-  <%= f.submit "Search" %>
-  <% end %>
+  <div class="card">
+    <div class="card-header" role="tab" id="headingTwo">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Filter by Features
+        </a>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+         <%= f.label "Features" %><br />
+         <%= f.collection_check_boxes :features_id_in_any, Feature.all, :id, :name do |b| %>
+         <div class="col-xs-12 col-sm-12 col-md-6">
+          <%= b.check_box %>
+          <%= b.label %>
+          <% end %>
+        </div>
+        <%= f.submit "Search" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="headingThree">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Filter by Dining Types
+        </a>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 <div class="extra_padding pix_builder_bg dark form_2_bg" id="section_normal_4_1" style="background: url(http://www.halalfoodhunt.com/images/media/WEBSITE-3.jpg) top; padding-top: 0px; padding-bottom: 40px; box-shadow: none; border-color: rgb(255, 255, 255); background-size: cover; background-attachment: scroll; background-repeat: no-repeat; outline-offset: -3px;" src="http://www.halalfoodhunt.com/images/media/WEBSITE-3.jpg">
   <div class="container">
@@ -43,7 +93,7 @@
                       </div>
                       <br>
                       <div>
-                        <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %><center><span onclick="openNav()" style="color:#333;">Advanced Search</span></center>
+                        <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %><center><span onclick="openNav()" style="color:#333; cursor:hand">Advanced Search</span></center>
                       </div>
                       <% end %>
                     </div>
