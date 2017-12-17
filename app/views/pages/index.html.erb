@@ -1,6 +1,6 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <%= search_form_for (@search_places) url: places_path do |f| %>
+  <%= search_form_for @search_places do |f| %>
   <div class="col-sm-12 col-md-12">
     <%= f.collection_check_boxes(:menu_items_id_eq_any, MenuItem.all, :id, :name, {:class=>'form-control'}) %><br>
     <%= f.collection_check_boxes(:dining_types_id_eq_any, DiningType.all, :id, :name, {:class=>'form-control'}) %>
