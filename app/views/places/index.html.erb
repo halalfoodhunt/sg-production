@@ -1,3 +1,13 @@
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <%= search_form_for @search_places, url: places_url do |f| %>">
+  <% MenuItem.all.uniq.each do |menu_item| %>
+  <%= check_box_tag('q[menu_item_name_cont_any][]', menu_item.name) %>
+  <%= menu_item.name %><br>
+  <% end %>
+  <%= f.submit "Search" %>
+  <% end %>
+</div>
 <div class="extra_padding pix_builder_bg dark form_2_bg" id="section_normal_4_1" style="background: url(http://www.halalfoodhunt.com/images/media/WEBSITE-3.jpg) top; padding-top: 0px; padding-bottom: 40px; box-shadow: none; border-color: rgb(255, 255, 255); background-size: cover; background-attachment: scroll; background-repeat: no-repeat; outline-offset: -3px;" src="http://www.halalfoodhunt.com/images/media/WEBSITE-3.jpg">
   <div class="container">
     <div class="sixteen columns">
@@ -485,15 +495,3 @@
                 </div>
               </div>
             </div>
-            <div id="mySidenav" class="sidenav">
-              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-              <%= search_form_for @search_places, url: places_url do |f| %>
-              <div class ="col-xs-12 col-sm-12 col-md-2">
-                <% MenuItem.all.uniq.each do |menu_item| %>
-                <%= check_box_tag('q[menu_item_name_cont_any][]', menu_item.name) %>
-                <%= menu_item.name %><br>
-                <% end %>
-                <div>
-                  <%= f.submit "Search" %>
-                  <% end %>
-                </div>
