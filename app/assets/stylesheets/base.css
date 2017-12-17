@@ -247,7 +247,7 @@
 		display: inline; }
 	
 	input[type=radio], input[type=checkbox] {
-		width : 28px !important;
+
 		float: left !important;
 		margin-top: 0px;
 		//text-align: left;
