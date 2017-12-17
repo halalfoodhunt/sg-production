@@ -19,8 +19,10 @@ class PlacesController < ApplicationController
     @search_places = Place.ransack(params[:q])
     else
     @search_places = Place.ransack(params[:q])
-    @places = @search_places.result.order("created_at DESC").where(draft: false)
+    @places = @search_places.result(distinct: true).order("created_at DESC").where(draft: false)
     end
+    @search_places = Place.ransack(params[:q])
+    @places = @search_places.result(distinct: true).order("created_at DESC").where(draft: false)
     @search_homies = Homy.ransack(params[:q])
     @homies = @search_homies.result.order("created_at DESC").where(draft: false)
     @search_caterers = Caterer.ransack(params[:q])
