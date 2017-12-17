@@ -1,36 +1,36 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <button class="btn btn-block btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Filter Menu Items
-  </button>
-    <button class="btn btn-block btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample2">
-    Filter Features
-  </button>
-      <%= search_form_for @search_places, url: places_path do |f| %>
-  <div class="collapse" id="collapseExample">
-  <div class="card card-body">
-  <%= f.label "Menu Items" %><br />
-  <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.all, :id, :name do |b| %>
-  <div class="col-xs-12 col-sm-12 col-md-6">
-    <%= b.check_box %>
-    <%= b.label %>
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <button class="btn btn-block btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Filter Menu Items
+    </button>
+    <%= search_form_for @search_places, url: places_path do |f| %>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        <%= f.label "Menu Items" %><br />
+        <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.all, :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-6">
+          <%= b.check_box %> <%= b.label %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <button class="btn btn-block btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+      Filter Features
+    </button>
+    <div class="collapse" id="collapseExample2">
+      <div class="card card-body">
+        <%= f.label "Feature" %><br />
+        <%= f.collection_check_boxes :features_id_in_any, Feature.all, :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <%= b.check_box %> <%= b.label %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <%= f.submit "Search" %>
+    <% end %>
   </div>
-  <% end %>
-  </div>
-</div>
- <div class="collapse" id="collapseExample2">
-  <div class="card card-body">
-  <%= f.label "Feature" %><br />
-  <%= f.collection_check_boxes :features_id_in_any, Feature.all, :id, :name do |b| %>
-  <div class="col-xs-12 col-sm-12 col-md-6">
-    <%= b.check_box %>
-    <%= b.label %>
-  </div>
-  <% end %>
-  </div>
-</div>
-  <%= f.submit "Search" %>
-  <% end %>
 </div>
 <div class="extra_padding pix_builder_bg dark form_2_bg" id="section_normal_4_1" style="background: url(http://www.halalfoodhunt.com/images/media/WEBSITE-3.jpg) top; padding-top: 0px; padding-bottom: 40px; box-shadow: none; border-color: rgb(255, 255, 255); background-size: cover; background-attachment: scroll; background-repeat: no-repeat; outline-offset: -3px;" src="http://www.halalfoodhunt.com/images/media/WEBSITE-3.jpg">
   <div class="container">
