@@ -1,7 +1,7 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="col-xs-12 col-sm-12 col-md-12">
-    <h4>Advanced Filter</h4>
+    <h4><i class="fa fa-filter" aria-hidden="true"></i> Advanced Filter</h4>
     <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
       Filter Menu Items
     </button>
@@ -317,16 +317,16 @@
             <div class="one-third column">
               <div class="col-xs-12 col-sm-12 col-md-12 text-right">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-small btn-default" onclick="openNav()"><i class="fa fa-filter" aria-hidden="true"></i> Advanced Filter</button>
+                  <button type="button" class="btn btn-small btn-default" onclick="openNav()"><i class="fa fa-filter" aria-hidden="true"></i> Filter</button>
                   <div class="btn-group">
-                      <button class="btn btn-small btn-default dropdown-toggle" type="button" data-toggle="dropdown">Sort By
-                        <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                          <li><center><h5><%= sort_link(@search_places, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
-                          <li><center><h5><%= sort_link(@search_places, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
-                          <li><center><h5><%= sort_link(@search_places, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-                          <li><center><h5><%= sort_link(@search_places, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
-                        </ul>
+                    <button class="btn btn-small btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-sort" aria-hidden="true"></i> Sort
+                      <span class="caret"></span></button>
+                      <ul class="dropdown-menu">
+                        <li><center><h5><%= sort_link(@search_places, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                        <li><center><h5><%= sort_link(@search_places, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                        <li><center><h5><%= sort_link(@search_places, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                        <li><center><h5><%= sort_link(@search_places, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -348,10 +348,10 @@
               <div class="one-third column">
                 <div class="col-xs-12 col-sm-12 col-md-12 text-right">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-small btn-default" onclick="openhomiesNav()"><i class="fa fa-filter" aria-hidden="true"></i> Advanced Filter</button>
+                    <button type="button" class="btn btn-small btn-default" onclick="openhomiesNav()"><i class="fa fa-filter" aria-hidden="true"></i> Filter</button>
                     <div class="btn-group">
                       <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Sort By
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-sort" aria-hidden="true"></i> Sort
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
                             <li><center><h5><%= sort_link(@search_homies, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
