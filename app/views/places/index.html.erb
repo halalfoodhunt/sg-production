@@ -7,7 +7,7 @@
     <%= search_form_for @search_places, url: places_path do |f| %>
     <div class="collapse" id="collapseExample">
       <div class="card card-body">
-        <%= f.label "Menu Items" %><br>
+        <strong><i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Menu Items" %></strong><br>
         <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.all, :id, :name do |b| %>
         <div class="col-xs-12 col-sm-12 col-md-6">
           <%= b.check_box %> <%= b.label %>
