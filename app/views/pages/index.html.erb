@@ -1,7 +1,7 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="col-xs-12 col-sm-12 col-md-12">
-    <h4>Advanced Search</h4>
+    <h4>Advanced Filter</h4>
     <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
       Filter Menu Items
     </button>
@@ -59,6 +59,67 @@
     <% end %>
   </div>
 </div>
+<div id="myHomiesnav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closehomiesNav()">&times;</a>
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <h4>Advanced Filter</h4>
+    <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Filter Menu Items
+    </button>
+    <%= search_form_for @search_homies, url: homies_path do |f| %>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Menu Items" %></b><br>
+        <%= f.collection_check_boxes :homies_menu_items_id_in_any, HomiesMenuItem.all, :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-6">
+          <%= b.check_box %> <%= b.label %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2" style="margin-bottom:10px;">
+      Filter by Ordering Methods
+    </button>
+    <div class="collapse" id="collapseExample2">
+      <div class="card card-body">
+        <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Ordering Method" %></b><br>
+        <%= f.collection_check_boxes :ordering_methods_id_in_any, OrderingMethod.all, :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <%= b.check_box %> <%= b.label %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3" style="margin-bottom:10px;">
+      Filter by Delivery Locations
+    </button>
+    <div class="collapse" id="collapseExample3">
+      <div class="card card-body">
+        <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Delivery Location" %><br>
+        <%= f.collection_check_boxes :delivery_locations_id_in_any, DeliveryLocation.all, :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-6">
+          <%= b.check_box %> <%= b.label %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4" style="margin-bottom:10px;">
+      Filter by Homies Service Types
+    </button>
+    <div class="collapse" id="collapseExample4">
+      <div class="card card-body">
+        <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Homies Service Type" %><br>
+        <%= f.collection_check_boxes :homie_service_types_id_in_any, HomieServiceType.all, :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-6">
+          <%= b.check_box %> <%= b.label %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <%= f.submit "Search", :class => "btn btn-block btn-default", :style => "padding:10px;" %>
+    <% end %>
+  </div>
+</div>
 <div class="extra_padding pix_builder_bg dark form_2_bg" id="section_normal_4_1" style="background: url(http://www.halalfoodhunt.com/images/media/WEBSITE-3.jpg) top; padding-top: 0px; padding-bottom: 40px; box-shadow: none; border-color: rgb(255, 255, 255); background-size: cover; background-attachment: scroll; background-repeat: no-repeat; outline-offset: -3px;" src="http://www.halalfoodhunt.com/images/media/WEBSITE-3.jpg">
   <div class="container">
     <div class="sixteen columns">
@@ -91,7 +152,7 @@
                       </div>
                       <br>
                       <div>
-                        <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %><center><button onclick="openNav()" style="color:#333;" class="btn-sm btn-default"><i class="fa fa-filter" aria-hidden="true"></i> Advanced Search</button></center>
+                        <%= f.submit "Search", class: "submit_btn orange_bg pix_text", :style => "background:#e73c25; color:#fff; border:0;" %>
                       </div>
                       <% end %>
                     </div>
@@ -255,15 +316,20 @@
             
             <div class="one-third column">
               <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-                <div class="dropdown">
-                  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
-                    <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                      <li><center><h5><%= sort_link(@search_places, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
-                      <li><center><h5><%= sort_link(@search_places, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
-                      <li><center><h5><%= sort_link(@search_places, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-                      <li><center><h5><%= sort_link(@search_places, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
-                    </ul>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-small btn-default" onclick="openNav()"><i class="fa fa-filter" aria-hidden="true"></i> Advanced Filter</button>
+                  <div class="btn-group">
+                    <div class="dropdown">
+                      <button class="btn btn-small btn-default dropdown-toggle" type="button" data-toggle="dropdown">Sort By
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><center><h5><%= sort_link(@search_places, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                          <li><center><h5><%= sort_link(@search_places, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                          <li><center><h5><%= sort_link(@search_places, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                          <li><center><h5><%= sort_link(@search_places, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -283,15 +349,20 @@
               
               <div class="one-third column">
                 <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-                  <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
-                      <span class="caret"></span></button>
-                      <ul class="dropdown-menu">
-                        <li><center><h5><%= sort_link(@search_homies, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
-                        <li><center><h5><%= sort_link(@search_homies, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
-                        <li><center><h5><%= sort_link(@search_homies, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-                        <li><center><h5><%= sort_link(@search_homies, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
-                      </ul>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-small btn-default" onclick="openNav()"><i class="fa fa-filter" aria-hidden="true"></i> Advanced Filter</button>
+                    <div class="btn-group">
+                      <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
+                          <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><center><h5><%= sort_link(@search_homies, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                            <li><center><h5><%= sort_link(@search_homies, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                            <li><center><h5><%= sort_link(@search_homies, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                            <li><center><h5><%= sort_link(@search_homies, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
