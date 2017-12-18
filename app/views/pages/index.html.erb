@@ -319,7 +319,6 @@
                 <div class="btn-group">
                   <button type="button" class="btn btn-small btn-default" onclick="openNav()"><i class="fa fa-filter" aria-hidden="true"></i> Advanced Filter</button>
                   <div class="btn-group">
-                    <div class="dropdown">
                       <button class="btn btn-small btn-default dropdown-toggle" type="button" data-toggle="dropdown">Sort By
                         <span class="caret"></span></button>
                         <ul class="dropdown-menu">
@@ -328,7 +327,6 @@
                           <li><center><h5><%= sort_link(@search_places, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
                           <li><center><h5><%= sort_link(@search_places, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
                         </ul>
-                      </div>
                     </div>
                   </div>
                 </div>
