@@ -1,7 +1,7 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="col-xs-12 col-sm-12 col-md-12">
-    <h4><i class="fa fa-filter" aria-hidden="true"></i> Advanced Filter</h4>
+    <h4><i class="fa fa-filter" aria-hidden="true"></i> Filter</h4>
     <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
       Filter Menu Items
     </button>
@@ -62,7 +62,7 @@
 <div id="myHomiesnav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closehomiesNav()">&times;</a>
   <div class="col-xs-12 col-sm-12 col-md-12">
-    <h4>Advanced Filter</h4>
+    <h4><i class="fa fa-filter" aria-hidden="true"></i> Filter</h4>
     <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample5">
       Filter Menu Items
     </button>
@@ -110,6 +110,80 @@
       <div class="card card-body">
         <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Homies Service Type" %><br>
         <%= f.collection_check_boxes :homie_service_types_id_in_any, HomieServiceType.all, :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-6">
+          <%= b.check_box %> <%= b.label %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <%= f.submit "Search", :class => "btn btn-block btn-default", :style => "padding:10px;" %>
+    <% end %>
+  </div>
+</div>
+<div id="myCaterersnav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closecaterersNav()">&times;</a>
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <h4><i class="fa fa-filter" aria-hidden="true"></i> Filter</h4>
+    <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample9" aria-expanded="false" aria-controls="collapseExample9">
+      Filter Menu Items
+    </button>
+    <%= search_form_for @search_caterers, url: caterers_path do |f| %>
+    <div class="collapse" id="collapseExample9">
+      <div class="card card-body">
+        <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Menu Items" %></b><br>
+        <%= f.collection_check_boxes :caterers_menu_items_id_in_any, CatererMenuItem.all, :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-6">
+          <%= b.check_box %> <%= b.label %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample10" aria-expanded="false" aria-controls="collapseExample10" style="margin-bottom:10px;">
+      Filter Caterer Types
+    </button>
+    <div class="collapse" id="collapseExample10">
+      <div class="card card-body">
+        <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Caterer Types" %></b><br>
+        <%= f.collection_check_boxes :caterer_types_id_in_any, CatererType.all, :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <%= b.check_box %> <%= b.label %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample11" aria-expanded="false" aria-controls="collapseExample11" style="margin-bottom:10px;">
+      Filter Caterer Service Types
+    </button>
+    <div class="collapse" id="collapseExample11">
+      <div class="card card-body">
+        <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Caterer Service Types" %><br>
+        <%= f.collection_check_boxes :caterer_service_types_id_in_any, CatererServiceType.all, :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-6">
+          <%= b.check_box %> <%= b.label %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample12" aria-expanded="false" aria-controls="collapseExample12" style="margin-bottom:10px;">
+      Filter Cuisine Types
+    </button>
+    <div class="collapse" id="collapseExample12">
+      <div class="card card-body">
+        <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Cuisine Types" %><br>
+        <%= f.collection_check_boxes :cuisine_types_id_in_any, CuisineType.all, :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-6">
+          <%= b.check_box %> <%= b.label %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+     <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample13" aria-expanded="false" aria-controls="collapseExample13" style="margin-bottom:10px;">
+      Filter Event Types
+    </button>
+    <div class="collapse" id="collapseExample13">
+      <div class="card card-body">
+        <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Event Types" %><br>
+        <%= f.collection_check_boxes :event_types_id_in_any, EventType.all, :id, :name do |b| %>
         <div class="col-xs-12 col-sm-12 col-md-6">
           <%= b.check_box %> <%= b.label %>
         </div>
@@ -350,16 +424,14 @@
                   <div class="btn-group">
                     <button type="button" class="btn btn-small btn-default" onclick="openhomiesNav()"><i class="fa fa-filter" aria-hidden="true"></i> Filter</button>
                     <div class="btn-group">
-                      <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-sort" aria-hidden="true"></i> Sort
-                          <span class="caret"></span></button>
-                          <ul class="dropdown-menu">
-                            <li><center><h5><%= sort_link(@search_homies, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
-                            <li><center><h5><%= sort_link(@search_homies, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
-                            <li><center><h5><%= sort_link(@search_homies, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-                            <li><center><h5><%= sort_link(@search_homies, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
-                          </ul>
-                        </div>
+                      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-sort" aria-hidden="true"></i> Sort
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><center><h5><%= sort_link(@search_homies, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                          <li><center><h5><%= sort_link(@search_homies, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                          <li><center><h5><%= sort_link(@search_homies, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                          <li><center><h5><%= sort_link(@search_homies, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                        </ul>
                       </div>
                     </div>
                   </div>
@@ -380,15 +452,18 @@
                 
                 <div class="one-third column">
                   <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-                    <div class="dropdown">
-                      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
-                        <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                          <li><center><h5><%= sort_link(@search_caterers, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
-                          <li><center><h5><%= sort_link(@search_caterers, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
-                          <li><center><h5><%= sort_link(@search_caterers, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-                          <li><center><h5><%= sort_link(@search_caterers, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
-                        </ul>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-small btn-default" onclick="opencaterersNav()"><i class="fa fa-filter" aria-hidden="true"></i> Filter</button>
+                      <div class="btn-group">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Sort
+                          <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><center><h5><%= sort_link(@search_caterers, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                            <li><center><h5><%= sort_link(@search_caterers, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                            <li><center><h5><%= sort_link(@search_caterers, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                            <li><center><h5><%= sort_link(@search_caterers, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>

@@ -9,7 +9,7 @@ class CaterersController < ApplicationController
     @caterer_type_id = CatererType.find_by(name: params[:caterer_type]).id
     @caterers = Caterer.joins(:caterer_categories).where(caterer_categories: {caterer_type_id: @caterer_type_id})
     @search_caterers = Caterer.ransack(params[:q])
-    elsif params[:menu_item].present? 
+    elsif params[:caterer_service_type].present? 
     @caterer_service_type_id = CatererServiceType.find_by(name: params[:caterer_service_type]).id
     @caterers = Caterer.joins(:cooking_service_types).where(cooking_service_types: {caterer_service_type_id: @caterer_service_type_id})
     @search_caterers = Caterer.ransack(params[:q])
@@ -21,9 +21,13 @@ class CaterersController < ApplicationController
     @event_type_id = EventType.find_by(name: params[:event_type]).id
     @caterers = Caterer.joins(:function_types).where(function_types: {event_type_id: @event_type_id})
     @search_caterers = Caterer.ransack(params[:q])
+    elsif params[:caterer_menu_item].present? 
+    @caterer_menu_item_id = CatererMenuItem.find_by(name: params[:caterer_menu_item]).id
+    @caterers = Caterer.joins(:caterer_dish_items).where(caterer_dish_items: {caterer_menu_item_id: @caterer_menu_item_id})
+    @search_caterers = Caterer.ransack(params[:q])
     else
     @search_caterers = Caterer.ransack(params[:q])
-    @caterers = @search_caterers.result.order("created_at DESC").where(draft: false)
+    @caterers = @search_caterers.result(distinct: true).order("created_at DESC").where(draft: false)
     end
     @search_places = Place.ransack(params[:q])
     @places = @search_places.result.order("created_at DESC").where(draft: false)
