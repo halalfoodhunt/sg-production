@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get 'pages/admin_dashboard'
 
-  get 'terms_of_use', to: 'pages#terms_of_use'
+  get 'terms_of_use', to: 'pages#terms'
 
   get 'privacy_policy', to: 'pages#privacy_policy'
   
