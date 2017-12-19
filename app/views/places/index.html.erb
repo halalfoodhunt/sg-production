@@ -10,7 +10,7 @@
       <div class="card card-body">
         <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Menu Items" %></b><br>
         <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.first(5), :id, :name do |b| %>
-        <div class="col-xs-12 col-sm-12 col-md-6">
+        <div class="col-xs-12 col-sm-12 col-md-12">
           <%= b.check_box %> <%= b.label %>
         </div>
         <% end %>
