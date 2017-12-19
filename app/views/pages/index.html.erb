@@ -13,7 +13,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
           <%= b.check_box %> <%= b.label %>
         </div>
-        <% end %>
+        <% end %><hr>
         <div id="demo" class="collapse">
         <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.offset(5), :id, :name do |b| %>
         <div class="col-xs-12 col-sm-12 col-md-12">
