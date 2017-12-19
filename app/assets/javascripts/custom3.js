@@ -12,8 +12,8 @@ jQuery(document).ready(function($){
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav() {
-    document.getElementById("mySidenav").style.width = "33%";
-    document.getElementById("push-content").style.marginLeft = "33%";
+    document.getElementById("mySidenav").style.width = "20%";
+    document.getElementById("push-content").style.marginLeft = "20%";
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
@@ -24,8 +24,8 @@ function closeNav() {
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openhomiesNav() {
-    document.getElementById("myHomiesnav").style.width = "33%";
-    document.getElementById("push-content").style.marginLeft = "33%";
+    document.getElementById("myHomiesnav").style.width = "20%";
+    document.getElementById("push-content").style.marginLeft = "20%";
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
@@ -36,8 +36,8 @@ function closehomiesNav() {
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function opencaterersNav() {
-    document.getElementById("myCaterersnav").style.width = "33%";
-    document.getElementById("push-content").style.marginLeft = "33%";
+    document.getElementById("myCaterersnav").style.width = "20%";
+    document.getElementById("push-content").style.marginLeft = "20%";
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
