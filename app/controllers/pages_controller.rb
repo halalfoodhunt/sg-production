@@ -63,6 +63,9 @@ class PagesController < ApplicationController
     if current_merchant.bundle? && quota >= 3
       @quota_warning = "Maximum listings reached."
     end
+     if current_merchant.custom?
+      @quota_warning = "Maximum listings reached."
+    end
   end
     
 end

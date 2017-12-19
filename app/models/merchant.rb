@@ -7,7 +7,7 @@ class Merchant < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
          
-  enum role: [:basic, :basic_plus, :pair, :bundle, :admin]
+  enum role: [:basic, :basic_plus, :pair, :bundle, :custom, :admin]
   after_initialize :set_default_role, :if => :new_record?
   
   has_many :listings
