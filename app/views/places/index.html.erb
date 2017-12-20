@@ -1,56 +1,81 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="col-xs-12 col-sm-12 col-md-12">
+    <%= search_form_for @search_places, url: places_path do |f| %>
     <h4><i class="fa fa-filter" aria-hidden="true"></i> Filter Places</h4>
-    <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <%= f.text_field :brand_name_or_question_1_or_operating_address_or_menu_items_name_cont_any, class: "form-control", :style => "height:30px; border-radius:20px; margin-bottom:10px;", placeholder: "Type: Nasi, Rojak, etc." %>
+    <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin-bottom:10px;">
       Filter Menu Items
     </button>
-    <%= search_form_for @search_places, url: places_path do |f| %>
     <div class="collapse" id="collapseExample">
       <div class="card card-body">
         <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Menu Items" %></b><br>
-        <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.first(5), :id, :name do |b| %>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-          <%= b.check_box %> <%= b.label %>
+        <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.first(10), :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
+          <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
+        </div>
+        <% end %><hr>
+        <div id="moreitems" class="collapse">
+        <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.offset(10), :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
+          <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
         </div>
         <% end %>
+        </div>
+        <p><a href="#moreitems" data-toggle="collapse"><i class="fa fa-plus" aria-hidden="true"></i> See More</a></p>
       </div>
     </div>
     <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2" style="margin-bottom:10px;">
-      Filter by Features
+      Filter Features
     </button>
     <div class="collapse" id="collapseExample2">
       <div class="card card-body">
         <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Feature" %></b><br>
-        <%= f.collection_check_boxes :features_id_in_any, Feature.all, :id, :name do |b| %>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-          <%= b.check_box %> <%= b.label %>
+        <%= f.collection_check_boxes :features_id_in_any, Feature.first(5), :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
+          <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
+        </div>
+        <% end %><hr>
+        <div id="morefeatures" class="collapse">
+        <%= f.collection_check_boxes :features_id_in_any, Feature.offset(5), :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
+          <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
         </div>
         <% end %>
+        </div>
+        <p><a href="#morefeatures" data-toggle="collapse"><i class="fa fa-plus" aria-hidden="true"></i> See More</a></p>
       </div>
     </div>
     <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3" style="margin-bottom:10px;">
-      Filter by Dining Types
+      Filter Dining Types
     </button>
     <div class="collapse" id="collapseExample3">
       <div class="card card-body">
         <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Dining Type" %><br>
-        <%= f.collection_check_boxes :dining_types_id_in_any, DiningType.all, :id, :name do |b| %>
-        <div class="col-xs-12 col-sm-12 col-md-6">
-          <%= b.check_box %> <%= b.label %>
+        <%= f.collection_check_boxes :dining_types_id_in_any, DiningType.first(6), :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
+          <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
+        </div>
+        <% end %><hr>
+        <div id="morediningtypes" class="collapse">
+        <%= f.collection_check_boxes :dining_types_id_in_any, DiningType.offset(6), :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
+          <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
         </div>
         <% end %>
+        </div>
+        <p><a href="#morediningtypes" data-toggle="collapse"><i class="fa fa-plus" aria-hidden="true"></i> See More</a></p>
       </div>
     </div>
     <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4" style="margin-bottom:10px;">
-      Filter by Location
+      Filter Locations
     </button>
     <div class="collapse" id="collapseExample4">
       <div class="card card-body">
-        <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Locations" %><br>
+        <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Location" %><br>
         <%= f.collection_check_boxes :location_id_in_any, Location.all, :id, :name do |b| %>
-        <div class="col-xs-12 col-sm-12 col-md-6">
-          <%= b.check_box %> <%= b.label %>
+        <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
+          <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
         </div>
         <% end %>
       </div>
@@ -62,7 +87,7 @@
 <div id="myHomiesnav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closehomiesNav()">&times;</a>
   <div class="col-xs-12 col-sm-12 col-md-12">
-    <h4><i class="fa fa-filter" aria-hidden="true"></i> Filter</h4>
+    <h4><i class="fa fa-filter" aria-hidden="true"></i> Filter Homies & Pop-ups</h4>
     <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample5">
       Filter Menu Items
     </button>
@@ -78,7 +103,7 @@
       </div>
     </div>
     <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample6" style="margin-bottom:10px;">
-      Filter by Ordering Methods
+      Filter Ordering Methods
     </button>
     <div class="collapse" id="collapseExample6">
       <div class="card card-body">
@@ -91,7 +116,7 @@
       </div>
     </div>
     <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample7" aria-expanded="false" aria-controls="collapseExample7" style="margin-bottom:10px;">
-      Filter by Delivery Locations
+      Filter Delivery Locations
     </button>
     <div class="collapse" id="collapseExample7">
       <div class="card card-body">
@@ -218,7 +243,7 @@
               <div class="tab-content">
                 <div id="place" class="tab-pane fade in active">
                   <div class="col-md-12" style="background:#fff; padding-left:0; padding-right:0; box-shadow:0px 0px 6px 0px rgba(0,0,0,0.4);">
-                    <%= search_form_for(@search_places, :html => {:id => 'contact_form', :class => 'pix_form' }, url: places_path) do |f| %>
+                    <%= search_form_for(@search_places, :html => {:id => 'contact_form', :class => 'pix_form' }, url: places_path, :as => :autocomplete) do |f| %>
                     <div class="col-sm-12 col-md-12" style="padding:20px">
                       <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
                         <label for="Search" class="label-front">What kind of food are you looking for?</label>
