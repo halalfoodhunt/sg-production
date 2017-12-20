@@ -11,13 +11,13 @@
       <div class="card card-body">
         <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Menu Items" %></b><br>
         <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.first(5), :id, :name do |b| %>
-        <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
-          <%= b.check_box %> <%= b.label %>
+        <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
+          <%= b.check_box %> <%= b.label, :style => 'font-size:12px; text-transform: none; font-family:'Muli'' %>
         </div>
         <% end %><hr>
         <div id="moreitems" class="collapse">
         <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.offset(5), :id, :name do |b| %>
-        <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
+        <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
           <%= b.check_box %> <%= b.label %>
         </div>
         <% end %>
