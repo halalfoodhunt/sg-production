@@ -6,7 +6,7 @@
   </button>
   <div class="collapse in" id="collapseExample">
     <div class="card card-body">
-      <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Menu Items" %></b><small>(<%= link_to 'Clear Selection', places_path %>)</small><br>
+      <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Menu Items" %></b> <small>(<%= link_to 'Clear Selection', places_path %>)</small><br>
       <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.first(10), :id, :name do |b| %>
       <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
         <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
@@ -27,7 +27,7 @@
   </button>
   <div class="collapse in" id="collapseExample2">
     <div class="card card-body">
-      <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Feature" %></b><br>
+      <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Feature" %></b> <small>(<%= link_to 'Clear Selection', places_path %>)</small><br>
       <%= f.collection_check_boxes :features_id_in_any, Feature.first(5), :id, :name do |b| %>
       <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0; padding-right:0;">
         <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
@@ -48,7 +48,7 @@
   </button>
   <div class="collapse in" id="collapseExample3">
     <div class="card card-body">
-      <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Dining Type" %><br>
+      <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Dining Type" %> <small>(<%= link_to 'Clear Selection', places_path %>)</small><br>
       <%= f.collection_check_boxes :dining_types_id_in_any, DiningType.first(5), :id, :name do |b| %>
       <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
         <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
@@ -69,7 +69,7 @@
   </button>
   <div class="collapse in" id="collapseExample4">
     <div class="card card-body">
-      <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Location" %><br>
+      <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Location" %> <small>(<%= link_to 'Clear Selection', places_path %>)</small><br>
       <%= f.collection_check_boxes :location_id_in_any, Location.all, :id, :name do |b| %>
       <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
         <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
