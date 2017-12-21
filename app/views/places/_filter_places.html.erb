@@ -1,12 +1,12 @@
  <div class="four columns alpha hidden-xs">
   <%= search_form_for @search_places, :html => {:class => 'form_no_padding' }, url: places_path do |f| %>
-  <h4 style="margin-top:0;"><i class="fa fa-filter" aria-hidden="true"></i> Filter Places</h4> <p>(<%= link_to 'Clear Selection', places_path %>)</p>
+  <h4 style="margin-top:0;"><i class="fa fa-filter" aria-hidden="true"></i> Filter Places</h4> 
   <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin-bottom:10px;">
     Filter Menu Items
   </button>
   <div class="collapse in" id="collapseExample">
     <div class="card card-body">
-      <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Menu Items" %></b><br>
+      <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Menu Items" %></b><small>(<%= link_to 'Clear Selection', places_path %>)</small><br>
       <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.first(10), :id, :name do |b| %>
       <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
         <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
