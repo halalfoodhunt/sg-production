@@ -20,7 +20,7 @@
                             :id => 'contact_form', :class => 'pix_form' }) do |f| %>
                               <%= f.text_field :name, autofocus: true, placeholder: "Your Name", :class => 'pix_text' %><br>
                               <%= f.email_field :email, placeholder: "Your Email", :class => 'pix_text' %><br>
-                              <%= f.password_field :password, autocomplete: "off", placeholder: "Must be at least 6 characters long", :class => 'pix_text' %><br>
+                              <%= f.password_field :password, autocomplete: "off", placeholder: "Password must be at least 6 characters long", :class => 'pix_text' %><br>
                               <%= f.phone_field :mobile_number, placeholder: "Your Mobile Number", :class => 'pix_text' %>
                           <div class="actions"><br>
                               <%= f.submit "Next", :class => 'submit_btn orange_bg pix_text', :style => "background:#e73c25; color:#fff; border:0; margin-bottom: 0;" %>
