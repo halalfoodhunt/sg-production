@@ -5,7 +5,7 @@
         <div class="">
           <div class="substyle pix_builder_bg">
             <div class ="col-xs-12 col-sm-12 col-md-8 hidden-sm hidden-md hidden-lg">
-              <h3 style="font-family: 'Muli', sans-serif; font-weight:700; color:#444;">Discover and verify<br></h3><h5 style="margin-top: 0; color:#333;">your halal food choices here!</h5>
+              <h3 style="font-family: 'Muli', sans-serif; font-weight:700; color:#444;">Discover and verify<br></h3><h5 style="margin-top: 20px; color:#333;">your halal food choices here!</h5>
             </div>
             <div class ="col-xs-12 col-sm-12 col-md-8 hidden-xs">
               <h1 style="font-family: 'Muli', sans-serif; font-weight:700; color:#444;">Discover and verify<br></h1><h3 style="margin-top: 0; color:#333;">your halal food choices here!</h3>
@@ -192,13 +192,13 @@
           <div class="container">
             
             <div class="sixteen columns">
-              <div class="col-xs-8 col-sm-8 col-md-8 text-right">
+              <div class="col-xs-12 col-sm-12 col-md-10">
                 <h5>SHOWING <strong><u><%= @places.count %></u></strong> HALAL ESTABLISHMENTS IN SINGAPORE</h5>
               </div>
-              <div class="col-xs-4 col-sm-4 col-md-4 text-right">
-                    <button class="btn btn-small btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Sort
+              <div class="col-xs-12 col-sm-12 col-md-2 text-right">
+                    <button class="btn btn-block btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Sort
                       <span class="caret"></span></button>
-                      <ul class="dropdown-menu">
+                      <ul class="dropdown-menu text-right">
                         <li><center><h5><%= sort_link(@search_places, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
                         <li><center><h5><%= sort_link(@search_places, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
                         <li><center><h5><%= sort_link(@search_places, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
