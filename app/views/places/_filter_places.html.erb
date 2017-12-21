@@ -1,81 +1,82 @@
  <div class="four columns alpha">
-<%= search_form_for @search_places, url: places_path do |f| %>
-    <h4><i class="fa fa-filter" aria-hidden="true"></i> Filter Places</h4>
-    <%= f.text_field :brand_name_or_question_1_or_operating_address_or_menu_items_name_cont_any, class: "form-control", :style => "height:30px; border-radius:20px; margin-bottom:10px;", placeholder: "Type: Nasi, Rojak, etc." %>
-    <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin-bottom:10px;">
-      Filter Menu Items
-    </button>
-    <div class="collapse in" id="collapseExample">
-      <div class="card card-body">
-        <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Menu Items" %></b><br>
-        <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.first(10), :id, :name do |b| %>
-        <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
-          <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
-        </div>
-        <% end %><hr>
-        <div id="moreitems" class="collapse">
+  <%= search_form_for @search_places, url: places_path do |f| %>
+  <h4><i class="fa fa-filter" aria-hidden="true"></i> Filter Places</h4>
+  <%= f.text_field :brand_name_or_question_1_or_operating_address_or_menu_items_name_cont_any, class: "form-control", :style => "height:30px; border-radius:20px; margin-bottom:10px;", placeholder: "Type: Nasi, Rojak, etc." %>
+  <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin-bottom:10px;">
+    Filter Menu Items
+  </button>
+  <div class="collapse in" id="collapseExample">
+    <div class="card card-body">
+      <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Menu Items" %></b><br>
+      <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.first(10), :id, :name do |b| %>
+      <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
+        <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
+      </div>
+      <% end %><hr>
+      <div id="moreitems" class="collapse">
         <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.offset(10), :id, :name do |b| %>
         <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
           <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
         </div>
         <% end %>
-        </div>
-        <p><a href="#moreitems" data-toggle="collapse"><i class="fa fa-plus" aria-hidden="true"></i> See More</a></p>
       </div>
+      <p><a href="#moreitems" data-toggle="collapse"><i class="fa fa-plus" aria-hidden="true"></i> See More</a></p>
     </div>
-    <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2" style="margin-bottom:10px;">
-      Filter Features
-    </button>
-    <div class="collapse in" id="collapseExample2">
-      <div class="card card-body">
-        <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Feature" %></b><br>
-        <%= f.collection_check_boxes :features_id_in_any, Feature.first(5), :id, :name do |b| %>
-        <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
-          <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
-        </div>
-        <% end %><hr>
-        <div id="morefeatures" class="collapse">
+  </div>
+  <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2" style="margin-bottom:10px;">
+    Filter Features
+  </button>
+  <div class="collapse in" id="collapseExample2">
+    <div class="card card-body">
+      <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Feature" %></b><br>
+      <%= f.collection_check_boxes :features_id_in_any, Feature.first(5), :id, :name do |b| %>
+      <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
+        <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
+      </div>
+      <% end %><hr>
+      <div id="morefeatures" class="collapse">
         <%= f.collection_check_boxes :features_id_in_any, Feature.offset(5), :id, :name do |b| %>
         <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
           <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
         </div>
         <% end %>
-        </div>
-        <p><a href="#morefeatures" data-toggle="collapse"><i class="fa fa-plus" aria-hidden="true"></i> See More</a></p>
       </div>
+      <p><a href="#morefeatures" data-toggle="collapse"><i class="fa fa-plus" aria-hidden="true"></i> See More</a></p>
     </div>
-    <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3" style="margin-bottom:10px;">
-      Filter Dining Types
-    </button>
-    <div class="collapse in" id="collapseExample3">
-      <div class="card card-body">
-        <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Dining Type" %><br>
-        <%= f.collection_check_boxes :dining_types_id_in_any, DiningType.first(5), :id, :name do |b| %>
-        <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
-          <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
-        </div>
-        <% end %><hr>
-        <div id="morediningtypes" class="collapse">
+  </div>
+  <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3" style="margin-bottom:10px;">
+    Filter Dining Types
+  </button>
+  <div class="collapse in" id="collapseExample3">
+    <div class="card card-body">
+      <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Dining Type" %><br>
+      <%= f.collection_check_boxes :dining_types_id_in_any, DiningType.first(5), :id, :name do |b| %>
+      <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
+        <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
+      </div>
+      <% end %><hr>
+      <div id="morediningtypes" class="collapse">
         <%= f.collection_check_boxes :dining_types_id_in_any, DiningType.offset(5), :id, :name do |b| %>
         <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
           <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
         </div>
         <% end %>
-        </div>
-        <p><a href="#morediningtypes" data-toggle="collapse"><i class="fa fa-plus" aria-hidden="true"></i> See More</a></p>
       </div>
+      <p><a href="#morediningtypes" data-toggle="collapse"><i class="fa fa-plus" aria-hidden="true"></i> See More</a></p>
     </div>
-    <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4" style="margin-bottom:10px;">
-      Filter Locations
-    </button>
-    <div class="collapse in" id="collapseExample4">
-      <div class="card card-body">
-        <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Location" %><br>
-        <%= f.collection_check_boxes :location_id_in_any, Location.all, :id, :name do |b| %>
-        <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
-          <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
-        </div>
-        <% end %>
+  </div>
+  <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4" style="margin-bottom:10px;">
+    Filter Locations
+  </button>
+  <div class="collapse in" id="collapseExample4">
+    <div class="card card-body">
+      <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Location" %><br>
+      <%= f.collection_check_boxes :location_id_in_any, Location.all, :id, :name do |b| %>
+      <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
+        <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
       </div>
+      <% end %>
     </div>
+  </div>
+  <% end %>
 </div>
