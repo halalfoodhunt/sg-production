@@ -18,12 +18,12 @@
                         </span>
                         <div class="contact_st">
                             <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-              <%= f.email_field :email, autofocus: true %><br>
-              <%= f.password_field :password, autocomplete: "off" %><br>
+              <%= f.email_field :email, autofocus: true %>
+              <%= f.password_field :password, autocomplete: "off" %>
               <% if devise_mapping.rememberable? -%>
                 <%= f.check_box :remember_me %>
-              <% end -%><br>
-              <%= f.submit "Log in", :class => 'submit_btn orange_bg pix_text', :style => "background:#e73c25; color:#fff; border:0; margin-bottom: 0;" %>
+              <% end -%>
+              <%= f.submit "Log in", :class => 'submit_btn orange_bg pix_text', :style => "background:#e73c25; color:#fff; border:0; margin-bottom: 0; padding:10px;" %>
               <% end %>
               <%= render "merchants/shared/links" %><br>
                         </div>
