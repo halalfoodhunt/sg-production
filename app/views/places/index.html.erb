@@ -7,7 +7,7 @@
     <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin-bottom:10px;">
       Filter Menu Items
     </button>
-    <div class="collapse" id="collapseExample">
+    <div class="collapse in" id="collapseExample">
       <div class="card card-body">
         <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Menu Items" %></b><br>
         <%= f.collection_check_boxes :menu_items_id_in_any, MenuItem.first(10), :id, :name do |b| %>
@@ -28,7 +28,7 @@
     <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2" style="margin-bottom:10px;">
       Filter Features
     </button>
-    <div class="collapse" id="collapseExample2">
+    <div class="collapse in" id="collapseExample2">
       <div class="card card-body">
         <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Feature" %></b><br>
         <%= f.collection_check_boxes :features_id_in_any, Feature.first(5), :id, :name do |b| %>
@@ -49,16 +49,16 @@
     <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3" style="margin-bottom:10px;">
       Filter Dining Types
     </button>
-    <div class="collapse" id="collapseExample3">
+    <div class="collapse in" id="collapseExample3">
       <div class="card card-body">
         <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Dining Type" %><br>
-        <%= f.collection_check_boxes :dining_types_id_in_any, DiningType.first(6), :id, :name do |b| %>
-        <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
+        <%= f.collection_check_boxes :dining_types_id_in_any, DiningType.first(5), :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
           <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
         </div>
         <% end %><hr>
         <div id="morediningtypes" class="collapse">
-        <%= f.collection_check_boxes :dining_types_id_in_any, DiningType.offset(6), :id, :name do |b| %>
+        <%= f.collection_check_boxes :dining_types_id_in_any, DiningType.offset(5), :id, :name do |b| %>
         <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
           <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
         </div>
@@ -70,7 +70,7 @@
     <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4" style="margin-bottom:10px;">
       Filter Locations
     </button>
-    <div class="collapse" id="collapseExample4">
+    <div class="collapse in" id="collapseExample4">
       <div class="card card-body">
         <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Location" %><br>
         <%= f.collection_check_boxes :location_id_in_any, Location.all, :id, :name do |b| %>
