@@ -21,7 +21,7 @@
               <%= f.email_field :email, autofocus: true %><br>
               <%= f.password_field :password, autocomplete: "off" %><br>
               <% if devise_mapping.rememberable? -%>
-                <%= f.check_box :remember_me :style => "width:" %>
+                <%= f.check_box :remember_me %>
               <% end -%><br>
               <%= f.submit "Log in", :class => 'submit_btn orange_bg pix_text', :style => "background:#e73c25; color:#fff; border:0; margin-bottom: 0;" %>
               <% end %>
