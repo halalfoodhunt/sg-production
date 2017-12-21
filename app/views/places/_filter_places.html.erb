@@ -1,6 +1,6 @@
  <div class="four columns alpha hidden-xs">
   <%= search_form_for @search_places, :html => {:class => 'form_no_padding' }, url: places_path do |f| %>
-  <h4 style="margin-top:0;"><i class="fa fa-filter" aria-hidden="true"></i> Filter Places</h4>
+  <h4 style="margin-top:0;"><i class="fa fa-filter" aria-hidden="true"></i> Filter Places</h4> <p>(<%= link_to 'Clear Selection', places_path %>)</p>
   <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin-bottom:10px;">
     Filter Menu Items
   </button>
