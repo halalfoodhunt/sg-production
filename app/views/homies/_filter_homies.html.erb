@@ -71,7 +71,7 @@
     <div class="card card-body">
       <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Location" %> <small>(<%= link_to 'Clear Selection', homies_path %>)</small><br>
       <%= f.collection_check_boxes :delivery_locations_id_in_any, DeliveryLocation.all, :id, :name do |b| %>
-      <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
+      <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
         <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
       </div>
       <% end %>
