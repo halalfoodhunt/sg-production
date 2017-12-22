@@ -3,7 +3,6 @@
   <div class="col-xs-12 col-sm-12 col-md-12">
     <%= search_form_for @search_places, url: places_path do |f| %>
     <h4><i class="fa fa-filter" aria-hidden="true"></i> Filter Places</h4>
-    <%= f.text_field :brand_name_or_question_1_or_operating_address_or_menu_items_name_cont_any, class: "form-control", :style => "height:30px; border-radius:20px; margin-bottom:10px;", placeholder: "Type: Nasi, Rojak, etc." %>
     <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin-bottom:10px;">
       Filter Menu Items
     </button>
@@ -265,7 +264,7 @@
                     <div class="col-sm-12 col-md-12" style="padding:20px">
                       <div class="form-group" style="margin-bottom: 0; background: rgba(255,255,255,1); color:black;">
                         <label for="Search" class="label-front">What kind of food are you looking for?</label>
-                        <%= f.text_field :brand_name_or_question_1_cont, class: "form-control", :style => "height:42px;", placeholder: "Type: Nasi, Rojak, etc." %>
+                            <%= f.text_field :brand_name_or_question_1_or_operating_address_or_menu_items_name_cont_any, class: "form-control", :style => "height:30px; border-radius:20px; margin-bottom:10px;", placeholder: "Type: Nasi, Rojak, etc." %>
                       </div>
                       <br>
                       <div>
