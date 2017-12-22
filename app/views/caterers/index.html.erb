@@ -188,7 +188,7 @@
           
           <div class="container">
             
-           <div class="two-thirds column">
+             <div class="two-thirds column">
               <div class="col-xs-12 col-sm-12 col-md-4 text-right">
               
               </div>
@@ -211,6 +211,7 @@
               </div>
               
               <div class="sixteen columns">
+                <%= render "places/filter_places" %>
                 <%= render "places/place" %>
               </div>
               
@@ -218,15 +219,20 @@
             
           </div>
           
-          <div id="homies1" class="tab-pane fade">
+          <div id="homies1" class="tab-pane fade in active">
             <div class="container">
               
-              <div class="two-thirds column"><h5>SHOWING <strong><u><%= @homies.count %></u></strong> HOMIES & POP-UPS IN SINGAPORE</h5></div>
+             <div class="two-thirds column">
+              <div class="col-xs-12 col-sm-12 col-md-4 text-right">
+              
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @homies.count %></u></strong> HOMIES & POP-UPS IN SINGAPORE</h5></div>
+              </div>
               
               <div class="one-third column">
                 <div class="col-xs-12 col-sm-12 col-md-12 text-right">
                   <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Sort
                       <span class="caret"></span></button>
                       <ul class="dropdown-menu">
                         <li><center><h5><%= sort_link(@search_homies, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
@@ -239,6 +245,7 @@
                 </div>
                 
                 <div class="sixteen columns">
+                  <%= render "homies/filter_homies" %>
                   <%= render "homies/homy" %>
                 </div>
                 
@@ -246,14 +253,10 @@
               
             </div>
             
-            <div id="caterers1" class="tab-pane fade in active">
+            <div id="caterers1" class="tab-pane fade">
               <div class="container">
-                <div class="two-thirds column">
-              <div class="col-xs-12 col-sm-12 col-md-4 text-right">
-              
-              </div>
-              <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @caterers.count %></u></strong> CATERERS IN SINGAPORE</h5></div>
-            </div>
+                
+                <div class="two-thirds column"><h5>SHOWING <strong><u><%= @caterers.count %></u></strong> CATERERS IN SINGAPORE</h5></div>
                 
                 <div class="one-third column">
                   <div class="col-xs-12 col-sm-12 col-md-12 text-right">
