@@ -75,13 +75,14 @@
         <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
       </div>
       <% end %><hr>
-      <div id="morecatererservicetype" class="collapse">
+      <div id="morecuisinetype" class="collapse">
         <%= f.collection_check_boxes :cuisine_types_id_in_any, CuisineType.offset(5), :id, :name do |b| %>
         <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
           <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
         </div>
         <% end %>
     </div>
+     <p><a href="#morecuisinetype" data-toggle="collapse"><i class="fa fa-plus" aria-hidden="true"></i> See More</a></p>
   </div>
    <%= f.submit "Filter", :class => "btn btn-block btn-default", :style => "padding:10px;" %>
   <% end %>
