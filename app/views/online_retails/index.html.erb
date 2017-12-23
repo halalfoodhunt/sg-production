@@ -301,7 +301,11 @@
                 <div id="retails1" class="tab-pane fade in active">
                   <div class="container">
                     
-                    <div class="two-thirds column"><h5>SHOWING <strong><u><%= @online_retails.count %></u></strong> ONLINE RETAILS IN SINGAPORE</h5></div>
+                    <div class="two-thirds column">
+            <div class="col-xs-12 col-sm-12 col-md-4 text-right">
+              
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @online_retails.count %></u></strong> ONLINE RETAILS IN SINGAPORE</h5></div></div>
                     
                     <div class="one-third column">
                       <div class="col-xs-12 col-sm-12 col-md-12 text-right">
@@ -319,6 +323,7 @@
                       </div>
                       
                       <div class="sixteen columns">
+                        <%= render "online_retails/filter_online_retails" %>
                         <%= render "online_retails/online_retail" %>
                       </div>
                       
