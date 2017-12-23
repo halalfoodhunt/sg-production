@@ -137,7 +137,7 @@
 							<% end %>
 						</div>
 						<div class="event_box row pix_builder_bg">
-							<h4>Menu Items</h4>
+							<h4>Online Products</h4>
 							<% @online_retail.online_retail_menu_items.each do |online_retail_menu_item| %>
 							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to online_retail_menu_item.name, online_retails_path(online_retail_menu_item: online_retail_menu_item.name) %></p>
 							</div>
