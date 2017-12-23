@@ -83,6 +83,25 @@
         <% end %>
     </div>
      <p><a href="#morecuisinetype" data-toggle="collapse"><i class="fa fa-plus" aria-hidden="true"></i> See More</a></p>
+  <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample13" aria-expanded="false" aria-controls="collapseExample13" style="margin-bottom:10px;">
+    Filter Event Types
+  </button>
+  <div class="collapse in" id="collapseExample13">
+    <div class="card card-body">
+      <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Event Types" %> <small>(<%= link_to 'Clear Selection', caterers_path %>)</small><br>
+       <%= f.collection_check_boxes :event_types_id_in_any, EventType.first(5), :id, :name do |b| %>
+      <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
+        <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
+      </div>
+      <% end %><hr>
+      <div id="moreeventtype" class="collapse">
+        <%= f.collection_check_boxes :event_types_id_in_any, EventType.offset(5), :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
+          <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
+        </div>
+        <% end %>
+    </div>
+     <p><a href="#moreeventtype" data-toggle="collapse"><i class="fa fa-plus" aria-hidden="true"></i> See More</a></p>
   </div>
    <%= f.submit "Filter", :class => "btn btn-block btn-default", :style => "padding:10px;" %>
   <% end %>
