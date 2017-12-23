@@ -221,7 +221,8 @@
           
           <div id="homies1" class="tab-pane fade">
             <div class="container">
-              <div class="two-thirds column">
+              
+             <div class="two-thirds column">
               <div class="col-xs-12 col-sm-12 col-md-4 text-right">
               
               </div>
@@ -252,16 +253,13 @@
               
             </div>
             
-            <div id="caterers1" class="tab-pane fade in active">
+            <div id="caterers1" class="tab-pane fade">
               <div class="container">
-                 <div class="four columns">
-                   <div class="col-xs-12 col-sm-12 col-md-12 hidden-xs"></div>
-                    <%= render "caterers/filter_caterers" %>
-                  </div>
                 
-                <div class="twelve columns">
-                  <div class="col-xs-12 col-sm-12 col-md-10"><h5>SHOWING <strong><u><%= @caterers.count %></u></strong> CATERERS IN SINGAPORE</h5></div>
-                  <div class="col-xs-12 col-sm-12 col-md-2 text-right">
+                <div class="two-thirds column"><h5>SHOWING <strong><u><%= @caterers.count %></u></strong> CATERERS IN SINGAPORE</h5></div>
+                
+                <div class="one-third column">
+                  <div class="col-xs-12 col-sm-12 col-md-12 text-right">
                     <div class="dropdown">
                       <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
                         <span class="caret"></span></button>
@@ -273,12 +271,15 @@
                         </ul>
                       </div>
                     </div>
-                    <%= render "caterers/caterer" %>
-                </div>
+                  </div>
                   
-              </div>
+                  <div class="sixteen columns">
+                    <%= render "caterers/caterer" %>
+                  </div>
+                  
+                </div>
                 
-            </div>
+              </div>
 
               <div id="deliveries1" class="tab-pane fade">
                 <div class="container">
@@ -301,7 +302,6 @@
                     </div>
                     
                     <div class="sixteen columns">
-                      <%= render "food_deliveries/filter_food_deliveries" %>
                       <%= render "food_deliveries/food_delivery" %>
                     </div>
                     
