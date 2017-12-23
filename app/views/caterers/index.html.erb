@@ -256,11 +256,12 @@
             <div id="caterers1" class="tab-pane fade in active">
               <div class="container">
                  <div class="four columns">
+                   <div class="col-xs-12 col-sm-12 col-md-12 hidden-xs"></div>
                     <%= render "caterers/filter_caterers" %>
                   </div>
                 
                 <div class="twelve columns">
-                  <div class="col-xs-12 col-sm-12 col-md-10"><h5>SHOWING <strong><u><%= @food_deliveries.count %></u></strong> FOOD DELIVERIES IN SINGAPORE</h5></div>
+                  <div class="col-xs-12 col-sm-12 col-md-10"><h5>SHOWING <strong><u><%= @caterers.count %></u></strong> CATERERS IN SINGAPORE</h5></div>
                   <div class="col-xs-12 col-sm-12 col-md-2 text-right">
                     <div class="dropdown">
                       <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
