@@ -256,10 +256,13 @@
             <div id="caterers1" class="tab-pane fade in active">
               <div class="container">
                 
-                <div class="two-thirds column"><h5>SHOWING <strong><u><%= @caterers.count %></u></strong> CATERERS IN SINGAPORE</h5></div>
+                <div class="four columns"><%= render "caterers/filter_caterers" %></div>
                 
-                <div class="one-third column">
-                  <div class="col-xs-12 col-sm-12 col-md-12 text-right">
+                <div class="twelve columns">
+                  <div class="col-xs-12 col-sm-12 col-md-10 text-right">
+                  <h5>SHOWING <strong><u><%= @caterers.count %></u></strong> CATERERS IN SINGAPORE</h5>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-2 text-right">
                     <div class="dropdown">
                       <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
                         <span class="caret"></span></button>
@@ -271,10 +274,6 @@
                         </ul>
                       </div>
                     </div>
-                  </div>
-                  
-                  <div class="sixteen columns">
-                    <%= render "caterers/filter_caterers" %>
                     <%= render "caterers/caterer" %>
                   </div>
                   
