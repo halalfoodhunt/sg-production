@@ -1,0 +1,103 @@
+ <div class="four columns alpha hidden-xs">
+  <%= search_form_for @search_bakers, :html => {:class => 'form_no_padding' }, url: bakers_path do |f| %>
+  <h4 style="margin-top:0;"><i class="fa fa-filter" aria-hidden="true"></i> Filter Bakers</h4> 
+  <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample35" aria-expanded="false" aria-controls="collapseExample35" style="margin-bottom:10px;">
+    Filter Menu Items
+  </button>
+  <div class="collapse in" id="collapseExample35">
+    <div class="card card-body">
+      <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Menu Items" %></b> <small>(<%= link_to 'Clear Selection', bakers_path %>)</small><br>
+      <%= f.collection_check_boxes :baker_menu_items_id_in_any, BakerMenuItem.first(10), :id, :name do |b| %>
+      <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
+        <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
+      </div>
+      <% end %><hr>
+      <div id="morebakeritems2" class="collapse">
+        <%= f.collection_check_boxes :baker_menu_items_id_in_any, BakerMenuItem.offset(10), :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
+          <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
+        </div>
+        <% end %>
+      </div>
+      <p><a href="#morebakeritems2" data-toggle="collapse"><i class="fa fa-plus" aria-hidden="true"></i> See More</a></p>
+    </div>
+  </div>
+  <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample36" aria-expanded="false" aria-controls="collapseExample36" style="margin-bottom:10px;">
+    Filter Baker Product Categories
+  </button>
+  <div class="collapse in" id="collapseExample36">
+    <div class="card card-body">
+      <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Baker Product Categories" %></b> <small>(<%= link_to 'Clear Selection', bakers_path %>)</small><br>
+      <%= f.collection_check_boxes :baker_product_categories_id_in_any, BakerProductCategory.first(10), :id, :name do |b| %>
+      <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
+        <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
+      </div>
+      <% end %><hr>
+      <div id="morebakerproductcategory" class="collapse">
+        <%= f.collection_check_boxes :baker_product_categories_id_in_any, BakerProductCategory.offset(10), :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
+          <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
+        </div>
+        <% end %>
+      </div>
+      <p><a href="#morebakerproductcategory" data-toggle="collapse"><i class="fa fa-plus" aria-hidden="true"></i> See More</a></p>
+    </div>
+  </div>
+  <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample37" aria-expanded="false" aria-controls="collapseExample37" style="margin-bottom:10px;">
+    Filter Ordering Methods
+  </button>
+  <div class="collapse in" id="collapseExample37">
+    <div class="card card-body">
+      <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Ordering Methods" %></b> <small>(<%= link_to 'Clear Selection', bakers_path %>)</small><br>
+      <%= f.collection_check_boxes :ordering_methods_id_in_any, OrderingMethod.first(5), :id, :name do |b| %>
+      <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0; padding-right:0;">
+        <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
+      </div>
+      <% end %><hr>
+      <div id="moreorderingmethod2" class="collapse">
+        <%= f.collection_check_boxes :ordering_methods_id_in_any, OrderingMethod.offset(5), :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0; padding-right:0;">
+          <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
+        </div>
+        <% end %>
+      </div>
+      <p><a href="#moreorderingmethod2" data-toggle="collapse"><i class="fa fa-plus" aria-hidden="true"></i> See More</a></p>
+    </div>
+  </div>
+  <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample38" aria-expanded="false" aria-controls="collapseExample38" style="margin-bottom:10px;">
+    Filter Service Types
+  </button>
+  <div class="collapse in" id="collapseExample38">
+    <div class="card card-body">
+      <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Service Types" %> <small>(<%= link_to 'Clear Selection', bakers_path %>)</small><br>
+      <%= f.collection_check_boxes :baker_service_types_id_in_any, BakerServiceType.first(5), :id, :name do |b| %>
+      <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
+        <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
+      </div>
+      <% end %><hr>
+      <div id="moreservicetypes2" class="collapse">
+        <%= f.collection_check_boxes :baker_service_types_id_in_any, BakerServiceType.offset(5), :id, :name do |b| %>
+        <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
+          <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
+        </div>
+        <% end %>
+      </div>
+      <p><a href="#moreservicetypes2" data-toggle="collapse"><i class="fa fa-plus" aria-hidden="true"></i> See More</a></p>
+    </div>
+  </div>
+  <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample39" aria-expanded="false" aria-controls="collapseExample39" style="margin-bottom:10px;">
+    Filter Locations
+  </button>
+  <div class="collapse in" id="collapseExample39">
+    <div class="card card-body">
+      <i class="fa fa-list" aria-hidden="true"></i> <%= f.label "Delivery Location" %> <small>(<%= link_to 'Clear Selection', bakers_path %>)</small><br>
+      <%= f.collection_check_boxes :delivery_locations_id_in_any, DeliveryLocation.all, :id, :name do |b| %>
+      <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
+        <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+   <%= f.submit "Filter", :class => "btn btn-block btn-default", :style => "padding:10px;" %>
+  <% end %>
+</div>

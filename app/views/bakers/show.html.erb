@@ -109,30 +109,37 @@
 			<div class="one-third column">
 				<div class="content_div" style="padding:0;">
 						<div class="event_box row pix_builder_bg">
+							<h4>Bakers Products</h4>
+							<% @baker.baker_menu_items.each do |baker_menu_item| %>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p> <%= link_to baker_menu_item.name, bakers_path(baker_menu_item: baker_menu_item.name %></p>
+							</div>
+							<% end %>
+						</div>
+						<div class="event_box row pix_builder_bg">
 							<h4>Ordering Methods</h4>
 							<% @baker.ordering_methods.each do |ordering_method| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p> <%= ordering_method.name %></p>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p> <%= link_to ordering_method.name, bakers_path(ordering_method: ordering_method.name) %></p>
 							</div>
 							<% end %>
 						</div>
 						<div class="event_box row pix_builder_bg">
 							<h4>Delivery Locations</h4>
 							<% @baker.delivery_locations.each do |delivery_location| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= delivery_location.name %></p>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to delivery_location.name, bakers_path(delivery_location: delivery_location.name) %></p>
 							</div>
 							<% end %>
 						</div>
 						<div class="event_box row pix_builder_bg">
 							<h4>Baker Service Types</h4>
 							<% @baker.baker_service_types.each do |baker_service_type| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= baker_service_type.name %></p>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to baker_service_type.name, bakers_path(baker_service_type: baker_service_type.name) %></p>
 							</div>
 							<% end %>
 						</div>
 						<div class="event_box row pix_builder_bg">
 							<h4>Baker Product Categories</h4>
 							<% @baker.baker_product_categories.each do |baker_product_category| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= baker_product_category.name %></p>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to baker_product_category.name, bakers_path(baker_product_category: baker_product_category.name) %></p>
 							</div>
 							<% end %>
 						</div>
