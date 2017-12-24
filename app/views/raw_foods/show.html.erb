@@ -132,7 +132,7 @@
 						<div class="event_box row pix_builder_bg">
 							<h4>Raw Food Service Types</h4>
 							<% @raw_food.online_retail_service_types.each do |online_retail_service_type| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to online_retail_menu_item.name, raw_foods_path (online_retail_menu_item: online_retail_menu_item.name) %></p>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to online_retail_service_type.name, raw_foods_path (online_retail_service_type: online_retail_service_type.name) %></p>
 							</div>
 							<% end %>
 						</div>
