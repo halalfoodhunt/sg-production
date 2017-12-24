@@ -109,7 +109,7 @@
 			<div class="one-third column">
 				<div class="content_div" style="padding:0;">
 						<div class="event_box row pix_builder_bg">
-							<h4>Menu Items</h4>
+							<h4>Supplier Products</h4>
 							<% @supplier.supplier_menu_items.each do |supplier_menu_item| %>
 							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to supplier_menu_item.name, suppliers_path(supplier_menu_item: supplier_menu_item.name) %></p>
 							</div>
