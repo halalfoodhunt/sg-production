@@ -108,31 +108,38 @@
 			</div>
 			<div class="one-third column">
 				<div class="content_div" style="padding:0;">
+					<div class="event_box row pix_builder_bg">
+							<h4>Raw Food Items</h4>
+							<% @raw_food.raw_food_menu_item.each do |raw_food_menu_item| %>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p> <%= link_to raw_food_menu_item.name, raw_foods_path(raw_food_menu_item: raw_food_menu_item.name) %></p>
+							</div>
+							<% end %>
+						</div>
 						<div class="event_box row pix_builder_bg">
 							<h4>Ordering Methods</h4>
 							<% @raw_food.ordering_methods.each do |ordering_method| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p> <%= ordering_method.name %></p>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p> <%= link_to ordering_method.name, raw_foods_path(ordering_method: ordering_method.name) %></p>
 							</div>
 							<% end %>
 						</div>
 						<div class="event_box row pix_builder_bg">
 							<h4>Delivery Locations</h4>
 							<% @raw_food.delivery_locations.each do |delivery_location| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= delivery_location.name %></p>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to delivery_location.name, raw_foods_path(delivery_location: delivery_location.name) %></p>
 							</div>
 							<% end %>
 						</div>
 						<div class="event_box row pix_builder_bg">
-							<h4>Online Retail Service Types</h4>
+							<h4>Raw Food Service Types</h4>
 							<% @raw_food.online_retail_service_types.each do |online_retail_service_type| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= online_retail_service_type.name %></p>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to online_retail_menu_item.name, raw_foods_path (online_retail_menu_item: online_retail_menu_item.name) %></p>
 							</div>
 							<% end %>
 						</div>
 						<div class="event_box row pix_builder_bg">
 							<h4>Raw Food Categories</h4>
 							<% @raw_food.raw_food_product_categories.each do |raw_food_product_category| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= raw_food_product_category.name %></p>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to raw_food_product_category.name, raw_foods_path (raw_food_product_category: raw_food_product_category.name) %></p>
 							</div>
 							<% end %>
 						</div>
