@@ -111,7 +111,7 @@
 						<div class="event_box row pix_builder_bg">
 							<h4>Bakers Products</h4>
 							<% @baker.baker_menu_items.each do |baker_menu_item| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p> <%= link_to baker_menu_item.name, bakers_path(baker_menu_item: baker_menu_item.name %></p>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p> <%= link_to baker_menu_item.name, bakers_path(baker_menu_item: baker_menu_item.name) %></p>
 							</div>
 							<% end %>
 						</div>
