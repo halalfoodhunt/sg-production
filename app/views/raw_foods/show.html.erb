@@ -110,7 +110,7 @@
 				<div class="content_div" style="padding:0;">
 					<div class="event_box row pix_builder_bg">
 							<h4>Raw Food Items</h4>
-							<% @raw_food.raw_food_menu_item.each do |raw_food_menu_item| %>
+							<% @raw_food.raw_food_menu_items.each do |raw_food_menu_item| %>
 							<div class="col-xs-12 col-md-12" style="padding:0;"><p> <%= link_to raw_food_menu_item.name, raw_foods_path(raw_food_menu_item: raw_food_menu_item.name) %></p>
 							</div>
 							<% end %>
