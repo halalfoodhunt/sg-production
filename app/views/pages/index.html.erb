@@ -354,7 +354,11 @@
                   <div id="suppliers1" class="tab-pane fade">
                     <div class="container">
                       
-                      <div class="two-thirds column"><h5>SHOWING <strong><u><%= @suppliers.count %></u></strong> SUPPLIERS IN SINGAPORE</h5></div>
+                      <div class="two-thirds column">
+            <div class="col-xs-12 col-sm-12 col-md-4 text-right">
+              
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @suppliers.count %></u></strong> SUPPLIERS IN SINGAPORE</h5></div></div>
                       
                       <div class="one-third column">
                         <div class="col-xs-12 col-sm-12 col-md-12 text-right">
@@ -372,6 +376,7 @@
                         </div>
                         
                         <div class="sixteen columns">
+                          <%= render "suppliers/filter_suppliers" %>
                           <%= render "suppliers/supplier" %>
                         </div>
                         

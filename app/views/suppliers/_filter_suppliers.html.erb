@@ -7,13 +7,13 @@
   <div class="collapse in" id="collapseExample25">
     <div class="card card-body">
       <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Menu Items" %></b> <small>(<%= link_to 'Clear Selection', suppliers_path %>)</small><br>
-      <%= f.collection_check_boxes :online_retail_menu_items_id_in_any, OnlineRetailMenuItem.first(10), :id, :name do |b| %>
+      <%= f.collection_check_boxes :supplier_menu_items_id_in_any, SupplierMenuItem.first(10), :id, :name do |b| %>
       <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
         <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
       </div>
       <% end %><hr>
       <div id="moreitems2" class="collapse">
-        <%= f.collection_check_boxes :online_retail_menu_items_id_in_any, OnlineRetailMenuItem.offset(10), :id, :name do |b| %>
+        <%= f.collection_check_boxes :supplier_menu_items_id_in_any, SupplierMenuItem.offset(10), :id, :name do |b| %>
         <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
           <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
         </div>
