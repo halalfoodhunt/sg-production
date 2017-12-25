@@ -5,20 +5,38 @@ class RawFoodsController < ApplicationController
   # GET /raw_foods
   # GET /raw_foods.json
   def index
+    if params[:ordering_method].present? 
+    @ordering_method_id = OrderingMethod.find_by(name: params[:ordering_method]).id
+    @raw_foods = RawFood.joins(:booking_methods).where(booking_methods: {ordering_method_id: @ordering_method_id})
+    @search_raw_foods = RawFood.ransack(params[:q])
+    elsif params[:delivery_location].present? 
+    @delivery_location_id = DeliveryLocation.find_by(name: params[:delivery_location]).id
+    @raw_foods = RawFood.joins(:shipping_locations).where(shipping_locations: {delivery_location_id: @delivery_location_id})
+    @search_raw_foods = RawFood.ransack(params[:q])
+    elsif params[:online_retail_service_type].present? 
+    @online_retail_service_type_id = OnlineRetailServiceType.find_by(name: params[:online_retail_service_type]).id
+    @raw_foods = RawFood.joins(:homie_work_types).where(homie_work_types: {online_retail_service_type_id: @online_retail_service_type_id})
+    @search_raw_foods = RawFood.ransack(params[:q])
+    elsif params[:online_retail_service_type].present? 
+    @raw_food_menu_item_id = RawFoodMenuItem.find_by(name: params[:raw_food_menu_item]).id
+    @raw_foods = RawFood.joins(:raw_food_dish_items).where(raw_food_dish_items: {raw_food_menu_item_id: @raw_food_menu_item_id})
+    @search_raw_foods = RawFood.ransack(params[:q])
+    else
+    @search_raw_foods = RawFood.ransack(params[:q])
+    @raw_foods = @search_raw_foods.result.order("created_at DESC").where(draft: false)
+    end
     @search_places = Place.ransack(params[:q])
     @places = @search_places.result.order("created_at DESC").where(draft: false)
     @search_homies = Homy.ransack(params[:q])
-    @homies = @search_homies.result.order("created_at DESC").where(draft: false)
+    @homies = @search_raw_foods.result.order("created_at DESC").where(draft: false)
     @search_caterers = Caterer.ransack(params[:q])
     @caterers = @search_caterers.result.order("created_at DESC").where(draft: false)
     @search_food_deliveries = FoodDelivery.ransack(params[:q])
     @food_deliveries = @search_food_deliveries.result.order("created_at DESC").where(draft: false)
-    @search_online_retails = OnlineRetail.ransack(params[:q])
-    @online_retails = @search_online_retails.result.order("created_at DESC").where(draft: false)
     @search_suppliers = Supplier.ransack(params[:q])
     @suppliers = @search_suppliers.result.order("created_at DESC").where(draft: false)
-    @search_raw_foods = RawFood.ransack(params[:q])
-    @raw_foods = @search_raw_foods.result.order("created_at DESC").where(draft: false)
+    @search_online_retails = OnlineRetail.ransack(params[:q])
+    @online_retails = @search_online_retails.result.order("created_at DESC").where(draft: false)
     @search_bakers = Baker.ransack(params[:q])
     @bakers = @search_bakers.result.order("created_at DESC").where(draft: false)
     @discounts = Discount.all

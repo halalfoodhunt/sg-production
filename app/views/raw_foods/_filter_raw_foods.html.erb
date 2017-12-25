@@ -23,13 +23,13 @@
     </div>
   </div>
   <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample46" aria-expanded="false" aria-controls="collapseExample46" style="margin-bottom:10px;">
-    Filter Raw Food Product Categories
+    Filter Product Categories
   </button>
   <div class="collapse in" id="collapseExample46">
     <div class="card card-body">
-      <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Raw Food Product Categories" %></b> <small>(<%= link_to 'Clear Selection', raw_foods_path %>)</small><br>
+      <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Product Categories" %></b> <small>(<%= link_to 'Clear Selection', raw_foods_path %>)</small><br>
       <%= f.collection_check_boxes :raw_food_product_categories_id_in_any, RawFoodProductCategory.first(10), :id, :name do |b| %>
-      <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
+      <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
         <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
       </div>
       <% end %><hr>
