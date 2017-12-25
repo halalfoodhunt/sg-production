@@ -1,12 +1,12 @@
  <div class="four columns alpha hidden-xs">
   <%= search_form_for @search_online_retails, :html => {:class => 'form_no_padding' }, url: online_retails_path do |f| %>
-  <h4 style="margin-top:0;"><i class="fa fa-filter" aria-hidden="true"></i> Filter Online Retails</h4> 
+  <h4 style="margin-top:0;"><i class="fa fa-filter" aria-hidden="true"></i> Filter Online Retailers</h4> 
   <button class="btn btn-block btn-light" type="button" data-toggle="collapse" data-target="#collapseExample25" aria-expanded="false" aria-controls="collapseExample25" style="margin-bottom:10px;">
     Filter Menu Items
   </button>
   <div class="collapse in" id="collapseExample25">
     <div class="card card-body">
-      <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Menu Items" %></b> <small>(<%= link_to 'Clear Selection', online_retails_path %>)</small><br>
+      <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Retail Items" %></b> <small>(<%= link_to 'Clear Selection', online_retails_path %>)</small><br>
       <%= f.collection_check_boxes :online_retail_menu_items_id_in_any, OnlineRetailMenuItem.first(10), :id, :name do |b| %>
       <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
         <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
