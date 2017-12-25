@@ -28,7 +28,7 @@ class RawFoodsController < ApplicationController
     @search_places = Place.ransack(params[:q])
     @places = @search_places.result.order("created_at DESC").where(draft: false)
     @search_homies = Homy.ransack(params[:q])
-    @homies = @search_raw_foods.result.order("created_at DESC").where(draft: false)
+    @homies = @search_homies.result.order("created_at DESC").where(draft: false)
     @search_caterers = Caterer.ransack(params[:q])
     @caterers = @search_caterers.result.order("created_at DESC").where(draft: false)
     @search_food_deliveries = FoodDelivery.ransack(params[:q])
