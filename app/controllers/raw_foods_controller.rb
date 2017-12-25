@@ -15,7 +15,7 @@ class RawFoodsController < ApplicationController
     @search_raw_foods = RawFood.ransack(params[:q])
     elsif params[:online_retail_service_type].present? 
     @online_retail_service_type_id = OnlineRetailServiceType.find_by(name: params[:online_retail_service_type]).id
-    @raw_foods = RawFood.joins(:homie_work_types).where(homie_work_types: {online_retail_service_type_id: @online_retail_service_type_id})
+    @raw_foods = RawFood.joins(:online_retail_work_types).where(online_retail_work_types: {online_retail_service_type_id: @online_retail_service_type_id})
     @search_raw_foods = RawFood.ransack(params[:q])
     elsif params[:online_retail_service_type].present? 
     @raw_food_menu_item_id = RawFoodMenuItem.find_by(name: params[:raw_food_menu_item]).id
