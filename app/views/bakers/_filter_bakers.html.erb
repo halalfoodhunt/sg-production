@@ -8,7 +8,7 @@
     <div class="card card-body">
       <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Menu Items" %></b> <small>(<%= link_to 'Clear Selection', bakers_path %>)</small><br>
       <%= f.collection_check_boxes :baker_menu_items_id_in_any, BakerMenuItem.first(10), :id, :name do |b| %>
-      <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
+      <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
         <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
       </div>
       <% end %><hr>
@@ -29,7 +29,7 @@
     <div class="card card-body">
       <i class="fa fa-list" aria-hidden="true"></i> <b><%= f.label "Baker Product Categories" %></b> <small>(<%= link_to 'Clear Selection', bakers_path %>)</small><br>
       <%= f.collection_check_boxes :baker_product_categories_id_in_any, BakerProductCategory.first(10), :id, :name do |b| %>
-      <div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:0;">
+      <div class="col-xs-12 col-sm-12 col-md-12" style="padding-left:0;">
         <%= b.check_box %> <%= b.label :style => 'font-size:12px; text-transform: none;' %>
       </div>
       <% end %><hr>
