@@ -5,6 +5,29 @@ class BakersController < ApplicationController
   # GET /bakers
   # GET /bakers.json
   def index
+    if params[:ordering_method].present? 
+    @ordering_method_id = OrderingMethod.find_by(name: params[:ordering_method]).id
+    @bakers = Baker.joins(:booking_methods).where(booking_methods: {ordering_method_id: @ordering_method_id})
+    @search_bakers = Baker.ransack(params[:q])
+    elsif params[:delivery_location].present? 
+    @delivery_location_id = DeliveryLocation.find_by(name: params[:delivery_location]).id
+    @bakers = Baker.joins(:shipping_locations).where(shipping_locations: {delivery_location_id: @delivery_location_id})
+    @search_bakers = Baker.ransack(params[:q])
+    elsif params[:product_type_service_type].present? 
+    @baker_service_type_id = BakerServiceType.find_by(name: params[:baker_service_type]).id
+    @bakers = Baker.joins(:baker_work_types).where(baker_work_types: {baker_service_type_id: @baker_service_type_id})
+    @search_bakers = Baker.ransack(params[:q])
+    elsif params[:baker_service_type].present? 
+    @baker_menu_item_id = BakerMenuItem.find_by(name: params[:baker_menu_item]).id
+    @bakers = Baker.joins(:baker_dish_items).where(baker_dish_items: {baker_menu_item_id: @baker_menu_item_id})
+    @search_bakers = Baker.ransack(params[:q])
+    @baker_product_category_id = BakerProductCategory.find_by(name: params[:baker_product_category]).id
+    @bakers = Baker.joins(:baker_product_types).where(baker_product_types: {baker_product_category_id: @baker_product_category_id})
+    @search_bakers = Baker.ransack(params[:q])
+    else
+    @search_bakers = Baker.ransack(params[:q])
+    @bakers = @search_bakers.result(distinct: true).order("created_at DESC").where(draft: false)
+    end
     @search_places = Place.ransack(params[:q])
     @places = @search_places.result.order("created_at DESC").where(draft: false)
     @search_homies = Homy.ransack(params[:q])
@@ -19,8 +42,7 @@ class BakersController < ApplicationController
     @suppliers = @search_suppliers.result.order("created_at DESC").where(draft: false)
     @search_raw_foods = RawFood.ransack(params[:q])
     @raw_foods = @search_raw_foods.result.order("created_at DESC").where(draft: false)
-    @search_bakers = Baker.ransack(params[:q])
-    @bakers = @search_bakers.result.order("created_at DESC").where(draft: false)
+    @place_types = PlaceType.all
     @discounts = Discount.all
   end
 
