@@ -120,6 +120,11 @@
 							<% end %>
 						</div>
 						<div class="event_box row pix_builder_bg">
+							<h4>Self-collect Location</h4>
+							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= @homy.self_collect_location %></p>
+							</div>
+						</div>
+						<div class="event_box row pix_builder_bg">
 							<h4>Homies Service Types</h4>
 							<% @homy.homie_service_types.each do |homie_service_type| %>
 							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to homie_service_type.name, homies_path(homie_service_type: homie_service_type.name) %></p>
