@@ -11,13 +11,13 @@
 						<p class="headtext_style editContent" style="font-size:18px;"><span class="pix-text"><%= image_tag @supplier.logo.url(:large), :class => "img-circle", :style => "height:80px; width:80px;" %> <%= @supplier.brand_name %></span></p><br>
 						<hr>
 						<p><% unless @supplier.general_contact_number.blank? %>
-						<%= @supplier.general_contact_number %>
+						<img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> <%= @supplier.general_contact_number %>
 						<hr><% end %></p>
 						<p><% unless @supplier.general_email.blank? %>
-						<%= @supplier.general_email %>
+						<i class="fa fa-envelope"></i> <%= @supplier.general_email %>
 						<hr><% end %></p>
 						<p><% unless @supplier.self_collection_address.blank? %>
-						<%= @supplier.self_collection_address %>
+						<i class="fa fa-map-marker"></i> <%= @supplier.self_collection_address %>
 						<hr><% end %></p>
 							Social sites: <% unless @supplier.facebook_page.blank? %><%= link_to @supplier.facebook_page do %><i class="fa fa-facebook-official fa-2x"></i><% end %><% end %>
 							<% unless @supplier.instagram_handle.blank? %><%= link_to @supplier.instagram_handle do %><i class="fa fa-instagram fa-2x"></i><% end %><% end %></p><br>
