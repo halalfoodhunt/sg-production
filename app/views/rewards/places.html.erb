@@ -189,7 +189,7 @@
           <div class="container">
             
             <div class="sixteen columns">
-              <div class="col-xs-12 col-sm-12 col-md-3"></div>
+              <div class="col-xs-12 col-sm-12 col-md-3"><%= render "places/filter_friends_places" %></div>
               <div class="col-xs-12 col-sm-12 col-md-9"><small>The FRIENDS Rewards Card must be presented to participating merchants BEFORE payment. All discounts and exclusive deals offered to holders of the FRIENDS Rewards Card are not applicable in conjunction with other promotions, discounts and set meals, unless otherwise stated by the participating merchants in their individual listing pages.</small></div>
               <div class="col-xs-12 col-sm-12 col-md-3"></div>
               <div class="col-xs-12 col-sm-12 col-md-7"><h5>SHOWING <strong><u><%= @places.count %></u></strong> HALAL ESTABLISHMENTS IN SINGAPORE</h5> </div>
@@ -209,7 +209,6 @@
               </div>
               
               <div class="sixteen columns">
-                <%= render "places/filter_friends_places" %>
                 <%= render "places/friends_place" %>
               </div>
               
