@@ -292,7 +292,7 @@
             <div class="two-thirds column"><div class="col-xs-12 col-sm-12 col-md-4 text-right">
               
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @food_deliveries.count %></u></strong> FOOD DELIVERIES IN SINGAPORE</h5></div>
+            <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @rewards.where.not(food_delivery_id: nil).count %></u></strong> FOOD DELIVERIES IN SINGAPORE</h5></div>
           </div>
           
           <div class="one-third column">
