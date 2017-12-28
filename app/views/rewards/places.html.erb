@@ -323,9 +323,8 @@
             
             <div class="two-thirds column">
               <div class="col-xs-12 col-sm-12 col-md-4 text-right">
-                
-              </div>
-              <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @online_retails.count %></u></strong> ONLINE RETAILS IN SINGAPORE</h5></div></div>
+              </div> 
+              <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @rewards.where.not(online_retail_id: nil).count %></u></strong> ONLINE RETAILS IN SINGAPORE</h5></div></div>
               
               <div class="one-third column">
                 <div class="col-xs-12 col-sm-12 col-md-12 text-right">
