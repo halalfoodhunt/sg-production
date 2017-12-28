@@ -33,7 +33,7 @@ class RewardsController < ApplicationController
     @search_places = Place.ransack(params[:q])
     else
     @search_places = Place.ransack(params[:q])
-    @places = @search_places.result(distinct: true).order("created_at DESC").where(draft: false).where.not(discount_id: nil)
+    @places = @search_places.result(distinct: true).order("created_at DESC").where(draft: false)
     end
     @search_homies = Homy.ransack(params[:q])
     @homies = @search_homies.result.order("created_at DESC").where(draft: false)
@@ -51,6 +51,7 @@ class RewardsController < ApplicationController
     @bakers = @search_bakers.result.order("created_at DESC").where(draft: false)
     @place_types = PlaceType.all
     @discounts = Discount.all
+    @rewards = Reward.all
   end
   
 end
