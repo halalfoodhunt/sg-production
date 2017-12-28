@@ -356,7 +356,7 @@
                   <div class="col-xs-12 col-sm-12 col-md-4 text-right">
                     
                   </div>
-                  <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @suppliers.count %></u></strong> SUPPLIERS IN SINGAPORE</h5></div></div>
+                  <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @rewards.where.not(supplier_id: nil).count %></u></strong> SUPPLIERS IN SINGAPORE</h5></div></div>
                   
                   <div class="one-third column">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-right">
@@ -388,7 +388,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-4 text-right">
                       
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @bakers.count %></u></strong> BAKERS & CONFECTIONERS IN SINGAPORE</h5></div></div>
+                    <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @rewards.where.not(baker_id: nil).count %></u></strong> BAKERS & CONFECTIONERS IN SINGAPORE</h5></div></div>
                     
                     <div class="one-third column">
                       <div class="col-xs-12 col-sm-12 col-md-12 text-right">
@@ -420,7 +420,7 @@
                       <div class="col-xs-12 col-sm-12 col-md-4 text-right">
                         
                       </div>
-                      <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @raw_foods.count %></u></strong> RAW FOODS IN SINGAPORE</h5></div></div>
+                      <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @rewards.where.not(raw_food_id: nil).count %></u></strong> RAW FOODS IN SINGAPORE</h5></div></div>
                       
                       <div class="one-third column">
                         <div class="col-xs-12 col-sm-12 col-md-12 text-right">
