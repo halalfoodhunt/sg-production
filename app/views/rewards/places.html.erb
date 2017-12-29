@@ -187,15 +187,12 @@
         <div id="place1" class="tab-pane fade in active">
           <div class="container">
             
-           <div class="two-thirds column">
-            <div class="col-xs-12 col-sm-12 col-md-4 text-right">
-              
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @rewards.where.not(place_id: @place_id).count %></u></strong> HALAL ESTABLISHMENTS IN SINGAPORE</h5></div>
+           <div class="four columns">
           </div>
           
-          <div class="one-third column">
-            <div class="col-xs-12 col-sm-12 col-md-12 text-right">
+          <div class="twelve columns">
+            <div class="col-xs-12 col-sm-12 col-md-10"><h5>SHOWING <strong><u><%= @rewards.where.not(place_id: @place_id).count %></u></strong> HALAL ESTABLISHMENTS IN SINGAPORE</h5></div>
+            <div class="col-xs-12 col-sm-12 col-md-2 text-right">
               <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
                   <span class="caret"></span></button>
