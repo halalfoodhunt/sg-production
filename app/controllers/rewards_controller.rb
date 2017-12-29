@@ -21,7 +21,7 @@ class RewardsController < ApplicationController
   def places
     if params[:feature].present? 
     @feature_id = Feature.find_by(name: params[:feature]).id
-    @places = Place.joins(:highlights).where(highlights: {feature_id: @feature_id})
+    @places = Place.joins(:highlights).where(highlights: {feature_id: @feature_id}).order("created_at DESC").where(draft: false).where(reward_id: nil)
     @search_places = Place.ransack(params[:q])
     elsif params[:menu_item].present? 
     @menu_item_id = MenuItem.find_by(name: params[:menu_item]).id
