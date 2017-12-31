@@ -23,11 +23,12 @@ class RewardsController < ApplicationController
     @feature_id = Feature.find_by(name: params[:feature]).id
     @places = Place.joins(:highlights).where(highlights: {feature_id: @feature_id})
     @search_places = Place.ransack(params[:q])
-    @places = @search_places.result(distinct: true).order("created_at DESC").where(draft: false).where(reward_id: nil)
+    @rewards = @search_places.result(distinct: true).order("created_at DESC").where(draft: false).where.not(place_id: @place_id).count
     elsif params[:menu_item].present? 
     @menu_item_id = MenuItem.find_by(name: params[:menu_item]).id
     @places = Place.joins(:dish_items).where(dish_items: {menu_item_id: @menu_item_id})
     @search_places = Place.ransack(params[:q])
+    @rewards = @search_places.result(distinct: true).order("created_at DESC").where(draft: false).where.not(place_id: @place_id).count
     elsif params[:dining_type].present? 
     @dining_type_id = DiningType.find_by(name: params[:dining_type]).id
     @places = Place.joins(:eateries).where(eateries: {dining_type_id: @dining_type_id})
