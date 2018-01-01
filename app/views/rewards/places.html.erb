@@ -191,7 +191,7 @@
           </div>
           
           <div class="twelve columns">
-            <div class="col-xs-12 col-sm-12 col-md-10"><h5>SHOWING <strong><u><%= @places.where.not(reward_id: nil).count %></u></strong> HALAL ESTABLISHMENTS IN SINGAPORE</h5></div>
+            <div class="col-xs-12 col-sm-12 col-md-10"><h5>SHOWING <strong><u><%= @places.where(reward_id: nil).count %></u></strong> HALAL ESTABLISHMENTS IN SINGAPORE</h5></div>
             <div class="col-xs-12 col-sm-12 col-md-2 text-right">
               <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
