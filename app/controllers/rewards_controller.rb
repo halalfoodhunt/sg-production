@@ -48,6 +48,7 @@ class RewardsController < ApplicationController
     @dining_type_id = DiningType.find_by(name: params[:dining_type]).id
     @places = Place.joins(:eateries).where(eateries: {dining_type_id: @dining_type_id}).order("created_at DESC").where(draft: false).where(reward_id: nil)
     @search_places = Place.ransack(params[:q])
+    @rewards = Reward.all
     else
     @search_places = Place.ransack(params[:q])
     @places = @search_places.result(distinct: true).order("created_at DESC").where(draft: false).where(reward_id: nil)
