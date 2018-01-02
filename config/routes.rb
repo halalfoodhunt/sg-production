@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'pages#index'
   
+  get 'rewards/homies_and_pop_ups'
+  
   get 'rewards/places'
 
   get 'rewards/index'
