@@ -219,16 +219,17 @@
         <div id="homies1" class="tab-pane fade">
           <div class="container">
             
-           <div class="two-thirds column">
-            <div class="col-xs-12 col-sm-12 col-md-4 text-right">
-              
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @rewards.where.not(homy_id: @homy_id).count %></u></strong> HOMIES & POP-UPS IN SINGAPORE</h5></div>
-          </div>
-          
-          <div class="one-third column">
-            <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-              <div class="dropdown">
+           <div class="sixteen columns">
+            <div class="col-xs-12 col-sm-12 col-md-3"><%= render "homies/filter_friends_homies" %></div>
+            <div class="col-xs-12 col-sm-12 col-md-9">
+              <div class="well">
+                <small>The FRIENDS Rewards Card must be presented to participating merchants BEFORE payment. All discounts and exclusive deals offered to holders of the FRIENDS Rewards Card are not applicable in conjunction with other promotions, discounts and set meals, unless otherwise stated by the participating merchants in their individual listing pages. </small>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-10">
+                <h5>SHOWING <strong><u><%= @rewards.where.not(homy_id: @homy_id).count %></u></strong> HOMIES & POP-UPS IN SINGAPORE</h5>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-2 text-right">
+                <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
                   <span class="caret"></span></button>
                   <ul class="dropdown-menu">
@@ -239,15 +240,12 @@
                   </ul>
                 </div>
               </div>
+              <div class="col-xs-12 col-sm-12 col-md-12" style="padding:0;"><%= render "homies/friends_homie" %></div>
             </div>
             
-            <div class="sixteen columns">
-              <%= render "homies/filter_homies" %>
-              <%= render "homies/friends_homie" %>
             </div>
-            
+  
           </div>
-          
         </div>
         
         <div id="caterers1" class="tab-pane fade">
