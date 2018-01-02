@@ -3,6 +3,18 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'pages#index'
   
+  get 'rewards/raw_food'
+  
+  get 'rewards/online_retail'
+  
+  get 'rewards/suppliers'
+  
+  get 'rewards/bakers'
+  
+  get 'rewards/food_deliveries'
+  
+  get 'rewards/caterers'
+  
   get 'rewards/homies_and_popups'
   
   get 'rewards/places'

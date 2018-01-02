@@ -251,17 +251,18 @@
         <div id="caterers1" class="tab-pane fade">
           <div class="container">
             
-           <div class="two-thirds column">
-            <div class="col-xs-12 col-sm-12 col-md-4 text-right">
-              
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @rewards.where.not(caterer_id: @caterer_id).count %></u></strong> CATERERS IN SINGAPORE</h5></div>
-          </div>
-          
-          <div class="one-third column">
-            <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-              <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Sort
+          <div class="sixteen columns">
+            <div class="col-xs-12 col-sm-12 col-md-3"><%= render "caterers/filter_friends_caterers" %></div>
+            <div class="col-xs-12 col-sm-12 col-md-9">
+              <div class="well">
+                <small>The FRIENDS Rewards Card must be presented to participating merchants BEFORE payment. All discounts and exclusive deals offered to holders of the FRIENDS Rewards Card are not applicable in conjunction with other promotions, discounts and set meals, unless otherwise stated by the participating merchants in their individual listing pages. </small>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-10">
+                <h5>SHOWING <strong><u><%= @rewards.where.not(caterer_id: @caterer_id).count %></u></strong> CATERERS IN SINGAPORE</h5>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-2 text-right">
+                <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
                   <span class="caret"></span></button>
                   <ul class="dropdown-menu">
                     <li><center><h5><%= sort_link(@search_caterers, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
@@ -271,16 +272,13 @@
                   </ul>
                 </div>
               </div>
+              <div class="col-xs-12 col-sm-12 col-md-12" style="padding:0;"><%= render "caterers/friends_caterer" %></div>
             </div>
             
-            <div class="sixteen columns">
-              <%= render "caterers/filter_caterers" %>
-              <%= render "caterers/friends_caterer" %>
+                </div>
+                
+              </div>
             </div>
-            
-          </div>
-          
-        </div>
 
         <div id="deliveries1" class="tab-pane fade">
           <div class="container">
