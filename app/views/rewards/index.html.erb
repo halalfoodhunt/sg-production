@@ -189,11 +189,15 @@
           
           <div class="sixteen columns">
             <div class="col-xs-12 col-sm-12 col-md-3"><%= render "places/filter_friends_places" %></div>
-            <div class="col-xs-12 col-sm-12 col-md-9"><div class="well"><small>The FRIENDS Rewards Card must be presented to participating merchants BEFORE payment. All discounts and exclusive deals offered to holders of the FRIENDS Rewards Card are not applicable in conjunction with other promotions, discounts and set meals, unless otherwise stated by the participating merchants in their individual listing pages. </small></div></div>
-            <div class="col-xs-12 col-sm-12 col-md-3 text-right"></div>
-            <div class="col-xs-12 col-sm-12 col-md-7"><h5>SHOWING <strong><u><%= @rewards.where.not(place_id: @place_id).count %></u></strong> HALAL ESTABLISHMENTS IN SINGAPORE</h5></div>
-            <div class="col-xs-12 col-sm-12 col-md-2 text-right">
-              <div class="dropdown">
+            <div class="col-xs-12 col-sm-12 col-md-9">
+              <div class="well">
+                <small>The FRIENDS Rewards Card must be presented to participating merchants BEFORE payment. All discounts and exclusive deals offered to holders of the FRIENDS Rewards Card are not applicable in conjunction with other promotions, discounts and set meals, unless otherwise stated by the participating merchants in their individual listing pages. </small>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-10">
+                <h5>SHOWING <strong><u><%= @rewards.where.not(place_id: @place_id).count %></u></strong> HALAL ESTABLISHMENTS IN SINGAPORE</h5>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-2 text-right">
+                <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
                   <span class="caret"></span></button>
                   <ul class="dropdown-menu">
@@ -204,10 +208,7 @@
                   </ul>
                 </div>
               </div>
-            </div>
-            
-            <div class="sixteen columns">
-              <%= render "places/friends_place" %>
+              <div class="col-xs-12 col-sm-12 col-md-12"><%= render "places/friends_place" %></div>
             </div>
             
           </div>
