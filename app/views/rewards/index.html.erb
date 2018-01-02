@@ -315,29 +315,30 @@
         <div id="retails1" class="tab-pane">
           <div class="container">
             
-            <div class="two-thirds column">
-              <div class="col-xs-12 col-sm-12 col-md-4 text-right">
-              </div> 
-              <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @rewards.where.not(online_retail_id: nil).count %></u></strong> ONLINE RETAILS IN SINGAPORE</h5></div></div>
-              
-              <div class="one-third column">
-                <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-                  <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
-                      <span class="caret"></span></button>
-                      <ul class="dropdown-menu">
-                        <li><center><h5><%= sort_link(@search_online_retails, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
-                        <li><center><h5><%= sort_link(@search_online_retails, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
-                        <li><center><h5><%= sort_link(@search_online_retails, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-                        <li><center><h5><%= sort_link(@search_online_retails, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
-                      </ul>
-                    </div>
-                  </div>
+            <div class="sixteen columns">
+            <div class="col-xs-12 col-sm-12 col-md-3"><%= render "online_retails/filter_friends_online_retails" %></div>
+            <div class="col-xs-12 col-sm-12 col-md-9">
+              <div class="well">
+                <small>The FRIENDS Rewards Card must be presented to participating merchants BEFORE payment. All discounts and exclusive deals offered to holders of the FRIENDS Rewards Card are not applicable in conjunction with other promotions, discounts and set meals, unless otherwise stated by the participating merchants in their individual listing pages. </small>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-10">
+                <h5>SHOWING <strong><u><%= @rewards.where.not(online_retail_id: @online_retail_id).count %></u></strong> ONLINE RETAILERS IN SINGAPORE</h5>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-2 text-right">
+                <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><center><h5><%= sort_link(@search_online_retails, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                    <li><center><h5><%= sort_link(@search_online_retails, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                    <li><center><h5><%= sort_link(@search_online_retails, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                    <li><center><h5><%= sort_link(@search_online_retails, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                  </ul>
                 </div>
-                
-                <div class="sixteen columns">
-                  <%= render "online_retails/filter_online_retails" %>
-                  <%= render "online_retails/friends_online_retail" %>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12" style="padding:0;"><%= render "online_retails/friends_online_retail" %></div>
+            </div>
+            
                 </div>
                 
               </div>
