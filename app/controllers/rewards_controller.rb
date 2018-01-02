@@ -73,7 +73,7 @@ class RewardsController < ApplicationController
     @rewards = Reward.all
   end
   
-  def homies_and_pop_ups
+  def homies_and_popups
     if params[:feature].present? 
     @feature_id = Feature.find_by(name: params[:feature]).id
     @places = Place.joins(:highlights).where(highlights: {feature_id: @feature_id})
