@@ -379,30 +379,30 @@
                 <div id="bakes1" class="tab-pane fade">
                   <div class="container">
                     
-                   <div class="two-thirds column">
-                    <div class="col-xs-12 col-sm-12 col-md-4 text-right">
-                      
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @rewards.where.not(baker_id: nil).count %></u></strong> BAKERS & CONFECTIONERS IN SINGAPORE</h5></div></div>
-                    
-                    <div class="one-third column">
-                      <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-                        <div class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
-                            <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                              <li><center><h5><%= sort_link(@search_bakers, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
-                              <li><center><h5><%= sort_link(@search_bakers, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
-                              <li><center><h5><%= sort_link(@search_bakers, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-                              <li><center><h5><%= sort_link(@search_bakers, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div class="sixteen columns">
-                        <%= render "bakers/filter_bakers" %>
-                        <%= render "bakers/friends_baker" %>
+                  <div class="sixteen columns">
+            <div class="col-xs-12 col-sm-12 col-md-3"><%= render "bakers/filter_friends_bakers" %></div>
+            <div class="col-xs-12 col-sm-12 col-md-9">
+              <div class="well">
+                <small>The FRIENDS Rewards Card must be presented to participating merchants BEFORE payment. All discounts and exclusive deals offered to holders of the FRIENDS Rewards Card are not applicable in conjunction with other promotions, discounts and set meals, unless otherwise stated by the participating merchants in their individual listing pages. </small>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-10">
+                <h5>SHOWING <strong><u><%= @rewards.where.not(baker_id: @baker_id).count %></u></strong> BAKERS IN SINGAPORE</h5>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-2 text-right">
+                <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><center><h5><%= sort_link(@search_bakers, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                    <li><center><h5><%= sort_link(@search_bakers, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                    <li><center><h5><%= sort_link(@search_bakers, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                    <li><center><h5><%= sort_link(@search_bakers, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12" style="padding:0;"><%= render "bakers/friends_baker" %></div>
+            </div>
+            
                       </div>
                       
                     </div>
@@ -411,30 +411,29 @@
                   <div id="raw1" class="tab-pane fade">
                     <div class="container">
                       
-                     <div class="two-thirds column">
-                      <div class="col-xs-12 col-sm-12 col-md-4 text-right">
-                        
-                      </div>
-                      <div class="col-xs-12 col-sm-12 col-md-8"><h5>SHOWING <strong><u><%= @rewards.where.not(raw_food_id: nil).count %></u></strong> RAW FOODS IN SINGAPORE</h5></div></div>
-                      
-                      <div class="one-third column">
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-                          <div class="dropdown">
-                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
-                              <span class="caret"></span></button>
-                              <ul class="dropdown-menu">
-                                <li><center><h5><%= sort_link(@search_raw_foods, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
-                                <li><center><h5><%= sort_link(@search_raw_foods, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
-                                <li><center><h5><%= sort_link(@search_raw_foods, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
-                                <li><center><h5><%= sort_link(@search_raw_foods, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        <div class="sixteen columns">
-                          <%= render "raw_foods/filter_raw_foods" %>
-                          <%= render "raw_foods/friends_raw_food" %>
+                     <div class="sixteen columns">
+            <div class="col-xs-12 col-sm-12 col-md-3"><%= render "raw_foods/filter_friends_raw_foods" %></div>
+            <div class="col-xs-12 col-sm-12 col-md-9">
+              <div class="well">
+                <small>The FRIENDS Rewards Card must be presented to participating merchants BEFORE payment. All discounts and exclusive deals offered to holders of the FRIENDS Rewards Card are not applicable in conjunction with other promotions, discounts and set meals, unless otherwise stated by the participating merchants in their individual listing pages. </small>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-10">
+                <h5>SHOWING <strong><u><%= @rewards.where.not(raw_food_id: @raw_food_id).count %></u></strong> RAW FOODS IN SINGAPORE</h5>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-2 text-right">
+                <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SORT BY
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><center><h5><%= sort_link(@search_raw_foods, :brand_name, 'A-Z', default_order: :asc) %></h5></center></li>
+                    <li><center><h5><%= sort_link(@search_raw_foods, :brand_name, 'Z-A', default_order: :desc) %></h5></center></li>
+                    <li><center><h5><%= sort_link(@search_raw_foods, :created_at, 'Recent', default_order: :desc) %></h5></center></li>
+                    <li><center><h5><%= sort_link(@search_raw_foods, :created_at, 'Oldest', default_order: :asc) %></h5></center></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12" style="padding:0;"><%= render "raw_foods/friends_raw_food" %></div>
+            </div>
                         </div>
                         
                       </div>
