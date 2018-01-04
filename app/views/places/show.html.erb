@@ -191,4 +191,20 @@
         </div>
       </div>
     </div>
+    <script>
+<% @reviews.each do |review| %>
+$(".score_<%= review.id %>").raty({
+  starOn: "<%= image_path('star-on.png') %>",
+  starOff: "<%= image_path('star-off.png') %>",
+  score: <%= review.score %>,
+  readOnly: true
+});
+<% end %>
+$(".average").raty({
+  starOn: "<%= image_path('star-on.png') %>",
+  starOff: "<%= image_path('star-off.png') %>",
+  score: <%= @place.total_average_rating %>,
+  readOnly: true
+});
+</script>
 
