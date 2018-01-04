@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :reviews
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  
   root 'pages#index'
   
   get 'rewards/raw_food'
@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   
   get 'listings/index'
   
+  resources :reviews
   resources :baker_product_categories
   resources :baker_service_types
   resources :event_types
@@ -63,6 +64,7 @@ Rails.application.routes.draw do
   resources :places
   resources :listings
   devise_for :merchants, controllers: { registrations: "merchants/registrations", sessions: 'merchants/sessions' }
+  devise_for :friends, controllers: { registrations: "friends/registrations", sessions: 'friends/sessions' }
   
   get '*path' => redirect('/')
   # The priority is based upon order of creation: first created -> highest priority.
