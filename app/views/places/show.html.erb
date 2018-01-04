@@ -183,7 +183,9 @@
         <div class="container">
             <h3>Reviews</h3>
             <h5>New Review</h5>
+            <% if current_friend %>
             <%= render "reviews/form" %>
+            <% end %>
             <h5>All Reviews</h5>
             <%= render @reviews %>
         </div>
