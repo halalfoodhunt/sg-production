@@ -1,181 +1,194 @@
 <div class="pix_builder_bg" id="section_highlight_2" style="outline-offset: -3px; background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('<%= @place.featured_image.url(:large) %>'); background-size: contain;">
-	<div class="big_padding highlight-section">
-		<div class="highlight-right pix_builder_bg"></div>
-		<div class="container">
-			<div class="sixteen columns">
-				<div class="eight columns alpha">
-					<br>
-				</div>                 
-				<div class="eight columns omega ">
-					<div class="highlight_inner">
-						<p class="headtext_style editContent" style="font-size:18px;"><span class="pix-text"><%= image_tag @place.logo.url(:medium), :class => "img-circle", :style => "height:80px; width:80px;" %> <%= @place.brand_name %></span></p><br>
-						<p class="normal_text margin_bottom normal_text red editContent"><i class="fa fa-map-marker"></i> <%= @place.operating_address %></p><hr>
-						<p class="normal_text margin_bottom normal_text red editContent"><i class="fa fa-map-marker"></i> <%= @place.location.name %></p><hr>
-						<p class="normal_text margin_bottom normal_text red editContent"><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> <%= @place.general_outlet_contact_number %><hr>
-							<% unless @place.website.blank? %>
-							<img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/house.png" title="Monitor" width="16">
-						<p class="normal_text margin_bottom normal_text red editContent"><%= link_to @place.website, "#{@place.website}" %></p>
-							<hr><% end %>
-							Social sites: <% unless @place.facebook_page.blank? %><%= link_to @place.facebook_page do %><i class="fa fa-facebook-official fa-2x"></i><% end %><% end %>
-							<% unless @place.instagram_handle.blank? %><%= link_to @place.instagram_handle do %><i class="fa fa-instagram fa-2x"></i><% end %><% end %></p><br>
-							<% unless @place.link_to_online_ordering_page.blank? %><%= link_to "Order NOW!", @place.link_to_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
-							<% end %>
-							<% unless @place.link_to_online_reservation_page.blank? %><%= link_to "Reserve NOW!", @place.link_to_online_reservation_page, :class => "pix_button pix_button_line orange bold_text editContent" %>
-							<% end %>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="pixfort_university_6" id="section_university_4">
-			<div class="uni_life pix_builder_bg">
-				<div class="container"><h4>Gallery</h4></div>
-				<div class="container">
-					<div class="scroller sixteen columns">
-						<% @place.menus.each do |menu| %>
-						<% unless menu.image.blank? %>
-						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-							<div class="part_st">
-								<%= image_tag menu.image.url(:square), :class => "img-responsive" %>
-								<div class="text_uni_style">
-									<p class="uni_st editContent"><%= menu.name %></p>
-								</div>
-							</div>
-						</div>
-						<% end %>
-						<% end %>
-					</div>
-				</div><!-- container -->
-			</div>
-		</div>
-	<div class="pixfort_content_1 pix_contents pix_builder_bg" id="section_text_2_1" data-selector=".pix_builder_bg" style="">
-		<br>
-		<div class="container ">
-			<div class="two-thirds column">
-				<div class="content_div" style="padding:0;">
-					<% unless @place.qualifying_type.blank? %>
-					<div class="event_box row pix_builder_bg">
-						<div class="event_box_1 ">
-							<div class="event_box_img ">
-								<% if @place.verified == true %>
-								<%= image_tag @place.qualifying_type.image.url(:large), :class => "img-responsive" %>
-								<% else %>
-								<img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/large/Listing_Icons_Artboard_12.png?1487220138" alt="Chania" style="width:130px; height:130px;">
-								<% end %>
-							</div>
-						</div>
-						<div class="event_box_2">
-							<div class="padding_15 hor_padding">
-								<h4 data-selector="h3" style="">
-									<strong>Halal Verification</strong>
-								</h4>
-								<% if @place.verified == true %>
-								<%= @place.qualifying_type.halal_summary %>
-								<% else %>
-								This business has yet to submit documents for official verification.
-								<% end %>
-							</div>
-						</div>
-						<% end %>
-					</div>
-					<% @place.rewards.each do |reward| %>
-					<% unless reward.discount.blank? %>
-					<div class="event_box row pix_builder_bg">
-						<div class="event_box_1 ">
-							<div class="event_box_img ">
-								<%= image_tag reward.discount.icon.url(:large), :class => "img-responsive" %>
-							</div>
-						</div>
-						<div class="event_box_2">
-							<div class="padding_15 hor_padding">
-								<h4 data-selector="h3" style="">
-									<strong>FRIENDS CARD HOLDERS ONLY</strong>
-								</h4>
-								<%= reward.terms %>
-								<p><br><%= link_to 'View More Rewards', rewards_path, class: "btn btn-default" %></p>
-							</div>
-						</div>
-					</div>
-					<% end %>
-					<% end %>
-					<div class="event_box row pix_builder_bg">
-						<h3>FAQ</h3>
-						<h4 class="editContent"><strong>What do you recommend our users to try when they visit you?</strong></h4>
-						<%= @place.question_1 %><br><br>
-						<h4 class="editContent"><strong>What is the easiest way to get to your place by public transport?</strong></h4>
-						<%= @place.question_2 %>
-					</div>
-				</div>
-			</div>
-			<div class="one-third column">
-				<div class="content_div" style="padding:0;">
-					<% unless @place.opening_hours.blank? %>
-					<div class="event_box row pix_builder_bg">
-						<h4>Opening Hours</h4>
-						<p class="editContent" style="font-size:8px;"> <% @place.opening_hours.each do |time| %>
-							<div class="col-xs-6 col-sm-6 col-md-5" style="padding:0; font-size:12px; line-height:16px;">
-								<%= time.day.name %>
-							</div>
-							<div class="col-xs-6 col-sm-6 col-md-7" style="font-size:12px; line-height:16px;">
-								<%= time.open.strftime("%I:%M %p") %> - <%= time.close.strftime("%I:%M %p") %>
-							</div>
-							<br><% end %></p>
-						</div>
-						<% end %>
-						<div class="event_box row pix_builder_bg">
-							<h4>On the Menu</h4>
-							<% @place.menu_items.each do |menu_item| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to menu_item.name, places_path(menu_item: menu_item.name) %></p>
-							</div>
-							<% end %>
-						</div>
-						<div class="event_box row pix_builder_bg">
-							<h4>Features</h4>
-							<% @place.features.each do |feature| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= image_tag feature.icon.url(:thumb) %> <%= link_to feature.name, places_path(feature: feature.name) %></p>
-							</div>
-							<% end %>
-						</div>
-						<div class="event_box row pix_builder_bg">
-							<h4>Dining Types</h4>
-							<% @place.dining_types.each do |dining_type| %>
-							<div class="col-xs-12 col-md-12" style="padding:0;"><p><%= image_tag dining_type.icon.url(:thumb) %> <%= link_to dining_type.name, places_path(dining_type: dining_type.name) %></p>
-							</div>
-							<% end %>
-						</div>
-						<div class="event_box row pix_builder_bg">
-							<h4>Musollah Information</h4>
-							<p><%= @place.musollah_nearby %></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="pixfort_business_10" id="section_business_5">
-			<div class="why_section pix_builder_bg" style="background: white !important;">
-				<div class="container">
-					<div class="eight columns alpha">
-<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@place.latitude},#{@place.longitude}&markers=#{@place.latitude},#{@place.longitude}&zoom=18&size=400x400&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
-              class: 'img-fluid img-rounded', alt: "#{@place.brand_name} on the map"%>
-					</div>
-					<div class="eight columns omega">
-						<div class="text_input">
-							<div class="headtext_style"><span class="editContent"><span class="pix_text">Message Box</span></span></div>
-							<div class="contact_st">
-								<form id="contact_form" pix-confirm="hidden_pix_10">
-									<div id="result"></div>
-									<input type="text" name="name" id="name" placeholder="Enter Your Full Name" class="pix_text"><br>
-									<input type="text" name="number" id="number" placeholder="Enter Your Phone Number" class="pix_text"><br>
-									<input type="email" name="email" id="email" placeholder="Enter Your Email" class="pix_text"><br>
-									<button class="subscribe_btn pix_text" id="subscribe_btn_10">
-										<span class="editContent">SEND MESSAGE</span>
-									</button>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+  <div class="big_padding highlight-section">
+    <div class="highlight-right pix_builder_bg"></div>
+    <div class="container">
+      <div class="sixteen columns">
+        <div class="eight columns alpha">
+          <br>
+        </div>                 
+        <div class="eight columns omega ">
+          <div class="highlight_inner">
+            <p class="headtext_style editContent" style="font-size:18px;"><span class="pix-text"><%= image_tag @place.logo.url(:medium), :class => "img-circle", :style => "height:80px; width:80px;" %> <%= @place.brand_name %></span></p><br>
+            <p class="normal_text margin_bottom normal_text red editContent"><i class="fa fa-map-marker"></i> <%= @place.operating_address %></p><hr>
+            <p class="normal_text margin_bottom normal_text red editContent"><i class="fa fa-map-marker"></i> <%= @place.location.name %></p><hr>
+            <p class="normal_text margin_bottom normal_text red editContent"><img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/phone-call.png" title="Email" width="16"> <%= @place.general_outlet_contact_number %><hr>
+              <% unless @place.website.blank? %>
+              <img src="http://friends.jumaiyah.com/wp-content/uploads/2016/12/house.png" title="Monitor" width="16">
+              <p class="normal_text margin_bottom normal_text red editContent"><%= link_to @place.website, "#{@place.website}" %></p>
+              <hr><% end %>
+              Social sites: <% unless @place.facebook_page.blank? %><%= link_to @place.facebook_page do %><i class="fa fa-facebook-official fa-2x"></i><% end %><% end %>
+              <% unless @place.instagram_handle.blank? %><%= link_to @place.instagram_handle do %><i class="fa fa-instagram fa-2x"></i><% end %><% end %></p><br>
+              <% unless @place.link_to_online_ordering_page.blank? %><%= link_to "Order NOW!", @place.link_to_online_ordering_page, :class => "pix_button pix_button_line brown bold_text editContent" %>
+              <% end %>
+              <% unless @place.link_to_online_reservation_page.blank? %><%= link_to "Reserve NOW!", @place.link_to_online_reservation_page, :class => "pix_button pix_button_line orange bold_text editContent" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pixfort_university_6" id="section_university_4">
+    <div class="uni_life pix_builder_bg">
+      <div class="container"><h4>Gallery</h4></div>
+      <div class="container">
+        <div class="scroller sixteen columns">
+          <% @place.menus.each do |menu| %>
+          <% unless menu.image.blank? %>
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+            <div class="part_st">
+              <%= image_tag menu.image.url(:square), :class => "img-responsive" %>
+              <div class="text_uni_style">
+                <p class="uni_st editContent"><%= menu.name %></p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+      </div><!-- container -->
+    </div>
+  </div>
+  <div class="pixfort_content_1 pix_contents pix_builder_bg" id="section_text_2_1" data-selector=".pix_builder_bg" style="">
+    <br>
+    <div class="container ">
+      <div class="two-thirds column">
+        <div class="content_div" style="padding:0;">
+          <% unless @place.qualifying_type.blank? %>
+          <div class="event_box row pix_builder_bg">
+            <div class="event_box_1 ">
+              <div class="event_box_img ">
+                <% if @place.verified == true %>
+                <%= image_tag @place.qualifying_type.image.url(:large), :class => "img-responsive" %>
+                <% else %>
+                <img class="img-responsive" src="http://s3.amazonaws.com/international-hfh/verifying_types/icons/000/000/002/large/Listing_Icons_Artboard_12.png?1487220138" alt="Chania" style="width:130px; height:130px;">
+                <% end %>
+              </div>
+            </div>
+            <div class="event_box_2">
+              <div class="padding_15 hor_padding">
+                <h4 data-selector="h3" style="">
+                  <strong>Halal Verification</strong>
+                </h4>
+                <% if @place.verified == true %>
+                <%= @place.qualifying_type.halal_summary %>
+                <% else %>
+                This business has yet to submit documents for official verification.
+                <% end %>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <% @place.rewards.each do |reward| %>
+          <% unless reward.discount.blank? %>
+          <div class="event_box row pix_builder_bg">
+            <div class="event_box_1 ">
+              <div class="event_box_img ">
+                <%= image_tag reward.discount.icon.url(:large), :class => "img-responsive" %>
+              </div>
+            </div>
+            <div class="event_box_2">
+              <div class="padding_15 hor_padding">
+                <h4 data-selector="h3" style="">
+                  <strong>FRIENDS CARD HOLDERS ONLY</strong>
+                </h4>
+                <%= reward.terms %>
+                <p><br><%= link_to 'View More Rewards', rewards_path, class: "btn btn-default" %></p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+          <% end %>
+          <div class="event_box row pix_builder_bg">
+            <h3>FAQ</h3>
+            <h4 class="editContent"><strong>What do you recommend our users to try when they visit you?</strong></h4>
+            <%= @place.question_1 %><br><br>
+            <h4 class="editContent"><strong>What is the easiest way to get to your place by public transport?</strong></h4>
+            <%= @place.question_2 %>
+          </div>
+        </div>
+      </div>
+      <div class="one-third column">
+        <div class="content_div" style="padding:0;">
+          <% unless @place.opening_hours.blank? %>
+          <div class="event_box row pix_builder_bg">
+            <h4>Opening Hours</h4>
+            <p class="editContent" style="font-size:8px;"> <% @place.opening_hours.each do |time| %>
+              <div class="col-xs-6 col-sm-6 col-md-5" style="padding:0; font-size:12px; line-height:16px;">
+                <%= time.day.name %>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-7" style="font-size:12px; line-height:16px;">
+                <%= time.open.strftime("%I:%M %p") %> - <%= time.close.strftime("%I:%M %p") %>
+              </div>
+              <br><% end %></p>
+            </div>
+            <% end %>
+            <div class="event_box row pix_builder_bg">
+              <h4>On the Menu</h4>
+              <% @place.menu_items.each do |menu_item| %>
+              <div class="col-xs-12 col-md-12" style="padding:0;"><p><%= link_to menu_item.name, places_path(menu_item: menu_item.name) %></p>
+              </div>
+              <% end %>
+            </div>
+            <div class="event_box row pix_builder_bg">
+              <h4>Features</h4>
+              <% @place.features.each do |feature| %>
+              <div class="col-xs-12 col-md-12" style="padding:0;"><p><%= image_tag feature.icon.url(:thumb) %> <%= link_to feature.name, places_path(feature: feature.name) %></p>
+              </div>
+              <% end %>
+            </div>
+            <div class="event_box row pix_builder_bg">
+              <h4>Dining Types</h4>
+              <% @place.dining_types.each do |dining_type| %>
+              <div class="col-xs-12 col-md-12" style="padding:0;"><p><%= image_tag dining_type.icon.url(:thumb) %> <%= link_to dining_type.name, places_path(dining_type: dining_type.name) %></p>
+              </div>
+              <% end %>
+            </div>
+            <div class="event_box row pix_builder_bg">
+              <h4>Musollah Information</h4>
+              <p><%= @place.musollah_nearby %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pixfort_business_10" id="section_business_5">
+      <div class="why_section pix_builder_bg" style="background: white !important;">
+        <div class="container">
+          <div class="eight columns alpha">
+            <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@place.latitude},#{@place.longitude}&markers=#{@place.latitude},#{@place.longitude}&zoom=18&size=400x400&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
+            class: 'img-fluid img-rounded', alt: "#{@place.brand_name} on the map"%>
+          </div>
+          <div class="eight columns omega">
+            <div class="text_input">
+              <div class="headtext_style"><span class="editContent"><span class="pix_text">Message Box</span></span></div>
+              <div class="contact_st">
+                <form id="contact_form" pix-confirm="hidden_pix_10">
+                  <div id="result"></div>
+                  <input type="text" name="name" id="name" placeholder="Enter Your Full Name" class="pix_text"><br>
+                  <input type="text" name="number" id="number" placeholder="Enter Your Phone Number" class="pix_text"><br>
+                  <input type="email" name="email" id="email" placeholder="Enter Your Email" class="pix_text"><br>
+                  <button class="subscribe_btn pix_text" id="subscribe_btn_10">
+                    <span class="editContent">SEND MESSAGE</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pixfort_business_10" id="section_business_5">
+      <div class="why_section pix_builder_bg" style="background: white !important;">
+        <div class="container">
+            <h3>Reviews</h3>
+            <% if current_friend %>
+            <h5>New Review</h5>
+            <%= render "reviews/form" %>
+            <% end %>
+            <h5>All Reviews</h5>
+            <%= render @reviews %>
+        </div>
+      </div>
+    </div>
 

@@ -16,6 +16,14 @@ class Place < ActiveRecord::Base
   def should_generate_new_friendly_id?
     slug.blank? || brand_name_changed?
   end
+
+	def average_rating
+		self.reviews.sum(:score) / reviews.size
+	rescue ZeroDivisionError
+		0
+	end
+	
+	has_many :reviews, dependent: :destroy
   
   has_many :features, :through => :highlights, dependent: :destroy
   has_many :highlights, dependent: :destroy

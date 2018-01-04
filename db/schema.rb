@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171216102819) do
+ActiveRecord::Schema.define(version: 20180104070321) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -404,6 +404,15 @@ ActiveRecord::Schema.define(version: 20171216102819) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
+  create_table "friends", force: :cascade do |t|
+    t.string   "name"
+    t.string   "uid"
+    t.string   "email"
+    t.string   "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "function_types", force: :cascade do |t|
     t.integer  "caterer_id"
     t.integer  "event_type_id"
@@ -756,6 +765,7 @@ ActiveRecord::Schema.define(version: 20171216102819) do
     t.integer  "verifying_document_id"
     t.string   "slug"
     t.text     "musollah_nearby"
+    t.integer  "total_average_rating",            default: 0
   end
 
   add_index "places", ["dining_type_id"], name: "index_places_on_dining_type_id"
@@ -881,6 +891,15 @@ ActiveRecord::Schema.define(version: 20171216102819) do
   add_index "raw_foods", ["raw_food_product_category_id"], name: "index_raw_foods_on_raw_food_product_category_id"
   add_index "raw_foods", ["reward_id"], name: "index_raw_foods_on_reward_id"
   add_index "raw_foods", ["slug"], name: "index_raw_foods_on_slug", unique: true
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "place_id"
+    t.integer  "friend_id"
+    t.text     "content"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "score",      default: 0
+  end
 
   create_table "rewards", force: :cascade do |t|
     t.text     "terms"
