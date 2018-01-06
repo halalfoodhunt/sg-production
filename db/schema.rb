@@ -891,14 +891,6 @@ ActiveRecord::Schema.define(version: 20180104070108) do
   add_index "raw_foods", ["reward_id"], name: "index_raw_foods_on_reward_id"
   add_index "raw_foods", ["slug"], name: "index_raw_foods_on_slug", unique: true
 
-  create_table "reviews", force: :cascade do |t|
-    t.integer  "place_id"
-    t.integer  "friend_id"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "rewards", force: :cascade do |t|
     t.text     "terms"
     t.integer  "discount_id"
