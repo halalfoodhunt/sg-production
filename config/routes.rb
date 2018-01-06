@@ -63,7 +63,6 @@ Rails.application.routes.draw do
   resources :places
   resources :listings
   devise_for :merchants, controllers: { registrations: "merchants/registrations", sessions: 'merchants/sessions' }
-  devise_for :friends, controllers: { registrations: "friends/registrations", sessions: 'friends/sessions' }
   
   get '*path' => redirect('/')
   # The priority is based upon order of creation: first created -> highest priority.

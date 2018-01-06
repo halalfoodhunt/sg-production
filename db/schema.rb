@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104070321) do
+ActiveRecord::Schema.define(version: 20180104070108) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -765,7 +765,6 @@ ActiveRecord::Schema.define(version: 20180104070321) do
     t.integer  "verifying_document_id"
     t.string   "slug"
     t.text     "musollah_nearby"
-    t.integer  "total_average_rating",            default: 0
   end
 
   add_index "places", ["dining_type_id"], name: "index_places_on_dining_type_id"
@@ -896,9 +895,8 @@ ActiveRecord::Schema.define(version: 20180104070321) do
     t.integer  "place_id"
     t.integer  "friend_id"
     t.text     "content"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "score",      default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "rewards", force: :cascade do |t|
