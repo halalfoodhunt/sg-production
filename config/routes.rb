@@ -32,7 +32,6 @@ Rails.application.routes.draw do
   
   get 'listings/index'
   
-  resources :reviews
   resources :baker_product_categories
   resources :baker_service_types
   resources :event_types

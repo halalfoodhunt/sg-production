@@ -42,10 +42,6 @@ class PlacesController < ApplicationController
   # GET /places/1
   # GET /places/1.json
   def show
-    @reviews = @place.reviews
-    if current_friend
-      @review = Review.new
-    end
   end
 
   # GET /places/new

@@ -181,30 +181,7 @@
     <div class="pixfort_business_10" id="section_business_5">
       <div class="why_section pix_builder_bg">
         <div class="container">
-            <h3>Reviews</h3>
-            <h5>New Review</h5>
-            <% if current_friend %>
-            <%= render "reviews/form" %>
-            <% end %>
-            <h5>All Reviews</h5>
-            <%= render @reviews %>
+          
         </div>
       </div>
     </div>
-    <script>
-<% @reviews.each do |review| %>
-$(".score_<%= review.id %>").raty({
-  starOn: "<%= image_path('star-on.png') %>",
-  starOff: "<%= image_path('star-off.png') %>",
-  score: <%= review.score %>,
-  readOnly: true
-});
-<% end %>
-$(".average").raty({
-  starOn: "<%= image_path('star-on.png') %>",
-  starOff: "<%= image_path('star-off.png') %>",
-  score: <%= @place.total_average_rating %>,
-  readOnly: true
-});
-</script>
-
